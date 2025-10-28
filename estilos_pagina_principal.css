@@ -15,7 +15,7 @@
 
   /* Espaciado y radios */
   --border-radius-btn: 25px;
-  --border-radius-card: 10px;
+  --border-radius-card: 20px;
   --transition-fast: 0.3s ease;
 }
 
@@ -33,44 +33,37 @@ body {
   line-height: 1.6;
 }
 
-/* Header */
+/* Header - Todo alineado a la derecha */
 header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: var(--color-header); /* #05438D */
+  background-color: var(--color-header);
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
 }
 
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--color-text-light);
-}
-
 nav ul {
   display: flex;
   list-style: none;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
 }
 
 nav ul li a {
   color: var(--color-text-light);
   text-decoration: none;
-  padding: 0.5rem 1rem;
+  font-weight: 500;
   transition: color var(--transition-fast);
+  white-space: nowrap;
 }
 
 nav ul li a:hover {
   color: var(--color-primary);
-}
-
-.user-icon {
-  font-size: 1.5rem;
-  cursor: pointer;
 }
 
 /* Hero Carousel */
@@ -121,6 +114,8 @@ nav ul li a:hover {
   z-index: 1;
   max-width: 800px;
   padding: 2rem;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
 }
 
 .hero-content h1 {
@@ -136,9 +131,7 @@ nav ul li a:hover {
 }
 
 /* Botones */
-.btn-primary,
-.btn-secondary,
-.btn-subscribe {
+.btn-primary {
   display: inline-block;
   padding: 0.75rem 1.5rem;
   border-radius: var(--border-radius-btn);
@@ -146,48 +139,33 @@ nav ul li a:hover {
   font-weight: bold;
   transition: background-color var(--transition-fast), transform 0.2s ease;
   cursor: pointer;
-  color: var(--color-bg-body);
   background-color: var(--color-primary);
+  color: var(--color-bg-body);
 }
 
-.btn-primary:hover,
-.btn-secondary:hover,
-.btn-subscribe:hover {
+.btn-primary:hover {
   background-color: var(--color-primary-hover);
   transform: scale(1.05);
 }
 
-.btn-secondary {
-  margin-top: 1rem;
-}
-
-.btn-subscribe {
-  width: 100%;
-  margin-top: 1rem;
-}
-
-/* ... (el resto del CSS anterior se mantiene igual) ... */
-
-/* Services Section - Ajustado EXACTAMENTE a la imagen */
+/* Services Section */
 .services {
   display: flex;
   justify-content: center;
   gap: 2rem;
   padding: 3rem 2rem;
   flex-wrap: wrap;
-  background-color: #007BFF; /* Fondo azul brillante como en la imagen */
+  background-color: var(--color-bg-section);
 }
 
 .service-card {
-  background-color: #ffffff; /* Fondo blanco para la tarjeta */
-  border-radius: 20px; /* Bordes muy redondeados */
+  background-color: #ffffff;
+  border-radius: var(--border-radius-card);
   padding: 1.5rem;
   width: 300px;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-  overflow: hidden;
 }
 
 .service-card:hover {
@@ -199,29 +177,29 @@ nav ul li a:hover {
   width: 100%;
   border-radius: 10px;
   margin-bottom: 1rem;
-  border: 3px solid #e0e0e0; /* Borde blanco/gris claro alrededor de la imagen */
+  border: 3px solid #e0e0e0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .service-card h3 {
   margin-bottom: 0.5rem;
-  color: #000000; /* Texto negro */
+  color: #000000;
   font-size: 1.1rem;
   font-weight: bold;
 }
 
 .service-card p {
   margin-bottom: 1rem;
-  color: #666666; /* Texto gris oscuro */
+  color: #666666;
   font-size: 0.9rem;
   line-height: 1.4;
 }
 
 .btn-secondary {
-  background-color: #BEA2E6; /* Verde pastel como en la imagen */
-  color: #000000; /* Texto negro */
+  background-color: #BEA2E6;
+  color: #000000;
   padding: 0.5rem 1rem;
-  border-radius: 25px;
+  border-radius: var(--border-radius-btn);
   text-decoration: none;
   font-weight: bold;
   transition: background-color 0.3s ease, transform 0.2s ease;
@@ -230,16 +208,17 @@ nav ul li a:hover {
   width: 100%;
   max-width: 150px;
   margin: 0 auto;
+  display: block;
 }
 
 .btn-secondary:hover {
-  background-color: #ae88e3; /* Verde más oscuro al pasar el mouse */
+  background-color: #ae88e3;
   transform: scale(1.05);
 }
 
 /* Footer */
 footer {
-  background-color: var(--color-footer); /* #2874AF */
+  background-color: var(--color-footer);
   padding: 2rem;
   display: flex;
   flex-wrap: wrap;
@@ -298,39 +277,61 @@ input[type="email"] {
   color: var(--color-text-light);
 }
 
+.btn-subscribe {
+  background-color: var(--color-primary);
+  color: var(--color-bg-body);
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: var(--border-radius-btn);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color var(--transition-fast), transform 0.2s ease;
+  margin-top: 1rem;
+  border: none;
+}
+
+.btn-subscribe:hover {
+  background-color: var(--color-primary-hover);
+  transform: scale(1.05);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
-  .services {
-    flex-direction: column;
-    align-items: center;
+  header {
+    padding: 1rem;
   }
 
-  .service-card {
-    width: 100%;
-    max-width: 400px;
+  nav ul {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.8rem;
+  }
+
+  .hero-carousel {
+    height: 60vh;
   }
 
   .hero-content h1 {
     font-size: 2rem;
   }
 
-  nav ul {
+  .services {
     flex-direction: column;
-    text-align: center;
+    align-items: center;
   }
 
-  nav ul li a {
-    padding: 0.5rem;
+  .service-card {
+    width: 90%;
+    max-width: 400px;
   }
 
   footer {
     flex-direction: column;
-    align-items: center;
     text-align: center;
   }
 
   .social-icons {
     order: -1;
-    margin-bottom: 1rem;
+    justify-content: center;
   }
 }
