@@ -1,0 +1,470 @@
+/* ================================
+   Variables globales CSS (Custom Properties)
+   Definen colores, tipografía, espaciados y bordes reutilizables
+   ================================ */
+:root {
+  --color-azul-oscuro: #03045E;
+  /* Azul oscuro principal */
+  --color-azul-hover: #0056b3;
+  /* Azul para estados hover/focus */
+  --color-blanco: #fff;
+  /* Color blanco */
+  --color-fondo-cards: #f0f2f5;
+  /* Fondo claro para tarjetas */
+  --color-texto-principal: #333;
+  /* Color principal del texto */
+  --color-texto-secundario: #666;
+  /* Color secundario del texto */
+  --font-family: 'Poppins', sans-serif;
+  /* Fuente principal */
+  --espaciado: 1rem;
+  /* Espaciado base */
+  --border-radius: 5px;
+  /* Radio de bordes para elementos */
+}
+
+/* ================================
+   Reset y box-sizing
+   ================================ */
+* {
+  box-sizing: border-box;
+  /* Incluye padding y border en el tamaño total */
+  margin: 0;
+  /* Elimina márgenes por defecto */
+  padding: 0;
+  /* Elimina padding por defecto */
+}
+
+/* ================================
+   Estilos base para el body
+   ================================ */
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-blanco);
+  color: var(--color-texto-principal);
+  line-height: 1.5;
+  /* Mejor legibilidad */
+}
+
+/* ================================
+   Barra de navegación (navbar)
+   ================================ */
+.navbar {
+  display: flex;
+  /* Layout flexible */
+  justify-content: space-between;
+  /* Separar logo y menú */
+  align-items: center;
+  /* Centrar verticalmente */
+  padding: var(--espaciado);
+  background-color: var(--color-azul-oscuro);
+}
+
+/* Logo dentro de la navbar */
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  color: var(--color-blanco);
+  text-decoration: none;
+  /* Sin subrayado */
+}
+
+/* Imagen del logo */
+.navbar__logo-image {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+  border-radius: 50%;
+  /* Circular */
+  object-fit: cover;
+  /* Ajusta la imagen sin distorsión */
+}
+
+/* Texto del logo */
+.navbar__logo-text {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+/* Menú de navegación */
+.navbar__menu {
+  display: flex;
+  list-style: none;
+  /* Sin viñetas */
+}
+
+/* Ítems del menú */
+.navbar__item {
+  margin-left: 2rem;
+  /* Separación entre ítems */
+}
+
+/* Enlaces del menú */
+.navbar__link {
+  color: var(--color-blanco);
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: text-decoration 0.3s ease;
+}
+
+/* Efecto hover y focus para enlaces */
+.navbar__link:hover,
+.navbar__link:focus {
+  text-decoration: underline;
+  outline: none;
+  /* Elimina outline por defecto */
+}
+
+/* ================================
+   Sección Hero (principal)
+   ================================ */
+.hero {
+  padding: 2rem 1rem 3rem;
+  text-align: center;
+  background-color: var(--color-blanco);
+}
+
+/* Contenido interno del hero */
+.hero__content {
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+
+/* Título principal */
+.hero__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--color-azul-oscuro);
+}
+
+/* Subtítulo */
+.hero__subtitle {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  color: var(--color-texto-secundario);
+}
+
+/* Contenedor para búsqueda */
+.hero__search {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  /* Permite que los elementos bajen en pantallas pequeñas */
+}
+
+Input de búsqueda
+.hero__search-input {
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  width: 250px;
+  max-width: 100%;
+  /* Responsivo */
+}
+
+/* ================================
+   Botones generales
+   ================================ */
+.btn {
+  cursor: pointer;
+  border: none;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+/* Botón específico para búsqueda */
+.btn--search {
+  background-color: var(--color-azul-oscuro);
+  color: var(--color-blanco);
+  padding: 0.75rem 1.5rem;
+}
+
+/* Efectos hover y focus para botón búsqueda */
+.btn--search:hover,
+.btn--search:focus {
+  background-color: var(--color-azul-hover);
+  outline: none;
+}
+
+/* Contenedor de imagen en hero */
+.hero__image-container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Imagen hero */
+.hero__image {
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ================================
+   Sección de productos
+   ================================ */
+.products {
+  background-color: var(--color-fondo-cards);
+  padding: 3rem 1rem 4rem;
+  text-align: center;
+}
+
+/* Título productos */
+.products__title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--color-azul-oscuro);
+  font-weight: 700;
+}
+
+/* Contenedor de tarjetas de productos */
+.products__cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  /* Permite que las tarjetas bajen en pantallas pequeñas */
+}
+
+/* Tarjeta individual de producto */
+.product-card {
+  background-color: var(--color-blanco);
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+/* Efecto hover y focus para tarjeta */
+.product-card:hover,
+.product-card:focus-within {
+  transform: translateY(-5px);
+  outline: none;
+}
+
+/* Imagen dentro de la tarjeta */
+.product-card__image {
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+
+/* Contenedor de descripción */
+.product-card__description {
+  margin-bottom: 1.5rem;
+}
+
+/* Título del producto */
+.product-card__title {
+  font-size: 1.5rem;
+  color: var(--color-texto-principal);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+/* Texto descriptivo */
+.product-card__text {
+  font-size: 1rem;
+  color: var(--color-texto-secundario);
+  line-height: 1.4;
+}
+
+/* Botón dentro de la tarjeta */
+.product-card__button {
+  background-color: var(--color-azul-oscuro);
+  color: var(--color-blanco);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+}
+
+/* Efectos hover y focus para botón */
+.product-card__button:hover,
+.product-card__button:focus {
+  background-color: var(--color-azul-hover);
+  outline: none;
+}
+
+/* ================================
+   Pie de página (footer)
+   ================================ */
+.footer {
+  background-color: var(--color-azul-oscuro);
+  color: var(--color-blanco);
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Secciones internas del footer */
+.footer__section {
+  margin-bottom: 1.5rem;
+}
+
+/* Títulos dentro del footer */
+.footer__title {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+/* Parte inferior del footer con borde superior */
+.footer__bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding-top: 1rem;
+}
+
+/* ================================
+   Enlaces externos
+   ================================ */
+.external-link {
+  background-color: var(--color-azul-oscuro);
+  text-align: right;
+  padding: 0.5rem 1rem;
+}
+
+/* Estilo para anclas dentro de external-link */
+.external-link__anchor {
+  color: var(--color-blanco);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+/* Efectos hover y focus para enlaces externos */
+.external-link__anchor:hover,
+.external-link__anchor:focus {
+  color: var(--color-azul-hover);
+  outline: none;
+}
+
+/* Carrusel centrado y más grande */
+.slider {
+  position: relative;
+  width: 80%; /* más grande pero adaptable */
+  max-width: 800px;
+  height: 400px;
+  margin: 2rem auto; /* centra el carrusel horizontalmente */
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.slider img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: cambio 12s infinite;
+}
+
+.slider img:nth-child(1) { animation-delay: 0s; }
+.slider img:nth-child(2) { animation-delay: 4s; }
+.slider img:nth-child(3) { animation-delay: 8s; }
+.slider img:nth-child(4) { animation-delay: 12s; }
+
+@keyframes cambio {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  30% { opacity: 1; }
+  40% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+
+@keyframes cambio {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  30% { opacity: 1; }
+  40% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+
+/* ================================
+   Media Queries para responsividad
+   ================================ */
+
+/* Pantallas menores a 1024px */
+@media (max-width: 1024px) {
+  .products__cards {
+    flex-direction: column;
+    /* Apilar tarjetas verticalmente */
+    align-items: center;
+  }
+
+  .navbar__menu {
+    flex-wrap: wrap;
+    /* Permite que el menú se ajuste */
+    justify-content: center;
+  }
+
+  .navbar__item {
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .hero__title {
+    font-size: 2rem;
+    /* Reducir tamaño del título */
+  }
+}
+
+/* Pantallas menores a 900px */
+@media (max-width: 900px) {
+  .testimonials__list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testimonial-card {
+    width: 90%;
+    max-width: 400px;
+  }
+}
+
+/* Pantallas menores a 600px */
+@media (max-width: 600px) {
+  .external-link {
+    text-align: center;
+    /* Centrar texto */
+  }
+}
+
+/* Pantallas menores a 480px */
+@media (max-width: 480px) {
+  .hero__search {
+    flex-direction: column;
+    /* Apilar inputs y botones */
+  }
+
+  .hero__search-input {
+    width: 100%;
+    /* Input ocupa todo el ancho */
+  }
+
+  .btn--search {
+    width: 100%;
+    /* Botón ocupa todo el ancho */
+  }
+}
