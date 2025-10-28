@@ -1,450 +1,336 @@
-/* ================================
-   Variables globales CSS (Custom Properties)
-   Definen colores, tipografía, espaciados y bordes reutilizables
-   ================================ */
+/* --- Variables Globales --- */
 :root {
-  --color-azul-oscuro: #03045E;
-  /* Azul oscuro principal */
-  --color-azul-hover: #0056b3;
-  /* Azul para estados hover/focus */
-  --color-blanco: #fff;
-  /* Color blanco */
-  --color-fondo-cards: #f0f2f5;
-  /* Fondo claro para tarjetas */
-  --color-texto-principal: #333;
-  /* Color principal del texto */
-  --color-texto-secundario: #666;
-  /* Color secundario del texto */
-  --font-family: 'Poppins', sans-serif;
-  /* Fuente principal */
-  --espaciado: 1rem;
-  /* Espaciado base */
-  --border-radius: 5px;
-  /* Radio de bordes para elementos */
+  /* Colores principales */
+  --color-header: #03045E;
+  --color-footer: hsl(206, 63%, 42%);
+  --color-bg-body: #033F8A;
+  --color-bg-section: #448ec7;
+  --color-text-light: #ffffff;
+  --color-text-muted: #e0e0e0;
+  --color-primary: #4cc9f0;
+  --color-primary-hover: #3a9fd0;
+
+  /* Tipografía */
+  --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  /* Espaciado y radios */
+  --border-radius-btn: 25px;
+  --border-radius-card: 10px;
+  --transition-fast: 0.3s ease;
 }
 
-/* ================================
-   Reset y box-sizing
-   ================================ */
+/* Reset y estilos generales */
 * {
-  box-sizing: border-box;
-  /* Incluye padding y border en el tamaño total */
   margin: 0;
-  /* Elimina márgenes por defecto */
   padding: 0;
-  /* Elimina padding por defecto */
+  box-sizing: border-box;
 }
 
-/* ================================
-   Estilos base para el body
-   ================================ */
 body {
-  font-family: var(--font-family);
-  background-color: var(--color-blanco);
-  color: var(--color-texto-principal);
-  line-height: 1.5;
-  /* Mejor legibilidad */
+  font-family: var(--font-main);
+  background-color: var(--color-bg-body);
+  color: var(--color-text-light);
+  line-height: 1.6;
 }
 
-/* ================================
-   Barra de navegación (navbar)
-   ================================ */
-.navbar {
+/* Header */
+header {
   display: flex;
-  /* Layout flexible */
   justify-content: space-between;
-  /* Separar logo y menú */
   align-items: center;
-  /* Centrar verticalmente */
-  padding: var(--espaciado);
-  background-color: var(--color-azul-oscuro);
+  padding: 1rem 2rem;
+  background-color: var(--color-header); /* #05438D */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
-/* Logo dentro de la navbar */
-.navbar__logo {
-  display: flex;
-  align-items: center;
-  color: var(--color-blanco);
-  text-decoration: none;
-  /* Sin subrayado */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-text-light);
 }
 
-/* Imagen del logo */
-.navbar__logo-image {
-  width: 60px;
-  height: 60px;
-  margin-right: 10px;
-  border-radius: 50%;
-  /* Circular */
-  object-fit: cover;
-  /* Ajusta la imagen sin distorsión */
-}
-
-/* Texto del logo */
-.navbar__logo-text {
-  font-size: 1.6rem;
-  font-weight: 600;
-}
-
-/* Menú de navegación */
-.navbar__menu {
+nav ul {
   display: flex;
   list-style: none;
-  /* Sin viñetas */
 }
 
-/* Ítems del menú */
-.navbar__item {
-  margin-left: 2rem;
-  /* Separación entre ítems */
-}
-
-/* Enlaces del menú */
-.navbar__link {
-  color: var(--color-blanco);
+nav ul li a {
+  color: var(--color-text-light);
   text-decoration: none;
-  font-size: 1.1rem;
-  transition: text-decoration 0.3s ease;
+  padding: 0.5rem 1rem;
+  transition: color var(--transition-fast);
 }
 
-/* Efecto hover y focus para enlaces */
-.navbar__link:hover,
-.navbar__link:focus {
-  text-decoration: underline;
-  outline: none;
-  /* Elimina outline por defecto */
+nav ul li a:hover {
+  color: var(--color-primary);
 }
 
-/* ================================
-   Sección Hero (principal)
-   ================================ */
-.hero {
-  padding: 2rem 1rem 3rem;
-  text-align: center;
-  background-color: var(--color-blanco);
-}
-
-/* Contenido interno del hero */
-.hero__content {
-  max-width: 700px;
-  margin: 0 auto 2rem;
-}
-
-/* Título principal */
-.hero__title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  color: var(--color-azul-oscuro);
-}
-
-/* Subtítulo */
-.hero__subtitle {
-  font-size: 1.25rem;
-  font-weight: 400;
-  margin-bottom: 1.5rem;
-  color: var(--color-texto-secundario);
-}
-
-/* Contenedor para búsqueda */
-.hero__search {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  /* Permite que los elementos bajen en pantallas pequeñas */
-}
-
-Input de búsqueda
-.hero__search-input {
-  padding: 0.7rem 1rem;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: var(--border-radius);
-  width: 250px;
-  max-width: 100%;
-  /* Responsivo */
-}
-
-/* ================================
-   Botones generales
-   ================================ */
-.btn {
+.user-icon {
+  font-size: 1.5rem;
   cursor: pointer;
-  border: none;
-  border-radius: var(--border-radius);
-  font-weight: 600;
-  transition: background-color 0.3s ease;
 }
 
-/* Botón específico para búsqueda */
-.btn--search {
-  background-color: var(--color-azul-oscuro);
-  color: var(--color-blanco);
-  padding: 0.75rem 1.5rem;
-}
-
-/* Efectos hover y focus para botón búsqueda */
-.btn--search:hover,
-.btn--search:focus {
-  background-color: var(--color-azul-hover);
-  outline: none;
-}
-
-/* Contenedor de imagen en hero */
-.hero__image-container {
-  max-width: 1500px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-/* Imagen hero */
-.hero__image {
-  width: 100%;
-  height: auto;
-  border-radius: var(--border-radius);
-  object-fit: cover;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* ================================
-   Sección de productos
-   ================================ */
-.products {
-  background-color: var(--color-fondo-cards);
-  padding: 3rem 1rem 4rem;
+/* Hero Carousel */
+.hero-carousel {
+  position: relative;
+  height: 70vh;
+  overflow: hidden;
+  margin-top: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
 }
 
-/* Título productos */
-.products__title {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: var(--color-azul-oscuro);
-  font-weight: 700;
+.carousel-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
-/* Contenedor de tarjetas de productos */
-.products__cards {
+.carousel-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: carouselFade 12s infinite;
+}
+
+.carousel-image:nth-child(1) { animation-delay: 0s; }
+.carousel-image:nth-child(2) { animation-delay: 4s; }
+.carousel-image:nth-child(3) { animation-delay: 8s; }
+
+@keyframes carouselFade {
+  0%   { opacity: 0; }
+  20%  { opacity: 1; }
+  33%  { opacity: 1; }
+  53%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+.hero-content {
+  z-index: 1;
+  max-width: 800px;
+  padding: 2rem;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-text-light);
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-text-muted);
+}
+
+/* Botones */
+.btn-primary,
+.btn-secondary,
+.btn-subscribe {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius-btn);
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color var(--transition-fast), transform 0.2s ease;
+  cursor: pointer;
+  color: var(--color-bg-body);
+  background-color: var(--color-primary);
+}
+
+.btn-primary:hover,
+.btn-secondary:hover,
+.btn-subscribe:hover {
+  background-color: var(--color-primary-hover);
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  margin-top: 1rem;
+}
+
+.btn-subscribe {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+/* ... (el resto del CSS anterior se mantiene igual) ... */
+
+/* Services Section - Ajustado EXACTAMENTE a la imagen */
+.services {
   display: flex;
   justify-content: center;
   gap: 2rem;
+  padding: 3rem 2rem;
   flex-wrap: wrap;
-  /* Permite que las tarjetas bajen en pantallas pequeñas */
+  background-color: #007BFF; /* Fondo azul brillante como en la imagen */
 }
 
-/* Tarjeta individual de producto */
-.product-card {
-  background-color: var(--color-blanco);
-  border: 1px solid #ddd;
-  border-radius: var(--border-radius);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.service-card {
+  background-color: #ffffff; /* Fondo blanco para la tarjeta */
+  border-radius: 20px; /* Bordes muy redondeados */
   padding: 1.5rem;
+  width: 300px;
   text-align: center;
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Efecto hover y focus para tarjeta */
-.product-card:hover,
-.product-card:focus-within {
+.service-card:hover {
   transform: translateY(-5px);
-  outline: none;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Imagen dentro de la tarjeta */
-.product-card__image {
+.service-card img {
   width: 100%;
-  height: auto;
-  border-radius: var(--border-radius);
+  border-radius: 10px;
   margin-bottom: 1rem;
-  object-fit: cover;
+  border: 3px solid #e0e0e0; /* Borde blanco/gris claro alrededor de la imagen */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-/* Contenedor de descripción */
-.product-card__description {
-  margin-bottom: 1.5rem;
-}
-
-/* Título del producto */
-.product-card__title {
-  font-size: 1.5rem;
-  color: var(--color-texto-principal);
+.service-card h3 {
   margin-bottom: 0.5rem;
-  font-weight: 600;
+  color: #000000; /* Texto negro */
+  font-size: 1.1rem;
+  font-weight: bold;
 }
 
-/* Texto descriptivo */
-.product-card__text {
-  font-size: 1rem;
-  color: var(--color-texto-secundario);
+.service-card p {
+  margin-bottom: 1rem;
+  color: #666666; /* Texto gris oscuro */
+  font-size: 0.9rem;
   line-height: 1.4;
 }
 
-/* Botón dentro de la tarjeta */
-.product-card__button {
-  background-color: var(--color-azul-oscuro);
-  color: var(--color-blanco);
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--border-radius);
+.btn-secondary {
+  background-color: #BEA2E6; /* Verde pastel como en la imagen */
+  color: #000000; /* Texto negro */
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
   cursor: pointer;
-  font-size: 1rem;
-  font-weight: 700;
-  transition: background-color 0.3s ease;
-}
-
-/* Efectos hover y focus para botón */
-.product-card__button:hover,
-.product-card__button:focus {
-  background-color: var(--color-azul-hover);
-  outline: none;
-}
-
-/* ================================
-   Pie de página (footer)
-   ================================ */
-.footer {
-  background-color: var(--color-azul-oscuro);
-  color: var(--color-blanco);
-  padding: 2rem 1rem;
-  text-align: center;
   font-size: 0.9rem;
-}
-
-/* Secciones internas del footer */
-.footer__section {
-  margin-bottom: 1.5rem;
-}
-
-/* Títulos dentro del footer */
-.footer__title {
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-}
-
-/* Parte inferior del footer con borde superior */
-.footer__bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
-  padding-top: 1rem;
-}
-
-/* Carrusel centrado y más grande */
-.slider {
-  position: relative;
-  width: 80%; /* más grande pero adaptable */
-  max-width: 800px;
-  height: 400px;
-  margin: 2rem auto; /* centra el carrusel horizontalmente */
-  overflow: hidden;
-  border-radius: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.slider img {
-  position: absolute;
   width: 100%;
-  height: 100%;
-  min-width: 100%;
-  min-height: 100%;
-  object-fit: cover;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  animation: cambio 12s infinite;
+  max-width: 150px;
+  margin: 0 auto;
 }
 
-
-.slider img:nth-child(1) { animation-delay: 0s; }
-.slider img:nth-child(2) { animation-delay: 4s; }
-.slider img:nth-child(3) { animation-delay: 8s; }
-.slider img:nth-child(4) { animation-delay: 12s; }
-
-@keyframes cambio {
-  0% { opacity: 0; }
-  10% { opacity: 1; }
-  30% { opacity: 1; }
-  40% { opacity: 0; }
-  100% { opacity: 0; }
+.btn-secondary:hover {
+  background-color: #ae88e3; /* Verde más oscuro al pasar el mouse */
+  transform: scale(1.05);
 }
 
-
-@keyframes cambio {
-  0% { opacity: 0; }
-  10% { opacity: 1; }
-  30% { opacity: 1; }
-  40% { opacity: 0; }
-  100% { opacity: 0; }
+/* Footer */
+footer {
+  background-color: var(--color-footer); /* #2874AF */
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 2rem;
+  color: var(--color-text-light);
 }
 
+.footer-column {
+  flex: 1;
+  min-width: 250px;
+}
 
-/* ================================
-   Media Queries para responsividad
-   ================================ */
+.footer-column h4 {
+  margin-bottom: 1rem;
+  color: var(--color-text-light);
+}
 
-/* Pantallas menores a 1024px */
-@media (max-width: 1024px) {
-  .products__cards {
+.footer-column p,
+.footer-column a {
+  color: var(--color-text-muted);
+  margin-bottom: 0.5rem;
+  display: block;
+  text-decoration: none;
+}
+
+.footer-column a:hover {
+  color: var(--color-primary);
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  align-self: flex-start;
+}
+
+.social-icons a {
+  font-size: 1.5rem;
+  color: var(--color-text-light);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.social-icons a:hover {
+  color: var(--color-primary);
+}
+
+input[type="email"] {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 0.5rem;
+  background-color: var(--color-bg-section);
+  color: var(--color-text-light);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .services {
     flex-direction: column;
-    /* Apilar tarjetas verticalmente */
     align-items: center;
   }
 
-  .navbar__menu {
-    flex-wrap: wrap;
-    /* Permite que el menú se ajuste */
-    justify-content: center;
-  }
-
-  .navbar__item {
-    margin-left: 1rem;
-    margin-top: 0.5rem;
-  }
-
-  .hero__title {
-    font-size: 2rem;
-    /* Reducir tamaño del título */
-  }
-}
-
-/* Pantallas menores a 900px */
-@media (max-width: 900px) {
-  .testimonials__list {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .testimonial-card {
-    width: 90%;
+  .service-card {
+    width: 100%;
     max-width: 400px;
   }
-}
 
-/* Pantallas menores a 600px */
-@media (max-width: 600px) {
-  .external-link {
-    text-align: center;
-    /* Centrar texto */
+  .hero-content h1 {
+    font-size: 2rem;
   }
-}
 
-/* Pantallas menores a 480px */
-@media (max-width: 480px) {
-  .hero__search {
+  nav ul {
     flex-direction: column;
-    /* Apilar inputs y botones */
+    text-align: center;
   }
 
-  .hero__search-input {
-    width: 100%;
-    /* Input ocupa todo el ancho */
+  nav ul li a {
+    padding: 0.5rem;
   }
 
-  .btn--search {
-    width: 100%;
-    /* Botón ocupa todo el ancho */
+  footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .social-icons {
+    order: -1;
+    margin-bottom: 1rem;
   }
 }

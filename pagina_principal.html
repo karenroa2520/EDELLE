@@ -2,117 +2,84 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Edelle - Tu Agencia de Viajes de confianza</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tu Próxima Gran Aventura</title>
   <link rel="stylesheet" href="/estilos_pagina_principal.css" />
 </head>
 <body>
-  <header class="header">
-    <nav class="navbar">
-      <a href="#inicio" class="navbar__logo">
-        <img
-          src="/src/static/img/logo_edelle.jpg"
-          alt="Logo circular con fondo azul degradado y letras blancas 'ACME' en el centro"
-          class="navbar__logo-image"
-        />
-        <span class="navbar__logo-text">EDELLE</span>
-      </a>
-
-      <ul class="navbar__menu">
-        <li class="navbar__item"><a href="#inicio" class="navbar__link">Inicio</a></li>
-        <li class="navbar__item"><a href="#servicios" class="navbar__link">Servicios</a></li>
-        <li class="navbar__item"><a href="#productos" class="navbar__link">Productos</a></li>
-        <li class="navbar__item"><a href="#acerca" class="navbar__link">Acerca de</a></li>
+  <!-- Header -->
+  <header>
+    <div class="logo">Logo</div>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#quienes">Quiénes Somos</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#destinos">Destinos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
+    <div class="user-icon">👤</div>
   </header>
 
-  <main>
-    <section id="inicio" class="hero">
-      <div class="hero__content">
-        <h1 class="hero__title">Tu Próxima Gran Aventura Comienza Aquí</h1>
-        <p class="hero__subtitle">"Vive tranquilo, gasta poquito y vive bonito"</p>
-        <div class="hero__search">
-          <button class="btn btn--search">Explora nuestros Servicios</button>
-        </div>
-      </div>
-        <div class="slider">
-           <img src="/src/static/img/frame1.jpg" alt="1">
-           <img src="/src/static/img/frame2.jpg" alt="2">
-           <img src="/src/static/img/frame3.jpg" alt="3">
-           <img src="/src/static/img/frame4.jpg" alt="3">
-        </div>
-    </section>
-
-    <section id="servicios" class="services">
-      <h2 class="services__title">Nuestros Servicios</h2>
-      <p>Edelle es un sistema de agencia de viajes que nos permite tener una opcion libre para escoger nuestro propio tour o nuestro viaje soñado, Nunca hemos soñado con las vacaciones perfectas? A nuestro tiempo, cuerdo a nuestro bolsillo sin gastar injustamente, escogiendo la actividades que quiero realizar y no las que me propongan, Todo esto y mas lo encuentras en una sola plataforms y es esta y se llama Edelle, donde el viaje de tus sueños se hara realidad.</p>
-    </section>
-
-    <section id="productos" class="products">
-      <h2 class="products__title">Nuestros Productos</h2>
-      <div class="products__cards">
-        <article class="product-card">
-          <img
-            src="/src/static/img/Crea tu Tour 1.jpg"
-            alt="Producto 1"
-            class="product-card__image"
-          />
-          <div class="product-card__description">
-            <h3 class="product-card__title">Crea tu propio viaje</h3>
-            <p class="product-card__text">
-              Tu viaje, tus reglas. Diseñamos itinerarios a medida para una
-              experiencia única.
-            </p>
-          </div>
-          <button class="product-card__button">Conoce Más</button>
-        </article>
-
-        <article class="product-card">
-          <img
-            src="/src/static/img/comprar pasajes 2.jpg"
-            alt="Producto 2"
-            class="product-card__image"
-          />
-          <div class="product-card__description">
-            <h3 class="product-card__title">Comprar Pasajes</h3>
-            <p class="product-card__text">
-              Conexiones que te llevan lejos. Asegura tus pasajes al mejor
-              precio y sin complicaciones.
-            </p>
-          </div>
-          <button class="product-card__button">Comprar ahora</button>
-        </article>
-
-        <article class="product-card">
-          <img
-            src="/src/static/img/alquilar coches 3.jpg"
-            alt="Producto 3"
-            class="product-card__image"
-          />
-          <div class="product-card__description">
-            <h3 class="product-card__title">Alquilar Vehículo</h3>
-            <p class="product-card__text">
-              Tu aventura sin límites. Reserva el coche perfecto para tu viaje y
-              maneja a tu antojo.
-            </p>
-          </div>
-          <button class="product-card__button">Conoce Más</button>
-        </article>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="footer">
-    <div class="footer__section">
-      <h4 class="footer__title">Contacto</h4>
-      <p>Cra. 6 #15-88, Santa Fé, Bogotá, Cundinamarca</p>
-      <p>+57 3197421375</p>
-      <p>EdelleViajesAgencia@gmail.com</p>
+  <!-- Hero Carousel -->
+  <section class="hero-carousel">
+    <div class="carousel-container">
+      <img src="/src/static/imagenes/img/frame1.jpg" alt="Viaje Tranquilo" class="carousel-image active">
+      <img src="/src/static/imagenes/img/frame2.jpg" alt="Gasta Poco Vive Bien" class="carousel-image">
+      <img src="/src/static/imagenes/img/frame3.jpg" alt="Comienza Aquí" class="carousel-image">
     </div>
-    <div class="footer__bottom">
-      <p>© 2025 Edelle Travel. Todos los derechos reservados.</p>
+    <div class="hero-content">
+      <h1>Tu Próxima Gran Aventura<br>Comienza Aquí</h1>
+      <p>Viaja tranquilo, gasta poquito, vive bonito.</p>
+      <a href="#servicios" class="btn-primary">Explora Nuestros Servicios</a>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services">
+    <div class="service-card">
+      <img src="/src/static/imagenes/img/Crea tu Tour 1.jpg" alt="Crea Tu Propio Viaje" />
+      <h3>Crea Tu Propio Viaje</h3>
+      <p>Tu viaje, tus reglas. Diseñamos tu experiencia a medida para una aventura única.</p>
+      <a href="#" class="btn-secondary">Conoce Más</a>
+    </div>
+    <div class="service-card">
+      <img src="/src/static/imagenes/img/comprar pasajes 2.jpg" alt="Comprar Pasajes" />
+      <h3>Comprar Pasajes</h3>
+      <p>Comparamos las mejores ofertas. Ahorra en tu viaje con el mejor precio y comodidad.</p>
+      <a href="#" class="btn-secondary">Conoce Más</a>
+    </div>
+    <div class="service-card">
+      <img src="src/static/imagenes/img/alquilar coches 3.jpg" alt="Alquila Un Vehículo" />
+      <h3>Alquila un Vehículo</h3>
+      <p>Tu aventura no se detiene. Alquila el vehículo perfecto para tu viaje y márcate la tuya.</p>
+      <a href="#" class="btn-secondary">Conoce Más</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-column">
+      <h4>Edelle</h4>
+      <p>Tu compañero de confianza para experiencias de viaje inolvidables.</p>
+    </div>
+    <div class="footer-column">
+      <h4>Contactanos</h4>
+      <p>📍 123 Calle del Viajero, Ciudad Aventura</p>
+      <p>📞 +1 234 567 8900</p>
+      <p>✉️ Edelle@Gmail.com</p>
+    </div>
+    <div class="footer-column">
+      <h4>Recibe Ofertas Exclusivas</h4>
+      <p>Búscanos en nuestro boletín para las mejores promociones y tips de viaje.</p>
+      <input type="email" placeholder="Tu Correo Electrónico" />
+      <button class="btn-subscribe">Suscribirme</button>
+    </div>
+    <div class="social-icons">
+      <a href="#">📘</a>
+      <a href="#">📸</a>
+      <a href="#">𝕏</a>
     </div>
   </footer>
 </body>
