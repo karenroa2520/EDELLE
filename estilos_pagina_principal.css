@@ -1,22 +1,22 @@
-/* --- Variables Globales (en español) --- */
+/* --- Variables Globales --- */
 :root {
   /* Colores */
-  --color-encabezado: #03045E;            /* Fondo del header */
-  --color-pie: #03045E;        /* Fondo del footer */
-  --color-fondo-cuerpo: #033F8A;          /* Fondo general de la página */
-  --color-fondo-seccion: #448ec7;         /* Fondo de secciones como servicios */
-  --color-texto-claro: #ffffff;           /* Texto blanco principal */
-  --color-texto-secundario: #e0e0e0;      /* Texto gris claro (menos énfasis) */
-  --color-primario: #4cc9f0;              /* Color principal para botones e interacciones */
-  --color-primario-hover: #3a9fd0;        /* Color al pasar el mouse sobre elementos primarios */
+  --color-encabezado: #03045E;
+  --color-pie: #03045E;
+  --color-fondo-cuerpo: #033F8A;
+  --color-fondo-seccion: #448ec7;
+  --color-texto-claro: #ffffff;
+  --color-texto-secundario: #e0e0e0;
+  --color-primario: #4cc9f0;
+  --color-primario-hover: #3a9fd0;
 
   /* Tipografía */
   --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
   /* Diseño */
-  --radio-boton: 25px;                    /* Bordes redondeados para botones */
-  --radio-tarjeta: 20px;                  /* Bordes redondeados para tarjetas */
-  --transicion-rapida: 0.3s ease;         /* Duración y tipo de transiciones suaves */
+  --radio-boton: 25px;
+  --radio-tarjeta: 20px;
+  --transicion-rapida: 0.3s ease;
 }
 
 /* Reset y estilos generales */
@@ -33,26 +33,50 @@ body {
   line-height: 1.6;
 }
 
-/* Encabezado (header) */
-/* Encabezado (header) - más grande */
-header {
+/* === BARRA DE NAVEGACIÓN === */
+.navbar-container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 2rem; /* ↑ Aumentado de 1rem a 1.5rem (altura mayor) */
+  padding: 1rem 2rem;
   background-color: var(--color-encabezado);
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Opcional: sombra para destacar */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* Enlaces de navegación - más grandes y espaciados */
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-container {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.logo-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Menú de navegación */
 nav ul {
   display: flex;
   list-style: none;
-  gap: 2rem; /* ↑ Aumentado de 1.5rem a 2rem para más espacio */
+  gap: 2rem;
   margin: 0;
   padding: 0;
 }
@@ -60,26 +84,45 @@ nav ul {
 nav ul li a {
   color: var(--color-texto-claro);
   text-decoration: none;
-  font-weight: 600; /* ↑ Más énfasis */
-  font-size: 1.1rem; /* ↑ Tamaño de fuente ligeramente mayor */
+  font-weight: 600;
+  font-size: 1.1rem;
   transition: color var(--transicion-rapida);
   white-space: nowrap;
-  padding: 0.4rem 0.6rem; /* Opcional: área de clic más grande */
-  border-radius: 8px; /* Opcional: redondeo sutil */
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
 }
 
 nav ul li a:hover {
   color: var(--color-primario);
-  background-color: rgba(255, 255, 255, 0.1); /* Opcional: fondo sutil al pasar */
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Carrusel de imágenes */
-/* Carrusel de imágenes - Ahora con ancho limitado y centrado */
+/* Ícono de usuario */
+.user-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--color-texto-claro);
+  transition: stroke var(--transicion-rapida);
+}
+
+.user-icon a {
+  display: block;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: background-color var(--transicion-rapida);
+}
+
+.user-icon a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  stroke: var(--color-primario);
+}
+
+/* === CARRUSEL (solo una imagen, sin animación) === */
 .hero-carousel {
   position: relative;
   height: 70vh;
   overflow: hidden;
-  margin-top: 70px;
+  margin-top: 90px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -90,13 +133,23 @@ nav ul li a:hover {
   position: absolute;
   top: 0;
   left: 50%;
-  transform: translateX(-50%); /* Centra horizontalmente */
-  width: 65%; /* 👈 Limita el ancho al 80% de la pantalla */
-  max-width: 1200px; /* 👈 Límite máximo para pantallas grandes */
+  transform: translateX(-50%);
+  width: 70%;
+  max-width: 1200px;
   height: 100%;
   z-index: -1;
-  border-radius: 15px; /* Opcional: bordes redondeados para darle forma de cuadro */
-  overflow: hidden; /* Asegura que las imágenes no sobresalgan */
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.carousel-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1; /* Imagen siempre visible, sin animación */
 }
 
 .hero-content {
@@ -110,7 +163,6 @@ nav ul li a:hover {
 .hero-content h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: var(--color-texto-claro);
 }
 
 .hero-content p {
@@ -176,7 +228,7 @@ nav ul li a:hover {
   transform: scale(1.05);
 }
 
-/* Sección de servicios */
+/* === SECCIÓN DE SERVICIOS === */
 .services {
   display: flex;
   justify-content: center;
@@ -224,7 +276,7 @@ nav ul li a:hover {
   line-height: 1.4;
 }
 
-/* Pie de página */
+/* === PIE DE PÁGINA === */
 footer {
   background-color: var(--color-pie);
   padding: 2rem;
@@ -232,7 +284,7 @@ footer {
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 2rem;
-  margin-top: 0; /* ← LÍNEA NO DESEADA ELIMINADA */
+  margin-top: 0;
   color: var(--color-texto-claro);
 }
 
@@ -243,7 +295,6 @@ footer {
 
 .footer-column h4 {
   margin-bottom: 1rem;
-  color: var(--color-texto-claro);
 }
 
 .footer-column p,
@@ -258,23 +309,6 @@ footer {
   color: var(--color-primario);
 }
 
-.social-icons {
-  display: flex;
-  gap: 1rem;
-  align-self: flex-start;
-}
-
-.social-icons a {
-  font-size: 1.5rem;
-  color: var(--color-texto-claro);
-  text-decoration: none;
-  transition: color var(--transicion-rapida);
-}
-
-.social-icons a:hover {
-  color: var(--color-primario);
-}
-
 input[type="email"] {
   width: 100%;
   padding: 0.75rem;
@@ -285,20 +319,36 @@ input[type="email"] {
   color: var(--color-texto-claro);
 }
 
-/* Responsivo */
+/* === RESPONSIVO === */
 @media (max-width: 768px) {
-  header {
+  .navbar-container {
     padding: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    order: 1;
+  }
+
+  nav {
+    order: 3;
+    width: 100%;
+    margin-top: 1rem;
   }
 
   nav ul {
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 0.8rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .user-icon {
+    order: 2;
   }
 
   .hero-carousel {
     height: 60vh;
+    margin-top: 140px;
   }
 
   .hero-content h1 {
@@ -318,10 +368,5 @@ input[type="email"] {
   footer {
     flex-direction: column;
     text-align: center;
-  }
-
-  .social-icons {
-    order: -1;
-    justify-content: center;
   }
 }
