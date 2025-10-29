@@ -66,7 +66,7 @@ nav ul li a:hover {
   color: var(--color-primary);
 }
 
-/* Hero Carousel */
+/* carrusel de imagenes */
 .hero-carousel {
   position: relative;
   height: 70vh;
@@ -148,7 +148,7 @@ nav ul li a:hover {
   transform: scale(1.05);
 }
 
-/* Services Section */
+/* sesion de servicios */
 .services {
   display: flex;
   justify-content: center;
