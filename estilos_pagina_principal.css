@@ -1,22 +1,22 @@
-/* --- Variables Globales --- */
+/* --- Variables Globales (en español) --- */
 :root {
-  /* Colores principales */
-  --color-header: #03045E;
-  --color-footer: hsl(206, 63%, 42%);
-  --color-bg-body: #033F8A;
-  --color-bg-section: #448ec7;
-  --color-text-light: #ffffff;
-  --color-text-muted: #e0e0e0;
-  --color-primary: #4cc9f0;
-  --color-primary-hover: #3a9fd0;
+  /* Colores */
+  --color-encabezado: #03045E;            /* Fondo del header */
+  --color-pie: hsl(206, 63%, 42%);        /* Fondo del footer */
+  --color-fondo-cuerpo: #033F8A;          /* Fondo general de la página */
+  --color-fondo-seccion: #448ec7;         /* Fondo de secciones como servicios */
+  --color-texto-claro: #ffffff;           /* Texto blanco principal */
+  --color-texto-secundario: #e0e0e0;      /* Texto gris claro (menos énfasis) */
+  --color-primario: #4cc9f0;              /* Color principal para botones e interacciones */
+  --color-primario-hover: #3a9fd0;        /* Color al pasar el mouse sobre elementos primarios */
 
   /* Tipografía */
-  --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
-  /* Espaciado y radios */
-  --border-radius-btn: 25px;
-  --border-radius-card: 20px;
-  --transition-fast: 0.3s ease;
+  /* Diseño */
+  --radio-boton: 25px;                    /* Bordes redondeados para botones */
+  --radio-tarjeta: 20px;                  /* Bordes redondeados para tarjetas */
+  --transicion-rapida: 0.3s ease;         /* Duración y tipo de transiciones suaves */
 }
 
 /* Reset y estilos generales */
@@ -27,46 +27,54 @@
 }
 
 body {
-  font-family: var(--font-main);
-  background-color: var(--color-bg-body);
-  color: var(--color-text-light);
+  font-family: var(--fuente-principal);
+  background-color: var(--color-fondo-cuerpo);
+  color: var(--color-texto-claro);
   line-height: 1.6;
 }
 
-/* Header - Todo alineado a la derecha */
+/* Encabezado (header) */
+/* Encabezado (header) - más grande */
 header {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 1rem 2rem;
-  background-color: var(--color-header);
+  padding: 1.5rem 2rem; /* ↑ Aumentado de 1rem a 1.5rem (altura mayor) */
+  background-color: var(--color-encabezado);
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Opcional: sombra para destacar */
 }
 
+/* Enlaces de navegación - más grandes y espaciados */
 nav ul {
   display: flex;
   list-style: none;
-  gap: 1.5rem;
+  gap: 2rem; /* ↑ Aumentado de 1.5rem a 2rem para más espacio */
   margin: 0;
   padding: 0;
 }
 
 nav ul li a {
-  color: var(--color-text-light);
+  color: var(--color-texto-claro);
   text-decoration: none;
-  font-weight: 500;
-  transition: color var(--transition-fast);
+  font-weight: 600; /* ↑ Más énfasis */
+  font-size: 1.1rem; /* ↑ Tamaño de fuente ligeramente mayor */
+  transition: color var(--transicion-rapida);
   white-space: nowrap;
+  padding: 0.4rem 0.6rem; /* Opcional: área de clic más grande */
+  border-radius: 8px; /* Opcional: redondeo sutil */
 }
 
 nav ul li a:hover {
-  color: var(--color-primary);
+  color: var(--color-primario);
+  background-color: rgba(255, 255, 255, 0.1); /* Opcional: fondo sutil al pasar */
 }
 
-/* carrusel de imagenes */
+/* Carrusel de imágenes */
+/* Carrusel de imágenes - Ahora con ancho limitado y centrado */
 .hero-carousel {
   position: relative;
   height: 70vh;
@@ -81,17 +89,21 @@ nav ul li a:hover {
 .carousel-container {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  left: 50%;
+  transform: translateX(-50%); /* Centra horizontalmente */
+  width: 65%; /* 👈 Limita el ancho al 80% de la pantalla */
+  max-width: 1200px; /* 👈 Límite máximo para pantallas grandes */
   height: 100%;
   z-index: -1;
+  border-radius: 15px; /* Opcional: bordes redondeados para darle forma de cuadro */
+  overflow: hidden; /* Asegura que las imágenes no sobresalgan */
 }
 
 .carousel-image {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100%; /* La imagen se adapta al ancho del contenedor */
   height: 100%;
   object-fit: cover;
   opacity: 0;
@@ -121,46 +133,86 @@ nav ul li a:hover {
 .hero-content h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: var(--color-text-light);
+  color: var(--color-texto-claro);
 }
 
 .hero-content p {
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
-  color: var(--color-text-muted);
+  color: var(--color-texto-secundario);
 }
 
-/* Botones */
-.btn-primary {
+/* === BOTONES === */
+.boton-principal {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  border-radius: var(--border-radius-btn);
+  border-radius: var(--radio-boton);
   text-decoration: none;
   font-weight: bold;
-  transition: background-color var(--transition-fast), transform 0.2s ease;
+  transition: background-color var(--transicion-rapida), transform 0.2s ease;
   cursor: pointer;
-  background-color: var(--color-primary);
-  color: var(--color-bg-body);
+  background-color: var(--color-primario);
+  color: var(--color-fondo-cuerpo);
 }
 
-.btn-primary:hover {
-  background-color: var(--color-primary-hover);
+.boton-principal:hover {
+  background-color: var(--color-primario-hover);
   transform: scale(1.05);
 }
 
-/* sesion de servicios */
+.boton-secundario {
+  background-color: var(--color-primario);
+  color: var(--color-fondo-cuerpo);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radio-boton);
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  font-size: 0.9rem;
+  width: 100%;
+  max-width: 150px;
+  margin: 0 auto;
+  display: block;
+}
+
+.boton-secundario:hover {
+  background-color: var(--color-primario-hover);
+  transform: scale(1.05);
+}
+
+.boton-suscribir {
+  background-color: var(--color-primario);
+  color: var(--color-fondo-cuerpo);
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: var(--radio-boton);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color var(--transicion-rapida), transform 0.2s ease;
+  margin-top: 1rem;
+  border: none;
+}
+
+.boton-suscribir:hover {
+  background-color: var(--color-primario-hover);
+  transform: scale(1.05);
+}
+
+/* Sección de servicios */
 .services {
   display: flex;
   justify-content: center;
   gap: 2rem;
   padding: 3rem 2rem;
   flex-wrap: wrap;
-  background-color: var(--color-bg-section);
+  background-color: var(--color-fondo-seccion);
+  margin-bottom: 0;
 }
 
 .service-card {
   background-color: #ffffff;
-  border-radius: var(--border-radius-card);
+  border-radius: var(--radio-tarjeta);
   padding: 1.5rem;
   width: 300px;
   text-align: center;
@@ -195,37 +247,16 @@ nav ul li a:hover {
   line-height: 1.4;
 }
 
-.btn-secondary {
-  background-color: #BEA2E6;
-  color: #000000;
-  padding: 0.5rem 1rem;
-  border-radius: var(--border-radius-btn);
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  cursor: pointer;
-  font-size: 0.9rem;
-  width: 100%;
-  max-width: 150px;
-  margin: 0 auto;
-  display: block;
-}
-
-.btn-secondary:hover {
-  background-color: #ae88e3;
-  transform: scale(1.05);
-}
-
-/* Footer */
+/* Pie de página */
 footer {
-  background-color: var(--color-footer);
+  background-color: var(--color-pie);
   padding: 2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 2rem;
-  margin-top: 2rem;
-  color: var(--color-text-light);
+  margin-top: 0; /* ← LÍNEA NO DESEADA ELIMINADA */
+  color: var(--color-texto-claro);
 }
 
 .footer-column {
@@ -235,19 +266,19 @@ footer {
 
 .footer-column h4 {
   margin-bottom: 1rem;
-  color: var(--color-text-light);
+  color: var(--color-texto-claro);
 }
 
 .footer-column p,
 .footer-column a {
-  color: var(--color-text-muted);
+  color: var(--color-texto-secundario);
   margin-bottom: 0.5rem;
   display: block;
   text-decoration: none;
 }
 
 .footer-column a:hover {
-  color: var(--color-primary);
+  color: var(--color-primario);
 }
 
 .social-icons {
@@ -258,13 +289,13 @@ footer {
 
 .social-icons a {
   font-size: 1.5rem;
-  color: var(--color-text-light);
+  color: var(--color-texto-claro);
   text-decoration: none;
-  transition: color var(--transition-fast);
+  transition: color var(--transicion-rapida);
 }
 
 .social-icons a:hover {
-  color: var(--color-primary);
+  color: var(--color-primario);
 }
 
 input[type="email"] {
@@ -273,29 +304,11 @@ input[type="email"] {
   border-radius: 5px;
   border: none;
   margin-bottom: 0.5rem;
-  background-color: var(--color-bg-section);
-  color: var(--color-text-light);
+  background-color: var(--color-fondo-seccion);
+  color: var(--color-texto-claro);
 }
 
-.btn-subscribe {
-  background-color: var(--color-primary);
-  color: var(--color-bg-body);
-  width: 100%;
-  padding: 0.75rem;
-  border-radius: var(--border-radius-btn);
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color var(--transition-fast), transform 0.2s ease;
-  margin-top: 1rem;
-  border: none;
-}
-
-.btn-subscribe:hover {
-  background-color: var(--color-primary-hover);
-  transform: scale(1.05);
-}
-
-/* se adapta para que sea responsivo */
+/* Responsivo */
 @media (max-width: 768px) {
   header {
     padding: 1rem;
