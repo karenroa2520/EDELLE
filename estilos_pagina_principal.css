@@ -2,7 +2,7 @@
 :root {
   /* Colores */
   --color-encabezado: #03045E;            /* Fondo del header */
-  --color-pie: hsl(206, 63%, 42%);        /* Fondo del footer */
+  --color-pie: #03045E;        /* Fondo del footer */
   --color-fondo-cuerpo: #033F8A;          /* Fondo general de la página */
   --color-fondo-seccion: #448ec7;         /* Fondo de secciones como servicios */
   --color-texto-claro: #ffffff;           /* Texto blanco principal */
@@ -97,29 +97,6 @@ nav ul li a:hover {
   z-index: -1;
   border-radius: 15px; /* Opcional: bordes redondeados para darle forma de cuadro */
   overflow: hidden; /* Asegura que las imágenes no sobresalgan */
-}
-
-.carousel-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%; /* La imagen se adapta al ancho del contenedor */
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  animation: carouselFade 12s infinite;
-}
-
-.carousel-image:nth-child(1) { animation-delay: 0s; }
-.carousel-image:nth-child(2) { animation-delay: 4s; }
-.carousel-image:nth-child(3) { animation-delay: 8s; }
-
-@keyframes carouselFade {
-  0%   { opacity: 0; }
-  20%  { opacity: 1; }
-  33%  { opacity: 1; }
-  53%  { opacity: 0; }
-  100% { opacity: 0; }
 }
 
 .hero-content {
