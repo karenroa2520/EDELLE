@@ -49,35 +49,3 @@ body {
   margin: 0.5rem 0 1.5rem;
   cursor: pointer;
 }
-
-.btn-login {
-  width: 100%;
-  padding: 0.75rem;
-  background-color: #ffffff;
-  color: #003366;
-  border: none;
-  border-radius: 25px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  font-size: 1rem;
-}
-
-.btn-login:hover {
-  background-color: #e6e6e6;
-}
-
-.register-link {
-  display: block;
-  margin-top: 1.5rem;
-  color: #cce5ff;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 0.9rem;
-  transition: color 0.3s ease;
-}
-
-.register-link:hover {
-  color: white;
-  text-decoration: underline;
-}
