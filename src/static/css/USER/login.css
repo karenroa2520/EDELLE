@@ -1,16 +1,32 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root {
+  /* Colores */
+  --color-encabezado: #03045E;
+  --color-pie: #03045E;
+  --color-fondo-cuerpo: #033F8A;
+  --color-fondo-seccion: #448ec7;
+  --color-texto-claro: #ffffff;
+  --color-texto-secundario: #e0e0e0;
+  --color-primario: #4cc9f0;
+  --color-primario-hover: #3a9fd0;
+
+  --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  /* Diseño */
+  --radio-boton: 25px;
+  --radio-tarjeta: 20px;
+  --transicion-rapida: 0.3s ease;
 }
 
 body {
-  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: var(--color-texto-claro);
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--fuente-principal)
 }
 
 .login-container {
