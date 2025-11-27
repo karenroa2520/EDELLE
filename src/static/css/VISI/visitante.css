@@ -1,5 +1,6 @@
+/* ===== VARIABLES DE ESTILO (CSS CUSTOM PROPERTIES) ===== */
 :root {
-  /* Colores */
+  /* Colores del sistema */
   --color-encabezado: #03045E;
   --color-pie: #03045E;
   --color-fondo-cuerpo: #033F8A;
@@ -9,16 +10,16 @@
   --color-primario: #4cc9f0;
   --color-primario-hover: #3a9fd0;
 
-  /* tipografia de la pagina principal */
+  /* Tipografía */
   --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
-  /* Diseño */
+  /* Diseño general */
   --radio-boton: 25px;
   --radio-tarjeta: 20px;
   --transicion-rapida: 0.3s ease;
 }
 
-/* Reset y estilos generales */
+/* ===== RESET Y ESTILOS BASE ===== */
 * {
   margin: 0;
   padding: 0;
@@ -30,9 +31,11 @@ body {
   background-color: var(--color-fondo-cuerpo);
   color: var(--color-texto-claro);
   line-height: 1.6;
+  overflow: hidden;
+  min-height: 100vh;
 }
 
-/* === BARRA DE NAVEGACIÓN === */
+/* ===== BARRA DE NAVEGACIÓN FIJA ===== */
 .navbar-container {
   display: flex;
   justify-content: space-between;
@@ -44,12 +47,6 @@ body {
   width: 100%;
   z-index: 1000;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-}
-
-/* Logo */
-.logo {
-  display: flex;
-  align-items: center;
 }
 
 .logo-container {
@@ -71,7 +68,6 @@ body {
   object-position: center;
 }
 
-/* Menú de navegación */
 nav ul {
   display: flex;
   list-style: none;
@@ -96,14 +92,6 @@ nav ul li a:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Ícono de usuario */
-.user-icon svg {
-  width: 24px;
-  height: 24px;
-  stroke: var(--color-texto-claro);
-  transition: stroke var(--transicion-rapida);
-}
-
 .user-icon a {
   display: block;
   padding: 0.5rem;
@@ -111,12 +99,24 @@ nav ul li a:hover {
   transition: background-color var(--transicion-rapida);
 }
 
+.user-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--color-texto-claro);
+  transition: stroke var(--transicion-rapida);
+}
+
 .user-icon a:hover {
   background-color: rgba(255, 255, 255, 0.1);
   stroke: var(--color-primario);
 }
 
+/* ===== FORMULARIO DE REGISTRO - CENTRADO ABSOLUTO ===== */
 .register-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background: linear-gradient(135deg, #3283B9, #033F8A);
   padding: 2rem;
   border-radius: 15px;
@@ -125,6 +125,9 @@ nav ul li a:hover {
   text-align: center;
   color: white;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1001;
+  max-height: calc(100vh - 4rem);
+  overflow-y: auto;
 }
 
 .register-container h2 {
@@ -132,16 +135,28 @@ nav ul li a:hover {
   font-size: 1.8rem;
 }
 
-.register-container input {
+/* Estilo común para inputs, select y label */
+.register-container .form-label {
+  display: block;
+  text-align: left;
+  margin: 0.75rem 0 0.25rem;
+  font-size: 0.95rem;
+  color: #cce5ff;
+}
+
+.register-container input,
+.register-container .form-select {
   width: 100%;
   padding: 0.75rem;
-  margin: 0.75rem 0;
+  margin: 0.25rem 0 0.75rem;
   border: none;
   border-radius: 8px;
   font-size: 1rem;
   color: #333;
   outline: none;
+  background-color: white;
 }
+
 
 .btn-register {
   width: 100%;
@@ -149,7 +164,7 @@ nav ul li a:hover {
   background-color: #ffffff;
   color: #00897b;
   border: none;
-  border-radius: 25px;
+  border-radius: var(--radio-boton);
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
