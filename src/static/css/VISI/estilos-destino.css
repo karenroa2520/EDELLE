@@ -1,0 +1,279 @@
+/* ===== VARIABLES DE ESTILO ===== */
+:root {
+  --color-encabezado: #03045e;
+  --color-fondo-cuerpo: #033f8a;
+  --color-fondo-tarjeta: #9dc5f4;
+  --color-texto-claro: #ffffff;
+  --color-texto-oscuro: #03045e;
+  --color-botones: #e0e0e0;
+  --fuente-principal: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --transicion-rapida: 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fuente-principal);
+  background-color: white;
+  color: var(--color-texto-oscuro);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ===== BARRA DE NAVEGACIÓN FIJA ===== */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--color-encabezado);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.logo-container {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.logo-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: var(--color-texto-claro);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color var(--transicion-rapida);
+  white-space: nowrap;
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+}
+
+nav ul li a:hover {
+  color: #4cc9f0;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.user-icon a {
+  display: block;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: background-color var(--transicion-rapida);
+}
+
+.user-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--color-texto-claro);
+  transition: stroke var(--transicion-rapida);
+}
+
+.user-icon a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  stroke: #4cc9f0;
+}
+
+/* ===== CONTENIDO PRINCIPAL ===== */
+.content {
+  padding-top: 100px;
+  min-height: 100vh;
+  padding: 2rem;
+  background: white;
+  flex-direction: column;
+}
+
+/* === BARRA DE BÚSQUEDA === */
+.search-bar {
+  display: flex;
+  justify-content: center;
+  margin: 4rem auto;
+  max-width: 500px;
+  width: 100%;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 2px solid #ccc;
+  border-radius: 25px 0 0 25px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.search-bar button {
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+  border-left: none;
+  border-radius: 0 25px 25px 0;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+  background-color: #e0e0e0;
+}
+
+.search-bar button svg {
+  stroke: #333;
+}
+
+/* === TARJETAS DE DESTINOS === */
+.destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 5fr);
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.destination-card {
+  background-color: var(--color-fondo-tarjeta);
+  border-radius: 20px;
+  padding: 1.8rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  /* Reducimos el ancho máximo para que no sean "panes" */
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.destination-card:hover {
+  transform: translateY(-4px);
+}
+
+.destination-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+}
+
+.destination-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--color-texto-oscuro);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.btn-more {
+  background-color: var(--color-botones);
+  color: #333;
+  border: none;
+  border-radius: 25px;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+.btn-more:hover {
+  background-color: #d0d0d0;
+}
+
+/* === DECORACIÓN DE ONDAS AZULES === */
+.wave-decoration {
+  position: fixed;
+  z-index: -1;
+  background: linear-gradient(135deg, #3283b9, #033f8a);
+}
+
+.wave-decoration.left {
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 40px;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 100%,
+    0 100%,
+    0 80%,
+    20px 70%,
+    0 60%,
+    20px 50%,
+    0 40%,
+    20px 30%,
+    0 20%,
+    20px 10%,
+    0 0
+  );
+}
+
+.wave-decoration.bottom {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 40px;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 20px,
+    80px 0,
+    60px 20px,
+    40px 0,
+    20px 20px,
+    0 0
+  );
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 1rem;
+  }
+
+  nav ul {
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .destinations-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .destination-card {
+    padding: 1rem;
+    max-width: 100%;
+  }
+
+  .destination-card img {
+    height: 150px;
+  }
+
+  .search-bar {
+    max-width: 100%;
+  }
+}

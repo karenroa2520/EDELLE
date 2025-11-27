@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Destinos</title>
+    <link rel="stylesheet" href="/src/static/css/VISI/estilos-destino.css" />
+  </head>
+  <body>
+    <!-- Barra de navegación fija -->
+    <header>
+      <div class="navbar-container">
+        <div class="logo">
+          <div class="logo-container">
+            <img
+              src="/src/static/imagenes/INICIO/logo_edelle.jpg"
+              alt="Edelle - Tu Próxima Gran Aventura"
+            />
+          </div>
+        </div>
+
+        <nav>
+          <ul>
+            <li><a href="/index.html">Inicio</a></li>
+            <li>
+              <a href="/src/templates/visitante/quienes-somos.html"
+                >Quiénes Somos</a
+              >
+            </li>
+            <li>
+              <a href="/src/templates/visitante/servicios.html">Servicios</a>
+            </li>
+            <li><a href="#destinos">Destinos</a></li>
+          </ul>
+        </nav>
+
+        <div class="user-icon">
+          <a href="/src/templates/comprador/login.html" title="Iniciar Sesión">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M20 21v-2a4 4 0 0 0-5.656-3.656L12 17l-2.344-2.344A4 4 0 0 0 4 17v2"
+              ></path>
+              <circle cx="12" cy="9" r="4"></circle>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="content">
+      <!-- Barra de búsqueda -->
+      <div class="search-bar">
+        <input type="text" placeholder="Buscar destino..." />
+        <button type="submit">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Tarjetas de destinos -->
+      <section class="destinations-grid">
+        <div class="destination-card">
+          <img src="/src/static/imagenes/DESTINOS/bogota 2.jpg" alt="Bogotá" />
+          <h3>BOGOTÁ</h3>
+          <button class="btn-more">Find Out More</button>
+        </div>
+
+        <div class="destination-card">
+          <img
+            src="/src/static/imagenes/DESTINOS/bucaramanga 1.jpg"
+            alt="Bucaramanga"
+          />
+          <h3>BUCARAMANGA</h3>
+          <button class="btn-more">Find Out More</button>
+        </div>
+
+        <div class="destination-card">
+          <img src="/src/static/imagenes/DESTINOS/cali 1.jpg" alt="Cali" />
+          <h3>CALI</h3>
+          <button class="btn-more">Find Out More</button>
+        </div>
+
+        <div class="destination-card">
+          <img
+            src="/src/static/imagenes/DESTINOS/cartagena 1.jpg"
+            alt="Cartagena"
+          />
+          <h3>CARTAGENA</h3>
+          <button class="btn-more">Find Out More</button>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
