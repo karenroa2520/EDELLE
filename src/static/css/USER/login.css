@@ -1,5 +1,6 @@
+/* ===== VARIABLES DE ESTILO (CSS CUSTOM PROPERTIES) ===== */
 :root {
-  /* Colores */
+  /* Colores del sistema */
   --color-encabezado: #03045E;
   --color-pie: #03045E;
   --color-fondo-cuerpo: #033F8A;
@@ -9,27 +10,123 @@
   --color-primario: #4cc9f0;
   --color-primario-hover: #3a9fd0;
 
+  /* Tipografía */
   --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
-  /* Diseño */
+  /* Diseño general */
   --radio-boton: 25px;
   --radio-tarjeta: 20px;
   --transicion-rapida: 0.3s ease;
 }
 
-body {
+/* ===== RESET Y ESTILOS BASE ===== */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: var(--color-texto-claro);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  font-family: var(--fuente-principal)
 }
 
+/* Cuerpo de la página: fondo y tipografía */
+body {
+  font-family: var(--fuente-principal);
+  /* background-color: var(--color-fondo-cuerpo); */
+  color: var(--color-texto-claro);
+  line-height: 1.6;
+  /* Evita el scroll vertical global para mantener el login centrado sin desplazamiento */
+  overflow: hidden;
+  /* Altura mínima para ocupar toda la pantalla */
+  min-height: 100vh;
+}
+
+/* ===== BARRA DE NAVEGACIÓN FIJA ===== */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--color-encabezado);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Asegura que esté encima del contenido */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Contenedor del logo circular */
+.logo-container {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.logo-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Menú de navegación */
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: var(--color-texto-claro);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color var(--transicion-rapida);
+  white-space: nowrap;
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+}
+
+nav ul li a:hover {
+  color: var(--color-primario);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Ícono de usuario (perfil) */
+.user-icon a {
+  display: block;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: background-color var(--transicion-rapida);
+}
+
+.user-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--color-texto-claro);
+  transition: stroke var(--transicion-rapida);
+}
+
+.user-icon a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  stroke: var(--color-primario);
+}
+
+/* ===== FORMULARIO DE LOGIN - CENTRADO ABSOLUTO ===== */
+/*
+  Usamos `position: fixed` para que el formulario siempre esté en el centro,
+  independiente del contenido o la posición de scroll.
+*/
 .login-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centra exactamente el centro del elemento */
   background: linear-gradient(135deg, #1e5799, #003366);
   padding: 2rem;
   border-radius: 15px;
@@ -38,6 +135,10 @@ body {
   text-align: center;
   color: white;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1001; /* Por encima de la navbar */
+  /* Seguridad visual: evita que contenido largo fuerce un scroll fuera */
+  max-height: calc(100vh - 4rem);
+  overflow-y: auto; /* Solo si hay mucho contenido (ej: mensajes de error) */
 }
 
 .login-container h2 {
@@ -56,6 +157,7 @@ body {
   outline: none;
 }
 
+/* Enlace de "olvidó contraseña" */
 .login-container .forgot-password {
   display: block;
   text-align: left;
@@ -66,13 +168,14 @@ body {
   cursor: pointer;
 }
 
+/* Botón de inicio de sesión */
 .btn-login {
   width: 100%;
   padding: 0.75rem;
   background-color: #ffffff;
   color: #003366;
   border: none;
-  border-radius: 25px;
+  border-radius: var(--radio-boton);
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -83,6 +186,7 @@ body {
   background-color: #e6e6e6;
 }
 
+/* Enlace para registrarse */
 .register-link {
   display: block;
   margin-top: 1.5rem;

@@ -1,31 +1,27 @@
 :root {
-  /* Colores */
   --color-encabezado: #03045E;
-  --color-pie: #03045E;
   --color-fondo-cuerpo: #033F8A;
-  --color-fondo-seccion: #448ec7;
   --color-texto-claro: #ffffff;
-  --color-texto-secundario: #e0e0e0;
   --color-primario: #4cc9f0;
-  --color-primario-hover: #3a9fd0;
-
-  /* tipografia de la pagina principal ya definido en styles */
   --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-  /* Diseño */
   --radio-boton: 25px;
-  --radio-tarjeta: 20px;
   --transicion-rapida: 0.3s ease;
 }
 
-/* Reset y estilos generales */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+body {
+  font-family: var(--fuente-principal);
+  background-color: var(--color-fondo-cuerpo);
+  color: var(--color-texto-claro);
+  padding-top: 80px; /* Para la navbar fija */
+}
 
+/* Navbar */
 .navbar-container {
   display: flex;
   justify-content: space-between;
@@ -39,7 +35,6 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* Logo */
 .logo {
   display: flex;
   align-items: center;
@@ -64,7 +59,6 @@
   object-position: center;
 }
 
-/* Men de navegación */
 nav ul {
   display: flex;
   list-style: none;
@@ -89,7 +83,6 @@ nav ul li a:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Ícono de usuario */
 .user-icon svg {
   width: 24px;
   height: 24px;
@@ -109,123 +102,107 @@ nav ul li a:hover {
   stroke: var(--color-primario);
 }
 
+/* Contenedor principal de servicios */
+.servicios-container {
+  padding: 2rem;
+  background-color: var(--color-fondo-cuerpo);
+  min-height: 100vh;
+  padding-top: 8rem;
+}
 
-/* :root { */
-  /* Colores */
-  /* --color-fondo-body: #1a5276;
-  --color-fondo-btn: #3498db;
-  --color-fondo-content: #2980b9;
-  --color-texto: white; */
+/* Título "SERVICIOS" */
+.servicios-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--color-texto-claro);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
 
-  /* Tipografia */
-  /* --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  --tamano-fuente-btn: 16px;
-  --tamano-fuente-content: 14px; */
-
-  /* Espaciado */
-  /* --padding-btn: 12px 16px;
-  --padding-content: 16px;
-  --gap-grid: 20px; */
-
-  /* Bordes y redondeo */
-  /* --border-radius: 12px; */
-
-  /* Sombra */
-  /* --sombra-1: 0 4px 8px rgba(0, 0, 0, 0.2);
-  --sombra-2: 0 6px 12px rgba(0, 0, 0, 0.3); */
-
-  /* Tamaño contenedor */
-  /* --max-width-container: 800px; */
-
-  /* Transiciones */
-  /* --transicion: all 0.3s ease;
-  --transicion-hover: background-color 0.2s; */
-/* }
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-} */
-/* 
-body {
-  background-color: var(--color-fondo-body);
-  font-family: var(--fuente-principal);
-  padding: 20px;
-  color: var(--color-texto);
-} */
-
-/* .services-container {
-  max-width: var(--max-width-container);
-  margin: 0 auto;
+/* Grid de 2 columnas */
+.servicios-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--gap-grid);
-} */
+  grid-template-columns: repeat(2, 4fr); /* DOS COLUMNAS */
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
 
-/* Estilos para <details> y <summary> */
-/* details.service-item {
-  background-color: var(--color-fondo-btn);
-  border-radius: var(--border-radius);
-  overflow: hidden;
-  box-shadow: var(--sombra-1);
-  transition: var(--transicion);
-} */
-/* 
-details.service-item:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--sombra-2);
-} */
+/* Cada item con details */
+.servicio-item {
+  width: 100%;
+  border: none;
+  background: transparent;
+  outline: none;
+}
 
-/* summary.service-btn {
-  padding: var(--padding-btn);
-  background: none;
-  cursor: pointer;
+.servicio-btn {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: var(--color-texto);
-  font-size: var(--tamano-fuente-btn);
-  font-weight: bold;
-  list-style: none; /* Quita el triángulo por defecto */
-  /* outline: none;
-  transition: var(--transicion-hover);
-} */
-
-/* summary.service-btn:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-/* } */ 
-
-/* Elimina el estilo por defecto de <summary> en Webkit */
-/* summary.service-btn::-webkit-details-marker {
-  display: none;
-} */
-/* 
-.arrow {
-  font-size: 14px;
-  margin-right: 8px;
-} */
-
-/* .text {
-  flex-grow: 1;
-  margin: 0 8px;
-} */
-
-/* .icon {
-  font-size: 20px;
-  margin-left: 8px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+  border-radius: var(--radio-boton);
+  padding: 0.75rem 1.2rem;
+  width: 100%;
+  color: var(--color-texto-claro);
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: transform var(--transicion-rapida), box-shadow var(--transicion-rapida);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.1);
+  cursor: pointer;
 }
 
-.service-content {
-  padding: var(--padding-content);
-  background-color: var(--color-fondo-content);
-  line-height: 1.5;
-  font-size: var(--tamano-fuente-content);
-} */
+.servicio-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.1));
+}
 
-/* Responsive: en móvil, una sola columna */
-/* @media (max-width: 768px) {
-  .services-container {
-    grid-template-columns: 1fr;
-  }
-} */
+/* Triángulo hacia abajo (icono de despliegue) */
+.servicio-btn .icon-arrow {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+  margin-right: 0.75rem;
+  border-radius: 3px;
+}
+
+/* Icono de servicio (a la derecha) */
+.servicio-btn .service-icon {
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
+}
+
+/* Ocultar el marker nativo de summary */
+.servicio-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  list-style: none;
+}
+
+.servicio-item summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Descripción que aparece al abrir */
+.servicio-content {
+  padding: 1rem;
+  color: var(--color-texto-claro);
+  background: rgba(0,0,0,0.1);
+  border-radius: 0 0 var(--radio-boton) var(--radio-boton);
+  margin-top: 0.25rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}

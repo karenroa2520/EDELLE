@@ -9,14 +9,16 @@
 <body>
   <header>
     <div class="navbar-container">
-      <!-- Logo a la izquierda (imagen dentro de contenedor circular) -->
+      <!-- Logo -->
       <div class="logo">
         <div class="logo-container">
           <img src="/src/static/imagenes/img/logo_edelle.jpg" alt="Edelle - Tu Próxima Gran Aventura" />
         </div>
       </div>
 
-      <!-- Menu de navegacion -->
+
+      
+      <!-- Navegación -->
       <nav>
         <ul>
           <li><a href="/index.html">Inicio</a></li>
@@ -26,7 +28,7 @@
         </ul>
       </nav>
 
-      <!-- Icono de usuario a la derecha -->
+      <!-- Icono de usuario -->
       <div class="user-icon">
         <a href="/src/templates/comprador/login.html" title="Iniciar Sesión">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -38,105 +40,117 @@
     </div>
   </header>
 
-  <section class="services-container">
-    <!-- Transporte -->
-    <details class="service-item">
-      <summary class="service-btn">
-        <span class="text">Transporte</span>
-        <span class="icon">🚌</span>
-      </summary>
-      <div class="service-content">
-        <p>Busqueda, comparacion de precios (ida y vuelta, solo ida, multidestino), reserva y mision de billetes.</p>
-      </div>
-    </details>
+  <section class="servicios-container">
+    <h1 class="servicios-title">SERVICIOS</h1>
+    <div class="servicios-grid">
+      <!-- Transporte -->
+      <details class="servicio-item">
+        <summary class="servicio-btn">
+          <span class="icon-arrow"></span>
+          Transporte
+          <span class="service-icon">🚌</span>
+        </summary>
+        <div class="servicio-content">
+          <p>Busqueda, comparacion de precios (ida y vuelta, solo ida, multidestino), reserva y mision de billetes.</p>
+        </div>
+      </details>
 
-    <!-- Alojamientos -->
-    <details class="service-item">
-      <summary class="service-btn">
-        <span class="text">Alojamientos</span>
-        <span class="icon">🏨</span>
-      </summary>
-      <div class="service-content">
-        <p>Hoteles, hostales, con opciones de filtrado por precio, tipo, ubicacion, servicios, etc.</p>
-      </div>
-    </details>
+      <!-- Alojamientos -->
+      <details class="servicio-item">
+        <summary class="servicio-btn">
+          <span class="icon-arrow"></span>
+          Alojamientos
+          <span class="service-icon">🏨</span>
+        </summary>
+        <div class="servicio-content">
+          <p>Hoteles, hostales, con opciones de filtrado por precio, tipo, ubicacion, servicios, etc.</p>
+        </div>
+      </details>
 
-    <!-- Paquetes Turisticos -->
-    <details class="service-item">
-      <summary class="service-btn">
-        <span class="text">Paquetes turisticos</span>
-        <span class="icon">🧳</span>
-      </summary>
-      <div class="service-content">
-        <p>Ofertas Preestablecidas que combinan transporte, alojamiento y a menudo, actividades o traslados.</p>
-      </div>
-    </details>
+      <!-- Paquetes Turisticos -->
+      <details class="servicio-item">
+        <summary class="servicio-btn">
+          <span class="icon-arrow"></span>
+          Paquetes turisticos
+          <span class="service-icon">🧳</span>
+        </summary>
+        <div class="servicio-content">
+          <p>Ofertas Preestablecidas que combinan transporte, alojamiento y a menudo, actividades o traslados.</p>
+        </div>
+      </details>
 
-    <!-- Reseñas -->
-    <details class="service-item">
-      <summary class="service-btn">
-        <span class="text">Reseñas</span>
-        <span class="icon">⭐</span>
-      </summary>
-      <div class="service-content">
-        <p>Acceso a opiniones de otros viajeros sobre alojamientos, actividades y servicios.</p>
-      </div>
-    </details>
+      <!-- Reseñas -->
+      <details class="servicio-item">
+        <summary class="servicio-btn">
+          <span class="icon-arrow"></span>
+          Reseñas
+          <span class="service-icon">⭐</span>
+        </summary>
+        <div class="servicio-content">
+          <p>Acceso a opiniones de otros viajeros sobre alojamientos, actividades y servicios.</p>
+        </div>
+      </details>
 
-    <!-- Actividades -->
-    <details class="service-item">
-      <summary class="service-btn">
-        <span class="text">Actividades</span>
-        <span class="icon">🌋</span>
-      </summary>
-      <div class="service-content">
-        <p>Reserva de tours, entradas a atracciones, espectaculos, clases de cocina, etc.</p>
-      </div>
-    </details>
+      <!-- Actividades -->
+      <details class="servicio-item">
+        <summary class="servicio-btn">
+          <span class="icon-arrow"></span>
+          Actividades
+          <span class="service-icon">🌋</span>
+        </summary>
+        <div class="servicio-content">
+          <p>Reserva de tours, entradas a atracciones, espectaculos, clases de cocina, etc.</p>
+        </div>
+      </details>
 
-    <!-- Traslados -->
-    <details class="service-item">
-      <summary class="service-btn">
-        <span class="text">Traslados</span>
-        <span class="icon">➡️</span>
-      </summary>
-      <div class="service-content">
-        <p>Reserva de traslados desde y hacia aeropuertos, estaciones o puntos de interes.</p>
-      </div>
-    </details>
+      <!-- Traslados -->
+      <details class="servicio-item">
+        <summary class="servicio-btn">
+          <span class="icon-arrow"></span>
+          Traslados
+          <span class="service-icon">➡️</span>
+        </summary>
+        <div class="servicio-content">
+          <p>Reserva de traslados desde y hacia aeropuertos, estaciones o puntos de interes.</p>
+        </div>
+      </details>
 
-    <!-- Notificaciones -->
-    <details class="service-item">
-      <summary class="service-btn">
-        <span class="text">Notificaciones</span>
-        <span class="icon">✉️</span>
-      </summary>
-      <div class="service-content">
-        <p>Notificaciones en tiempo real sobre el estado de viaje en bus como (Retrasos, cancelacion del viaje por motivos administrativas, cambios de reserva, etc.)</p>
-      </div>
-    </details>
+      <!-- Notificaciones -->
+      <details class="servicio-item">
+        <summary class="servicio-btn">
+          <span class="icon-arrow"></span>
+          Notificaciones
+          <span class="service-icon">✉️</span>
+        </summary>
+        <div class="servicio-content">
+          <p>Notificaciones en tiempo real sobre el estado de viaje en bus como (Retrasos, cancelacion del viaje por motivos administrativas, cambios de reserva, etc.)</p>
+        </div>
+      </details>
 
-    <!-- Historial -->
-    <details class="service-item">
-      <summary class="service-btn">
-        <span class="text">Historial</span>
-        <span class="icon">📚</span>
-      </summary>
-      <div class="service-content">
-        <p>Un registro de viajes pasados y futuros.</p>
-      </div>
-    </details>
+      <!-- Historial -->
+      <details class="servicio-item">
+        <summary class="servicio-btn">
+          <span class="icon-arrow"></span>
+          Historial
+          <span class="service-icon">📚</span>
+        </summary>
+        <div class="servicio-content">
+          <p>Un registro de viajes pasados y futuros.</p>
+        </div>
+      </details>
 
-    <!-- Modificacion -->
-    <details class="service-item">
-      <summary class="service-btn">
-        <span class="text">Modificacion</span>
-        <span class="icon">🔄</span>
-      </summary>
-      <div class="service-content">
-        <p>Posibilidad de modificar o cancelar reservas (sujeto a las politicas de los proveedores).</p>
-      </div>
-    </details>
+      <!-- Modificacion -->
+      <details class="servicio-item">
+        <summary class="servicio-btn">
+          <span class="icon-arrow"></span>
+          Modificacion
+          <span class="service-icon">🔄</span>
+        </summary>
+        <div class="servicio-content">
+          <p>Posibilidad de modificar o cancelar reservas (sujeto a las politicas de los proveedores).</p>
+        </div>
+      </details>
+    </div>
   </section>
 </body>
 </html>
