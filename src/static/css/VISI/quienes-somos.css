@@ -1,16 +1,25 @@
-/* ===== VARIABLES DE ESTILO ===== */
+/* --- Variables Globales --- */
 :root {
-  --color-encabezado: #03045E;
-  --color-fondo-cuerpo: #033F8A;
+  /* Colores */
+  --color-encabezado: #03045e;
+  --color-pie: #03045e;
+  --color-fondo-cuerpo: #033f8a;
   --color-fondo-seccion: #448ec7;
   --color-texto-claro: #ffffff;
-  --color-texto-oscuro: #03045E;
-  --color-texto-gris: #666;
+  --color-texto-secundario: #e0e0e0;
   --color-primario: #4cc9f0;
-  --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --color-primario-hover: #3a9fd0;
+
+  /* tipografia de la pagina principal */
+  --fuente-principal: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  /* Diseño */
+  --radio-boton: 25px;
+  --radio-tarjeta: 20px;
   --transicion-rapida: 0.3s ease;
 }
 
+/* Reset y estilos generales */
 * {
   margin: 0;
   padding: 0;
@@ -22,10 +31,9 @@ body {
   background-color: var(--color-fondo-cuerpo);
   color: var(--color-texto-claro);
   line-height: 1.6;
-  overflow-x: hidden;
 }
 
-/* ===== BARRA DE NAVEGACIÓN FIJA ===== */
+/* === BARRA DE NAVEGACIÓN === */
 .navbar-container {
   display: flex;
   justify-content: space-between;
@@ -37,6 +45,12 @@ body {
   width: 100%;
   z-index: 1000;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
 }
 
 .logo-container {
@@ -58,10 +72,11 @@ body {
   object-position: center;
 }
 
+/* Menú de navegación */
 nav ul {
   display: flex;
   list-style: none;
-  gap: 1.5rem;
+  gap: 2rem;
   margin: 0;
   padding: 0;
 }
@@ -69,8 +84,8 @@ nav ul {
 nav ul li a {
   color: var(--color-texto-claro);
   text-decoration: none;
-  font-weight: 500;
-  font-size: 1rem;
+  font-weight: 600;
+  font-size: 1.1rem;
   transition: color var(--transicion-rapida);
   white-space: nowrap;
   padding: 0.4rem 0.6rem;
@@ -82,18 +97,19 @@ nav ul li a:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.user-icon a {
-  display: block;
-  padding: 0.5rem;
-  border-radius: 8px;
-  transition: background-color var(--transicion-rapida);
-}
-
+/* Ícono de usuario */
 .user-icon svg {
   width: 24px;
   height: 24px;
   stroke: var(--color-texto-claro);
   transition: stroke var(--transicion-rapida);
+}
+
+.user-icon a {
+  display: block;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: background-color var(--transicion-rapida);
 }
 
 .user-icon a:hover {
@@ -158,9 +174,9 @@ nav ul li a:hover {
 
 .section-1 .image-container img {
   position: absolute;
-  top: 10%;     /* Desplazamiento desde arriba */
-  right: 15%;   /* Desplazamiento desde la derecha */
-  width: 80%;   /* Ancho de la imagen (ajustable) */
+  top: 10%; /* Desplazamiento desde arriba */
+  right: 15%; /* Desplazamiento desde la derecha */
+  width: 80%; /* Ancho de la imagen (ajustable) */
   height: auto; /* Altura automática para mantener proporción */
   object-fit: contain;
   object-position: center;

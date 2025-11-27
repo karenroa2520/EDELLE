@@ -1,15 +1,25 @@
-/* ===== VARIABLES DE ESTILO ===== */
+/* --- Variables Globales --- */
 :root {
+  /* Colores */
   --color-encabezado: #03045e;
+  --color-pie: #03045e;
   --color-fondo-cuerpo: #033f8a;
-  --color-fondo-tarjeta: #9dc5f4;
+  --color-fondo-seccion: #448ec7;
   --color-texto-claro: #ffffff;
-  --color-texto-oscuro: #03045e;
-  --color-botones: #e0e0e0;
+  --color-texto-secundario: #e0e0e0;
+  --color-primario: #4cc9f0;
+  --color-primario-hover: #3a9fd0;
+
+  /* tipografia de la pagina principal */
   --fuente-principal: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  /* Diseño */
+  --radio-boton: 25px;
+  --radio-tarjeta: 20px;
   --transicion-rapida: 0.3s ease;
 }
 
+/* Reset y estilos generales */
 * {
   margin: 0;
   padding: 0;
@@ -18,13 +28,12 @@
 
 body {
   font-family: var(--fuente-principal);
-  background-color: white;
-  color: var(--color-texto-oscuro);
+  background-color: var(--color-fondo-cuerpo);
+  color: var(--color-texto-claro);
   line-height: 1.6;
-  overflow-x: hidden;
 }
 
-/* ===== BARRA DE NAVEGACIÓN FIJA ===== */
+/* === BARRA DE NAVEGACIÓN === */
 .navbar-container {
   display: flex;
   justify-content: space-between;
@@ -36,6 +45,12 @@ body {
   width: 100%;
   z-index: 1000;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
 }
 
 .logo-container {
@@ -57,10 +72,11 @@ body {
   object-position: center;
 }
 
+/* Menú de navegación */
 nav ul {
   display: flex;
   list-style: none;
-  gap: 1.5rem;
+  gap: 2rem;
   margin: 0;
   padding: 0;
 }
@@ -68,8 +84,8 @@ nav ul {
 nav ul li a {
   color: var(--color-texto-claro);
   text-decoration: none;
-  font-weight: 500;
-  font-size: 1rem;
+  font-weight: 600;
+  font-size: 1.1rem;
   transition: color var(--transicion-rapida);
   white-space: nowrap;
   padding: 0.4rem 0.6rem;
@@ -77,8 +93,16 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: #4cc9f0;
+  color: var(--color-primario);
   background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Ícono de usuario */
+.user-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--color-texto-claro);
+  transition: stroke var(--transicion-rapida);
 }
 
 .user-icon a {
@@ -88,16 +112,9 @@ nav ul li a:hover {
   transition: background-color var(--transicion-rapida);
 }
 
-.user-icon svg {
-  width: 24px;
-  height: 24px;
-  stroke: var(--color-texto-claro);
-  transition: stroke var(--transicion-rapida);
-}
-
 .user-icon a:hover {
   background-color: rgba(255, 255, 255, 0.1);
-  stroke: #4cc9f0;
+  stroke: var(--color-primario);
 }
 
 /* ===== CONTENIDO PRINCIPAL ===== */
@@ -154,7 +171,7 @@ nav ul li a:hover {
 }
 
 .destination-card {
-  background-color: var(--color-fondo-tarjeta);
+  background-color: var(--color-fondo-seccion);
   border-radius: 20px;
   padding: 1.8rem;
   text-align: center;
@@ -206,7 +223,7 @@ nav ul li a:hover {
 .wave-decoration {
   position: fixed;
   z-index: -1;
-  background: linear-gradient(135deg, #3283b9, #033f8a);
+  /* background: linear-gradient(135deg, #3283b9, #033f8a); */
 }
 
 .wave-decoration.left {
