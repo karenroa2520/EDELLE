@@ -28,7 +28,7 @@
 
 body {
   font-family: var(--fuente-principal);
-  background-color: var(--color-fondo-cuerpo);
+  /* background-color: var(--color-fondo-cuerpo); */
   color: var(--color-texto-claro);
   line-height: 1.6;
   overflow: hidden;
