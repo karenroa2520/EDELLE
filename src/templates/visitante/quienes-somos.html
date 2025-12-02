@@ -1,30 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sobre Nosotros</title>
-  <link rel="stylesheet" href="/src/static/css/VISI/quienes-somos.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sobre Nosotros</title>
+    <link rel="stylesheet" href="/src/static/css/VISI/quienes-somos.css" />
 </head>
 <body>
-  <!-- Barra de navegación fija -->
-  <header>
+    <header>
     <div class="navbar-container">
+      <!-- Logo a la izquierda (imagen dentro de contenedor circular) -->
       <div class="logo">
         <div class="logo-container">
           <img src="/src/static/imagenes/INICIO/logo_edelle.jpg" alt="Edelle - Tu Próxima Gran Aventura" />
         </div>
       </div>
 
+      <!-- Menu de navegación -->
       <nav>
         <ul>
-          <li><a href="/index.html">Inicio</a></li>
-          <li><a href="#quienes">Quiénes Somos</a></li>
-          <li><a href="/src/templates/visitante/servicios.html">Servicios</a></li>
-          <li><a href="/src/templates/visitante/destinos.html">Destinos</a></li>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="src/templates/visitante/quienes-somos.html">Quiénes Somos</a></li>
+          <li><a href="src/templates/visitante/servicios.html">Servicios</a></li>
+          <li><a href="src/templates/visitante/destinos.html">Destinos</a></li>
         </ul>
       </nav>
 
+      <!-- Icono de usuario a la derecha -->
       <div class="user-icon">
         <a href="/src/templates/comprador/login.html" title="Iniciar Sesión">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -36,46 +38,42 @@
     </div>
   </header>
 
-  <!-- Contenido principal -->
-  <main class="content">
-    <!-- SECCIÓN 1: Sobre nosotros -->
-    <section class="section-1">
-      <div class="text-content">
-        <h1>Sobre nosotros</h1>
-        <p>Nuestra agencia de viajes, al igual que los destinos que ofrecemos, está diseñada con un propósito: brindarte una experiencia de viaje sencillamente placentera, sin dejar espacio a la improvisación.</p>
-      </div>
-      <div class="image-wrapper">
-        <div class="image-container">
-          <img src="/src/static/imagenes/QUIENES_SOMOS/1.jpg" alt="Ciudad vibrante" />
-        </div>
-      </div>
-    </section>
+    <main>
+        <section class="sobre-nosotros">
+            <div class="texto-sobre">
+                <h1>Sobre <br> nosotros</h1>
+                <p>
+                    Nuestra agencia de viajes, al igual que los destinos que ofrecemos, está diseñada con un propósito: brindarte una experiencia de viaje sencillamente placentera, sin dejar espacio a la improvisación.
+                </p>
+            </div>
+            <div class="img-sobre">
+                <img src="/src/static/imagenes/QUIENES_SOMOS/1.jpg" alt="Ciudad en miniatura" />
+            </div>
+        </section>
 
-    <!-- SECCIÓN 2: Nuestra Misión -->
-    <section class="section-2">
-      <div class="image-wrapper">
-        <div class="image-container">
-          <img src="/src/static/imagenes/QUIENES_SOMOS/2.jpg" alt="Montañas y playa" />
-        </div>
-      </div>
-      <div class="text-content">
-        <h2>Nuestra Misión:<br>Crecimiento y Experiencias Inolvidables</h2>
-        <p>Nuestra misión va más allá de llevarte a tu destino; es ayudarte a crecer mejor a través de cada viaje. Creemos firmemente que el verdadero éxito de un viaje se alinea con tu plena satisfacción y el descubrimiento de nuevas perspectivas, ¡Es un ganar-ganar!</p>
-      </div>
-    </section>
+        <section class="mision">
+            <div class="contenido-mision">
+                <h2>Nuestra Misión:<br> Crecimiento y Experiencias Inolvidables</h2>
+                <p>
+                    Nuestra misión va más allá de llevarte a tu destino, es ayudarte a conocer mejor a través de cada viaje. Creemos firmemente que el verdadero éxito de un viaje se alinea con tu plena satisfacción y el descubrimiento de nuevas perspectivas. ¡Es un ganar-ganar!
+                </p>
+            </div>
+            <div class="img-mision">
+                <img src="/src/static/imagenes/QUIENES_SOMOS/2.jpg" alt="Lago y montaña" />
+            </div>
+        </section>
 
-    <!-- SECCIÓN 3: Nuestra Historia -->
-    <section class="section-3">
-      <div class="text-content">
-        <h2>Nuestra Historia</h2>
-        <p>En nuestra agencia de viajes, comprendimos un cambio fundamental en la forma en que las personas planean y experimentan sus aventuras. Los viajeros no quieren ser simplemente "vendidos" paquetes; buscan información útil y experiencias auténticas. Por eso, creamos nuestra agencia con la misión de ayudarte a aprovechar este cambio y viajar mejor.</p>
-      </div>
-      <div class="image-wrapper">
-        <div class="image-container">
-          <img src="/src/static/imagenes/QUIENES_SOMOS/3.jpg" alt="Playa al atardecer" />
-        </div>
-      </div>
-    </section>
-  </main>
+        <section class="historia">
+            <div class="texto-historia">
+                <h3>Nuestra Historia</h3>
+                <p>
+                    En nuestra agencia de viajes, comprendimos un cambio fundamental en la forma en que las personas planean y experimentan sus aventuras. Los viajeros no quieren ser simplemente “vendidos” paquetes, buscan información útil y experiencias auténticas. Por eso, creamos nuestra agencia con la misión de ayudarte a aprovechar este cambio y viajar mejor.
+                </p>
+            </div>
+            <div class="img-historia">
+                <img src="/src/static/imagenes/QUIENES_SOMOS/3.jpg" alt="Playa al atardecer" />
+            </div>
+        </section>
+    </main>
 </body>
-</html>
+</html
