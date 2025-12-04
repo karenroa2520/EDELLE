@@ -1,72 +1,93 @@
+<!-- Declara que este documento es HTML5 -->
 <!DOCTYPE html>
+
+<!-- Define el idioma principal de la página como español -->
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Destinos</title>
-    <link rel="stylesheet" href="/src/static/css/VISI/estilos-destino.css" />
-  </head>
-  <body>
-    <!-- Barra de navegación fija -->
-    <header>
-      <div class="navbar-container">
-        <div class="logo">
-          <div class="logo-container">
-            <img
-              src="/src/static/imagenes/INICIO/logo_edelle.jpg"
-              alt="Edelle - Tu Próxima Gran Aventura"
-            />
-          </div>
+
+<!-- Sección de cabecera: contiene configuración y enlaces a recursos externos -->
+<head>
+
+  <!-- Establece la codificación de caracteres a UTF-8 para mostrar correctamente acentos y símbolos -->
+  <meta charset="UTF-8" />
+
+  <!-- Hace que la página se vea bien en dispositivos móviles (responsive) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Título que aparece en la pestaña del navegador -->
+  <title>Destinos</title>
+
+  <!-- Enlaza el archivo de estilos específico para esta página de destinos -->
+  <link rel="stylesheet" href="/src/static/css/VISI/estilos-destino.css" />
+
+<!-- Cierra la cabecera -->
+</head>
+
+<!-- Cuerpo visible de la página web -->
+<body>
+
+  <!-- Encabezado fijo en la parte superior (barra de navegación) -->
+  <header>
+
+    <!-- Contenedor que agrupa logo, menú e ícono de usuario -->
+    <div class="navbar-container">
+
+      <!-- Sección del logo, alineado a la izquierda -->
+      <div class="logo">
+
+        <!-- Contenedor circular para el logo de la empresa -->
+        <div class="logo-container">
+
+          <!-- Imagen del logo con texto alternativo para accesibilidad -->
+          <img
+            src="/src/static/imagenes/INICIO/logo_edelle.jpg"
+            alt="Edelle - Tu Próxima Gran Aventura"
+          />
+
+        <!-- Cierra contenedor del logo -->
         </div>
 
-        <nav>
-          <ul>
-            <li><a href="/index.html">Inicio</a></li>
-            <li>
-              <a href="/src/templates/visitante/quienes-somos.html"
-                >Quiénes Somos</a
-              >
-            </li>
-            <li>
-              <a href="/src/templates/visitante/servicios.html">Servicios</a>
-            </li>
-            <li><a href="#destinos">Destinos</a></li>
-          </ul>
-        </nav>
-
-        <div class="user-icon">
-          <a href="/src/templates/comprador/login.html" title="Iniciar Sesión">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path
-                d="M20 21v-2a4 4 0 0 0-5.656-3.656L12 17l-2.344-2.344A4 4 0 0 0 4 17v2"
-              ></path>
-              <circle cx="12" cy="9" r="4"></circle>
-            </svg>
-          </a>
-        </div>
+      <!-- Cierra sección del logo -->
       </div>
-    </header>
 
-    <!-- Contenido principal -->
-    <main class="content">
-      <!-- Barra de búsqueda -->
-      <div class="search-bar">
-        <input type="text" placeholder="Buscar destino..." />
-        <button type="submit">
+      <!-- Barra de navegación con enlaces a otras páginas del sitio -->
+      <nav>
+
+        <!-- Lista de enlaces del menú -->
+        <ul>
+
+          <!-- Enlace a la página de inicio -->
+          <li><a href="/index.html">Inicio</a></li>
+
+          <!-- Enlace a la página "Quiénes Somos" -->
+          <li>
+            <a href="/src/templates/visitante/quienes-somos.html">Quienes Somos</a>
+          </li>
+
+          <!-- Enlace a la página de servicios -->
+          <li>
+            <a href="/src/templates/visitante/servicios.html">Servicios</a>
+          </li>
+
+          <!-- Enlace anclado a la sección de destinos en esta misma página -->
+          <li><a href="#destinos">Destinos</a></li>
+
+        <!-- Cierra la lista del menú -->
+        </ul>
+
+      <!-- Cierra la barra de navegación -->
+      </nav>
+
+      <!-- Ícono de usuario (perfil) alineado a la derecha -->
+      <div class="user-icon">
+
+        <!-- Enlace al formulario de inicio de sesión con ícono SVG de usuario -->
+        <a href="/src/templates/comprador/login.html" title="Iniciar Sesión">
+
+          <!-- Icono de perfil en formato SVG (escalable y ligero) -->
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
+            width="24"
+            height="24"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -74,44 +95,102 @@
             stroke-linecap="round"
             stroke-linejoin="round"
           >
-            <circle cx="11" cy="11" r="8"></circle>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            <path
+              d="M20 21v-2a4 4 0 0 0-5.656-3.656L12 17l-2.344-2.344A4 4 0 0 0 4 17v2"></path>
+            <circle cx="12" cy="9" r="4"></circle>
           </svg>
-        </button>
+
+        <!-- Cierra el enlace del ícono de usuario -->
+        </a>
+
+      <!-- Cierra contenedor del ícono -->
       </div>
 
-      <!-- Tarjetas de destinos -->
-      <section class="destinations-grid">
-        <div class="destination-card">
-          <img src="/src/static/imagenes/DESTINOS/bogota 2.jpg" alt="Bogotá" />
-          <h3>BOGOTÁ</h3>
-          <button class="btn-more">Find Out More</button>
-        </div>
+    <!-- Cierra el contenedor de la barra de navegación -->
+    </div>
 
-        <div class="destination-card">
-          <img
-            src="/src/static/imagenes/DESTINOS/bucaramanga 1.jpg"
-            alt="Bucaramanga"
-          />
-          <h3>BUCARAMANGA</h3>
-          <button class="btn-more">Find Out More</button>
-        </div>
+  <!-- Cierra el encabezado -->
+  </header>
 
-        <div class="destination-card">
-          <img src="/src/static/imagenes/DESTINOS/cali 1.jpg" alt="Cali" />
-          <h3>CALI</h3>
-          <button class="btn-more">Find Out More</button>
-        </div>
+  <!-- Contenido principal de la página (destinos turísticos) -->
+  <main class="content">
 
-        <div class="destination-card">
-          <img
-            src="/src/static/imagenes/DESTINOS/cartagena 1.jpg"
-            alt="Cartagena"
-          />
-          <h3>CARTAGENA</h3>
-          <button class="btn-more">Find Out More</button>
-        </div>
-      </section>
-    </main>
-  </body>
+    <!-- Barra de búsqueda para filtrar destinos (aunque funcionalidad aún no implementada) -->
+    <div class="search-bar">
+
+      <!-- Campo de texto donde el usuario puede escribir el nombre de un destino -->
+      <input type="text" placeholder="Buscar destino..." />
+
+      <!-- Botón de búsqueda con ícono de lupa (SVG) -->
+      <button type="submit">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </button>
+
+    <!-- Cierra la barra de búsqueda -->
+    </div>
+
+    <!-- Sección en cuadrícula que muestra las tarjetas de destinos -->
+    <section class="destinations-grid">
+
+      <!-- Primera tarjeta: destino Bogotá -->
+      <div class="destination-card">
+        <!-- Imagen representativa de Bogotá -->
+        <img src="/src/static/imagenes/DESTINOS/bogota 2.jpg" alt="Bogotá" />
+        <!-- Nombre del destino en mayúsculas -->
+        <h3>BOGOTÁ</h3>
+        <!-- Botón para ver más información (aún sin enlace funcional) -->
+        <button class="btn-more">Mas Informacion</button>
+      </div>
+
+      <!-- Segunda tarjeta: destino Bucaramanga -->
+      <div class="destination-card">
+        <img
+          src="/src/static/imagenes/DESTINOS/bucaramanga 1.jpg"
+          alt="Bucaramanga"
+        />
+        <h3>BUCARAMANGA</h3>
+        <button class="btn-more">Mas Informacion</button>
+      </div>
+
+      <!-- Tercera tarjeta: destino Cali -->
+      <div class="destination-card">
+        <img src="/src/static/imagenes/DESTINOS/cali 1.jpg" alt="Cali" />
+        <h3>CALI</h3>
+        <button class="btn-more">Mas Informacion</button>
+      </div>
+
+      <!-- Cuarta tarjeta: destino Cartagena -->
+      <div class="destination-card">
+        <img
+          src="/src/static/imagenes/DESTINOS/cartagena 1.jpg"
+          alt="Cartagena"
+        />
+        <h3>CARTAGENA</h3>
+        <!-- Nota: hay un error tipográfico en "Imformacion" (falta la 'o'), debería corregirse -->
+        <button class="btn-more">Mas Imformacion</button>
+      </div>
+
+    <!-- Cierra la sección de destinos -->
+    </section>
+
+  <!-- Cierra el contenido principal -->
+  </main>
+
+<!-- Cierra el cuerpo de la página -->
+</body>
+
+<!-- Cierra el documento HTML -->
 </html>

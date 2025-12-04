@@ -1,6 +1,6 @@
-/* --- Variables Globales --- */
+/* --> Define variables reutilizables para colores, fuentes y medidas. Facilita mantener un estilo consistente en todo el sitio. */
 :root {
-  /* Colores */
+  /* --> Paleta de colores: azules profesionales para encabezado, fondo y acentos; textos en blanco y gris claro. */
   --color-encabezado: #03045e;
   --color-pie: #03045e;
   --color-fondo-cuerpo: #033f8a;
@@ -10,22 +10,23 @@
   --color-primario: #4cc9f0;
   --color-primario-hover: #3a9fd0;
 
-  /* tipografia de la pagina principal */
+  /* --> Fuente principal: moderna, legible y compatible en la mayoría de dispositivos. */
   --fuente-principal: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 
-  /* Diseño */
+  /* --> Medidas de diseño reutilizables: bordes redondeados para botones y tarjetas, y transición suave en interacciones. */
   --radio-boton: 25px;
   --radio-tarjeta: 20px;
   --transicion-rapida: 0.3s ease;
 }
 
-/* Reset y estilos generales */
+/* --> Reseteo universal: elimina márgenes/rellenos por defecto y asegura que ancho/alto incluyan bordes y padding. */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* --> Estilo base del cuerpo: fuente definida, fondo azul oscuro, texto blanco y buen espaciado entre líneas. */
 body {
   font-family: var(--fuente-principal);
   background-color: var(--color-fondo-cuerpo);
@@ -34,6 +35,8 @@ body {
 }
 
 /* === BARRA DE NAVEGACIÓN === */
+
+/* --> Barra superior fija: fondo azul oscuro, sombra sutil y contenido distribuido horizontalmente. */
 .navbar-container {
   display: flex;
   justify-content: space-between;
@@ -43,21 +46,22 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* --> Asegura que la barra quede por encima del contenido al hacer scroll. */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* --> Sombra ligera para mejor separación visual. */
 }
 
-/* Logo */
+/* --> Contenedor del logo: alinea verticalmente el logo dentro de la barra. */
 .logo {
   display: flex;
   align-items: center;
 }
 
+/* --> Marco circular blanco para el logo con sombra y recorte interno. */
 .logo-container {
   width: 50px;
   height: 50px;
-  border-radius: 50%;
-  overflow: hidden;
+  border-radius: 50%; /* --> Hace el contenedor circular. */
+  overflow: hidden; /* --> Recorta la imagen si sobresale. */
   background-color: white;
   display: flex;
   align-items: center;
@@ -65,14 +69,15 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+/* --> Imagen del logo: ocupa todo el círculo y se ajusta sin deformarse. */
 .logo-container img {
   width: 100%;
   height: auto;
-  object-fit: cover;
-  object-position: center;
+  object-fit: cover; /* --> Rellena el espacio manteniendo proporción. */
+  object-position: center; /* --> Centra la parte visible de la imagen. */
 }
 
-/* Menú de navegación */
+/* --> Menú de navegación: elementos en fila, sin viñetas, con espacio entre enlaces. */
 nav ul {
   display: flex;
   list-style: none;
@@ -81,23 +86,25 @@ nav ul {
   padding: 0;
 }
 
+/* --> Enlaces del menú: texto blanco, sin subrayado, con peso medio y transición suave. */
 nav ul li a {
   color: var(--color-texto-claro);
   text-decoration: none;
   font-weight: 600;
   font-size: 1.1rem;
   transition: color var(--transicion-rapida);
-  white-space: nowrap;
+  white-space: nowrap; /* --> Evita que el texto se parta. */
   padding: 0.4rem 0.6rem;
   border-radius: 8px;
 }
 
+/* --> Efecto al pasar el mouse: cambia a color primario y añade fondo semitransparente. */
 nav ul li a:hover {
   color: var(--color-primario);
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Ícono de usuario */
+/* --> Ícono de usuario (SVG): tamaño fijo, color blanco, con transición al cambiar. */
 .user-icon svg {
   width: 24px;
   height: 24px;
@@ -105,6 +112,7 @@ nav ul li a:hover {
   transition: stroke var(--transicion-rapida);
 }
 
+/* --> Zona clickeable del ícono: con padding y redondeo para mejor usabilidad. */
 .user-icon a {
   display: block;
   padding: 0.5rem;
@@ -112,21 +120,26 @@ nav ul li a:hover {
   transition: background-color var(--transicion-rapida);
 }
 
+/* --> Efecto hover en ícono: fondo semitransparente y SVG cambia a color primario. */
 .user-icon a:hover {
   background-color: rgba(255, 255, 255, 0.1);
   stroke: var(--color-primario);
 }
 
 /* ===== CONTENIDO PRINCIPAL ===== */
+
+/* --> Contenedor del cuerpo principal: espacio superior para evitar que quede bajo la barra fija, fondo blanco y centrado. */
 .content {
-  padding-top: 100px;
-  min-height: 100vh;
+  padding-top: 100px; /* --> Compensa la barra de navegación fija (más alto que 90px para seguridad en móviles). */
+  min-height: 100vh; /* --> Ocupa al menos toda la altura de la ventana. */
   padding: 2rem;
-  background: white;
-  flex-direction: column;
+  background: white; /* --> Fondo blanco para destacar el contenido sobre el fondo azul del body. */
+  flex-direction: column; /* --> Nota: esta regla no tiene efecto porque no es un contenedor flex; probablemente innecesaria. */
 }
 
 /* === BARRA DE BÚSQUEDA === */
+
+/* --> Contenedor centrado de la barra de búsqueda, con ancho máximo y margen vertical grande. */
 .search-bar {
   display: flex;
   justify-content: center;
@@ -135,41 +148,48 @@ nav ul li a:hover {
   width: 100%;
 }
 
+/* --> Campo de texto: ocupa el espacio restante, con borde redondeado a la izquierda y sin contorno al enfocar. */
 .search-bar input {
   flex: 1;
   padding: 0.75rem 1rem;
   border: 2px solid #ccc;
   border-radius: 25px 0 0 25px;
   font-size: 1rem;
-  outline: none;
+  outline: none; /* --> Elimina el borde azul por defecto al hacer clic. */
 }
 
+/* --> Botón de búsqueda: estilo continuo con el input, redondeado a la derecha, sin borde izquierdo. */
 .search-bar button {
   background-color: #f0f0f0;
   border: 2px solid #ccc;
-  border-left: none;
+  border-left: none; /* --> Elimina el borde doble entre input y botón. */
   border-radius: 0 25px 25px 0;
   padding: 0.75rem 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
+/* --> Efecto hover en botón: fondo más oscuro al pasar el mouse. */
 .search-bar button:hover {
   background-color: #e0e0e0;
 }
 
+/* --> Color del ícono de lupa (SVG): gris oscuro para mejor contraste. */
 .search-bar button svg {
   stroke: #333;
 }
 
 /* === TARJETAS DE DESTINOS === */
+
+/* --> Cuadrícula de destinos: 2 columnas, con espacio entre tarjetas. */
 .destinations-grid {
   display: grid;
-  grid-template-columns: repeat(2, 5fr);
+  grid-template-columns: repeat(2, 5fr); /* --> Equivalente a dos columnas iguales (mejor usar 1fr 1fr). */
   gap: 2rem;
   padding: 2rem 0;
 }
 
+/* --> Cada tarjeta: fondo azul claro, redondeada, con sombra y transición suave. */
 .destination-card {
   background-color: var(--color-fondo-seccion);
   border-radius: 20px;
@@ -177,15 +197,17 @@ nav ul li a:hover {
   text-align: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease;
-  /* Reducimos el ancho máximo para que no sean "panes" */
+  /* --> Limita el ancho para evitar que se estiren demasiado en pantallas anchas. */
   max-width: 300px;
-  margin: 0 auto;
+  margin: 0 auto; /* --> Centra cada tarjeta horizontalmente. */
 }
 
+/* --> Efecto al pasar el mouse: la tarjeta se eleva ligeramente. */
 .destination-card:hover {
   transform: translateY(-4px);
 }
 
+/* --> Imagen dentro de la tarjeta: altura fija, sin deformar, con bordes redondeados. */
 .destination-card img {
   width: 100%;
   height: 200px;
@@ -194,16 +216,18 @@ nav ul li a:hover {
   margin-bottom: 1rem;
 }
 
+/* --> Título del destino: mayúsculas, negrita, tamaño moderado. */
 .destination-card h3 {
   font-size: 1.2rem;
   margin-bottom: 1rem;
-  color: var(--color-texto-oscuro);
+  color: var(--color-texto-oscuro); /* --> ¡Advertencia! Esta variable NO está definida en :root. Debería ser un color fijo o usar --color-texto-claro. */
   font-weight: bold;
   text-transform: uppercase;
 }
 
+/* --> Botón "Más Información": fondo definido por variable (pero esta variable no existe), texto oscuro, redondeado. */
 .btn-more {
-  background-color: var(--color-botones);
+  background-color: var(--color-botones); /* --> ¡Error! --color-botones NO está definido en :root. Debería usar --color-primario o un color fijo. */
   color: #333;
   border: none;
   border-radius: 25px;
@@ -215,17 +239,22 @@ nav ul li a:hover {
   width: 100%;
 }
 
+/* --> Efecto hover en botón: fondo gris más oscuro. */
 .btn-more:hover {
   background-color: #d0d0d0;
 }
 
 /* === DECORACIÓN DE ONDAS AZULES === */
+
+/* --> Elementos decorativos posicionados de forma fija, detrás del contenido. */
 .wave-decoration {
   position: fixed;
-  z-index: -1;
+  z-index: -1; /* --> Quedan detrás de todo el contenido. */
   /* background: linear-gradient(135deg, #3283b9, #033f8a); */
+  /* --> Esta línea está comentada, así que no tiene efecto. */
 }
 
+/* --> Onda vertical decorativa a la izquierda (estilo geométrico con clip-path). */
 .wave-decoration.left {
   left: 0;
   top: 0;
@@ -248,6 +277,7 @@ nav ul li a:hover {
   );
 }
 
+/* --> Onda horizontal decorativa en la parte inferior. */
 .wave-decoration.bottom {
   left: 0;
   right: 0;
@@ -265,31 +295,39 @@ nav ul li a:hover {
   );
 }
 
-/* ===== RESPONSIVE ===== */
+/* ===== RESPONSIVE (adaptación a móviles) ===== */
+
+/* --> Estilos para pantallas de hasta 768px de ancho. */
 @media (max-width: 768px) {
+  /* --> Barra de navegación más compacta. */
   .navbar-container {
     padding: 1rem;
   }
 
+  /* --> Menú más pequeño y con menos espacio entre enlaces. */
   nav ul {
     gap: 1rem;
     font-size: 0.9rem;
   }
 
+  /* --> Cuadrícula de destinos en una sola columna. */
   .destinations-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
 
+  /* --> Tarjetas más pequeñas y ocupan todo el ancho. */
   .destination-card {
     padding: 1rem;
     max-width: 100%;
   }
 
+  /* --> Imágenes más cortas en móvil. */
   .destination-card img {
     height: 150px;
   }
 
+  /* --> Barra de búsqueda ocupa todo el ancho en móvil. */
   .search-bar {
     max-width: 100%;
   }

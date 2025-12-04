@@ -1,0 +1,24 @@
+@import url("/src/static/css/estilos\ principales.css");
+
+
+
+
+:root {
+  /* Colores */
+  --color-encabezado: #03045e;
+  --color-pie: #03045e;
+  --color-fondo-cuerpo: #033f8a;
+  --color-fondo-seccion: #448ec7;
+  --color-texto-claro: #ffffff;
+  --color-texto-secundario: #e0e0e0;
+  --color-primario: #4cc9f0;
+  --color-primario-hover: #3a9fd0;
+
+  /* tipografia de la pagina principal */
+  --fuente-principal: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  /* Diseño */
+  --radio-boton: 25px;
+  --radio-tarjeta: 20px;
+  --transicion-rapida: 0.3s ease;
+}
