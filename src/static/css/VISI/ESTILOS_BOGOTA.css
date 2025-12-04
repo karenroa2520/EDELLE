@@ -211,9 +211,9 @@ nav ul li a:hover {
 
 .lista-lugares {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2.5rem;
-  max-width: 900px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3.5rem;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -234,7 +234,7 @@ nav ul li a:hover {
 .tarjeta {
   background: var(--color-texto-claro);
   border-radius: var(--radio-tarjeta);
-  padding: 1.5rem;
+  padding: 1.6rem;
   box-shadow: 0 4px 12px rgba(0,0,0,0.12);
   color: #333;
 }
@@ -250,7 +250,7 @@ nav ul li a:hover {
 }
 
 .tarjeta h3 {
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   color: var(--color-encabezado);
   margin-bottom: 0.7rem;
   line-height: 1.35;
@@ -270,7 +270,7 @@ nav ul li a:hover {
 }
 
 .estrellas {
-  color: var(--color-primario);
+  color: var(--color-encabezado);
   font-size: 1.25rem;
 }
 
