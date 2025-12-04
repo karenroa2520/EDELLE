@@ -1,0 +1,164 @@
+:root {
+  /* Colores */
+  --color-encabezado: #03045e;
+  --color-pie: #03045e;
+  --color-fondo-cuerpo: #033f8a;
+  --color-fondo-seccion: #448ec7;
+  --color-texto-claro: #ffffff;
+  --color-texto-secundario: #e0e0e0;
+  --color-primario: #4cc9f0;
+  --color-primario-hover: #3a9fd0;
+
+  /* Tipografía */
+  --fuente-principal: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  /* Diseño */
+  --radio-boton: 25px;
+  --radio-tarjeta: 20px;
+  --transicion-rapida: 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --> Estilo base del cuerpo de la página: usa la fuente definida, fondo azul oscuro y texto blanco con buen espaciado entre líneas. */
+body {
+  font-family: var(--fuente-principal);
+  background-color: var(--color-fondo-cuerpo);
+  color: var(--color-texto-claro);
+  line-height: 1.6;
+}
+
+/* === BARRA DE NAVEGACIÓN === */
+
+/* --> Contenedor de la barra superior: fija en la parte de arriba, con fondo oscuro, sombra sutil y contenido alineado horizontalmente. */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--color-encabezado);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* --> Asegura que la barra esté por encima de otros elementos al hacer scroll. */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* --> Sombra suave para separarla visualmente del contenido. */
+}
+
+/* --> Contenedor del logo: alinea verticalmente el logo dentro de la barra. */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+/* --> Marco circular blanco para el logo, con sombra, que recorta la imagen si no es redonda. */
+.logo-container {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* --> Hace que el contenedor sea un círculo. */
+  overflow: hidden; /* --> Recorta la imagen si sobresale del círculo. */
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* --> Estilo de la imagen del logo: ocupa todo el contenedor circular y se ajusta sin deformarse. */
+.logo-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* --> Rellena el espacio sin deformar la imagen. */
+  object-position: center; /* --> Centra la parte visible de la imagen. */
+}
+
+/* --> Lista del menú de navegación: elementos en fila horizontal, sin viñetas, con espacio entre ellos. */
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* --> Enlaces del menú: texto blanco, sin subrayado, con peso negrita suave y transición suave al pasar el mouse. */
+nav ul li a {
+  color: var(--color-texto-claro);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color var(--transicion-rapida);
+  white-space: nowrap; /* --> Evita que el texto se parta en dos líneas. */
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+}
+
+/* --> Efecto al pasar el mouse sobre un enlace: cambia a color primario y añade fondo ligeramente transparente. */
+nav ul li a:hover {
+  color: var(--color-primario);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* --> Estilo del ícono de usuario (SVG): tamaño fijo, color blanco, con transición al cambiar de color. */
+.user-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--color-texto-claro);
+  transition: stroke var(--transicion-rapida);
+}
+
+/* --> Enlace del ícono: zona clickeable más grande con redondeo y transición de fondo. */
+.user-icon a {
+  display: block;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: background-color var(--transicion-rapida);
+}
+
+/* --> Al pasar el mouse sobre el ícono: fondo ligeramente blanco y el ícono cambia al color primario. */
+.user-icon a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  stroke: var(--color-primario);
+}
+
+/* === NUEVO: Sección Hero (imagen grande de Bogotá) === */
+
+.hero-carousel {
+  position: relative;
+  height: 70vh;
+  overflow: hidden;
+  margin-top: 90px; /* --> Espacio suficiente para que no quede cubierta por la barra de navegación fija. */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 30%;
+}
+
+/* --> Contenedor de la imagen de fondo del hero: centrado horizontalmente y recortado con bordes redondeados. */
+/* .carousel-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  max-width: 1200px;
+  height: 100%;
+  z-index: -1; /* --> Pone la imagen detrás del texto. */
+  /* border-radius: 15px;
+  overflow: hidden;
+} */ 
+
+/* --> La imagen siempre visible y cubriendo todo el contenedor sin deformarse. */
+.carousel-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1; 
+}
