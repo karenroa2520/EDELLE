@@ -111,7 +111,7 @@ main {
   gap: 24px;
   margin-bottom: 80px;
   position: relative;
-}
+} 
 
 .texto-sobre h1 {
   font-size: 2.5rem; /* ≈40px */
@@ -122,13 +122,14 @@ main {
 }
 
 .texto-sobre p {
-  font-size: 0.875rem; /* 14px */
-  max-width: 220px;
+  font-size: 0.975rem; /* 14px */
+  max-width: 360px;
 }
 
 .img-sobre {
   position: relative;
-  width: 320px;
+  width: 4
+  20px;
 }
 
 .img-sobre img {

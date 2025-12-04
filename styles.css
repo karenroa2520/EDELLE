@@ -1,6 +1,6 @@
-/* --- Variables Globales --- */
+/* --> Define variables reutilizables para colores, fuentes y medidas. Esto facilita mantener y cambiar el estilo en todo el sitio desde un solo lugar. */
 :root {
-  /* Colores */
+  /* --> Colores principales del sitio: azul oscuro para encabezado y pie, azules más claros para fondos, y blanco/claros para texto. */
   --color-encabezado: #03045E;
   --color-pie: #03045E;
   --color-fondo-cuerpo: #033F8A;
@@ -10,22 +10,23 @@
   --color-primario: #4cc9f0;
   --color-primario-hover: #3a9fd0;
 
-  /* tipografia de la pagina principal */
+  /* --> Fuente principal para todo el contenido: moderna, legible y compatible en la mayoría de dispositivos. */
   --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
-  /* Diseño */
+  /* --> Medidas de diseño reutilizables: bordes redondeados para botones y tarjetas, y duración de transiciones suaves. */
   --radio-boton: 25px;
   --radio-tarjeta: 20px;
   --transicion-rapida: 0.3s ease;
 }
 
-/* Reset y estilos generales */
+/* --> Reseteo universal: elimina márgenes y rellenos por defecto del navegador y asegura que el ancho y alto incluyan bordes y rellenos. */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* --> Estilo base del cuerpo de la página: usa la fuente definida, fondo azul oscuro y texto blanco con buen espaciado entre líneas. */
 body {
   font-family: var(--fuente-principal);
   background-color: var(--color-fondo-cuerpo);
@@ -34,6 +35,8 @@ body {
 }
 
 /* === BARRA DE NAVEGACIÓN === */
+
+/* --> Contenedor de la barra superior: fija en la parte de arriba, con fondo oscuro, sombra sutil y contenido alineado horizontalmente. */
 .navbar-container {
   display: flex;
   justify-content: space-between;
@@ -43,21 +46,22 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* --> Asegura que la barra esté por encima de otros elementos al hacer scroll. */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* --> Sombra suave para separarla visualmente del contenido. */
 }
 
-/* Logo */
+/* --> Contenedor del logo: alinea verticalmente el logo dentro de la barra. */
 .logo {
   display: flex;
   align-items: center;
 }
 
+/* --> Marco circular blanco para el logo, con sombra, que recorta la imagen si no es redonda. */
 .logo-container {
   width: 50px;
   height: 50px;
-  border-radius: 50%;
-  overflow: hidden;
+  border-radius: 50%; /* --> Hace que el contenedor sea un círculo. */
+  overflow: hidden; /* --> Recorta la imagen si sobresale del círculo. */
   background-color: white;
   display: flex;
   align-items: center;
@@ -65,14 +69,15 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+/* --> Estilo de la imagen del logo: ocupa todo el contenedor circular y se ajusta sin deformarse. */
 .logo-container img {
   width: 100%;
   height: auto;
-  object-fit: cover;
-  object-position: center;
+  object-fit: cover; /* --> Rellena el espacio sin deformar la imagen. */
+  object-position: center; /* --> Centra la parte visible de la imagen. */
 }
 
-/* Menú de navegación */
+/* --> Lista del menú de navegación: elementos en fila horizontal, sin viñetas, con espacio entre ellos. */
 nav ul {
   display: flex;
   list-style: none;
@@ -81,23 +86,25 @@ nav ul {
   padding: 0;
 }
 
+/* --> Enlaces del menú: texto blanco, sin subrayado, con peso negrita suave y transición suave al pasar el mouse. */
 nav ul li a {
   color: var(--color-texto-claro);
   text-decoration: none;
   font-weight: 600;
   font-size: 1.1rem;
   transition: color var(--transicion-rapida);
-  white-space: nowrap;
+  white-space: nowrap; /* --> Evita que el texto se parta en dos líneas. */
   padding: 0.4rem 0.6rem;
   border-radius: 8px;
 }
 
+/* --> Efecto al pasar el mouse sobre un enlace: cambia a color primario y añade fondo ligeramente transparente. */
 nav ul li a:hover {
   color: var(--color-primario);
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Ícono de usuario */
+/* --> Estilo del ícono de usuario (SVG): tamaño fijo, color blanco, con transición al cambiar de color. */
 .user-icon svg {
   width: 24px;
   height: 24px;
@@ -105,6 +112,7 @@ nav ul li a:hover {
   transition: stroke var(--transicion-rapida);
 }
 
+/* --> Enlace del ícono: zona clickeable más grande con redondeo y transición de fondo. */
 .user-icon a {
   display: block;
   padding: 0.5rem;
@@ -112,23 +120,27 @@ nav ul li a:hover {
   transition: background-color var(--transicion-rapida);
 }
 
+/* --> Al pasar el mouse sobre el ícono: fondo ligeramente blanco y el ícono cambia al color primario. */
 .user-icon a:hover {
   background-color: rgba(255, 255, 255, 0.1);
   stroke: var(--color-primario);
 }
 
 /* === CARRUSEL (solo una imagen, sin animación) === */
+
+/* --> Sección principal llamativa: altura del 70% de la ventana, centrada, con margen superior para no taparse con la barra fija. */
 .hero-carousel {
   position: relative;
   height: 70vh;
   overflow: hidden;
-  margin-top: 90px;
+  margin-top: 90px; /* --> Espacio suficiente para que no quede cubierta por la barra de navegación fija. */
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
 }
 
+/* --> Contenedor de la imagen de fondo del hero: centrado horizontalmente y recortado con bordes redondeados. */
 .carousel-container {
   position: absolute;
   top: 0;
@@ -137,11 +149,12 @@ nav ul li a:hover {
   width: 70%;
   max-width: 1200px;
   height: 100%;
-  z-index: -1;
+  z-index: -1; /* --> Pone la imagen detrás del texto. */
   border-radius: 15px;
   overflow: hidden;
 }
 
+/* --> La imagen siempre visible y cubriendo todo el contenedor sin deformarse. */
 .carousel-image {
   position: absolute;
   top: 0;
@@ -149,22 +162,25 @@ nav ul li a:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 1; /* Imagen siempre visible, sin animación */
+  opacity: 1; /* --> Aunque se llama "carrusel", solo muestra una imagen sin transiciones. */
 }
 
+/* --> Contenido de texto sobre la imagen: fondo semitransparente para mejorar la legibilidad. */
 .hero-content {
   z-index: 1;
   max-width: 800px;
   padding: 2rem;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.4); /* --> Fondo negro al 40% de opacidad. */
   border-radius: 12px;
 }
 
+/* --> Título principal del hero: grande y con margen inferior. */
 .hero-content h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 
+/* --> Párrafo del hero: texto secundario más claro y con más espacio debajo. */
 .hero-content p {
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
@@ -172,6 +188,8 @@ nav ul li a:hover {
 }
 
 /* === BOTONES === */
+
+/* --> Estilo base para el botón principal: fondo color primario, texto oscuro, redondeado, con efecto al pasar el mouse. */
 .boton-principal {
   display: inline-block;
   padding: 0.75rem 1.5rem;
@@ -184,11 +202,13 @@ nav ul li a:hover {
   color: var(--color-fondo-cuerpo);
 }
 
+/* --> Efecto al pasar el mouse: cambia a un tono más oscuro y se agranda ligeramente. */
 .boton-principal:hover {
   background-color: var(--color-primario-hover);
   transform: scale(1.05);
 }
 
+/* --> Botón secundario (en tarjetas): similar al principal pero más pequeño y centrado. */
 .boton-secundario {
   background-color: var(--color-primario);
   color: var(--color-fondo-cuerpo);
@@ -205,11 +225,13 @@ nav ul li a:hover {
   display: block;
 }
 
+/* --> Efecto hover para botón secundario: igual que el principal. */
 .boton-secundario:hover {
   background-color: var(--color-primario-hover);
   transform: scale(1.05);
 }
 
+/* --> Botón de suscripción en el footer: ocupa todo el ancho del formulario. */
 .boton-suscribir {
   background-color: var(--color-primario);
   color: var(--color-fondo-cuerpo);
@@ -220,25 +242,29 @@ nav ul li a:hover {
   cursor: pointer;
   transition: background-color var(--transicion-rapida), transform 0.2s ease;
   margin-top: 1rem;
-  border: none;
+  border: none; /* --> Elimina borde por defecto del botón. */
 }
 
+/* --> Efecto hover para botón de suscripción. */
 .boton-suscribir:hover {
   background-color: var(--color-primario-hover);
   transform: scale(1.05);
 }
 
 /* === SECCIÓN DE SERVICIOS === */
+
+/* --> Contenedor de las tarjetas de servicios: centrado, con espacios y fondo azul claro. */
 .services {
   display: flex;
   justify-content: center;
   gap: 2rem;
   padding: 3rem 2rem;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* --> Permite que las tarjetas se ajusten en pantallas pequeñas. */
   background-color: var(--color-fondo-seccion);
   margin-bottom: 0;
 }
 
+/* --> Cada tarjeta de servicio: fondo blanco, redondeada, con sombra y transición suave al hacer hover. */
 .service-card {
   background-color: #ffffff;
   border-radius: var(--radio-tarjeta);
@@ -249,11 +275,13 @@ nav ul li a:hover {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* --> Al pasar el mouse: la tarjeta se eleva ligeramente y la sombra se hace más fuerte. */
 .service-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
+/* --> Imagen dentro de la tarjeta: ocupa todo el ancho, con borde y sombra suave. */
 .service-card img {
   width: 100%;
   border-radius: 10px;
@@ -262,6 +290,7 @@ nav ul li a:hover {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
+/* --> Título de la tarjeta: texto negro y en negrita. */
 .service-card h3 {
   margin-bottom: 0.5rem;
   color: #000000;
@@ -269,6 +298,7 @@ nav ul li a:hover {
   font-weight: bold;
 }
 
+/* --> Descripción de la tarjeta: texto gris oscuro, más pequeño y con buen espaciado. */
 .service-card p {
   margin-bottom: 1rem;
   color: #666666;
@@ -277,6 +307,8 @@ nav ul li a:hover {
 }
 
 /* === PIE DE PÁGINA === */
+
+/* --> Estilo del footer: fondo azul oscuro, con columnas flexibles y espaciado. */
 footer {
   background-color: var(--color-pie);
   padding: 2rem;
@@ -288,15 +320,18 @@ footer {
   color: var(--color-texto-claro);
 }
 
+/* --> Cada columna del footer: crece para ocupar espacio, pero con ancho mínimo para no colapsar. */
 .footer-column {
   flex: 1;
   min-width: 250px;
 }
 
+/* --> Títulos de las columnas: margen inferior para separar del contenido. */
 .footer-column h4 {
   margin-bottom: 1rem;
 }
 
+/* --> Texto y enlaces en el footer: color secundario (gris claro), sin subrayado, en bloque. */
 .footer-column p,
 .footer-column a {
   color: var(--color-texto-secundario);
@@ -305,10 +340,12 @@ footer {
   text-decoration: none;
 }
 
+/* --> Al pasar el mouse sobre un enlace del footer: cambia al color primario. */
 .footer-column a:hover {
   color: var(--color-primario);
 }
 
+/* --> Campo de correo en el formulario de suscripción: ocupa todo el ancho, fondo azul claro y texto blanco. */
 input[type="email"] {
   width: 100%;
   padding: 0.75rem;
@@ -319,17 +356,21 @@ input[type="email"] {
   color: var(--color-texto-claro);
 }
 
-/* === RESPONSIVO === */
+/* === RESPONSIVO (adaptación a móviles y tablets) === */
+
+/* --> Estilos para pantallas de hasta 768px de ancho (tabletas y móviles). */
 @media (max-width: 768px) {
+  /* --> Barra de navegación: más compacta y permite que se envuelva si es necesario. */
   .navbar-container {
     padding: 1rem;
     flex-wrap: wrap;
   }
 
-  .logo {
-    order: 1;
-  }
+  /* --> Orden visual en móvil: logo primero, ícono de usuario segundo, menú abajo. */
+  .logo { order: 1; }
+  .user-icon { order: 2; }
 
+  /* --> Menú ocupa todo el ancho y se centra. */
   nav {
     order: 3;
     width: 100%;
@@ -342,19 +383,18 @@ input[type="email"] {
     gap: 1rem;
   }
 
-  .user-icon {
-    order: 2;
-  }
-
+  /* --> Hero más corto y con más margen arriba (por la barra más alta en móvil). */
   .hero-carousel {
     height: 60vh;
     margin-top: 140px;
   }
 
+  /* --> Título del hero más pequeño en móvil. */
   .hero-content h1 {
     font-size: 2rem;
   }
 
+  /* --> Servicios en columna (uno debajo del otro) en móvil. */
   .services {
     flex-direction: column;
     align-items: center;
@@ -365,6 +405,7 @@ input[type="email"] {
     max-width: 400px;
   }
 
+  /* --> Footer en una sola columna centrada en móvil. */
   footer {
     flex-direction: column;
     text-align: center;
