@@ -162,3 +162,49 @@ nav ul li a:hover {
   object-fit: cover;
   opacity: 1; 
 }
+
+/* Aseguramos que el contenido no quede bajo la barra fija */
+.contenido-ciudad {
+  padding: 2.5rem 3rem;
+  background: var(--color-texto-claro);
+  max-width: 900px;
+  margin: 0 auto;
+  margin-top: 40px; /* --> Para evitar que el contenido quede bajo la barra fija */
+}
+.contenido-ciudad h1 {
+  font-size: 2.5rem;
+  color: var(--color-encabezado);
+  margin-bottom: 1.2rem;
+}
+
+.contenido-ciudad p {
+  line-height: 1.8;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+.seccion-puntos {
+  padding: 2.5rem 3rem;
+  background: var(--color-fondo-seccion);
+}
+
+.seccion-puntos h2 {
+  font-size: 2rem;
+  color: var(--color-texto-claro);
+  margin-bottom: 1.4rem;
+}
+
+.categorias {
+  display: flex;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.categoria {
+  padding: 0.4rem 1rem;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: var(--radio-boton);
+  font-size: 0.95rem;
+  color: var(--color-texto-claro);
+  font-weight: 500;
+}
