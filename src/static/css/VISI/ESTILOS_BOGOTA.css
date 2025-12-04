@@ -248,3 +248,93 @@ nav ul li a:hover {
   margin-bottom: 1rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
+
+.tarjeta h3 {
+  font-size: 1.35rem;
+  color: var(--color-encabezado);
+  margin-bottom: 0.7rem;
+  line-height: 1.35;
+}
+
+.calificacion {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.7rem;
+}
+
+.calificacion span:first-child {
+  font-weight: bold;
+  color: var(--color-encabezado);
+  font-size: 1.1rem;
+}
+
+.estrellas {
+  color: var(--color-primario);
+  font-size: 1.25rem;
+}
+
+.tipo {
+  color: #666;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+
+/* === MEDIA QUERY: solo para pantallas pequeñas (móvil y tablet) === */
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 1rem 1.5rem;
+  }
+
+  nav ul {
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .contenido-ciudad,
+  .seccion-puntos {
+    padding: 1.8rem 1.5rem;
+  }
+
+  .contenido-ciudad {
+    margin-top: 90px;
+  }
+
+  .contenido-ciudad h1 {
+    font-size: 2rem;
+  }
+
+  .seccion-puntos h2 {
+    font-size: 1.6rem;
+  }
+
+  .categorias {
+    gap: 0.8rem;
+    flex-wrap: wrap;
+  }
+
+  .categoria {
+    padding: 0.3rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .lista-lugares {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+    max-width: 100%;
+  }
+
+  .tarjeta {
+    padding: 1.2rem;
+  }
+
+  .tarjeta h3 {
+    font-size: 1.2rem;
+  }
+
+  .imagen-tarjeta {
+    height: 180px;
+  }
+}
