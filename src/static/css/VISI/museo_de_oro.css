@@ -163,210 +163,241 @@ nav ul li a:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* === NUEVO: Sección Hero (imagen grande de Bogotá) === */
-
-.hero-carousel {
+/* --- Hero Section --- */
+.hero {
+  height: 500px;
+  background-size: cover;
+  background-position: center;
   position: relative;
-  height: 70vh;
-  overflow: hidden;
-  margin-top: 140px; /* Ajustado para dejar espacio debajo de ambos menús fijos */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  border-radius: 30%;
 }
 
-/* Aseguramos que el contenido no quede bajo la barra fija */
-.contenido-ciudad {
-  padding: 2.5rem 3rem;
-  background: var(--color-texto-claro);
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.hero-contenido {
+  position: relative;
+  z-index: 2;
   max-width: 900px;
   margin: 0 auto;
-  margin-top: 40px;
-}
-.contenido-ciudad h1 {
-  font-size: 2.5rem;
-  color: var(--color-encabezado);
-  margin-bottom: 1.2rem;
-}
-
-.contenido-ciudad p {
-  line-height: 1.8;
-  font-size: 1.1rem;
-  color: #444;
-}
-
-.seccion-puntos {
-  padding: 2.5rem 3rem;
-  background: var(--color-fondo-seccion);
-}
-
-.seccion-puntos h2 {
-  font-size: 2rem;
-  color: var(--color-texto-claro);
-  margin-bottom: 1.4rem;
-}
-
-.categorias {
+  padding: 60px 20px 0;
   display: flex;
-  gap: 1.2rem;
-  margin-bottom: 2rem;
+  flex-direction: column;
+  align-items: center;
 }
 
-.categoria {
-  padding: 0.4rem 1rem;
-  background: rgba(255, 255, 255, 0.25);
-  border-radius: var(--radio-boton);
-  font-size: 0.95rem;
-  color: var(--color-texto-claro);
-  font-weight: 500;
+.hero-contenido h1 {
+  color: var(--color-blanco);
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 32px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
-.lista-lugares {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3.5rem;
+.formulario-busqueda {
+  display: flex;
+  gap: 20px;
+  background: var(--color-blanco);
+  padding: 24px;
+  border-radius: var(--radio-bordes);
+  box-shadow: var(--sombra-tarjeta);
+}
+
+.campo-busqueda {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 180px;
+}
+
+.campo-busqueda i {
+  color: var(--color-azul-claro);
+  font-size: 18px;
+}
+
+.campo-busqueda span {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-negro-suave);
+}
+
+.valor {
+  font-size: 16px;
+  color: var(--color-gris-texto);
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+/* --- Filtros --- */
+.filtros {
+  display: flex;
+  justify-content: center;
+  margin: 24px 0;
+}
+
+.boton-filtros {
+  background-color: var(--color-azul-claro);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+/* --- Resultados --- */
+.resultados {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto 40px;
+  padding: 0 20px;
 }
 
-/* === NUEVO: Estilos para tarjetas con imágenes y enlaces === */
-
-.tarjeta-enlace {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-  transition: transform var(--transicion-rapida);
+.encabezado-resultados {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
 }
 
-.tarjeta-enlace:hover {
-  transform: translateY(-5px);
+.encabezado-resultados h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-negro-suave);
 }
 
-.tarjeta {
-  background: var(--color-texto-claro);
-  border-radius: var(--radio-tarjeta);
-  padding: 1.6rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-  color: #333;
+.boton-ver-todos {
+  background-color: var(--color-azul-claro);
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
 }
 
-.imagen-tarjeta {
+.tarjetas-hoteles {
+  display: flex;
+  gap: 24px;
+  overflow: hidden;
+  position: relative;
+}
+
+.tarjeta-hotel {
+  background: white;
+  border-radius: var(--radio-bordes);
+  box-shadow: var(--sombra-tarjeta);
+  padding: 16px;
+  width: 280px;
+  flex-shrink: 0;
+}
+
+.tarjeta-hotel img {
   width: 100%;
-  height: 200px;
+  height: 160px;
   object-fit: cover;
-  border-radius: var(--radio-tarjeta) var(--radio-tarjeta) 0 0;
-  display: block;
-  margin-bottom: 1rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  margin-bottom: 12px;
 }
 
-.tarjeta h3 {
-  font-size: 1.25rem;
-  color: var(--color-encabezado);
-  margin-bottom: 0.7rem;
-  line-height: 1.35;
+.tarjeta-hotel h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--color-negro-suave);
 }
 
 .calificacion {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  margin-bottom: 0.7rem;
+  gap: 4px;
+  margin-bottom: 10px;
+  color: #ff9100;
+  font-size: 14px;
 }
 
-.calificacion span:first-child {
-  font-weight: bold;
-  color: var(--color-encabezado);
-  font-size: 1.1rem;
+.precio {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-negro-suave);
+  margin-bottom: 14px;
 }
 
-.estrellas {
-  color: var(--color-encabezado);
-  font-size: 1.25rem;
+.boton-consultar {
+  width: 100%;
+  background-color: var(--color-azul-claro);
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
 }
 
-.tipo {
-  color: #666;
-  font-size: 0.95rem;
-  font-weight: 500;
+/* Flecha de desplazamiento (representación visual) */
+.flecha-desplazamiento {
+  width: 40px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--sombra-suave);
+  cursor: pointer;
+  align-self: center;
 }
 
-/* === MEDIA QUERY: solo para pantallas pequeñas (móvil y tablet) === */
+/* --- Responsive básico --- */
+@media (max-width: 1024px) {
+  .formulario-busqueda {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .tarjetas-hoteles {
+    justify-content: center;
+  }
+}
+
 @media (max-width: 768px) {
-  .navbar-container {
-    padding: 1rem 1.5rem;
+  .navbar-principal {
+    padding: 12px 20px;
   }
-
-  nav ul {
-    gap: 1.2rem;
-    flex-wrap: wrap;
-    justify-content: center;
+  .menu-principal {
+    display: none;
   }
-
-  .submenu-container {
-    padding: 0.5rem 1.5rem;
-    top: 80px;
+  .hero {
+    height: 400px;
   }
-
-  .submenu ul {
-    gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: center;
+  .hero-contenido h1 {
+    font-size: 28px;
   }
-
-  .submenu ul li a {
-    font-size: 0.85rem;
-    padding: 0.2rem 0.4rem;
+  .formulario-busqueda {
+    flex-direction: column;
+    gap: 16px;
   }
-
-  .contenido-ciudad,
-  .seccion-puntos {
-    padding: 1.8rem 1.5rem;
+  .encabezado-resultados {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
   }
-
-  .contenido-ciudad {
-    margin-top: 90px;
+  .tarjetas-hoteles {
+    overflow-x: auto;
+    padding-bottom: 12px;
   }
-
-  .hero-carousel {
-    margin-top: 160px; /* Más espacio en móvil */
-  }
-
-  .contenido-ciudad h1 {
-    font-size: 2rem;
-  }
-
-  .seccion-puntos h2 {
-    font-size: 1.6rem;
-  }
-
-  .categorias {
-    gap: 0.8rem;
-    flex-wrap: wrap;
-  }
-
-  .categoria {
-    padding: 0.3rem 0.8rem;
-    font-size: 0.85rem;
-  }
-
-  .lista-lugares {
-    grid-template-columns: 1fr;
-    gap: 1.8rem;
-    max-width: 100%;
-  }
-
-  .tarjeta {
-    padding: 1.2rem;
-  }
-
-  .tarjeta h3 {
-    font-size: 1.2rem;
-  }
-
-  .imagen-tarjeta {
-    height: 180px;
+  .flecha-desplazamiento {
+    display: none;
   }
 }
