@@ -1,195 +1,95 @@
-<!-- Declara el tipo de documento como HTML5 -->
 <!DOCTYPE html>
-
-<!-- Define el idioma principal de la página como español -->
 <html lang="es">
-
-<!-- Sección de cabecera del documento: contiene metadatos y enlaces a recursos externos -->
 <head>
-
-  <!-- Especifica la codificación de caracteres como UTF-8 para soportar acentos y símbolos -->
   <meta charset="UTF-8" />
-
-  <!-- Configura la vista para que sea responsive en dispositivos móviles -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-  <!-- Define el título que aparece en la pestaña del navegador -->
   <title>Tu Próxima Gran Aventura</title>
-
-  <!-- Enlaza la hoja de estilos externa 'styles.css' para aplicar estilos a la página -->
   <link rel="stylesheet" href="styles.css" />
-
-<!-- Cierra la sección <head> -->
 </head>
-
-<!-- Cuerpo visible de la página web -->
 <body>
 
-  <!-- Barra de navegación superior con logo, menú y acceso al usuario -->
-  <header>
-
-    <!-- Contenedor principal que agrupa los elementos de la barra de navegación -->
-    <div class="navbar-container">
-
-      <!-- Sección del logo, alineado a la izquierda -->
-      <div class="logo">
-
-        <!-- Contenedor circular para la imagen del logo -->
-        <div class="logo-container">
-
-          <!-- Imagen del logo de la empresa (Edelle) con texto alternativo para accesibilidad -->
+  <header class="barra-navegacion">
+    <div class="barra-navegacion__contenido">
+      <div class="barra-navegacion__logo">
+        <div class="logo">
           <img src="src/static/imagenes/INICIO/logo_edelle.jpg" alt="Edelle - Tu Próxima Gran Aventura" />
-
-        <!-- Cierra el contenedor del logo -->
         </div>
-
-      <!-- Cierra la sección del logo -->
       </div>
 
-      <!-- Barra de navegación con enlaces principales del sitio -->
-      <nav>
-
-        <!-- Lista no ordenada de elementos del menú -->
+      <nav class="barra-navegacion__menu">
         <ul>
-
-          <!-- Enlace a la página de inicio -->
           <li><a href="index.html">Inicio</a></li>
-
-          <!-- Enlace a la página "Quiénes Somos" -->
           <li><a href="src/templates/visitante/quienes-somos.html">Quiénes Somos</a></li>
-
-          <!-- Enlace a la página de servicios -->
           <li><a href="src/templates/visitante/servicios.html">Servicios</a></li>
-
-          <!-- Enlace a la página de destinos turísticos -->
           <li><a href="src/templates/visitante/destinos.html">Destinos</a></li>
-
-        <!-- Cierra la lista de menú -->
         </ul>
-
-      <!-- Cierra la barra de navegación -->
       </nav>
 
-      <!-- Icono de usuario, alineado a la derecha, para iniciar sesión -->
-      <div class="user-icon">
-
-        <!-- Enlace al formulario de inicio de sesión con ícono SVG de usuario -->
+      <div class="barra-navegacion__usuario">
         <a href="src/templates/comprador/login.html" title="Iniciar Sesión">
-
-          <!-- Icono de perfil de usuario en formato SVG (escalable y sin dependencia de imágenes) -->
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M20 21v-2a4 4 0 0 0-5.656-3.656L12 17l-2.344-2.344A4 4 0 0 0 4 17v2"></path>
             <circle cx="12" cy="9" r="4"></circle>
           </svg>
-
-        <!-- Cierra enlace de usuario -->
         </a>
-
-      <!-- Cierra contenedor del ícono de usuario -->
       </div>
-
-    <!-- Cierra el contenedor de la barra de navegación -->
     </div>
-
-  <!-- Cierra el encabezado (header) -->
   </header>
 
-  <!-- Sección principal destacada (hero) con imagen y mensaje promocional -->
-  <section class="hero-carousel">
-
-    <!-- Contenedor del carrusel (aunque solo tiene una imagen estática) -->
-    <div class="carousel-container">
-
-      <!-- Comentario con una nota sobre funcionalidad futura de animación (aunque actualmente no se usa) -->
-
-      <!-- Imagen principal del hero, estática (sin animación real implementada) -->
-      <img src="/src/static/imagenes/INICIO/frame1.jpg" alt="Viaje Tranquilo" class="carousel-image">
-
-    <!-- Cierra contenedor del carrusel -->
+  <section class="hero">
+    <div class="hero__fondo">
+      <img src="/src/static/imagenes/INICIO/frame1.jpg" alt="Viaje Tranquilo" class="hero__imagen">
     </div>
-
-    <!-- Contenido superpuesto sobre la imagen del hero -->
-    <div class="hero-content">
-
-      <!-- Título llamativo para captar la atención del visitante -->
+    <div class="hero__contenido">
       <h1>Tu Próxima Gran Aventura<br>Comienza Aquí</h1>
-
-      <!-- Subtítulo con eslogan promocional -->
       <p>Viaja tranquilo, gasta poquito, vive bonito.</p>
-
-      <!-- Botón principal que redirige a la página de servicios -->
-      <a href="/src/templates/visitante/servicios.html" class="boton-principal">Explora Nuestros Servicios</a>
-
-    <!-- Cierra el contenedor de contenido del hero -->
+      <a href="/src/templates/visitante/servicios.html" class="boton boton--primario">Explora Nuestros Servicios</a>
     </div>
-
-  <!-- Cierra sección hero -->
   </section>
 
-  <!-- Sección que muestra los servicios principales de la empresa -->
-  <section class="services">
-
-    <!-- Primera tarjeta de servicio: crear viaje a medida -->
-    <div class="service-card">
+  <section class="seccion-servicios">
+    <div class="tarjeta-servicio">
       <img src="/src/static/imagenes/INICIO/Crea tu Tour 1.jpg" alt="Crea Tu Propio Viaje" />
-      <h3>Crea Tu Propio Viaje</h3>
-      <p>Tu viaje, tus reglas. Diseñamos tu experiencia a medida para una aventura única.</p>
-      <a href="#" class="boton-secundario">Conoce Más</a>
+      <h3 class="tarjeta-servicio__titulo">Crea Tu Propio Viaje</h3>
+      <p class="tarjeta-servicio__descripcion">Tu viaje, tus reglas. Diseñamos tu experiencia a medida para una aventura única.</p>
+      <a href="#" class="boton boton--secundario">Conoce Más</a>
     </div>
 
-    <!-- Segunda tarjeta de servicio: compra de pasajes -->
-    <div class="service-card">
+    <div class="tarjeta-servicio">
       <img src="/src/static/imagenes/INICIO/comprar pasajes 2.jpg" alt="Comprar Pasajes" />
-      <h3>Comprar Pasajes</h3>
-      <p>Comparamos las mejores ofertas. Ahorra en tu viaje con el mejor precio y comodidad.</p>
-      <a href="#" class="boton-secundario">Conoce Más</a>
+      <h3 class="tarjeta-servicio__titulo">Comprar Pasajes</h3>
+      <p class="tarjeta-servicio__descripcion">Comparamos las mejores ofertas. Ahorra en tu viaje con el mejor precio y comodidad.</p>
+      <a href="#" class="boton boton--secundario">Conoce Más</a>
     </div>
 
-    <!-- Tercera tarjeta de servicio: alquiler de vehículos -->
-    <div class="service-card">
+    <div class="tarjeta-servicio">
       <img src="/src/static/imagenes/INICIO/conocer ciudades.jpg" alt="Alquila Un Vehículo" />
-      <h3>Conocer ciudades</h3>
-      <p>Tu aventura no se detiene. Descubre las ciudades menos conocidad de colombia y llenate te experiencias involdables.</p>
-      <a href="#" class="boton-secundario">Conoce Más</a>
+      <h3 class="tarjeta-servicio__titulo">Conocer ciudades</h3>
+      <p class="tarjeta-servicio__descripcion">Tu aventura no se detiene. Descubre las ciudades menos conocidas de Colombia y llénate de experiencias inolvidables.</p>
+      <a href="#" class="boton boton--secundario">Conoce Más</a>
     </div>
-
-  <!-- Cierra sección de servicios -->
   </section>
 
-  <!-- Pie de página (footer) con información de contacto y formulario de suscripción -->
-  <footer>
-
-    <!-- Primera columna: información de marca -->
-    <div class="footer-column">
-      <h4>Edelle</h4>
-      <p>Tu compañero de confianza para experiencias de viaje inolvidables.</p>
+  <footer class="pie">
+    <div class="pie__columna">
+      <h4 class="pie__titulo">Edelle</h4>
+      <p class="pie__texto">Tu compañero de confianza para experiencias de viaje inolvidables.</p>
     </div>
 
-    <!-- Segunda columna: datos de contacto -->
-    <div class="footer-column">
-      <h4>Contactanos</h4>
-      <p>123 Calle del Viajero, Ciudad Aventura</p>
-      <p>+1 234 567 8900</p>
-      <p>Edelle@Gmail.com</p>
+    <div class="pie__columna">
+      <h4 class="pie__titulo">Contáctanos</h4>
+      <p class="pie__texto">123 Calle del Viajero, Ciudad Aventura</p>
+      <p class="pie__texto">+1 234 567 8900</p>
+      <p class="pie__texto">Edelle@Gmail.com</p>
     </div>
 
-    <!-- Tercera columna: formulario para suscribirse al boletín -->
-    <div class="footer-column">
-      <h4>Recibe Ofertas Exclusivas</h4>
-      <p>Suscríbete a nuestro boletín para las mejores promociones y tips de viaje.</p>
-
-      <!-- Campo de entrada para correo electrónico -->
-      <input type="email" placeholder="Tu Correo Electrónico" />
-
-      <!-- Botón para enviar la suscripción -->
-      <button class="boton-suscribir">Suscribirme</button>
+    <div class="pie__columna">
+      <h4 class="pie__titulo">Recibe Ofertas Exclusivas</h4>
+      <p class="pie__texto">Suscríbete a nuestro boletín para las mejores promociones y tips de viaje.</p>
+      <input type="email" placeholder="Tu Correo Electrónico" class="pie__correo" />
+      <button class="boton boton--suscribir">Suscribirme</button>
     </div>
-
-  <!-- Cierra el pie de página -->
   </footer>
 
-<!-- Cierra el cuerpo de la página -->
 </body>
-
-<!-- Cierra el documento HTML -->
 </html>
