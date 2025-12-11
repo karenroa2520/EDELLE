@@ -1,3 +1,4 @@
+
 /* ===== VARIABLES GLOBALES ===== */
 :root {
   --color-primary-dark: #000033;
@@ -245,6 +246,111 @@ body {
   .main-content__text h2 {
     font-size: 1.5rem;
     letter-spacing: 1px;
+  }
+
+  .menu-toggle-label {
+    font-size: 1.2rem;
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+/* ==============================================
+   MEDIAS QUERIES — RESPONSIVIDAD
+   ============================================== */
+
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    min-height: 300px;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    transition: left 0.3s ease;
+    z-index: 100;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu-toggle-label {
+    display: block;
+  }
+
+
+  .menu-toggle:checked ~ .sidebar {
+    left: 0;
+  }
+
+  .sidebar__header,
+  .sidebar__footer {
+    display: none;
+  }
+
+  .sidebar__nav {
+    padding: 1rem 0;
+  }
+
+  .sidebar__menu-link {
+    font-size: 1.1rem;
+    padding: 1rem 1.5rem;
+  }
+
+  .main-content__title {
+    font-size: 2rem;
+  }
+
+  .main-content__items {
+    width: 95%;
+    padding: 0;
+  }
+
+  .trip-card {
+    flex-direction: column;
+    padding: 0.75rem;
+  }
+
+  .trip-card__image {
+    width: 100%;
+    height: 60px;
+  }
+
+  .trip-card--placeholder {
+    height: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    min-height: 250px;
+  }
+
+  .sidebar__menu-link {
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .main-content__title {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+  }
+
+  .trip-card {
+    padding: 0.5rem;
+  }
+
+  .trip-card__content {
+    font-size: 0.85rem;
+  }
+
+  .trip-card--placeholder {
+    height: 60px;
   }
 
   .menu-toggle-label {

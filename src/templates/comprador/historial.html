@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bienvenido Viajero</title>
-  <link rel="stylesheet" href="/src/static/css/USER/Estilo_principal.css" />
+  <title>Mi Historial</title>
+  <link rel="stylesheet" href="/src/static/css/USER/historial_estilos.css" />
 </head>
 <body>
   <div class="layout">
-
-    <!-- Menú hamburguesa para móvil -->
+    <!-- Menú hamburguesa -->
     <input type="checkbox" id="menu-toggle" class="menu-toggle" />
     <label for="menu-toggle" class="menu-toggle-label">☰</label>
 
+    <!-- Sidebar: estructura idéntica a la primera imagen -->
     <aside class="sidebar">
       <div class="sidebar__header">
         <img src="/src/static/imagenes/USER/PERFIL USUARIO.jpg" alt="Avatar de Bob" class="sidebar__avatar" />
@@ -20,8 +20,8 @@
       </div>
       <nav class="sidebar__nav">
         <ul class="sidebar__menu">
-          <li class="sidebar__menu-item"><a href="/" class="sidebar__menu-link">Menu</a></li>
-          <li class="sidebar__menu-item"><a href="/src/templates/comprador/historial.html" class="sidebar__menu-link">Historial</a></li>
+          <li class="sidebar__menu-item"><a href="/src/templates/comprador/Principal_comprador.html" class="sidebar__menu-link">Menu</a></li>
+          <li class="sidebar__menu-item"><a href="/src/templates/comprador/historial.html" class="sidebar__menu-link sidebar__menu-link--active">Historial</a></li>
           <li class="sidebar__menu-item"><a href="#" class="sidebar__menu-link">Mis tours</a></li>
           <li class="sidebar__menu-item"><a href="#" class="sidebar__menu-link">Pasajes</a></li>
           <li class="sidebar__menu-item"><a href="#" class="sidebar__menu-link">Mis comentarios</a></li>
@@ -32,10 +32,18 @@
       </div>
     </aside>
 
+    <!-- Contenido principal: historial -->
     <main class="main-content">
-      <div class="main-content__bg-diagonal"></div>
-      <div class="main-content__text">
-        <h2>¡BIENVENIDO VIAJERO, A QUE LUGAR IRMOS HOY?!</h2>
+      <div class="main-content__bg"></div>
+      <h1 class="main-content__title">MI HISTORIAL</h1>
+      <div class="historial-card">
+        <div class="card-image-placeholder">Hotel Bogotá</div>
+        <div class="card-content">
+          <p><strong>Destino:</strong> Bogotá</p>
+          <p><strong>Cosas:</strong> en el hotel ------------------- con las actividades de...</p>
+          <p><strong>FECHA:</strong> 10-11-2025</p>
+          <p><strong>TOTAL PAGADO :</strong> 2'500.000</p>
+        </div>
       </div>
     </main>
   </div>
