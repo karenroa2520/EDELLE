@@ -1,0 +1,99 @@
+/* ==============================================
+   VARIABLES GLOBALES - BEM + THEMING
+   ============================================== */
+:root {
+  --color-primary-dark: #000033;
+  --color-primary-light: #8da7e8;
+  --color-white: #ffffff;
+  --color-text: #000000;
+  --color-bg-main: #f5f5f5;
+  --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-size-large: 2.5rem;
+  --font-size-medium: 1.5rem;
+  --font-size-small: 1rem;
+  --spacing: 1.5rem;
+  --border-radius: 8px;
+  --transition: all 0.3s ease;
+  --menu-width: 300px;
+}
+
+/* ==============================================
+   RESET Y ESTILO GENERAL
+   ============================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: #222;
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+.layout {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ==============================================
+    SIDEBAR
+   ============================================== */
+.sidebar {
+  width: var(--menu-width);
+  background: var(--color-primary-dark);
+  color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--spacing);
+  transition: var(--transition);
+  z-index: 10;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+}
+
+.sidebar__header {
+  text-align: center;
+  margin-bottom: var(--spacing);
+}
+
+.sidebar__avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: var(--spacing);
+  border: 2px solid var(--color-white);
+}
+
+.sidebar__greeting {
+  font-size: var(--font-size-medium);
+  margin-bottom: var(--spacing);
+}
+
+.sidebar__nav {
+  flex-grow: 1;
+}
+
+.sidebar__menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar__menu-item {
+  margin-bottom: 1rem;
+}
+
+.sidebar__menu-link {
+  color: var(--color-white);
+  text-decoration: none;
+  font-size: var(--font-size-small);
+  display: block;
+  padding: 0.75rem 1rem;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
