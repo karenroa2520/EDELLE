@@ -9,6 +9,7 @@
   --color-texto-secundario: #e0e0e0;
   --color-primario: #4cc9f0;
   --color-primario-hover: #3a9fd0;
+  --color-botones: #D9D9D9;
 
   /* --> Fuente principal: moderna, legible y compatible en la mayoría de dispositivos. */
   --fuente-principal: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -184,9 +185,9 @@ nav ul li a:hover {
 /* --> Cuadrícula de destinos: 2 columnas, con espacio entre tarjetas. */
 .destinations-grid {
   display: grid;
-  grid-template-columns: repeat(3, 4fr); /* --> Equivalente a dos columnas iguales (mejor usar 1fr 1fr). */
-  gap: 6rem;
-  padding: 1rem 0;
+  grid-template-columns: repeat(2, 5fr); /* --> Equivalente a dos columnas iguales (mejor usar 1fr 1fr). */
+  gap: 2rem;
+  padding: 2rem 0;
 }
 
 /* --> Cada tarjeta: fondo azul claro, redondeada, con sombra y transición suave. */
@@ -198,27 +199,27 @@ nav ul li a:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease;
   /* --> Limita el ancho para evitar que se estiren demasiado en pantallas anchas. */
-  max-width: 400px;
+  max-width: 300px;
   margin: 0 auto; /* --> Centra cada tarjeta horizontalmente. */
 }
 
 /* --> Efecto al pasar el mouse: la tarjeta se eleva ligeramente. */
 .destination-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
 }
 
 /* --> Imagen dentro de la tarjeta: altura fija, sin deformar, con bordes redondeados. */
 .destination-card img {
   width: 100%;
-  height: 300px;
+  height: 200px;
   object-fit: cover;
   border-radius: 15px;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 
 /* --> Título del destino: mayúsculas, negrita, tamaño moderado. */
 .destination-card h3 {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   margin-bottom: 1rem;
   color: var(--color-texto-oscuro); /* --> ¡Advertencia! Esta variable NO está definida en :root. Debería ser un color fijo o usar --color-texto-claro. */
   font-weight: bold;
@@ -231,12 +232,13 @@ nav ul li a:hover {
   color: #333;
   border: none;
   border-radius: 25px;
-  padding: 0.85rem 1.5rem;
+  padding: 0.75rem 1.5rem;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  font-size: 1rem;
+  font-size: 0.9rem;
   width: 100%;
+  text-decoration: none;
 }
 
 /* --> Efecto hover en botón: fondo gris más oscuro. */

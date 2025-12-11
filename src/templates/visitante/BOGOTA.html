@@ -9,46 +9,32 @@
 <body>
 
   <header>
-  <div class="navbar-container">
-    <div class="logo">
-      <div class="logo-container">
-        <img src="/src/static/imagenes/INICIO/logo_edelle.jpg" alt="Edelle - Tu Próxima Gran Aventura" />
+    <div class="navbar-container">
+      <div class="logo">
+        <div class="logo-container">
+          <img src="/src/static/imagenes/INICIO/logo_edelle.jpg" alt="Edelle - Tu Próxima Gran Aventura" />
+        </div>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="/index.html">Inicio</a></li>
+          <li><a href="/src/templates/visitante/quienes-somos.html">Quienes Somos</a></li>
+          <li><a href="/src/templates/visitante/servicios.html">Servicios</a></li>
+          <li><a href="/src/templates/visitante/destinos.html">Destinos</a></li>
+        </ul>
+      </nav>
+
+      <div class="user-icon">
+        <a href="/src/templates/comprador/login.html" title="Iniciar Sesión">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-5.656-3.656L12 17l-2.344-2.344A4 4 0 0 0 4 17v2"></path>
+            <circle cx="12" cy="9" r="4"></circle>
+          </svg>
+        </a>
       </div>
     </div>
-
-    <nav>
-      <ul>
-        <li><a href="/index.html">Inicio</a></li>
-        <li><a href="/src/templates/visitante/quienes-somos.html">Quienes Somos</a></li>
-        <li><a href="/src/templates/visitante/servicios.html">Servicios</a></li>
-        <li><a href="/src/templates/visitante/destinos.html">Destinos</a></li>
-      </ul>
-    </nav>
-
-    <div class="user-icon">
-      <a href="src/templates/comprador/login.html" title="Iniciar Sesión">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M20 21v-2a4 4 0 0 0-5.656-3.656L12 17l-2.344-2.344A4 4 0 0 0 4 17v2"></path>
-          <circle cx="12" cy="9" r="4"></circle>
-        </svg>
-      </a>
-    </div>
-  </div>
-
-  <!-- SUBMENU (nuevo) -->
-  <div class="submenu-container">
-    <nav class="submenu">
-      <ul>
-        <li><a href="#ubicacion">Bogota</a></li>
-        <li><a href="/src/templates/visitante/museo_de_oro.html">Hoteles</a></li>
-        <li><a href="#cosas-por-hacer">Cosas Por Hacer</a></li>
-        <li><a href="#restaurantes">Restaurantes</a></li>
-        <li><a href="#pasajes">Pasajes</a></li>
-        <li><a href="#resenas">Reseñas</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+  </header>
 
   <!-- NUEVA SECCIÓN: Imagen Hero de Bogotá -->
   <section class="hero-carousel">
@@ -60,15 +46,12 @@
       <h1>Bogotá, Colombia</h1>
       <p>
         Diez millones de personas habitan la vibrante, pasional y floreciente Bogotá.
-        La energía de este centro metropolitano de Colombia se debe, en parte, a los cientos de lugares 
-        eclécticos y auténticos para ir a comer: fantásticos vinos y frecuentes festivales gastronómicos. 
-        Pregúntales a los lugareños adónde les gusta comer: después prueba las empanadas con ají cuando 
-        pases por el centro histórico de La Candelaria o mientras vayas de compras por el lado norte de la ciudad.
+        La energía de este centro metropolitano de Colombia se debe, en parte, a los cientos de lugares eclécticos y auténticos para ir a comer: fantásticos vinos y frecuentes festivales gastronómicos. Pregúntales a los lugareños adónde les gusta comer: después prueba las empanadas con ají cuando pases por el centro histórico de La Candelaria o mientras vayas de compras por el lado norte de la ciudad.
       </p>
     </section>
 
     <section class="seccion-puntos">
-      <h2>Puntos importantes en Bogotá</h2>
+      <h2>Puntos esenciales en Bogotá</h2>
 
       <div class="categorias">
         <span class="categoria">Joyas Ocultas</span>
@@ -80,9 +63,9 @@
 
       <div class="lista-lugares">
         <!-- Tarjeta 1 -->
-        <a href="" class="tarjeta-enlace">
+        <a href="/src/templates/" class="tarjeta-enlace">
           <article class="tarjeta">
-            <img src="/src/static/imagenes/DESTINOS/BOGOTA/sitios de interes/museo del oro.jpg" alt="Museo del Oro" class="imagen-tarjeta">
+            <img src="/src/static/imagenes/DESTINOS/BOGOTA/museo del oro.jpg" alt="Museo del Oro" class="imagen-tarjeta">
             <h3>Museo del oro</h3>
             <div class="calificacion">
               <span>4.6</span>
@@ -97,7 +80,7 @@
         <!-- Tarjeta 2 -->
         <a href="" class="tarjeta-enlace">
           <article class="tarjeta">
-            <img src="/src/static/imagenes/DESTINOS/BOGOTA/sitios de interes/mount-monserrate.jpg" alt="Cerro de Monserrate" class="imagen-tarjeta">
+            <img src="/src/static/imagenes/DESTINOS/BOGOTA/mount-monserrate.jpg" alt="Jardín Botánico de Bogotá" class="imagen-tarjeta">
             <h3>Cerro de Monserrate</h3>
             <div class="calificacion">
               <span>4.5</span>
@@ -112,7 +95,7 @@
         <!-- Tarjeta 3 -->
         <a href="" class="tarjeta-enlace">
           <article class="tarjeta">
-            <img src="/src/static/imagenes/DESTINOS/BOGOTA/hoteles/hotel cabrera imperial.jpg" alt="Hotel Cabrera Imperial" class="imagen-tarjeta">
+            <img src="/src/static/imagenes/DESTINOS/BOGOTA/hotel cabrera imperial.jpg" alt="Hotel Cabrera Imperial" class="imagen-tarjeta">
             <h3>Hotel Cabrera Imperial</h3>
             <div class="calificacion">
               <span>4.8</span>
@@ -127,7 +110,7 @@
         <!-- Tarjeta 4 -->
         <a href="" class="tarjeta-enlace">
           <article class="tarjeta">
-            <img src="/src/static/imagenes/DESTINOS/BOGOTA/hoteles/hotel hilton garden inn.jpg" alt="Hotel_Garden_Inn" class="imagen-tarjeta">
+            <img src="/src/static/imagenes/DESTINOS/BOGOTA/hotel hilton garden inn.jpg" alt="Hotel_Garden_Inn" class="imagen-tarjeta">
             <h3>Hotel Hilton Garden Inn</h3>
             <div class="calificacion">
               <span>4.8</span>
@@ -139,109 +122,111 @@
           </article>
         </a>
 
-        <!-- Tarjeta 5 -->
+
         <a href="" class="tarjeta-enlace">
           <article class="tarjeta">
-            <img src="/src/static/imagenes/DESTINOS/BOGOTA/sitios de interes/museo botero.jpg" alt="Museo_Botero" class="imagen-tarjeta">
-            <h3>Museo Botero</h3>
+            <img src="/src/static/imagenes/DESTINOS/BOGOTA/hotel hilton garden inn.jpg" alt="Hotel_Garden_Inn" class="imagen-tarjeta">
+            <h3>Hotel Hilton Garden Inn</h3>
             <div class="calificacion">
-              <span>4.7</span>
+              <span>4.8</span>
               <div class="estrellas">
-                <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
-              </div>
-            </div>
-            <p class="tipo">Museos de arte</p>
-          </article>
-        </a>
-
-
-        <!-- Tarjeta 6 -->
-        <a href="" class="tarjeta-enlace">
-          <article class="tarjeta">
-            <img src="/src/static/imagenes/DESTINOS/BOGOTA/sitios de interes/ek-hotel.jpg" alt="Barrio_La_Candelaria" class="imagen-tarjeta">
-            <h3>EK Hotel</h3>
-            <div class="calificacion">
-              <span>4.4</span>
-              <div class="estrellas">
-                <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
               </div>
             </div>
             <p class="tipo">Hoteles y hospedaje</p>
           </article>
         </a>
 
-          <!-- Tarjeta 7 -->
+
+
         <a href="" class="tarjeta-enlace">
           <article class="tarjeta">
-            <img src="/src/static/imagenes/DESTINOS/BOGOTA/sitios de interes/jardin-botanico-de-bogota.jpg" alt="Hotel_Garden_Inn" class="imagen-tarjeta">
-            <h3>Jardín Botánico de Bogotá Jose Celestino Mutis</h3>
+            <img src="/src/static/imagenes/DESTINOS/BOGOTA/hotel hilton garden inn.jpg" alt="Hotel_Garden_Inn" class="imagen-tarjeta">
+            <h3>Hotel Hilton Garden Inn</h3>
             <div class="calificacion">
-              <span>4.5</span>
-              <div class="estrellas">
-                <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
-              </div>
-            </div>
-            <p class="tipo">Jardines</p>
-          </article>
-        </a>
-
-
-        <!-- Tarjeta 8 -->
-        <a href="" class="tarjeta-enlace">
-          <article class="tarjeta">
-            <img src="/src/static/imagenes/DESTINOS/BOGOTA/sitios de interes/mercado-de-las-pulgas.jpg" alt="Hotel_Garden_Inn" class="imagen-tarjeta">
-            <h3>Mercado de las Pulgas de Usaquén</h3>
-            <div class="calificacion">
-              <span>4.4</span>
-              <div class="estrellas">
-                <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
-              </div>
-            </div>
-            <p class="tipo">Mercado de las pulgas y al aire libre</p>
-          </article>
-        </a>
-
-
-        <!-- Tarjeta 9 -->
-        <a href="" class="tarjeta-enlace">
-          <article class="tarjeta">
-            <img src="/src/static/imagenes/DESTINOS/BOGOTA/sitios de interes/el-amor-en-cada-plato.jpg" alt="Hotel_Garden_Inn" class="imagen-tarjeta">
-            <h3>Restaurante Peruano - Indio De Machu Picchu</h3>
-            <div class="calificacion">
-              <span>4.9</span>
+              <span>4.8</span>
               <div class="estrellas">
                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
               </div>
             </div>
-            <p class="tipo">Peruana, Mariscos, Toscana</p>
+            <p class="tipo">Hoteles y hospedaje</p>
           </article>
         </a>
 
 
-        <!-- Tarjeta 10 -->
+
+
         <a href="" class="tarjeta-enlace">
           <article class="tarjeta">
-            <img src="/src/static/imagenes/DESTINOS/BOGOTA/sitios de interes/los-mejores-espacios.jpg" alt="Hotel_Garden_Inn" class="imagen-tarjeta">
-            <h3>Cantina La 15 Bogotá</h3>
+            <img src="/src/static/imagenes/DESTINOS/BOGOTA/hotel hilton garden inn.jpg" alt="Hotel_Garden_Inn" class="imagen-tarjeta">
+            <h3>Hotel Hilton Garden Inn</h3>
             <div class="calificacion">
-              <span>4.9</span>
+              <span>4.8</span>
               <div class="estrellas">
                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
               </div>
             </div>
-            <p class="tipo">Mexicana, Latina, Centroamericana</p>
+            <p class="tipo">Hoteles y hospedaje</p>
+          </article>
+        </a>
+
+
+
+        <a href="" class="tarjeta-enlace">
+          <article class="tarjeta">
+            <img src="/src/static/imagenes/DESTINOS/BOGOTA/hotel hilton garden inn.jpg" alt="Hotel_Garden_Inn" class="imagen-tarjeta">
+            <h3>Hotel Hilton Garden Inn</h3>
+            <div class="calificacion">
+              <span>4.8</span>
+              <div class="estrellas">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+            </div>
+            <p class="tipo">Hoteles y hospedaje</p>
+          </article>
+        </a>
+
+
+
+        <a href="" class="tarjeta-enlace">
+          <article class="tarjeta">
+            <img src="/src/static/imagenes/DESTINOS/BOGOTA/hotel hilton garden inn.jpg" alt="Hotel_Garden_Inn" class="imagen-tarjeta">
+            <h3>Hotel Hilton Garden Inn</h3>
+            <div class="calificacion">
+              <span>4.8</span>
+              <div class="estrellas">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+            </div>
+            <p class="tipo">Hoteles y hospedaje</p>
+          </article>
+        </a>
+
+
+
+        <a href="" class="tarjeta-enlace">
+          <article class="tarjeta">
+            <img src="/src/static/imagenes/DESTINOS/BOGOTA/hotel hilton garden inn.jpg" alt="Hotel_Garden_Inn" class="imagen-tarjeta">
+            <h3>Hotel Hilton Garden Inn</h3>
+            <div class="calificacion">
+              <span>4.8</span>
+              <div class="estrellas">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+            </div>
+            <p class="tipo">Hoteles y hospedaje</p>
           </article>
         </a>
 
 
         <a href="" class="tarjeta-enlace">
           <article class="tarjeta">
-            <img src="/src/static/imagenes/DESTINOS/BOGOTA/sitios de interes/hotel-estelar-calle-100.jpg" alt="Hotel_Garden_Inn" class="imagen-tarjeta">
-            <h3>Estelar Calle 100</h3>
+            <img src="/src/static/imagenes/DESTINOS/BOGOTA/hotel hilton garden inn.jpg" alt="Hotel_Garden_Inn" class="imagen-tarjeta">
+            <h3>Hotel Hilton Garden Inn</h3>
             <div class="calificacion">
-              <span>4.6</span>
+              <span>4.8</span>
               <div class="estrellas">
-                <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
               </div>
             </div>
             <p class="tipo">Hoteles y hospedaje</p>
