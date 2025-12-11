@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bienvenido Viajero</title>
+  <link rel="stylesheet" href="/src/static/css/USER/Estilo_principal.css" />
+</head>
+<body>
+  <div class="layout">
+
+    <!-- Menu hamburguesa para móvil -->
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+    <label for="menu-toggle" class="menu-toggle-label">☰</label>
+
+    <aside class="sidebar">
+      <div class="sidebar__header">
+        <img src="/src/static/imagenes/USER/PERFIL USUARIO.jpg" alt="Avatar de Bob" class="sidebar__avatar" />
+        <h1 class="sidebar__greeting">Hola Bob!</h1>
+      </div>
+      <nav class="sidebar__nav">
+        <ul class="sidebar__menu">
+          <li class="sidebar__menu-item"><a href="/src/templates/comprador/Principal_comprador.html" class="sidebar__menu-link">Menu</a></li>
+          <li class="sidebar__menu-item"><a href="#" class="sidebar__menu-link">Historial</a></li>
+          <li class="sidebar__menu-item"><a href="#" class="sidebar__menu-link">Mis tours</a></li>
+          <li class="sidebar__menu-item"><a href="#" class="sidebar__menu-link">Pasajes</a></li>
+          <li class="sidebar__menu-item"><a href="#" class="sidebar__menu-link">Mis comentarios</a></li>
+        </ul>
+      </nav>
+      <div class="sidebar__footer">
+        <a href="#" class="sidebar__logout">Cerrar Sesion      📤</a>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <div class="main-content__bg-diagonal"></div>
+      <div class="main-content__text">
+        <h2>¡BIENVENIDO VIAJERO, A QUE LUGAR IRMOS HOY?!</h2>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
