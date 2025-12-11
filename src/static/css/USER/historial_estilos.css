@@ -173,6 +173,7 @@ body {
 }
 
 /* === Caja exacta del historial === */
+/* === Caja exacta del historial === */
 .historial-card {
   width: 90%;
   max-width: 600px;
@@ -185,6 +186,7 @@ body {
   align-items: flex-start;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   color: #000;
+  margin-bottom: 1.5rem; /* ←←← ESPACIO ENTRE CARDS */
 }
 
 .card-image-placeholder {
