@@ -1,146 +1,168 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hoteles en Bogotá</title>
-  <link rel="stylesheet" href="/src/static/css/VISI/museo_de_oro.css">
-  <!-- Font Awesome para íconos -->
-  <link rel="stylesheet" href="/src/static/css/VISI/hoteles-bogota.css">
-  <!-- Fuente principal (similar a la de la imagen) -->
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"> -->
+  <link rel="stylesheet" href="/src/static/css/VISI/hoteles-bogota.css" />
 </head>
 <body>
-  <!-- Barra de navegación principal -->
+  <!-- Header -->
   <header>
-  <div class="navbar-container">
-    <div class="logo">
-      <div class="logo-container">
-        <img src="/src/static/imagenes/INICIO/logo_edelle.jpg" alt="Edelle - Tu Próxima Gran Aventura" />
+
+    <!-- Contenedor principal que agrupa los elementos de la barra de navegación -->
+    <div class="navbar-container">
+
+      <!-- Sección del logo, alineado a la izquierda -->
+      <div class="logo">
+
+        <!-- Contenedor circular para la imagen del logo -->
+        <div class="logo-container">
+
+          <!-- Imagen del logo de la empresa (Edelle) con texto alternativo para accesibilidad -->
+          <img src="/src/static/imagenes/INICIO/logo_edelle.jpg" alt="Edelle - Tu Próxima Gran Aventura" />
+
+        <!-- Cierra el contenedor del logo -->
+        </div>
+
+      <!-- Cierra la sección del logo -->
       </div>
+
+      <!-- Barra de navegación con enlaces principales del sitio -->
+      <nav>
+
+        <!-- Lista no ordenada de elementos del menú -->
+        <ul>
+
+          <!-- Enlace a la página de inicio -->
+          <li><a href="/index.html">Inicio</a></li>
+
+          <!-- Enlace a la página "Quiénes Somos" -->
+          <li><a href="/src/templates/visitante/quienes-somos.html">Quienes Somos</a></li>
+
+          <!-- Enlace a la página de servicios -->
+          <li><a href="/src/templates/visitante/servicios.html">Servicios</a></li>
+
+          <!-- Enlace a la página de destinos turísticos -->
+          <li><a href="/src/templates/visitante/destinos.html">Destinos</a></li>
+
+        <!-- Cierra la lista de menú -->
+        </ul>
+
+      <!-- Cierra la barra de navegación -->
+      </nav>
+
+      <!-- Icono de usuario, alineado a la derecha, para iniciar sesión -->
+      <div class="user-icon">
+
+        <!-- Enlace al formulario de inicio de sesión con ícono SVG de usuario -->
+        <a href="/src/templates/comprador/login.html" title="Iniciar Sesión">
+
+          <!-- Icono de perfil de usuario en formato SVG (escalable y sin dependencia de imágenes) -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-5.656-3.656L12 17l-2.344-2.344A4 4 0 0 0 4 17v2"></path>
+            <circle cx="12" cy="9" r="4"></circle>
+          </svg>
+
+        <!-- Cierra enlace de usuario -->
+        </a>
+
+      <!-- Cierra contenedor del ícono de usuario -->
+      </div>
+
+    <!-- Cierra el contenedor de la barra de navegación -->
     </div>
 
-    <nav>
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="/src/templates/visitante/quienes-somos.html">Quienes Somos</a></li>
-        <li><a href="/src/templates/visitante/servicios.html">Servicios</a></li>
-        <li><a href="/src/templates/visitante/destinos.html">Destinos</a></li>
-      </ul>
-    </nav>
-
-    <div class="user-icon">
-      <a href="/src/templates/comprador/login.html" title="Iniciar Sesión">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M20 21v-2a4 4 0 0 0-5.656-3.656L12 17l-2.344-2.344A4 4 0 0 0 4 17v2"></path>
-          <circle cx="12" cy="9" r="4"></circle>
-        </svg>
-      </a>
-    </div>
-  </div>
-
-  <!-- SUBMENU (nuevo) -->
-  <div class="submenu-container">
-    <nav class="submenu">
-      <ul>
-        <li><a href="/src/templates/visitante/BOGOTA.html">Bogota</a></li>
-        <li><a href="/src/templates/visitante/museo_de_oro.html">Hoteles</a></li>
-        <li><a href="#cosas-por-hacer">Cosas Por Hacer</a></li>
-        <li><a href="#restaurantes">Restaurantes</a></li>
-        <li><a href="#pasajes">Pasajes</a></li>
-        <li><a href="#resenas">Reseñas</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+  <!-- Cierra el encabezado (header) -->
+  </header>
 
   <!-- Hero Section -->
-  <section class="hero" style="background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80');">
-    <div class="hero-contenido">
-      <h1>Hoteles en Bogotá y lugares donde alojarse</h1>
-      <div class="formulario-busqueda">
-        <div class="campo-busqueda">
-          <i class="fas fa-calendar-days"></i>
-          <span>Check-in</span>
-          <div class="valor">-/-/-</div>
+  <section class="hero">
+    <img src="/src/static/imagenes/DESTINOS/bogota 2.jpg" alt="Fondo de Bogotá" class="hero__image" />
+    <div class="hero__content">
+      <h1 class="hero__title">Hoteles en Bogotá y lugares donde alojarse</h1>
+      <div class="hero__filters">
+        <div class="filter-item">
+          <span>📅 Check-in</span>
+          <span class="filter-value">-/-/-</span>
         </div>
-        <div class="campo-busqueda">
-          <i class="fas fa-calendar-days"></i>
-          <span>Check-out</span>
-          <div class="valor">-/-/-</div>
+        <div class="filter-item">
+          <span>📅 Check-out</span>
+          <span class="filter-value">-/-/-</span>
         </div>
-        <div class="campo-busqueda">
-          <i class="fas fa-users"></i>
-          <span>Habitaciones/huéspedes</span>
-          <div class="valor">1 habitación, 2 huéspedes</div>
+        <div class="filter-item">
+          <span>👥 Habitaciones/huéspedes</span>
+          <span class="filter-value">1 habitación, 2 huéspedes</span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Filtros -->
-  <div class="filtros">
-    <button class="boton-filtros">
-      <i class="fas fa-sliders"></i> FILTROS
-    </button>
-  </div>
-
-  <!-- Resultados -->
-  <section class="resultados">
-    <div class="encabezado-resultados">
-      <h2>Las Mejores Elecciones de los Aventureros</h2>
-      <button class="boton-ver-todos">Ver Todos</button>
+  <section class="filters">
+    <div class="filters__container">
+      <h2 class="filters__title">FILTROS</h2>
     </div>
-    <div class="tarjetas-hoteles">
-      <!-- Tarjeta 1 -->
-      <div class="tarjeta-hotel">
-        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80" alt="Hotel Ejemplo">
-        <h3>Hotel Casa Deco</h3>
-        <div class="calificacion">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star-half-alt"></i>
-          <span>4.5</span>
+  </section>
+
+  <!-- Sección de Hoteles -->
+  <section class="hotels-section">
+    <div class="hotels-section__header">
+      <h2 class="hotels-section__title">Las Mejores Elecciones de los Aventureros</h2>
+      <a href="#" class="hotels-section__view-all">Ver Todos</a>
+    </div>
+
+    <div class="hotels-grid">
+      <!-- Hotel 1 -->
+      <article class="hotel-card">
+        <img src="https://placehold.co/300x200/ddd/000?text=Hotel+La+Colina" alt="La colina - Hotel Cottage" class="hotel-card__image" />
+        <div class="hotel-card__content">
+          <h3 class="hotel-card__name">La colina - Hotel Cottage</h3>
+          <div class="hotel-card__rating">
+            <span class="hotel-card__score">4.9</span>
+            <span class="hotel-card__stars">★★★★★</span>
+          </div>
+          <div class="hotel-card__price">
+            <span class="hotel-card__label">Desde</span>
+            <span class="hotel-card__amount">$219.295</span>
+          </div>
+          <button class="hotel-card__btn">Consultar Disponibilidad</button>
         </div>
-        <p class="precio">Desde $219.295</p>
-        <button class="boton-consultar">Consultar Disponibilidad</button>
-      </div>
-      <!-- Tarjeta 2 -->
-      <div class="tarjeta-hotel">
-        <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=600&q=80" alt="Hotel Ejemplo">
-        <h3>Hotel Boutique La Candelaria</h3>
-        <div class="calificacion">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="far fa-star"></i>
-          <span>4.0</span>
+      </article>
+
+      <!-- Hotel 2 -->
+      <article class="hotel-card">
+        <img src="https://placehold.co/300x200/ddd/000?text=NH+Collection" alt="NH Collection Bogotá Hacienda Royal" class="hotel-card__image" />
+        <div class="hotel-card__content">
+          <h3 class="hotel-card__name">NH Collection Bogotá Hacienda Royal</h3>
+          <div class="hotel-card__rating">
+            <span class="hotel-card__score">4.7</span>
+            <span class="hotel-card__stars">★★★★★</span>
+          </div>
+          <div class="hotel-card__price">
+            <span class="hotel-card__label">Desde</span>
+            <span class="hotel-card__amount">$219.295</span>
+          </div>
+          <button class="hotel-card__btn">Consultar Disponibilidad</button>
         </div>
-        <p class="precio">Desde $185.000</p>
-        <button class="boton-consultar">Consultar Disponibilidad</button>
-      </div>
-      <!-- Tarjeta 3 -->
-      <div class="tarjeta-hotel">
-        <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=600&q=80" alt="Hotel Ejemplo">
-        <h3>Hotel de la Gorda</h3>
-        <div class="calificacion">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <span>5.0</span>
+      </article>
+
+      <!-- Hotel 3 -->
+      <article class="hotel-card">
+        <img src="https://placehold.co/300x200/ddd/000?text=Avani+Royal" alt="Avani Royal Zona T Bogotá Hotel" class="hotel-card__image" />
+        <div class="hotel-card__content">
+          <h3 class="hotel-card__name">Avani Royal Zona T Bogotá Hotel</h3>
+          <div class="hotel-card__rating">
+            <span class="hotel-card__score">4.4</span>
+            <span class="hotel-card__stars">★★★★★</span>
+          </div>
+          <div class="hotel-card__price">
+            <span class="hotel-card__label">Desde</span>
+            <span class="hotel-card__amount">$219.295</span>
+          </div>
+          <button class="hotel-card__btn">Consultar Disponibilidad</button>
         </div>
-        <p class="precio">Desde $320.000</p>
-        <button class="boton-consultar">Consultar Disponibilidad</button>
-      </div>
-      <!-- Flecha de desplazamiento (simulada visualmente) -->
-      <div class="flecha-desplazamiento">
-        <i class="fas fa-chevron-right"></i>
-      </div>
+      </article>
     </div>
   </section>
 </body>

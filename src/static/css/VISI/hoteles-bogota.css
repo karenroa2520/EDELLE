@@ -1,23 +1,24 @@
 :root {
-  /* Colores */
-  --color-encabezado: #03045e;
-  --color-pie: #03045e;
-  --color-fondo-cuerpo: #033f8a;
+  /* --> Colores principales del sitio: azul oscuro para encabezado y pie, azules más claros para fondos, y blanco/claros para texto. */
+  --color-encabezado: #03045E;
+  --color-pie: #03045E;
+  --color-fondo-cuerpo: #033F8A;
   --color-fondo-seccion: #448ec7;
   --color-texto-claro: #ffffff;
   --color-texto-secundario: #e0e0e0;
   --color-primario: #4cc9f0;
   --color-primario-hover: #3a9fd0;
 
-  /* Tipografía */
-  --fuente-principal: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  /* --> Fuente principal para todo el contenido: moderna, legible y compatible en la mayoría de dispositivos. */
+  --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
-  /* Diseño */
+  /* --> Medidas de diseño reutilizables: bordes redondeados para botones y tarjetas, y duración de transiciones suaves. */
   --radio-boton: 25px;
   --radio-tarjeta: 20px;
   --transicion-rapida: 0.3s ease;
 }
 
+/* --> Reseteo universal: elimina márgenes y rellenos por defecto del navegador y asegura que el ancho y alto incluyan bordes y rellenos. */
 * {
   margin: 0;
   padding: 0;
@@ -44,8 +45,8 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* --> Asegura que la barra esté por encima de otros elementos al hacer scroll. */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* --> Sombra suave para separarla visualmente del contenido. */
 }
 
 /* --> Contenedor del logo: alinea verticalmente el logo dentro de la barra. */
@@ -58,8 +59,8 @@ body {
 .logo-container {
   width: 50px;
   height: 50px;
-  border-radius: 50%;
-  overflow: hidden;
+  border-radius: 50%; /* --> Hace que el contenedor sea un círculo. */
+  overflow: hidden; /* --> Recorta la imagen si sobresale del círculo. */
   background-color: white;
   display: flex;
   align-items: center;
@@ -71,8 +72,8 @@ body {
 .logo-container img {
   width: 100%;
   height: auto;
-  object-fit: cover;
-  object-position: center;
+  object-fit: cover; /* --> Rellena el espacio sin deformar la imagen. */
+  object-position: center; /* --> Centra la parte visible de la imagen. */
 }
 
 /* --> Lista del menú de navegación: elementos en fila horizontal, sin viñetas, con espacio entre ellos. */
@@ -91,7 +92,7 @@ nav ul li a {
   font-weight: 600;
   font-size: 1.1rem;
   transition: color var(--transicion-rapida);
-  white-space: nowrap;
+  white-space: nowrap; /* --> Evita que el texto se parta en dos líneas. */
   padding: 0.4rem 0.6rem;
   border-radius: 8px;
 }
@@ -124,280 +125,283 @@ nav ul li a:hover {
   stroke: var(--color-primario);
 }
 
-/* === SUBMENU (Nuevo) === */
-
-.submenu-container {
-  background-color: var(--color-texto-claro);
-  padding: 0.5rem 2rem;
-  position: fixed;
-  top: 80px; /* Altura del navbar principal + espacio */
-  width: 100%;
-  z-index: 999;
-  box-shadow: 0 2px 
-  
-  6px rgba(0, 0, 0, 0.2);
-}
-
-.submenu ul {
-  display: flex;
-  list-style: none;
-  gap: 2rem;
-  margin: 0;
-  padding: 0;
-  justify-content: center;
-}
-
-.submenu ul li a {
-  color: var(--color-encabezado);
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.95rem;
-  transition: color var(--transicion-rapida);
-  white-space: nowrap;
-  padding: 0.3rem 0.6rem;
-  border-radius: 8px;
-}
-
-.submenu ul li a:hover {
-  color: var(--color-primario);
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-/* --- Hero Section --- */
+/* ==============================================
+   HERO SECTION
+   ============================================== */
 .hero {
-  height: 500px;
-  background-size: cover;
-  background-position: center;
   position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
 }
 
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
+.hero__image {
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.3);
+  object-fit: cover;
+  filter: brightness(0.8);
 }
 
-.hero-contenido {
-  position: relative;
-  z-index: 2;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 60px 20px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.hero-contenido h1 {
-  color: var(--color-blanco);
-  font-size: 36px;
-  font-weight: 700;
+.hero__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
-  margin-bottom: 32px;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  color: var(--color-white);
+  background: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  max-width: 80%;
 }
 
-.formulario-busqueda {
+.hero__title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.hero__filters {
   display: flex;
-  gap: 20px;
-  background: var(--color-blanco);
-  padding: 24px;
-  border-radius: var(--radio-bordes);
-  box-shadow: var(--sombra-tarjeta);
-}
-
-.campo-busqueda {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  min-width: 180px;
-}
-
-.campo-busqueda i {
-  color: var(--color-azul-claro);
-  font-size: 18px;
-}
-
-.campo-busqueda span {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--color-negro-suave);
-}
-
-.valor {
-  font-size: 16px;
-  color: var(--color-gris-texto);
-  padding: 8px 0;
-  border-bottom: 1px solid #ddd;
-}
-
-/* --- Filtros --- */
-.filtros {
-  display: flex;
+  gap: 1rem;
   justify-content: center;
-  margin: 24px 0;
+  flex-wrap: wrap;
+  margin-top: 1rem;
 }
 
-.boton-filtros {
-  background-color: var(--color-azul-claro);
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 30px;
-  font-weight: 600;
-  font-size: 14px;
+.filter-item {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--color-text);
+  padding: 0.5rem 1rem;
+  border-radius: var(--btn-radius);
+  font-size: 0.9rem;
   display: flex;
   align-items: center;
-  gap: 8px;
-  cursor: pointer;
+  gap: 0.5rem;
 }
 
-/* --- Resultados --- */
-.resultados {
+.filter-value {
+  font-weight: bold;
+  margin-left: 0.5rem;
+}
+
+/* ==============================================
+   FILTROS
+   ============================================== */
+.filters {
+  background: var(--color-bg-light);
+  padding: 1rem 0;
+  border-top: 2px solid var(--color-primary-dark);
+  border-bottom: 2px solid var(--color-primary-dark);
+}
+
+.filters__container {
   max-width: 1200px;
-  margin: 0 auto 40px;
-  padding: 0 20px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
-.encabezado-resultados {
+.filters__title {
+  background: var(--color-primary-dark);
+  color: var(--color-white);
+  padding: 0.5rem 1.5rem;
+  border-radius: var(--btn-radius);
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+/* ==============================================
+   HOTELS SECTION
+   ============================================== */
+.hotels-section {
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hotels-section__header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
 }
 
-.encabezado-resultados h2 {
-  font-size: 24px;
-  font-weight: 700;
-  color: var(--color-negro-suave);
+.hotels-section__title {
+  font-size: 1.8rem;
+  font-weight: bold;
 }
 
-.boton-ver-todos {
-  background-color: var(--color-azul-claro);
-  color: white;
-  border: none;
-  padding: 8px 20px;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 14px;
-  cursor: pointer;
+.hotels-section__view-all {
+  background: var(--color-primary-dark);
+  color: var(--color-white);
+  padding: 0.5rem 1rem;
+  border-radius: var(--btn-radius);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: var(--transition);
 }
 
-.tarjetas-hoteles {
-  display: flex;
-  gap: 24px;
+.hotels-section__view-all:hover {
+  background: #000022;
+}
+
+.hotels-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.hotel-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray);
+  border-radius: var(--border-radius);
   overflow: hidden;
-  position: relative;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
 }
 
-.tarjeta-hotel {
-  background: white;
-  border-radius: var(--radio-bordes);
-  box-shadow: var(--sombra-tarjeta);
-  padding: 16px;
-  width: 280px;
-  flex-shrink: 0;
+.hotel-card:hover {
+  transform: translateY(-5px);
 }
 
-.tarjeta-hotel img {
+.hotel-card__image {
   width: 100%;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 12px;
-}
-
-.tarjeta-hotel h3 {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 8px;
-  color: var(--color-negro-suave);
-}
-
-.calificacion {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  margin-bottom: 10px;
-  color: #ff9100;
-  font-size: 14px;
-}
-
-.precio {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--color-negro-suave);
-  margin-bottom: 14px;
-}
-
-.boton-consultar {
-  width: 100%;
-  background-color: var(--color-azul-claro);
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 14px;
-  cursor: pointer;
-}
-
-/* Flecha de desplazamiento (representación visual) */
-.flecha-desplazamiento {
-  width: 40px;
   height: 200px;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: var(--sombra-suave);
-  cursor: pointer;
-  align-self: center;
+  object-fit: cover;
 }
 
-/* --- Responsive básico --- */
-@media (max-width: 1024px) {
-  .formulario-busqueda {
+.hotel-card__content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.hotel-card__name {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.hotel-card__rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.hotel-card__score {
+  font-weight: bold;
+  color: #333;
+}
+
+.hotel-card__stars {
+  color: #ffcc00;
+}
+
+.hotel-card__price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.hotel-card__label {
+  color: #666;
+  font-weight: normal;
+}
+
+.hotel-card__amount {
+  font-weight: bold;
+  color: #d35400;
+}
+
+.hotel-card__btn {
+  background: var(--color-primary-light);
+  color: var(--color-white);
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: var(--btn-radius);
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  transition: var(--transition);
+}
+
+.hotel-card__btn:hover {
+  background: #7b9bd8;
+}
+
+/* ==============================================
+   RESPONSIVE - MOBILE FIRST
+   ============================================== */
+@media (max-width: 768px) {
+  .header__container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .header__menu {
     flex-wrap: wrap;
     justify-content: center;
+    gap: 0.75rem;
   }
-  .tarjetas-hoteles {
-    justify-content: center;
+
+  .hero {
+    height: 300px;
+  }
+
+  .hero__content {
+    padding: 1rem;
+    max-width: 95%;
+  }
+
+  .hero__title {
+    font-size: 1.5rem;
+  }
+
+  .filter-item {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .filters__container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hotels-section__header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .hotels-grid {
+    gap: 1rem;
+  }
+
+  .hotel-card__image {
+    height: 150px;
   }
 }
 
-@media (max-width: 768px) {
-  .navbar-principal {
-    padding: 12px 20px;
+@media (max-width: 480px) {
+  .header__menu-link {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.6rem;
   }
-  .menu-principal {
-    display: none;
+
+  .hero__title {
+    font-size: 1.2rem;
   }
-  .hero {
-    height: 400px;
+
+  .hotel-card__name {
+    font-size: 1rem;
   }
-  .hero-contenido h1 {
-    font-size: 28px;
-  }
-  .formulario-busqueda {
-    flex-direction: column;
-    gap: 16px;
-  }
-  .encabezado-resultados {
-    flex-direction: column;
-    gap: 16px;
-    align-items: flex-start;
-  }
-  .tarjetas-hoteles {
-    overflow-x: auto;
-    padding-bottom: 12px;
-  }
-  .flecha-desplazamiento {
-    display: none;
+
+  .hotel-card__btn {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.75rem;
   }
 }
