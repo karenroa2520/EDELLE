@@ -76,9 +76,23 @@
   <!-- Cierra el encabezado (header) -->
   </header>
 
+  <section class="sub-header">
+    <div class="sub-header__container">
+      <a href="#" class="sub-header__item sub-header__item--active">
+        <span class="sub-header__icon">📍</span>
+        Bogotá
+      </a>
+      <a href="/src/templates/visitante/hoteles-bogota.html" class="sub-header__item">Hoteles</a>
+      <a href="#" class="sub-header__item">Cosas Por Hacer</a>
+      <a href="#" class="sub-header__item">Restaurantes</a>
+      <a href="#" class="sub-header__item">Pasajes</a>
+      <a href="#" class="sub-header__item">Reseñas</a>
+    </div>
+  </section>
+
   <!-- Hero Section -->
   <section class="hero">
-    <img src="/src/static/imagenes/DESTINOS/" alt="Fondo de Bogotá" class="hero__image" />
+    <img src="/src/static/imagenes/DESTINOS/bogota 2.jpg" alt="Fondo de Bogotá" class="hero__image" />
     <div class="hero__content">
       <h1 class="hero__title">Hoteles en Bogotá y lugares donde alojarse</h1>
       <div class="hero__filters">
@@ -115,7 +129,7 @@
     <div class="hotels-grid">
       <!-- Hotel 1 -->
       <article class="hotel-card">
-        <img src="https://placehold.co/300x200/ddd/000?text=Hotel+La+Colina" alt="La colina - Hotel Cottage" class="hotel-card__image" />
+        <img src="/src/static/imagenes/HOTELES/HOTEL-LA_COLINA.jpg" alt="La colina - Hotel Cottage" class="hotel-card__image" />
         <div class="hotel-card__content">
           <h3 class="hotel-card__name">La colina - Hotel Cottage</h3>
           <div class="hotel-card__rating">
@@ -126,13 +140,14 @@
             <span class="hotel-card__label">Desde</span>
             <span class="hotel-card__amount">$219.295</span>
           </div>
-          <button class="hotel-card__btn">Consultar Disponibilidad</button>
+
+          <a href="/src/templates/visitante/hotel-laColina-Bogota.html" class="hotel-card__btn">Consultar Disponibilidad</a>
         </div>
       </article>
 
       <!-- Hotel 2 -->
       <article class="hotel-card">
-        <img src="https://placehold.co/300x200/ddd/000?text=NH+Collection" alt="NH Collection Bogotá Hacienda Royal" class="hotel-card__image" />
+        <img src="/src/static/imagenes/HOTELES/Nh Collection Bogotá Andino Royal.jpg" alt="NH Collection Bogotá Hacienda Royal" class="hotel-card__image" />
         <div class="hotel-card__content">
           <h3 class="hotel-card__name">NH Collection Bogotá Hacienda Royal</h3>
           <div class="hotel-card__rating">
@@ -143,13 +158,13 @@
             <span class="hotel-card__label">Desde</span>
             <span class="hotel-card__amount">$219.295</span>
           </div>
-          <button class="hotel-card__btn">Consultar Disponibilidad</button>
+          <a href="" class="hotel-card__btn">Consultar Disponibilidad</a>
         </div>
       </article>
 
       <!-- Hotel 3 -->
       <article class="hotel-card">
-        <img src="https://placehold.co/300x200/ddd/000?text=Avani+Royal" alt="Avani Royal Zona T Bogotá Hotel" class="hotel-card__image" />
+        <img src="/src/static/imagenes/HOTELES/Avani Royal.jpg" alt="Avani Royal Zona T Bogotá Hotel" class="hotel-card__image" />
         <div class="hotel-card__content">
           <h3 class="hotel-card__name">Avani Royal Zona T Bogotá Hotel</h3>
           <div class="hotel-card__rating">
@@ -160,7 +175,7 @@
             <span class="hotel-card__label">Desde</span>
             <span class="hotel-card__amount">$219.295</span>
           </div>
-          <button class="hotel-card__btn">Consultar Disponibilidad</button>
+          <a href="" class="hotel-card__btn">Consultar Disponibilidad</a>
         </div>
       </article>
     </div>

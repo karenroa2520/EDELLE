@@ -169,7 +169,7 @@ nav ul li a:hover {
 /* === CONTENIDO PRINCIPAL DEL HOTEL === */
 
 .hotel-detail {
-  padding-top: 120px; /* Espacio para el navbar fijo + subheader */
+  padding-top: 50px; /* Espacio para el navbar fijo + subheader */
   min-height: 100vh;
 }
 

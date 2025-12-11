@@ -125,6 +125,53 @@ nav ul li a:hover {
   stroke: var(--color-primario);
 }
 
+
+.sub-header {
+  background: var(--color-texto-claro); /* Fondo blanco */
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  margin-top: 70px; /* Espacio para que no se solape con el navbar fijo */
+  position: relative;
+  z-index: 999;
+}
+
+.sub-header__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.sub-header__item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-pie); /* Texto gris oscuro */
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all var(--transicion-rapida);
+}
+
+.sub-header__item:hover,
+.sub-header__item--active {
+  background: var(--color-encabezado); /* Azul oscuro */
+  color: var(--color-texto-claro); /* Blanco */
+}
+
+.sub-header__item--active {
+  font-weight: bold;
+}
+
+.sub-header__icon {
+  font-size: 1.1rem;
+  color: var(--color-encabezado); /* Icono azul oscuro */
+}
 /* ==============================================
    HERO SECTION
    ============================================== */
@@ -233,7 +280,7 @@ nav ul li a:hover {
 }
 
 .hotels-section__view-all {
-  background: var(--color-primary-dark);
+  background: var(--color-encabezado);
   color: var(--color-white);
   padding: 0.5rem 1rem;
   border-radius: var(--btn-radius);
@@ -243,7 +290,7 @@ nav ul li a:hover {
 }
 
 .hotels-section__view-all:hover {
-  background: #000022;
+  background: #000013;
 }
 
 .hotels-grid {
@@ -253,7 +300,8 @@ nav ul li a:hover {
 }
 
 .hotel-card {
-  background: var(--color-white);
+  background: var(--color-texto-claro);
+  background-color: var(--color-encabezado);
   border: 1px solid var(--color-gray);
   border-radius: var(--border-radius);
   overflow: hidden;
