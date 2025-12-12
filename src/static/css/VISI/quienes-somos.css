@@ -128,8 +128,7 @@ main {
 
 .img-sobre {
   position: relative;
-  width: 4
-  20px;
+  width: 390px;
 }
 
 .img-sobre img {
@@ -169,7 +168,7 @@ main {
 .contenido-mision {
   flex: 1;
   font-weight: 700;
-  font-size: 1.25rem; /* 20px */
+  font-size: 1.45rem; /* 20px */
   line-height: 1.4;
 }
 
@@ -181,14 +180,14 @@ main {
 
 .contenido-mision p {
   font-weight: 400;
-  font-size: 0.875rem;
+  font-size: 0.950rem;
   line-height: 1.4;
   margin-top: 0.625rem;
 }
 
 .img-mision {
   position: relative;
-  width: 320px;
+  width: 380px;
 }
 
 .img-mision img {
@@ -221,24 +220,24 @@ main {
 
 .texto-historia {
   flex: 1;
-  max-width: 380px;
+  max-width: 480px;
 }
 
 .texto-historia h3 {
-  font-size: 1.25rem; /* 20px */
-  font-weight: 400;
+  font-size: 2rem; /* 20px */
+  font-weight: 900;
   margin-bottom: 1rem;
 }
 
 .texto-historia p {
-  max-width: 320px;
-  font-size: 0.875rem;
+  max-width: 420px;
+  font-size: 0.950rem;
   line-height: 1.5;
 }
 
 .img-historia {
   position: relative;
-  width: 320px;
+  width: 390px;
 }
 
 .img-historia img {

@@ -217,7 +217,7 @@ nav ul li a:hover {
 
 .filter-item {
   background: rgba(255, 255, 255, 0.9);
-  color: var(--color-text);
+  color: var(--color-pie);
   padding: 0.5rem 1rem;
   border-radius: var(--btn-radius);
   font-size: 0.9rem;
