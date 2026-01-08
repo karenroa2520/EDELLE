@@ -17,7 +17,7 @@
   <title>Tu Proxima Gran Aventura</title>
 
   <!-- Enlaza la hoja de estilos externa 'styles.css' para aplicar estilos a la página -->
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="/styles.css" />
 
 <!-- Cierra la sección <head> -->
 </head>
@@ -38,7 +38,7 @@
         <div class="logo-container">
 
           <!-- Imagen del logo de la empresa (Edelle) con texto alternativo para accesibilidad -->
-          <img src="src/static/imagenes/INICIO/logo_edelle.jpg" alt="Edelle - Tu Próxima Gran Aventura" />
+          <img src="/src/static/imagenes/INICIO/logo_edelle.jpg" alt="Edelle - Tu Próxima Gran Aventura" />
 
         <!-- Cierra el contenedor del logo -->
         </div>
@@ -70,23 +70,9 @@
       <!-- Cierra la barra de navegación -->
       </nav>
 
-      <!-- Icono de usuario, alineado a la derecha, para iniciar sesión -->
-      <div class="user-icon">
-
-        <!-- Enlace al formulario de inicio de sesión con ícono SVG de usuario -->
-        <a href="/src/templates/comprador/login.html" title="Iniciar Sesión">
-
-          <!-- Icono de perfil de usuario en formato SVG (escalable y sin dependencia de imágenes) -->
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 21v-2a4 4 0 0 0-5.656-3.656L12 17l-2.344-2.344A4 4 0 0 0 4 17v2"></path>
-            <circle cx="12" cy="9" r="4"></circle>
-          </svg>
-
-        <!-- Cierra enlace de usuario -->
-        </a>
-
-      <!-- Cierra contenedor del ícono de usuario -->
-      </div>
+      <a href="/src/templates/comprador/login.html" title="Iniciar Sesión" class="link-perfil">
+         <img src="/src/static/imagenes/INICIO/inicio-de-sesion-de-usuario.png" alt="Iniciar Sesión" class="icono-usuario">
+      </a>
 
     <!-- Cierra el contenedor de la barra de navegación -->
     </div>
@@ -170,7 +156,7 @@
       <h4>Contactanos</h4>
       <p>123 Calle del Viajero, Ciudad Aventura</p>
       <p>+1 234 567 8900</p>
-      <p>Edelle@Gmail.com</p>
+      <p>Edelle@gmail.com</p>
     </div>
 
     <!-- Tercera columna: formulario para suscribirse al boletín -->

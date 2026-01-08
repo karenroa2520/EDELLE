@@ -1,25 +1,15 @@
-/* --- Variables Globales --- */
 :root {
-  /* Colores */
   --color-encabezado: #03045E;
-  --color-pie: #03045E;
-  --color-fondo-cuerpo: #033F8A;
-  --color-fondo-seccion: #448ec7;
+  /* --color-fondo-cuerpo: #033F8A; */
+  --color-fondo-seccion : #3384BA;
   --color-texto-claro: #ffffff;
-  --color-texto-secundario: #e0e0e0;
+  --color-texto : #000;
   --color-primario: #4cc9f0;
-  --color-primario-hover: #3a9fd0;
-
-  /* tipografia de la pagina principal */
   --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-  /* Diseño */
   --radio-boton: 25px;
-  --radio-tarjeta: 20px;
   --transicion-rapida: 0.3s ease;
 }
 
-/* Reset y estilos generales */
 * {
   margin: 0;
   padding: 0;
@@ -28,12 +18,13 @@
 
 body {
   font-family: var(--fuente-principal);
-  background-color: var(--color-fondo-cuerpo);
-  color: var(--color-texto-claro);
-  line-height: 1.6;
+  background-color: var(--color-texto-claro);
+  color: var(--color-texto);
+  padding-top: 80px;
+  /* Para la navbar fija */
 }
 
-/* === BARRA DE NAVEGACIÓN === */
+/* Navbar */
 .navbar-container {
   display: flex;
   justify-content: space-between;
@@ -47,7 +38,6 @@ body {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* Logo */
 .logo {
   display: flex;
   align-items: center;
@@ -69,10 +59,10 @@ body {
   width: 100%;
   height: auto;
   object-fit: cover;
+  object-position: center;
 }
 
-/* Menú de navegación */
-.navbar-container nav ul {
+nav ul {
   display: flex;
   list-style: none;
   gap: 2rem;
@@ -80,7 +70,7 @@ body {
   padding: 0;
 }
 
-.navbar-container nav ul li a {
+nav ul li a {
   color: var(--color-texto-claro);
   text-decoration: none;
   font-weight: 600;
@@ -91,15 +81,35 @@ body {
   border-radius: 8px;
 }
 
-.navbar-container nav ul li a:hover {
+nav ul li a:hover {
   color: var(--color-primario);
   background-color: rgba(255, 255, 255, 0.1);
+}
+
+.user-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--color-texto-claro);
+  transition: stroke var(--transicion-rapida);
+}
+
+.user-icon a {
+  display: block;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: background-color var(--transicion-rapida);
+}
+
+.user-icon a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  stroke: var(--color-primario);
 }
 
 /* Contenedor principal */
 main {
   max-width: 1024px;
-  margin: 100px auto 40px; /* ↑ espacio extra para navbar fija */
+  margin: 100px auto 40px;
+  /* ↑ espacio extra para navbar fija */
   padding: 0 20px;
 }
 
@@ -111,10 +121,12 @@ main {
   gap: 24px;
   margin-bottom: 80px;
   position: relative;
-} 
+  background-color: #ffffff;
+}
 
 .texto-sobre h1 {
-  font-size: 2.5rem; /* ≈40px */
+  font-size: 2.5rem;
+  /* ≈40px */
   font-weight: 400;
   line-height: 1.3;
   letter-spacing: 0.02em;
@@ -122,7 +134,8 @@ main {
 }
 
 .texto-sobre p {
-  font-size: 0.975rem; /* 14px */
+  font-size: 0.975rem;
+  /* 14px */
   max-width: 360px;
 }
 
@@ -157,9 +170,11 @@ main {
 .mision {
   display: flex;
   background-color: var(--color-fondo-seccion);
-  color: var(--color-encabezado); /* más coherente que #0b2035 */
+  color: var(--color-texto);
+  /* más coherente que #0b2035 */
   border-radius: 15px;
-  padding: 1.875rem 2.5rem; /* 30px / 40px */
+  padding: 1.875rem 2.5rem;
+  /* 30px / 40px */
   gap: 24px;
   margin-bottom: 80px;
   align-items: center;
@@ -168,7 +183,8 @@ main {
 .contenido-mision {
   flex: 1;
   font-weight: 700;
-  font-size: 1.45rem; /* 20px */
+  font-size: 1.45rem;
+  /* 20px */
   line-height: 1.4;
 }
 
@@ -209,6 +225,11 @@ main {
   z-index: -1;
 }
 
+/* Invierte la segunda sección de misión */
+.mision.mision-invertida {
+  flex-direction: row-reverse;
+}
+
 /* Sección historia */
 .historia {
   display: flex;
@@ -216,6 +237,7 @@ main {
   gap: 24px;
   align-items: center;
   margin-bottom: 60px;
+  background-color: var(--color-texto-claro)
 }
 
 .texto-historia {
@@ -224,7 +246,8 @@ main {
 }
 
 .texto-historia h3 {
-  font-size: 2rem; /* 20px */
+  font-size: 2rem;
+  /* 20px */
   font-weight: 900;
   margin-bottom: 1rem;
 }
@@ -264,6 +287,7 @@ main {
 
 /* Responsividad básica */
 @media (max-width: 768px) {
+
   .sobre-nosotros,
   .mision,
   .historia {

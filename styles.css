@@ -104,26 +104,15 @@ nav ul li a:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* --> Estilo del ícono de usuario (SVG): tamaño fijo, color blanco, con transición al cambiar de color. */
-.user-icon svg {
-  width: 24px;
-  height: 24px;
-  stroke: var(--color-texto-claro);
-  transition: stroke var(--transicion-rapida);
+.link-perfil {
+  text-decoration: none;
+  color: white;
+  display: inline-block;
 }
 
-/* --> Enlace del ícono: zona clickeable más grande con redondeo y transición de fondo. */
-.user-icon a {
-  display: block;
-  padding: 0.5rem;
-  border-radius: 8px;
-  transition: background-color var(--transicion-rapida);
-}
-
-/* --> Al pasar el mouse sobre el ícono: fondo ligeramente blanco y el ícono cambia al color primario. */
-.user-icon a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  stroke: var(--color-primario);
+.icono-usuario {
+  width: 42px;
+  height: 42px;
 }
 
 /* === CARRUSEL (solo una imagen, sin animación) === */
