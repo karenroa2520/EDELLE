@@ -27,7 +27,7 @@
 /* --> Estilo base del cuerpo de la página: usa la fuente definida, fondo azul oscuro y texto blanco con buen espaciado entre líneas. */
 body {
   font-family: var(--fuente-principal);
-  background-color: var(--color-fondo-cuerpo);
+  background-color: var(--color-texto-claro);
   color: var(--color-texto-claro);
   line-height: 1.6;
 }
@@ -176,14 +176,14 @@ nav ul li a:hover {
 
 .hero-carousel {
   position: relative;
-  height: 70vh;
+  height: 60vh;
   overflow: hidden;
-  margin-top: 140px; /* Ajustado para dejar espacio debajo de ambos menús fijos */
+  margin-top: 20px; /* Ajustado para dejar espacio debajo de ambos menús fijos */
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  border-radius: 30%;
+  border-radius: 15%;
 }
 
 /* Aseguramos que el contenido no quede bajo la barra fija */
@@ -192,7 +192,7 @@ nav ul li a:hover {
   background: var(--color-texto-claro);
   max-width: 900px;
   margin: 0 auto;
-  margin-top: 40px;
+  margin-top: 1px;
 }
 .contenido-ciudad h1 {
   font-size: 2.5rem;
