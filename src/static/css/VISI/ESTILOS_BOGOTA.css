@@ -149,7 +149,7 @@ nav ul li a:hover {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: var(--color-pie); /* Texto gris oscuro */
+  color: var(--color-pie);
   text-decoration: none;
   font-size: 0.95rem;
   padding: 0.5rem 1rem;

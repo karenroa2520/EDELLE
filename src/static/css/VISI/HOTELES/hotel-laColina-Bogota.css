@@ -143,7 +143,7 @@ nav ul li a:hover {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: var(--color-texto-secundario); /* Texto gris oscuro */
+  color: var(--color-pie); /* Texto gris oscuro */
   text-decoration: none;
   font-size: 0.95rem;
   padding: 0.5rem 1rem;
@@ -350,7 +350,7 @@ nav ul li a:hover {
   padding: 1.5rem;
   border-radius: var(--radio-tarjeta);
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  color: var(--color-texto-secundario);
+  color: var(--color-encabezado);
 }
 
 .rating-summary__overall {
@@ -369,7 +369,7 @@ nav ul li a:hover {
 .rating-summary__label {
   font-size: 1.2rem;
   font-weight: bold;
-  color: var(--color-texto-secundario);
+  color: var(--color-encabezado);
 }
 
 .rating-summary__stars {
@@ -385,7 +385,7 @@ nav ul li a:hover {
 
 .rating-summary__detail {
   font-size: 0.9rem;
-  color: var(--color-texto-secundario);
+  color: var(--color-encabezado);
 }
 
 .description {
@@ -407,7 +407,7 @@ nav ul li a:hover {
   padding: 1.5rem;
   border-radius: var(--radio-tarjeta);
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  color: var(--color-texto-secundario);
+  color: var(--color-encabezado);
 }
 
 .services__title,
@@ -416,7 +416,7 @@ nav ul li a:hover {
   font-size: 1.1rem;
   margin-bottom: 1rem;
   font-weight: bold;
-  color: var(--color-texto-secundario);
+  color: var(--color-encabezado);
 }
 
 .services__list,
@@ -437,7 +437,7 @@ nav ul li a:hover {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: var(--color-texto-secundario);
+  color: var(--color-encabezado);
 }
 
 .services__btn,
