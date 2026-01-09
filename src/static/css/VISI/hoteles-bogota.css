@@ -28,7 +28,7 @@
 /* --> Estilo base del cuerpo de la página: usa la fuente definida, fondo azul oscuro y texto blanco con buen espaciado entre líneas. */
 body {
   font-family: var(--fuente-principal);
-  background-color: var(--color-fondo-cuerpo);
+  background-color: var(--color-texto-claro);
   color: var(--color-texto-claro);
   line-height: 1.6;
 }
@@ -389,7 +389,7 @@ nav ul li a:hover {
 }
 
 .hotel-card__btn {
-  background: var(--color-primary-light);
+  background: var(--color-primario-hover);
   color: var(--color-white);
   border: none;
   padding: 0.75rem 1rem;
@@ -477,4 +477,15 @@ nav ul li a:hover {
     font-size: 0.8rem;
     padding: 0.5rem 0.75rem;
   }
+}
+
+/* ==============================================
+   ✅ CAMBIO SOLICITADO: COLOR NEGRO EN TÍTULOS (SOLO ESTO)
+   ============================================== */
+.hotels-section__title {
+  color: #000000;
+}
+
+.filters__title {
+  color: #000000;
 }
