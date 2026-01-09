@@ -9,71 +9,29 @@
 <body>
   <!-- Header -->
   <header>
-
-    <!-- Contenedor principal que agrupa los elementos de la barra de navegación -->
     <div class="navbar-container">
-
-      <!-- Sección del logo, alineado a la izquierda -->
       <div class="logo">
-
-        <!-- Contenedor circular para la imagen del logo -->
         <div class="logo-container">
-
-          <!-- Imagen del logo de la empresa (Edelle) con texto alternativo para accesibilidad -->
           <img src="/src/static/imagenes/INICIO/logo_edelle.jpg" alt="Edelle - Tu Próxima Gran Aventura" />
-
-        <!-- Cierra el contenedor del logo -->
         </div>
-
-      <!-- Cierra la sección del logo -->
       </div>
-
-      <!-- Barra de navegación con enlaces principales del sitio -->
       <nav>
-
-        <!-- Lista no ordenada de elementos del menú -->
         <ul>
-
-          <!-- Enlace a la página de inicio -->
           <li><a href="/index.html">Inicio</a></li>
-
-          <!-- Enlace a la página "Quiénes Somos" -->
           <li><a href="/src/templates/visitante/quienes-somos.html">Quienes Somos</a></li>
-
-          <!-- Enlace a la página de servicios -->
           <li><a href="/src/templates/visitante/servicios.html">Servicios</a></li>
-
-          <!-- Enlace a la página de destinos turísticos -->
           <li><a href="/src/templates/visitante/destinos.html">Destinos</a></li>
-
-        <!-- Cierra la lista de menú -->
         </ul>
-
-      <!-- Cierra la barra de navegación -->
       </nav>
-
-      <!-- Icono de usuario, alineado a la derecha, para iniciar sesión -->
       <div class="user-icon">
-
-        <!-- Enlace al formulario de inicio de sesión con ícono SVG de usuario -->
         <a href="/src/templates/comprador/login.html" title="Iniciar Sesión">
-
-          <!-- Icono de perfil de usuario en formato SVG (escalable y sin dependencia de imágenes) -->
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M20 21v-2a4 4 0 0 0-5.656-3.656L12 17l-2.344-2.344A4 4 0 0 0 4 17v2"></path>
             <circle cx="12" cy="9" r="4"></circle>
           </svg>
-
-        <!-- Cierra enlace de usuario -->
         </a>
-
-      <!-- Cierra contenedor del ícono de usuario -->
       </div>
-
-    <!-- Cierra el contenedor de la barra de navegación -->
     </div>
-
-  <!-- Cierra el encabezado (header) -->
   </header>
 
   <section class="sub-header">
@@ -96,17 +54,29 @@
     <div class="hero__content">
       <h1 class="hero__title">Hoteles en Bogotá y lugares donde alojarse</h1>
       <div class="hero__filters">
-        <div class="filter-item">
-          <span>📅 Check-in</span>
-          <span class="filter-value">-/-/-</span>
+        <!-- ✅ CHECK-IN -->
+        <div class="filter-date-item">
+          <label for="checkin" class="filter-date-label">📅 Check-in</label>
+          <input type="date" id="checkin" class="filter-date-input" />
         </div>
-        <div class="filter-item">
-          <span>📅 Check-out</span>
-          <span class="filter-value">-/-/-</span>
+        <!-- ✅ CHECK-OUT -->
+        <div class="filter-date-item">
+          <label for="checkout" class="filter-date-label">📅 Check-out</label>
+          <input type="date" id="checkout" class="filter-date-input" />
         </div>
-        <div class="filter-item">
-          <span>👥 Habitaciones/huéspedes</span>
-          <span class="filter-value">1 habitación, 2 huéspedes</span>
+        <!-- ✅ HUÉSPEDES / HABITACIONES -->
+        <div class="filter-select-item">
+          <label for="guests" class="filter-select-label">👥 Huéspedes / Habitaciones</label>
+          <select id="guests" class="filter-select-input">
+            <option value="1-1">1 huésped, 1 habitación</option>
+            <option value="2-1">2 huéspedes, 1 habitación</option>
+            <option value="2-2">2 huéspedes, 2 habitaciones</option>
+            <option value="3-1">3 huéspedes, 1 habitación</option>
+            <option value="3-2">3 huéspedes, 2 habitaciones</option>
+            <option value="4-1">4 huéspedes, 1 habitación</option>
+            <option value="4-2">4 huéspedes, 2 habitaciones</option>
+            <option value="4-3">4 huéspedes, 3 habitaciones</option>
+          </select>
         </div>
       </div>
     </div>
@@ -140,7 +110,6 @@
             <span class="hotel-card__label">Desde</span>
             <span class="hotel-card__amount">$219.295</span>
           </div>
-
           <a href="/src/templates/visitante/hotel-laColina-Bogota.html" class="hotels-section">Consultar Disponibilidad</a>
         </div>
       </article>
