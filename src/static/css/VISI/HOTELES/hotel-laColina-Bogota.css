@@ -293,7 +293,7 @@ nav ul li a:hover {
 .booking-banner__title {
   font-size: 1.8rem;
   margin-bottom: 1rem;
-  color: var(--color-texto-claro);
+  color: var(--color-encabezado);
 }
 
 .booking-banner__filters {
@@ -305,7 +305,7 @@ nav ul li a:hover {
 
 .filter-item {
   background: rgba(255, 255, 255, 0.9);
-  color: var(--color-texto-secundario);
+  color: var(--color-encabezado);
   padding: 0.5rem 1rem;
   border-radius: var(--radio-boton);
   font-size: 0.9rem;
@@ -363,7 +363,7 @@ nav ul li a:hover {
 .rating-summary__score {
   font-size: 2rem;
   font-weight: bold;
-  color: #ffcc00;
+  color: #000000;
 }
 
 .rating-summary__label {
@@ -389,8 +389,8 @@ nav ul li a:hover {
 }
 
 .description {
-  font-size: 0.9rem;
-  line-height: 1.5;
+  font-size: 1.02rem;
+  line-height: 1.9;
   color: var(--color-texto-secundario);
 }
 
@@ -433,7 +433,7 @@ nav ul li a:hover {
 .services__list li,
 .features__list li,
 .room-types__list li {
-  font-size: 0.9rem;
+  font-size: 1rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
