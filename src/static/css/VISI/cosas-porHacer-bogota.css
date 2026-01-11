@@ -394,3 +394,38 @@ nav ul li a:hover {
 .tarjeta__boton-reservar:hover {
   background-color: var(--color-hover);
 }
+
+/* ===== MEDIA QUERIES ===== */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    padding: var(--espaciado-lg) var(--espaciado-md);
+  }
+
+  .hero__contenedor-imagen,
+  .hero__texto {
+    width: 100%;
+  }
+
+  .hero__titulo {
+    font-size: 2rem;
+  }
+
+  .experiencias,
+  .recomendaciones {
+    padding: 0 var(--espaciado-md) calc(var(--espaciado-md) * 2);
+  }
+
+  .recomendaciones__tarjetas {
+    justify-content: center;
+  }
+
+  .tarjeta {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .experiencias__etiquetas {
+    justify-content: center;
+  }
+}
