@@ -191,7 +191,7 @@ nav ul li a:hover {
 }
 
 .hero__contenedor-imagen {
-  width: 50%;
+  width: 40%;
 }
 
 .hero__imagen {
@@ -214,7 +214,7 @@ nav ul li a:hover {
 }
 
 .hero__descripcion {
-  font-size: 1rem;
+  font-size: 1.5rem;
   line-height: 1.6;
   color: var(--color-texto-secundario-suave);
 }
@@ -329,7 +329,7 @@ nav ul li a:hover {
   position: absolute;
   bottom: var(--espaciado-sm);
   right: var(--espaciado-sm);
-  background-color: white;
+  background-color: rgb(0, 0, 0);
   width: 30px;
   height: 30px;
   border-radius: var(--borde-redondeado-completo);
@@ -366,14 +366,13 @@ nav ul li a:hover {
   font-weight: bold;
 }
 
-.tarjeta__info-precio {
-  font-size: 14px;
-  font-weight: bold;
-  margin-bottom: var(--espaciado-xs);
-  color: var(--color-texto-claro);
+.tarjeta__por-persona {
+  font-size: 12px;
+  color: var(--color-texto-secundario-suave);
+  margin-bottom: var(--espaciado-md);
 }
 
-.tarjeta__por-persona {
+.tarjeta__info {
   font-size: 12px;
   color: var(--color-texto-secundario-suave);
   margin-bottom: var(--espaciado-md);
