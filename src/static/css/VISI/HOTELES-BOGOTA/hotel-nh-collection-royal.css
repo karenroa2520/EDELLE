@@ -454,27 +454,30 @@ nav ul li a:hover {
 
 /* === BOTÓN "AGREGAR A MI TOUR" === */
 
-.cta-section {
+.cta-button {
   text-align: center;
-  margin: 2rem auto;
-  padding: 0 1rem;
+  margin: 50px 2rem 60px;
 }
 
-.cta-section__btn {
-  display: inline-block;
-  background: var(--color-primario);
-  color: var(--color-texto-claro);
-  padding: 1rem 2rem;
+.cta-button__btn {
+  background-color: var(--color-primario);
+  color: white;
+  border: none;
+  padding: 16px 32px;
   border-radius: var(--radio-boton);
   font-size: 1.2rem;
-  font-weight: bold;
-  text-decoration: none;
-  transition: var(--transicion-rapida);
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color var(--transicion-rapida);
+  width: 100%;
+  max-width: 650px;
+  box-shadow: 0 4px 12px rgba(76, 201, 240, 0.3);
 }
 
-.cta-section__btn:hover {
-  background: var(--color-primario-hover);
-  transform: scale(1.02);
+.cta-button__btn:hover {
+  background-color: var(--color-primario-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(76, 201, 240, 0.4);
 }
 
 /* === SECCIÓN DE RESEÑAS === */

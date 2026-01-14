@@ -379,19 +379,27 @@ nav ul li a:hover {
 }
 
 .tarjeta__boton-reservar {
-  width: 100%;
-  padding: var(--espaciado-sm);
-  background-color: var(--color-secundario);
-  border: none;
-  border-radius: var(--borde-redondeado-lg);
-  color: var(--color-encabezado);
-  font-weight: bold;
+  display: inline-block;
+  background-color: var(--color-primario);
+  color: white;
+  text-decoration: none; /* quita el subrayado del enlace */
+  padding: 16px 32px;
+  border-radius: var(--radio-boton);
+  font-size: 1.2rem;
+  font-weight: 700;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background-color var(--transicion-rapida), transform var(--transicion-rapida), box-shadow var(--transicion-rapida);
+  width: 100%;
+  max-width: 650px;
+  box-shadow: 0 4px 12px rgba(76, 201, 240, 0.3);
+  text-align: center;
+  margin-top: 16px;
 }
 
 .tarjeta__boton-reservar:hover {
-  background-color: var(--color-hover);
+  background-color: var(--color-primario-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(76, 201, 240, 0.4);
 }
 
 /* ===== MEDIA QUERIES ===== */
