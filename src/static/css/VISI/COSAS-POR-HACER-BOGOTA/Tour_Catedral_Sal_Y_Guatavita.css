@@ -1,37 +1,43 @@
+/* ==============================================
+   VARIABLES GLOBALES - BEM + THEMING
+   ============================================== */
 :root {
-  /* Colores */
-  --color-encabezado: #03045e;
-  --color-pie: #03045e;
-  --color-fondo-cuerpo: #033f8a;
+  /* --> Colores principales del sitio: azul oscuro para encabezado y pie, azules más claros para fondos, y blanco/claros para texto. */
+  --color-encabezado: #03045E;
+  --color-pie: #03045E;
+  --color-fondo-cuerpo: #033F8A;
   --color-fondo-seccion: #448ec7;
   --color-texto-claro: #ffffff;
   --color-texto-secundario: #e0e0e0;
   --color-primario: #4cc9f0;
   --color-primario-hover: #3a9fd0;
 
-  /* Tipografía */
-  --fuente-principal: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  /* --> Fuente principal para todo el contenido: moderna, legible y compatible en la mayoría de dispositivos. */
+  --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
-  /* Diseño */
+  /* --> Medidas de diseño reutilizables: bordes redondeados para botones y tarjetas, y duración de transiciones suaves. */
   --radio-boton: 25px;
   --radio-tarjeta: 20px;
   --transicion-rapida: 0.3s ease;
 }
 
+/* --> Reseteo universal: elimina márgenes y rellenos por defecto del navegador y asegura que el ancho y alto incluyan bordes y rellenos. */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* --> Estilo base del cuerpo de la página: usa la fuente definida, fondo azul oscuro y texto blanco con buen espaciado entre líneas. */
 body {
   font-family: var(--fuente-principal);
   background-color: var(--color-texto-claro);
-  color: #333; /* Cambiado a gris oscuro para legibilidad */
+  color: var(--color-texto-claro);
   line-height: 1.6;
 }
 
-/* === BARRA DE NAVEGACIÓN (TU CÓDIGO ORIGINAL) === */
+/* === BARRA DE NAVEGACIÓN PRINCIPAL === */
+
 .navbar-container {
   display: flex;
   justify-content: space-between;
@@ -112,13 +118,13 @@ nav ul li a:hover {
   stroke: var(--color-primario);
 }
 
-/* === SUBMENU (TU CÓDIGO ORIGINAL) === */
+/* === SUB-MENU / SUB-HEADER === */
 .sub-header {
-  background: var(--color-texto-claro);
+  background: var(--color-texto-claro); /* Fondo blanco */
   padding: 0.75rem 1rem;
   border-bottom: 1px solid #ddd;
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  margin-top: 70px;
+  margin-top: 70px; /* Espacio para que no se solape con el navbar fijo */
   position: relative;
   z-index: 999;
 }
@@ -137,7 +143,7 @@ nav ul li a:hover {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: var(--color-pie);
+  color: var(--color-pie); /* Texto gris oscuro */
   text-decoration: none;
   font-size: 0.95rem;
   padding: 0.5rem 1rem;
@@ -147,8 +153,8 @@ nav ul li a:hover {
 
 .sub-header__item:hover,
 .sub-header__item--active {
-  background: var(--color-encabezado);
-  color: var(--color-texto-claro);
+  background: var(--color-encabezado); /* Azul oscuro */
+  color: var(--color-texto-claro); /* Blanco */
 }
 
 .sub-header__item--active {
@@ -157,64 +163,160 @@ nav ul li a:hover {
 
 .sub-header__icon {
   font-size: 1.1rem;
+  color: var(--color-encabezado); /* Icono azul oscuro */
+}
+
+/* === CONTENIDO PRINCIPAL DEL HOTEL === */
+
+.hotel-detail {
+  padding-top: 50px; /* Espacio para el navbar fijo + subheader */
+  min-height: 100vh;
+}
+
+.hotel-detail__header {
+  max-width: 1200px;
+  margin: 2rem auto 1rem;
+  padding: 0 1rem;
+}
+
+.hotel-detail__title {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
   color: var(--color-encabezado);
 }
 
-
-.price-box__price {
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: var(--color-encabezado);
-  margin-bottom: 8px;
-}
-
-.price-box__label {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 16px;
-}
-
-.price-box__guarantee {
-  font-size: 0.85rem;
-  color: #666;
-  margin-bottom: 20px;
-  font-style: italic;
-}
-
-.price-box__btn {
-  background-color: var(--color-primario);
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  border-radius: var(--radio-boton);
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  width: 100%;
-  margin-bottom: 20px;
-  transition: background-color var(--transicion-rapida);
-}
-
-.price-box__btn:hover {
-  background-color: var(--color-primario-hover);
-}
-
-.price-box__features .feature-item {
+.hotel-detail__rating {
   display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  margin-bottom: 16px;
-  font-size: 0.9rem;
-  color: #333;
-  line-height: 1.5;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
 }
 
-.price-box__features .feature-item svg {
-  width: 18px;
-  height: 18px;
-  stroke: var(--color-encabezado);
-  flex-shrink: 0;
-  margin-top: 2px;
+.hotel-detail__score {
+  font-weight: bold;
+  color: #000000;
+}
+
+.hotel-detail__stars {
+  color: #ffcc00;
+}
+
+.hotel-detail__address {
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: var(--color-encabezado);
+}
+
+.hotel-detail__write-review {
+  display: inline-block;
+  color: var(--color-primario);
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radio-boton);
+  background: rgba(76, 201, 240, 0.2);
+  transition: var(--transicion-rapida);
+}
+
+.hotel-detail__write-review:hover {
+  background: rgba(76, 201, 240, 0.4);
+  text-decoration: underline;
+}
+
+/* === GALERÍA === */
+
+.gallery {
+  max-width: 1200px;
+  margin: 1rem auto;
+  padding: 0 1rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.gallery__main {
+  position: relative;
+  flex: 1;
+  min-width: 300px;
+}
+
+.gallery__image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: var(--radio-tarjeta);
+}
+
+.gallery__count {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: var(--color-texto-claro);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radio-boton);
+  font-size: 0.9rem;
+}
+
+.gallery__thumbnails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 150px;
+}
+
+.gallery__thumbnail {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: var(--radio-tarjeta);
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.gallery__thumbnail:hover {
+  border-color: var(--color-encabezado);
+}
+
+/* === BANNER DE RESERVA === */
+
+.booking-banner {
+  background: var(--color-fondo-seccion);
+  padding: 1.5rem;
+  margin: 1.5rem auto;
+  max-width: 1200px;
+  border-radius: var(--radio-tarjeta);
+  text-align: center;
+}
+
+.booking-banner__title {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--color-encabezado);
+}
+
+.booking-banner__filters {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.filter-item {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--color-encabezado);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radio-boton);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filter-value {
+  font-weight: bold;
+  margin-left: 0.5rem;
 }
 
 /* === ESTILOS DEL TOUR (USANDO TUS VARIABLES EN ESPAÑOL) === */
@@ -338,6 +440,8 @@ nav ul li a:hover {
   stroke: var(--color-encabezado);
 }
 
+/* RESERVAS */
+
 .description {
   display: flex;
   gap: 32px;
@@ -383,14 +487,70 @@ nav ul li a:hover {
   color: var(--color-primario-hover);
 }
 
+
 .description__price-box {
-  flex: 1;
-  background: linear-gradient(135deg, #f0f7ff 0%, #e6f2ff 100%);
-  padding: 24px;
-  border-radius: var(--radio-tarjeta);
-  border: 1px solid #d0e3f5;
+      flex: 1;
+      background: linear-gradient(135deg, #f0f7ff 0%, #e6f2ff 100%);
+      padding: 24px;
+      border-radius: var(--radio-tarjeta);
+      border: 1px solid #d0e3f5;
+    }
+
+.price-box__price {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--color-encabezado);
+  margin-bottom: 8px;
 }
 
+.price-box__label {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 16px;
+}
+
+.price-box__guarantee {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.price-box__btn {
+  background-color: var(--color-primario);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: var(--radio-boton);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 20px;
+  transition: background-color var(--transicion-rapida);
+}
+
+.price-box__btn:hover {
+  background-color: var(--color-primario-hover);
+ }
+
+.price-box__features .feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+.price-box__features .feature-item svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--color-encabezado);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
 
 .info-general {
   margin: 40px 2rem;
