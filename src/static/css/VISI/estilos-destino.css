@@ -185,9 +185,9 @@ nav ul li a:hover {
 /* --> Cuadrícula de destinos: 2 columnas, con espacio entre tarjetas. */
 .destinations-grid {
   display: grid;
-  grid-template-columns: repeat(2, 5fr); /* --> Equivalente a dos columnas iguales (mejor usar 1fr 1fr). */
-  gap: 2rem;
-  padding: 2rem 0;
+  grid-template-columns: repeat(3, 1fr); /* --> Equivalente a dos columnas iguales (mejor usar 1fr 1fr). */
+  gap: 2.9rem;
+  padding: 2.6rem 0;
 }
 
 /* --> Cada tarjeta: fondo azul claro, redondeada, con sombra y transición suave. */
