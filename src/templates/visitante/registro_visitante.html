@@ -12,7 +12,7 @@
     <div class="navbar-container">
       <div class="logo">
         <div class="logo-container">
-          <img src="/src/static/imagenes/img/logo_edelle.jpg" alt="Edelle - Tu Próxima Gran Aventura" />
+          <img src="/src/static/imagenes/INICIO/logo_edelle.jpg" alt="Edelle - Tu Próxima Gran Aventura" />
         </div>
       </div>
 
@@ -38,8 +38,13 @@
 
   <!-- Formulario de registro centrado -->
   <div class="register-container">
+    <!-- CHECKBOX HIDDEN PARA EL MENSAJE DE ÉXITO -->
+    <input type="checkbox" id="success-toggle" class="success-checkbox" style="display: none;">
+
     <h2>Crear Cuenta</h2>
-    <form action="#" method="POST">
+    
+    <!-- FORMULARIO (visible por defecto) -->
+    <form action="#" method="POST" class="register-form">
       <input type="text" placeholder="Nombre completo" required />
 
       <label for="tipo-documento" class="form-label">Seleccione el tipo de Documento:</label>
@@ -49,9 +54,9 @@
         <option value="cc">Cédula de Ciudadanía</option>
         <option value="ce">Cédula de Extranjería</option>
         <option value="pasaporte">Pasaporte</option>
-        <input type="tel" placeholder="Documento" required />
       </select>
 
+      <input type="tel" placeholder="Documento" required />
       <input type="tel" placeholder="Teléfono" required />
       <input type="email" placeholder="Correo electrónico" required />
       <label for="fecha" class="form-label">Fecha de nacimiento</label>
@@ -59,8 +64,20 @@
       <input type="password" placeholder="Contraseña" required />
       <input type="password" placeholder="Confirmar contraseña" required />
 
-      <button type="submit" class="btn-register">Registrarme</button>
+      <!-- BOTÓN DE REGISTRO (label del checkbox) -->
+      <label for="success-toggle" class="btn-register">Registrarme</label>
     </form>
+
+    <!-- MENSAJE DE ÉXITO (oculto por defecto) -->
+    <div class="success-message">
+      <div class="success-icon">✓</div>
+      <h3>Usuario Creado con Éxito!</h3>
+      <p>El usuario "Juan Pérez" ha sido creado con éxito.</p>
+      <p>¡Bienvenido al sistema de la Agencia de Viajes!</p>
+      <a href="/src/templates/comprador/login.html" class="btn-aceptar">Aceptar</a>
+    </div>
+
+    <!-- ENLACE A INICIAR SESIÓN (visible solo cuando el formulario está activo) -->
     <a href="/src/templates/comprador/login.html" class="login-link">Ya tengo cuenta → Iniciar Sesión</a>
   </div>
 </body>

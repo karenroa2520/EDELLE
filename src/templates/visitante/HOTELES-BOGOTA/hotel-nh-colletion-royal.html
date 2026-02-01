@@ -7,6 +7,10 @@
   <link rel="stylesheet" href="/src/static/css/VISI/HOTELES-BOGOTA/hotel-nh-collection-royal.css" />
 </head>
 <body>
+
+  <!-- CHECKBOX HACK PARA EL CARRITO -->
+  <input type="checkbox" id="cart-toggle" class="cart-control">
+
   <!-- Header Principal -->
   <header>
     <div class="navbar-container">
@@ -183,10 +187,10 @@
       </div>
     </section>
 
-    <!-- BOTÓN DE ACCIÓN -->
-  <div class="cta-button">
-    <button class="cta-button__btn">¡AGREGAR A MI TOUR POR $ 219.295!</button>
-  </div>
+    <!-- BOTÓN DE ACCIÓN CON LABEL VINCULADO AL CHECKBOX -->
+    <div class="cta-button">
+      <label for="cart-toggle" class="cta-button__btn">¡AGREGAR A MI TOUR POR $ 219.295!</label>
+    </div>
 
     <!-- Reviews Section -->
     <section id="reviews-section" class="reviews-section">
@@ -196,7 +200,7 @@
       <!-- Review 1 -->
       <article class="review-card">
         <div class="review-card__header">
-          <img src="https://placehold.co/50x50/ccc/000?text=AM" alt="Alba Martinez" class="review-card__avatar" />
+          <img src="https://placehold.co/50x50/ccc/000?text=AM  " alt="Alba Martinez" class="review-card__avatar" />
           <div class="review-card__user-info">
             <span class="review-card__name">Alba Martinez B</span>
             <span class="review-card__date">5-12-2025</span>
@@ -208,7 +212,7 @@
         <div class="review-card__content">
           <p>Tuvimos una estancia maravillosa. La atención y el servicio fueron excepcionales. Me sentí como en casa. Además, la comida estaba deliciosa. ¡Muchas gracias!</p>
           <div class="review-card__meta">
-            <span>Fecha de estancia: Octubre de 2025</span>
+            <span>Fecha de estadia: Octubre de 2025</span>
             <span>Tipo de viaje: Viajé con mi familia</span>
           </div>
         </div>
@@ -222,5 +226,21 @@
       </article>
     </section>
   </main>
+
+  <!-- PANEL LATERAL (RESUMEN CARRITO) -->
+  <aside class="reserva">
+    <h3>TU RESERVA</h3>
+    <div class="cart-list">
+      <div class="cart-item item-1"><span>NH Collection Bogotá Hacienda Royal</span> <b>$219.295</b></div>
+    </div>
+    <a href="/src/templates/visitante/registro_visitante.html" class="btn-checkout">Realizar Compra</a>
+    <p class="hint">Toca el producto de nuevo para quitarlo</p>
+  </aside>
+
+  <!-- VENTANA EMERGENTE -->
+  <div class="notice-container">
+    <div class="notice">¡Producto añadido al carrito!</div>
+  </div>
+
 </body>
 </html>
