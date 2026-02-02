@@ -208,7 +208,7 @@ nav ul li a:hover {
 }
 
 .btn-aceptar {
-  background: #4CAF50;
+  background-color: var(--color-primario-hover);
   color: white;
   padding: 0.75rem 1.5rem;
   border-radius: 25px;
@@ -220,7 +220,7 @@ nav ul li a:hover {
 }
 
 .btn-aceptar:hover {
-  background: #45a049;
+  background-color: var(--color-primario);
 }
 
 /* ===== LÓGICA DEL CHECKBOX HACK ===== */
