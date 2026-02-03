@@ -7,6 +7,10 @@
   <link rel="stylesheet" href="/src/static/css/VISI/HOTELES-BOGOTA/hote-avani-royal-zonaT.css" />
 </head>
 <body>
+
+  <!-- CHECKBOX HACK PARA EL CARRITO -->
+  <input type="checkbox" id="cart-toggle" class="cart-control">
+
   <!-- Header Principal -->
   <header>
     <div class="navbar-container">
@@ -187,10 +191,10 @@
       </div>
     </section>
 
-    <!-- BOTÓN DE ACCIÓN -->
-  <div class="cta-button">
-    <button class="cta-button__btn">¡AGREGAR A MI TOUR POR $ 219.295!</button>
-  </div>
+    <!-- BOTÓN DE ACCIÓN CON LABEL VINCULADO AL CHECKBOX -->
+    <div class="cta-button">
+      <label for="cart-toggle" class="cta-button__btn">¡AGREGAR A MI TOUR POR $ 219.295!</label>
+    </div>
 
     <!-- Reviews Section -->
     <section id="reviews-section" class="reviews-section">
@@ -200,7 +204,7 @@
       <!-- Review 1 -->
       <article class="review-card">
         <div class="review-card__header">
-          <img src="https://placehold.co/50x50/ccc/000?text=AM" alt="Alba Martinez" class="review-card__avatar" />
+          <img src="https://placehold.co/50x50/ccc/000?text=AM  " alt="Alba Martinez" class="review-card__avatar" />
           <div class="review-card__user-info">
             <span class="review-card__name">Alba Martinez B</span>
             <span class="review-card__date">5-10-2025</span>
@@ -221,7 +225,7 @@
 
       <article class="review-card">
         <div class="review-card__header">
-          <img src="https://placehold.co/50x50/ccc/000?text=ER" alt="Edwar Roa" class="review-card__avatar" />
+          <img src="https://placehold.co/50x50/ccc/000?text=ER  " alt="Edwar Roa" class="review-card__avatar" />
           <div class="review-card__user-info">
             <span class="review-card__name">Alba Martinez B</span>
             <span class="review-card__date">10-08-2024</span>
@@ -248,5 +252,21 @@
       </article>
     </section>
   </main>
+
+  <!-- PANEL LATERAL (RESUMEN CARRITO) -->
+  <aside class="reserva">
+    <h3>TU RESERVA</h3>
+    <div class="cart-list">
+      <div class="cart-item item-3"><span>Avani Royal Zona T Bogotá Hotel</span> <b>$219.295</b></div>
+    </div>
+    <a href="/src/templates/visitante/registro_visitante.html" class="btn-checkout">Realizar Compra</a>
+    <p class="hint">Toca el producto de nuevo para quitarlo</p>
+  </aside>
+
+  <!-- VENTANA EMERGENTE -->
+  <div class="notice-container">
+    <div class="notice">¡Producto añadido al carrito!</div>
+  </div>
+
 </body>
 </html>

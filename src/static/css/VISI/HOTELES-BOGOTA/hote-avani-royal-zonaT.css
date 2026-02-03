@@ -31,7 +31,7 @@
 /* --> Estilo base del cuerpo de la página: usa la fuente definida, fondo azul oscuro y texto blanco con buen espaciado entre líneas. */
 body {
   font-family: var(--fuente-principal);
-  background-color: var(--color-texto-claro); /****************************************/
+  background-color: var(--color-texto-claro);
   color: var(--color-texto-claro);
   line-height: 1.6;
 }
@@ -330,7 +330,7 @@ nav ul li a:hover {
 .info-section__title {
   font-size: 1.8rem;
   margin-bottom: 1rem;
-  color: var(--color-encabezado);
+  color: var(--color-texto-claro);
 }
 
 .info-grid {
@@ -455,8 +455,11 @@ nav ul li a:hover {
 /* === BOTÓN "AGREGAR A MI TOUR" === */
 
 .cta-button {
-  text-align: center;
-  margin: 50px 2rem 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0 60px;
+  width: 100%;
 }
 
 .cta-button__btn {
@@ -472,6 +475,7 @@ nav ul li a:hover {
   width: 100%;
   max-width: 650px;
   box-shadow: 0 4px 12px rgba(76, 201, 240, 0.3);
+  text-align: center;
 }
 
 .cta-button__btn:hover {
@@ -493,13 +497,13 @@ nav ul li a:hover {
   margin-bottom: 0.5rem;
   border-bottom: 2px solid var(--color-encabezado);
   padding-bottom: 0.5rem;
-  color: var(--color-texto-claro);
+  color: var(--color-encabezado);
 }
 
 .reviews-section__subtitle {
   font-size: 1.2rem;
   margin-bottom: 1rem;
-  color: var(--color-texto-secundario);
+  color: var(--color-encabezado);
 }
 
 .review-card {
@@ -571,6 +575,78 @@ nav ul li a:hover {
   font-size: 1rem;
   font-style: italic;
 }
+
+/* --- LÓGICA DEL CARRITO (CHECKBOX HACK) --- */
+.cart-control { 
+  display: none; 
+}
+
+/* RESERVA */
+.reserva {
+  position: fixed;
+  right: -320px; 
+  top: 80px;
+  width: 280px;
+  background-color: var(--color-fondo-seccion);
+  box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+  padding: 2rem;
+  border-radius: 20px 0 0 20px;
+  transition: right 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 100;
+  border-left: 6px solid #03045E;
+}
+
+.reserva h3 { 
+  margin-top: 0; 
+  border-bottom: 1px solid #eee; 
+  padding-bottom: 10px; 
+}
+
+.cart-item {
+  display: none; 
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+  justify-content: space-between;
+}
+
+.cart-item b { 
+  color: #000000; 
+}
+
+/* Activar sidebar y items cuando el checkbox está checked */
+.cart-control:checked ~ .reserva {
+  right: 0;
+}
+
+.cart-control:checked ~ .reserva .cart-item {
+  display: flex;
+}
+
+/* Ventana Emergente (Toast) */
+.notice-container {
+  position: fixed;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  transition: top 0.5s;
+}
+
+.notice {
+  background-color: var(--color-primario-hover);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  font-weight: bold;
+}
+
+/* Mostrar notificación cuando se marca el checkbox */
+.cart-control:checked ~ .notice-container {
+  top: 20px;
+}
+
+
 
 /* ==============================================
    RESPONSIVE - MOBILE FIRST
