@@ -1,0 +1,700 @@
+:root {
+  /* Colores */
+  --color-encabezado: #03045e;
+  --color-pie: #03045e;
+  --color-fondo-cuerpo: #033f8a;
+  --color-fondo-seccion: #448ec7;
+  --color-texto-claro: #ffffff;
+  --color-texto-secundario: #e0e0e0;
+  --color-primario: #4cc9f0;
+  --color-primario-hover: #3a9fd0;
+  --color-border: #ddd;
+  --color-acento: #ff9100;
+
+  /* Tipografía */
+  --fuente-principal: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  /* Diseño */
+  --radio-boton: 25px;
+  --radio-tarjeta: 20px;
+  --transicion-rapida: 0.3s ease;
+  
+  /* Tamaños de fuente */
+  --font-size-title: 2.5rem;
+  --font-size-subtitle: 1.8rem;
+  --font-size-regular: 1rem;
+  --font-size-small: 0.875rem;
+  
+  /* Espaciado */
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  
+  /* Radio de bordes */
+  --border-radius: 8px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --> Estilo base del cuerpo de la página: usa la fuente definida, fondo azul oscuro y texto blanco con buen espaciado entre líneas. */
+body {
+  font-family: var(--fuente-principal);
+  background-color: var(--color-texto-claro);
+  color: var(--color-texto-claro);
+  line-height: 1.6;
+}
+
+/* === BARRA DE NAVEGACIÓN === */
+
+/* --> Contenedor de la barra superior: fija en la parte de arriba, con fondo oscuro, sombra sutil y contenido alineado horizontalmente. */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--color-encabezado);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* --> Contenedor del logo: alinea verticalmente el logo dentro de la barra. */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+/* --> Marco circular blanco para el logo, con sombra, que recorta la imagen si no es redonda. */
+.logo-container {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* --> Estilo de la imagen del logo: ocupa todo el contenedor circular y se ajusta sin deformarse. */
+.logo-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* --> Lista del menú de navegación: elementos en fila horizontal, sin viñetas, con espacio entre ellos. */
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* --> Enlaces del menú: texto blanco, sin subrayado, con peso negrita suave y transición suave al pasar el mouse. */
+nav ul li a {
+  color: var(--color-texto-claro);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color var(--transicion-rapida);
+  white-space: nowrap;
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+}
+
+/* --> Efecto al pasar el mouse sobre un enlace: cambia a color primario y añade fondo ligeramente transparente. */
+nav ul li a:hover {
+  color: var(--color-primario);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* --> Estilo del ícono de usuario (SVG): tamaño fijo, color blanco, con transición al cambiar de color. */
+.user-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--color-texto-claro);
+  transition: stroke var(--transicion-rapida);
+}
+
+/* --> Enlace del ícono: zona clickeable más grande con redondeo y transición de fondo. */
+.user-icon a {
+  display: block;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: background-color var(--transicion-rapida);
+}
+
+/* --> Al pasar el mouse sobre el ícono: fondo ligeramente blanco y el ícono cambia al color primario. */
+.user-icon a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  stroke: var(--color-primario);
+}
+
+/* === SUBMENU (Nuevo) === */
+.sub-header {
+  background: var(--color-texto-claro); /* Fondo blanco */
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  margin-top: 70px; /* Espacio para que no se solape con el navbar fijo */
+  position: relative;
+  z-index: 999;
+}
+
+.sub-header__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.sub-header__item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-pie);
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all var(--transicion-rapida);
+}
+
+.sub-header__item:hover,
+.sub-header__item--active {
+  background: var(--color-encabezado); /* Azul oscuro */
+  color: var(--color-texto-claro); /* Blanco */
+}
+
+.sub-header__item--active {
+  font-weight: bold;
+}
+
+.sub-header__icon {
+  font-size: 1.1rem;
+  color: var(--color-encabezado); /* Icono azul oscuro */
+}
+
+/* ==============================================
+   CONTENIDO PRINCIPAL - BEM METODOLOGY
+   ============================================== */
+
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--color-texto-claro);
+}
+
+.main-content__header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.main-content__title {
+  font-size: var(--font-size-title);
+  font-weight: 700;
+  color: var(--color-encabezado);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.main-content__subtitle {
+  font-size: var(--font-size-subtitle);
+  font-weight: 600;
+  color: var(--color-pie);
+  margin-top: 0.5rem;
+}
+
+.content-container {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* ==============================================
+   FILTROS - BEM METODOLOGY
+   ============================================== */
+
+.filters {
+  width: 28%;
+  background-color: var(--color-texto-claro);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  align-self: flex-start;
+  position: sticky;
+  top: 100px;
+}
+
+.filters__group {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 1.5rem;
+}
+
+.filters__group:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.filters__group-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--color-encabezado);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.filters__options {
+  margin-bottom: 1rem;
+}
+
+.filters__option {
+  display: block;
+  margin-bottom: 0.8rem;
+  cursor: pointer;
+  padding: 0.4rem 0;
+  transition: background-color var(--transicion-rapida);
+}
+
+.filters__option:hover {
+  background-color: rgba(76, 201, 240, 0.05);
+  border-radius: 4px;
+}
+
+.filters__option input {
+  margin-right: 0.6rem;
+  accent-color: var(--color-primario);
+  cursor: pointer;
+}
+
+.filters__option-text {
+  font-size: var(--font-size-regular);
+  color: var(--color-pie);
+  cursor: pointer;
+}
+
+.filters__show-more {
+  color: var(--color-primario);
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 0.5rem;
+  transition: color var(--transicion-rapida);
+}
+
+.filters__show-more:hover {
+  color: var(--color-primario-hover);
+  text-decoration: underline;
+}
+
+/* ==============================================
+   RESTAURANTES - BEM METODOLOGY
+   ============================================== */
+
+.restaurants {
+  width: 72%;
+}
+
+.restaurants__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--color-primario);
+}
+
+.restaurants__count {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--color-encabezado);
+}
+
+.restaurants__sort {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.restaurants__sort-label {
+  font-weight: 600;
+  color: var(--color-pie);
+  font-size: var(--font-size-regular);
+}
+
+.restaurants__sort-select {
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--color-primario);
+  border-radius: var(--border-radius);
+  background-color: var(--color-texto-claro);
+  color: var(--color-pie);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transicion-rapida);
+}
+
+.restaurants__sort-select:hover,
+.restaurants__sort-select:focus {
+  border-color: var(--color-primario-hover);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(76, 201, 240, 0.2);
+}
+
+.restaurants__list {
+  display: grid;
+  gap: 2rem;
+}
+
+.restaurant-item {
+  display: flex;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: transform var(--transicion-rapida), box-shadow var(--transicion-rapida);
+}
+
+.restaurant-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.restaurant-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.restaurant-item__image {
+  width: 30%;
+  min-width: 250px;
+  height: 200px;
+  border-radius: var(--border-radius);
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: transform var(--transicion-rapida);
+}
+
+.restaurant-item:hover .restaurant-item__image {
+  transform: scale(1.05);
+}
+
+.restaurant-item__info {
+  width: 70%;
+  padding-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.restaurant-item__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--color-encabezado);
+}
+
+.restaurant-item__rating {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.restaurant-item__rating-value {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--color-acento);
+}
+
+.restaurant-item__stars {
+  color: #ffd700;
+  font-size: 1.1rem;
+  letter-spacing: -2px;
+}
+
+.restaurant-item__cuisine {
+  color: var(--color-pie);
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+  font-size: var(--font-size-regular);
+}
+
+.restaurant-item__price {
+  color: var(--color-primario);
+  font-weight: 600;
+  font-size: var(--font-size-regular);
+  margin-bottom: 0.5rem;
+}
+
+.restaurant-item__menu {
+  color: var(--color-primario);
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  padding: 0.3rem 0.8rem;
+  border: 2px solid var(--color-primario);
+  border-radius: var(--border-radius);
+  transition: all var(--transicion-rapida);
+}
+
+.restaurant-item__menu:hover {
+  background-color: var(--color-primario);
+  color: var(--color-texto-claro);
+}
+
+.restaurant-item__description {
+  font-style: italic;
+  margin-bottom: 0.5rem;
+  color: var(--color-pie);
+  font-size: var(--font-size-regular);
+}
+
+.restaurant-item__quote {
+  color: var(--color-pie);
+  font-weight: 500;
+  font-size: var(--font-size-regular);
+  padding-left: 1rem;
+  border-left: 3px solid var(--color-primario);
+}
+
+/* ==============================================
+   PAGINACIÓN - BEM METODOLOGY
+   ============================================== */
+
+.restaurants__pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 2px solid var(--color-border);
+}
+
+.restaurants__pagination-btn {
+  padding: 0.8rem 1.5rem;
+  background-color: var(--color-primario);
+  color: var(--color-texto-claro);
+  border: none;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transicion-rapida);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.restaurants__pagination-btn:hover {
+  background-color: var(--color-primario-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.restaurants__pagination-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.restaurants__pagination-info {
+  font-weight: 600;
+  color: var(--color-pie);
+  font-size: var(--font-size-regular);
+}
+
+/* ==============================================
+   MEDIA QUERIES - RESPONSIVE DESIGN
+   ============================================== */
+
+/* Tablet - Menos de 992px */
+@media (max-width: 992px) {
+  .content-container {
+    flex-direction: column;
+  }
+  
+  .filters,
+  .restaurants {
+    width: 100%;
+  }
+  
+  .filters {
+    position: static;
+    margin-bottom: 2rem;
+  }
+  
+  .restaurant-item {
+    flex-direction: column;
+  }
+  
+  .restaurant-item__image {
+    width: 100%;
+    height: 250px;
+    margin-bottom: 1rem;
+  }
+  
+  .restaurant-item__info {
+    padding-left: 0;
+  }
+}
+
+/* Mobile - Menos de 768px */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+  }
+  
+  .main-content {
+    padding: 1rem;
+  }
+  
+  .main-content__title {
+    font-size: 2rem;
+  }
+  
+  .main-content__subtitle {
+    font-size: 1.4rem;
+  }
+  
+  .content-container {
+    gap: 1rem;
+  }
+  
+  .filters {
+    padding: 1rem;
+  }
+  
+  .filters__group {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+  }
+  
+  .filters__group-title {
+    font-size: 1.1rem;
+  }
+  
+  .restaurant-item__title {
+    font-size: 1.3rem;
+  }
+  
+  .restaurant-item__rating-value {
+    font-size: 1rem;
+  }
+  
+  .restaurant-item__stars {
+    font-size: 1rem;
+  }
+  
+  .restaurant-item__image {
+    height: 200px;
+  }
+  
+  .restaurants__header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  
+  .restaurants__sort {
+    width: 100%;
+  }
+  
+  .restaurants__sort-select {
+    width: 100%;
+  }
+}
+
+/* Mobile pequeño - Menos de 480px */
+@media (max-width: 480px) {
+  .navbar-container {
+    padding: 0.8rem 1rem;
+  }
+  
+  .logo-container {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .main-content__title {
+    font-size: 1.8rem;
+  }
+  
+  .main-content__subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .restaurant-item__title {
+    font-size: 1.2rem;
+  }
+  
+  .restaurant-item__rating {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+  
+  .restaurant-item__image {
+    height: 180px;
+  }
+  
+  .restaurant-item__info {
+    gap: 0.3rem;
+  }
+  
+  .restaurant-item__cuisine,
+  .restaurant-item__price,
+  .restaurant-item__description,
+  .restaurant-item__quote {
+    font-size: var(--font-size-small);
+  }
+  
+  .restaurant-item__menu {
+    padding: 0.25rem 0.6rem;
+    font-size: var(--font-size-small);
+  }
+  
+  .restaurants__pagination {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .restaurants__pagination-btn {
+    width: 100%;
+    padding: 0.7rem;
+  }
+  
+  .sub-header__container {
+    gap: 0.8rem;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding: 0.5rem 0;
+  }
+  
+  .sub-header__item {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+  
+  .sub-header__icon {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bogotá, Colombia</title>
+  <link rel="stylesheet" href="/src/static/css/VISI/restaurantes-bogota.css" />
+</head>
+<body>
+
+  <header>
+    <div class="navbar-container">
+      <div class="logo">
+        <div class="logo-container">
+          <img src="/src/static/imagenes/INICIO/logo_edelle.jpg" alt="Edelle - Tu Próxima Gran Aventura" />
+        </div>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="/index.html">Inicio</a></li>
+          <li><a href="/src/templates/visitante/quienes-somos.html">Quienes Somos</a></li>
+          <li><a href="/src/templates/visitante/servicios.html">Servicios</a></li>
+          <li><a href="/src/templates/visitante/destinos.html">Destinos</a></li>
+        </ul>
+      </nav>
+
+      <div class="user-icon">
+        <a href="/src/templates/comprador/login.html" title="Iniciar Sesión">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-5.656-3.656L12 17l-2.344-2.344A4 4 0 0 0 4 17v2"></path>
+            <circle cx="12" cy="9" r="4"></circle>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section class="sub-header">
+    <div class="sub-header__container">
+      <a href="#" class="sub-header__item sub-header__item--active">
+        <span class="sub-header__icon">📍</span>
+        Bogotá
+      </a>
+      <a href="/src/templates/visitante/hoteles-bogota.html" class="sub-header__item">Hoteles</a>
+      <a href="/src/templates/visitante/cosas-porHacer-bogota.html" class="sub-header__item">Cosas Por Hacer</a>
+      <a href="#" class="sub-header__item">Restaurantes</a>
+      <a href="#" class="sub-header__item">Pasajes</a>
+      <a href="#" class="sub-header__item">Reseñas</a>
+    </div>
+  </section>
+
+  <main class="main-content">
+    <div class="main-content__header">
+      <h1 class="main-content__title">Tesoros de la Cocina en Bogotá</h1>
+      <h2 class="main-content__subtitle">Los Mejores Restaurantes en Bogotá</h2>
+    </div>
+
+    <div class="content-container">
+      <aside class="filters">
+        <div class="filters__group">
+          <h3 class="filters__group-title">Tipo de Establecimiento</h3>
+          <div class="filters__options">
+            <label class="filters__option">
+              <input type="checkbox" name="establishment" value="restaurantes">
+              <span class="filters__option-text">Restaurantes</span>
+            </label>
+            <label class="filters__option">
+              <input type="checkbox" name="establishment" value="cafe">
+              <span class="filters__option-text">Café y Té</span>
+            </label>
+            <label class="filters__option">
+              <input type="checkbox" name="establishment" value="tentempiés">
+              <span class="filters__option-text">Tentempiés</span>
+            </label>
+            <label class="filters__option">
+              <input type="checkbox" name="establishment" value="postres">
+              <span class="filters__option-text">Postres</span>
+            </label>
+          </div>
+          <a href="#" class="filters__show-more">Mostrar mas</a>
+        </div>
+
+        <div class="filters__group">
+          <h3 class="filters__group-title">Tipo de comida</h3>
+          <div class="filters__options">
+            <label class="filters__option">
+              <input type="checkbox" name="food" value="desayuno">
+              <span class="filters__option-text">Desayuno</span>
+            </label>
+            <label class="filters__option">
+              <input type="checkbox" name="food" value="brunch">
+              <span class="filters__option-text">Brunch</span>
+            </label>
+            <label class="filters__option">
+              <input type="checkbox" name="food" value="almuerzo">
+              <span class="filters__option-text">Almuerzo</span>
+            </label>
+            <label class="filters__option">
+              <input type="checkbox" name="food" value="cena">
+              <span class="filters__option-text">Cena</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="filters__group">
+          <h3 class="filters__group-title">Tipo de cocina</h3>
+          <div class="filters__options">
+            <label class="filters__option">
+              <input type="checkbox" name="cuisine" value="colombiana">
+              <span class="filters__option-text">Colombiana</span>
+            </label>
+            <label class="filters__option">
+              <input type="checkbox" name="cuisine" value="internacional">
+              <span class="filters__option-text">Internacional</span>
+            </label>
+            <label class="filters__option">
+              <input type="checkbox" name="cuisine" value="japonesa">
+              <span class="filters__option-text">Japonesa</span>
+            </label>
+            <label class="filters__option">
+              <input type="checkbox" name="cuisine" value="mexicana">
+              <span class="filters__option-text">Mexicana</span>
+            </label>
+          </div>
+          <a href="#" class="filters__show-more">Mostrar mas</a>
+        </div>
+
+        <div class="filters__group">
+          <h3 class="filters__group-title">Precio</h3>
+          <div class="filters__options">
+            <label class="filters__option">
+              <input type="checkbox" name="price" value="economico">
+              <span class="filters__option-text">Económico</span>
+            </label>
+            <label class="filters__option">
+              <input type="checkbox" name="price" value="medio">
+              <span class="filters__option-text">Precio Medio</span>
+            </label>
+            <label class="filters__option">
+              <input type="checkbox" name="price" value="alto">
+              <span class="filters__option-text">Alto</span>
+            </label>
+          </div>
+        </div>
+      </aside>
+
+      <section class="restaurants">
+        <div class="restaurants__header">
+          <p class="restaurants__count">5.744 resultados</p>
+          <div class="restaurants__sort">
+            <label for="sort-select" class="restaurants__sort-label">Ordenar por:</label>
+            <select id="sort-select" class="restaurants__sort-select">
+              <option value="relevancia">Relevancia</option>
+              <option value="rating">Mejor Calificación</option>
+              <option value="nombre">Nombre (A-Z)</option>
+              <option value="precio">Precio</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="restaurants__list">
+          <article class="restaurant-item">
+            <img src="/src/static/imagenes/RESTAURANTES/petronio/1.jpg" alt="La paloma Mirador" class="restaurant-item__image">
+            <div class="restaurant-item__info">
+              <h3 class="restaurant-item__title">1. Petronio Cocina de Autor</h3>
+              <div class="restaurant-item__rating">
+                <span class="restaurant-item__rating-value">4.8</span>
+                <div class="restaurant-item__stars">
+                  ★★★★★
+                </div>
+              </div>
+              <p class="restaurant-item__cuisine">Mariscos, Internacional</p>
+              <p class="restaurant-item__price">$$$</p>
+              <a href="#" class="restaurant-item__menu">Menú</a>
+              <p class="restaurant-item__description">"Toda una Experiencia gastronómica"</p>
+              <p class="restaurant-item__quote">"Siempre Excelente"</p>
+            </div>
+          </article>
+
+          <article class="restaurant-item">
+            <img src="https://via.placeholder.com/300x200?text=Ushin+Japanese+%26+Grill" alt="Ushin Japanese & Grill" class="restaurant-item__image">
+            <div class="restaurant-item__info">
+              <h3 class="restaurant-item__title">2. Ushin Japanese & Grill</h3>
+              <div class="restaurant-item__rating">
+                <span class="restaurant-item__rating-value">4.9</span>
+                <div class="restaurant-item__stars">
+                  ★★★★★
+                </div>
+              </div>
+              <p class="restaurant-item__cuisine">Japonesa, Sushi</p>
+              <p class="restaurant-item__price">₡₡₡₡</p>
+              <a href="#" class="restaurant-item__menu">Menú</a>
+              <p class="restaurant-item__description">"Excelente atención de Daniel, muy buena comida y la vista 20/10"</p>
+              <p class="restaurant-item__quote">"Todo Increíble !"</p>
+            </div>
+          </article>
+
+          <article class="restaurant-item">
+            <img src="https://via.placeholder.com/300x200?text=Andrés+Carne+de+Res" alt="Andrés Carne de Res" class="restaurant-item__image">
+            <div class="restaurant-item__info">
+              <h3 class="restaurant-item__title">3. Andrés Carne de Res</h3>
+              <div class="restaurant-item__rating">
+                <span class="restaurant-item__rating-value">4.7</span>
+                <div class="restaurant-item__stars">
+                  ★★★★★
+                </div>
+              </div>
+              <p class="restaurant-item__cuisine">Colombiana, Parrilla</p>
+              <p class="restaurant-item__price">₡₡₡₡</p>
+              <a href="#" class="restaurant-item__menu">Menú</a>
+              <p class="restaurant-item__description">"Experiencia única en Bogotá"</p>
+              <p class="restaurant-item__quote">"Ambiente y sabor incomparable"</p>
+            </div>
+          </article>
+
+          <article class="restaurant-item">
+            <img src="https://via.placeholder.com/300x200?text=Casa+Nostra" alt="Casa Nostra" class="restaurant-item__image">
+            <div class="restaurant-item__info">
+              <h3 class="restaurant-item__title">4. Casa Nostra</h3>
+              <div class="restaurant-item__rating">
+                <span class="restaurant-item__rating-value">4.5</span>
+                <div class="restaurant-item__stars">
+                  ★★★★☆
+                </div>
+              </div>
+              <p class="restaurant-item__cuisine">Italiana, Mediterránea</p>
+              <p class="restaurant-item__price">₡₡₡</p>
+              <a href="#" class="restaurant-item__menu">Menú</a>
+              <p class="restaurant-item__description">"La mejor pasta de la ciudad"</p>
+              <p class="restaurant-item__quote">"Auténtico sabor italiano"</p>
+            </div>
+          </article>
+
+          <article class="restaurant-item">
+            <img src="https://via.placeholder.com/300x200?text=Leo" alt="Leo" class="restaurant-item__image">
+            <div class="restaurant-item__info">
+              <h3 class="restaurant-item__title">5. Leo</h3>
+              <div class="restaurant-item__rating">
+                <span class="restaurant-item__rating-value">4.8</span>
+                <div class="restaurant-item__stars">
+                  ★★★★★
+                </div>
+              </div>
+              <p class="restaurant-item__cuisine">Colombiana, Fusión</p>
+              <p class="restaurant-item__price">₡₡₡₡₡</p>
+              <a href="#" class="restaurant-item__menu">Menú</a>
+              <p class="restaurant-item__description">"Cocina colombiana de autor"</p>
+              <p class="restaurant-item__quote">"Experiencia gastronómica única"</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="restaurants__pagination">
+          <button class="restaurants__pagination-btn restaurants__pagination-btn--prev">Anterior</button>
+          <span class="restaurants__pagination-info">Página 1 de 10</span>
+          <button class="restaurants__pagination-btn restaurants__pagination-btn--next">Siguiente</button>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
