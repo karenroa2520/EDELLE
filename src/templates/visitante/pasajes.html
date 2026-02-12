@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pasajes</title>
+  <link rel="stylesheet" href="/src/static/css/VISI/pasajes.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="navbar-container">
+      <div class="logo">
+        <div class="logo-container">
+          <img src="/src/static/imagenes/INICIO/logo_edelle.jpg" alt="Edelle - Tu Próxima Gran Aventura" />
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/index.html">Inicio</a></li>
+          <li><a href="/src/templates/visitante/quienes-somos.html">Quienes Somos</a></li>
+          <li><a href="/src/templates/visitante/servicios.html">Servicios</a></li>
+          <li><a href="/src/templates/visitante/destinos.html">Destinos</a></li>
+          <li><a href="/src/templates/visitante/pasajes.html">Pasajes</a></li>
+        </ul>
+      </nav>
+      <div class="user-icon">
+        <a href="/src/templates/comprador/login.html" title="Iniciar Sesión">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-5.656-3.656L12 17l-2.344-2.344A4 4 0 0 0 4 17v2"></path>
+            <circle cx="12" cy="9" r="4"></circle>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- Sección principal (Hero) -->
+  <section class="hero">
+    <div class="hero__content">
+      <h1 class="hero__title">BIENVENIDOS A EDELLE - "Viajar es vivir." Celebramos 64 años de historia juntos</h1>
+      
+      <!-- Formulario de búsqueda -->
+      <div class="search-form">
+        <div class="search-form__group">
+          <label for="origin" class="search-form__label">Origen</label>
+          <input type="text" id="origin" class="search-form__input" placeholder="Ciudad de donde sales">
+        </div>
+        
+        <div class="search-form__group">
+          <label for="destination" class="search-form__label">Destino</label>
+          <input type="text" id="destination" class="search-form__input" placeholder="Ciudad a donde viajas">
+        </div>
+        
+        <div class="search-form__group">
+          <label for="departure" class="search-form__label">Fecha de salida</label>
+          <input type="text" id="departure" class="search-form__input" placeholder="11 Feb 2026">
+        </div>
+        
+        <div class="search-form__group">
+          <label for="return" class="search-form__label">Fecha de regreso</label>
+          <input type="text" id="return" class="search-form__input" placeholder="Regreso (Opc.)">
+        </div>
+        
+        <button type="submit" class="search-form__button">Buscar</button>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- Pie de página -->
+  <footer class="footer">
+    <p class="footer__text">© 2026 Grupo Coomotor. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
