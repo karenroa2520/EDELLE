@@ -1,8 +1,6 @@
-/* ========================================
-   VARIABLES GLOBALES (EN ESPAÑOL)
-   ======================================== */
+/* --> Define variables reutilizables para colores, fuentes y medidas. Esto facilita mantener y cambiar el estilo en todo el sitio desde un solo lugar. */
 :root {
-  /* --> Colores principales del sitio */
+  /* --> Colores principales del sitio: azul oscuro para encabezado y pie, azules más claros para fondos, y blanco/claros para texto. */
   --color-encabezado: #03045E;
   --color-pie: #03045E;
   --color-fondo-cuerpo: #033F8A;
@@ -12,41 +10,38 @@
   --color-primario: #4cc9f0;
   --color-primario-hover: #3a9fd0;
 
-  /* --> Fuente principal */
+  /* --> Fuente principal para todo el contenido: moderna, legible y compatible en la mayoría de dispositivos. */
   --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
-  /* --> Transiciones */
+  /* --> Medidas de diseño reutilizables: bordes redondeados para botones y tarjetas, y duración de transiciones suaves. */
+  --radio-boton: 25px;
+  --radio-tarjeta: 20px;
   --transicion-rapida: 0.3s ease;
 
-  /* --> Variables para formulario */
+  /* --> Variables adicionales para formulario y hero */
   --espacio: 1rem;
   --espacio-pequeno: 0.5rem;
   --espacio-mayor: 2rem;
   --tamano-fuente: 1rem;
   --tamano-titulo: 3.5rem;
   --tamano-titulo-movil: 2.2rem;
-  --peso-titulo: 700;
   --color-fondo-submenu: #ffffff;
   --color-texto-submenu: #000000;
+  --color-boton: #4cc9f0;
+  --color-boton-hover: #3a9fd0;
   --grosor-borde: 1px;
   --radio-borde: 8px;
-  
-  /* --> Alturas fijas */
   --altura-navbar: 70px;
 }
 
-/* ========================================
-   REINICIO UNIVERSAL
-   ======================================== */
+/* --> Reseteo universal: elimina márgenes y rellenos por defecto del navegador y asegura que el ancho y alto incluyan bordes y rellenos. */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ========================================
-   ESTILO BASE DEL CUERPO
-   ======================================== */
+/* --> Estilo base del cuerpo de la página: usa la fuente definida, fondo azul oscuro y texto blanco con buen espaciado entre líneas. */
 body {
   font-family: var(--fuente-principal);
   background-color: var(--color-fondo-cuerpo);
@@ -55,9 +50,9 @@ body {
   overflow-x: hidden;
 }
 
-/* ========================================
-   BARRA DE NAVEGACIÓN (SIN CAMBIOS)
-   ======================================== */
+/* === BARRA DE NAVEGACIÓN === */
+
+/* --> Contenedor de la barra superior: fija en la parte de arriba, con fondo oscuro, sombra sutil y contenido alineado horizontalmente. */
 .navbar-container {
   display: flex;
   justify-content: space-between;
@@ -67,21 +62,22 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  height: var(--altura-navbar);
+  z-index: 1000; /* --> Asegura que la barra esté por encima de otros elementos al hacer scroll. */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* --> Sombra suave para separarla visualmente del contenido. */
 }
 
+/* --> Contenedor del logo: alinea verticalmente el logo dentro de la barra. */
 .logo {
   display: flex;
   align-items: center;
 }
 
+/* --> Marco circular blanco para el logo, con sombra, que recorta la imagen si no es redonda. */
 .logo-container {
   width: 50px;
   height: 50px;
-  border-radius: 50%;
-  overflow: hidden;
+  border-radius: 50%; /* --> Hace que el contenedor sea un círculo. */
+  overflow: hidden; /* --> Recorta la imagen si sobresale del círculo. */
   background-color: white;
   display: flex;
   align-items: center;
@@ -89,13 +85,15 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+/* --> Estilo de la imagen del logo: ocupa todo el contenedor circular y se ajusta sin deformarse. */
 .logo-container img {
   width: 100%;
   height: auto;
-  object-fit: cover;
-  object-position: center;
+  object-fit: cover; /* --> Rellena el espacio sin deformar la imagen. */
+  object-position: center; /* --> Centra la parte visible de la imagen. */
 }
 
+/* --> Lista del menú de navegación: elementos en fila horizontal, sin viñetas, con espacio entre ellos. */
 nav ul {
   display: flex;
   list-style: none;
@@ -104,42 +102,33 @@ nav ul {
   padding: 0;
 }
 
+/* --> Enlaces del menú: texto blanco, sin subrayado, con peso negrita suave y transición suave al pasar el mouse. */
 nav ul li a {
   color: var(--color-texto-claro);
   text-decoration: none;
   font-weight: 600;
   font-size: 1.1rem;
   transition: color var(--transicion-rapida);
-  white-space: nowrap;
+  white-space: nowrap; /* --> Evita que el texto se parta en dos líneas. */
   padding: 0.4rem 0.6rem;
   border-radius: 8px;
 }
 
+/* --> Efecto al pasar el mouse sobre un enlace: cambia a color primario y añade fondo ligeramente transparente. */
 nav ul li a:hover {
   color: var(--color-primario);
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.user-icon svg {
-  width: 24px;
-  height: 24px;
-  stroke: var(--color-texto-claro);
-  transition: stroke var(--transicion-rapida);
+.link-perfil {
+  text-decoration: none;
+  color: white;
+  display: inline-block;
 }
 
-.user-icon a {
-  display: block;
-  padding: 0.5rem;
-  border-radius: 8px;
-  transition: background-color var(--transicion-rapida);
-}
-
-.user-icon a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.user-icon a:hover svg {
-  stroke: var(--color-primario);
+.icono-usuario {
+  width: 42px;
+  height: 42px;
 }
 
 /* ========================================
@@ -155,21 +144,22 @@ nav ul li a:hover {
   justify-content: center;
   color: var(--color-texto-claro);
   text-align: center;
-  padding: calc(var(--altura-navbar) + 2rem) 1rem 6rem 1rem;
   position: relative;
+  padding: calc(var(--altura-navbar) + 2rem) 1rem 6rem 1rem;
 }
 
 .hero__content {
   max-width: 1200px;
   margin: 0 auto;
-  width: 100%;
+  padding: 0 var(--espacio);
   z-index: 10;
+  width: 100%;
 }
 
 .hero__title {
   font-family: var(--fuente-principal);
   font-size: var(--tamano-titulo);
-  font-weight: var(--peso-titulo);
+  font-weight: 700;
   line-height: 1.3;
   margin-bottom: var(--espacio-mayor);
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
@@ -219,7 +209,7 @@ nav ul li a:hover {
 }
 
 .search-form__button {
-  background-color: var(--color-primario);
+  background-color: var(--color-boton);
   color: white;
   border: none;
   border-radius: var(--radio-borde);
@@ -234,12 +224,64 @@ nav ul li a:hover {
 }
 
 .search-form__button:hover {
-  background-color: var(--color-primario-hover);
+  background-color: var(--color-boton-hover);
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
+.hero__link {
+  display: inline-block;
+  margin-top: 1.5rem;
+  color: var(--color-boton);
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: var(--transicion-rapida);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  text-decoration: none;
+}
 
+.hero__link:hover {
+  text-decoration: underline;
+  color: var(--color-boton-hover);
+}
+
+/* ========================================
+   ESTILOS PARA SELECT DESPLEGABLE
+   ======================================== */
+.search-form__select {
+  width: 100%;
+  padding: 0.75rem;
+  border: var(--grosor-borde) solid #ddd;
+  border-radius: var(--radio-borde);
+  font-family: var(--fuente-principal);
+  font-size: var(--tamano-fuente);
+  color: var(--color-texto-submenu);
+  background-color: white;
+  outline: none;
+  cursor: pointer;
+  transition: border-color var(--transicion-rapida);
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 12px;
+  padding-right: 2.5rem;
+}
+
+.search-form__select:focus {
+  border-color: var(--color-primario);
+  box-shadow: 0 0 0 2px rgba(76, 201, 240, 0.2);
+}
+
+.search-form__select option {
+  padding: 0.5rem;
+  background-color: white;
+  color: var(--color-texto-submenu);
+}
+
+.search-form__select option:first-child {
+  color: #999;
+}
 
 /* ========================================
    PIE DE PÁGINA
@@ -253,6 +295,7 @@ nav ul li a:hover {
   bottom: 0;
   left: 0;
   width: 100%;
+  z-index: 20;
   font-size: 0.95rem;
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.15);
 }
@@ -270,20 +313,6 @@ nav ul li a:hover {
 @media (max-width: 768px) {
   :root {
     --tamano-titulo: 2.8rem;
-    --altura-navbar: 65px;
-  }
-  
-  .navbar-container {
-    padding: 0.8rem 1.5rem;
-  }
-  
-  nav ul {
-    gap: 1.2rem;
-  }
-  
-  nav ul li a {
-    font-size: 1rem;
-    padding: 0.35rem 0.5rem;
   }
   
   .hero {
@@ -300,7 +329,8 @@ nav ul li a:hover {
     max-width: 95%;
   }
   
-  .search-form__input {
+  .search-form__input,
+  .search-form__select {
     padding: 0.65rem;
   }
   
@@ -309,40 +339,20 @@ nav ul li a:hover {
     font-size: 1rem;
   }
   
+  .hero__link {
+    font-size: 1rem;
+    margin-top: 1.2rem;
+  }
 }
 
 /* Móvil */
 @media (max-width: 480px) {
   :root {
     --tamano-titulo: var(--tamano-titulo-movil);
-    --altura-navbar: 130px;
-  }
-  
-  .navbar-container {
-    padding: 0.7rem 1rem;
-    flex-direction: column;
-    gap: 0.8rem;
-    height: auto;
-  }
-  
-  .logo-container {
-    width: 45px;
-    height: 45px;
-  }
-  
-  nav ul {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.8rem;
-  }
-  
-  nav ul li a {
-    font-size: 0.95rem;
-    padding: 0.3rem 0.6rem;
   }
   
   .hero {
-    padding: calc(var(--altura-navbar) + 1rem) 1rem 5rem 1rem;
+    padding: calc(var(--altura-navbar) + 5rem) 1rem 5rem 1rem;
   }
   
   .hero__title {
@@ -361,9 +371,15 @@ nav ul li a:hover {
     margin-bottom: 0.8rem;
   }
   
-  .search-form__input {
+  .search-form__input,
+  .search-form__select {
     padding: 0.7rem;
     font-size: 0.95rem;
+  }
+  
+  .search-form__select {
+    background-position: right 0.6rem center;
+    padding-right: 2.2rem;
   }
   
   .search-form__label {

@@ -1,40 +1,86 @@
+<!-- Declara el tipo de documento como HTML5 -->
 <!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pasajes</title>
-  <link rel="stylesheet" href="/src/static/css/VISI/pasajes.css" />
-</head>
-<body>
-  <!-- Header -->
-  <header>
-    <div class="navbar-container">
-      <div class="logo">
-        <div class="logo-container">
-          <img src="/src/static/imagenes/INICIO/logo_edelle.jpg" alt="Edelle - Tu Próxima Gran Aventura" />
-        </div>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="/index.html">Inicio</a></li>
-          <li><a href="/src/templates/visitante/quienes-somos.html">Quienes Somos</a></li>
-          <li><a href="/src/templates/visitante/servicios.html">Servicios</a></li>
-          <li><a href="/src/templates/visitante/destinos.html">Destinos</a></li>
-          <li><a href="/src/templates/visitante/pasajes.html">Pasajes</a></li>
-        </ul>
-      </nav>
-      <div class="user-icon">
-        <a href="/src/templates/comprador/login.html" title="Iniciar Sesión">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 21v-2a4 4 0 0 0-5.656-3.656L12 17l-2.344-2.344A4 4 0 0 0 4 17v2"></path>
-            <circle cx="12" cy="9" r="4"></circle>
-          </svg>
-        </a>
-      </div>
-    </div>
-  </header>
 
+<!-- Define el idioma principal de la página como español -->
+<html lang="es">
+
+<!-- Sección de cabecera del documento: contiene metadatos y enlaces a recursos externos -->
+<head>
+
+  <!-- Especifica la codificación de caracteres como UTF-8 para soportar acentos y símbolos -->
+  <meta charset="UTF-8" />
+
+  <!-- Configura la vista para que sea responsive en dispositivos móviles -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- Define el título que aparece en la pestaña del navegador -->
+  <title>Pasajes</title>
+
+  <!-- Enlaza la hoja de estilos externa 'styles.css' para aplicar estilos a la página -->
+  <link rel="stylesheet" href="/src/static/css/VISI/pasajes.css" />
+
+<!-- Cierra la sección <head> -->
+</head>
+
+<!-- Cuerpo visible de la página web -->
+<body>
+
+  <!-- Barra de navegación superior con logo, menú y acceso al usuario -->
+  <header>
+
+    <!-- Contenedor principal que agrupa los elementos de la barra de navegación -->
+    <div class="navbar-container">
+
+      <!-- Sección del logo, alineado a la izquierda -->
+      <div class="logo">
+
+        <!-- Contenedor circular para la imagen del logo -->
+        <div class="logo-container">
+
+          <!-- Imagen del logo de la empresa (Edelle) con texto alternativo para accesibilidad -->
+          <img src="/src/static/imagenes/INICIO/logo_edelle.jpg" alt="Edelle - Tu Próxima Gran Aventura" />
+
+        <!-- Cierra el contenedor del logo -->
+        </div>
+
+      <!-- Cierra la sección del logo -->
+      </div>
+
+      <!-- Barra de navegación con enlaces principales del sitio -->
+      <nav>
+
+        <!-- Lista no ordenada de elementos del menú -->
+        <ul>
+
+          <!-- Enlace a la página de inicio -->
+          <li><a href="/index.html">Inicio</a></li>
+
+          <!-- Enlace a la página "Quiénes Somos" -->
+          <li><a href="/src/templates/visitante/quienes-somos.html">Quienes Somos</a></li>
+
+          <!-- Enlace a la página de servicios -->
+          <li><a href="/src/templates/visitante/servicios.html">Servicios</a></li>
+
+          <!-- Enlace a la página de destinos turísticos -->
+          <li><a href="/src/templates/visitante/destinos.html">Destinos</a></li>
+
+          <li><a href="/src/templates/visitante/pasajes.html">Pasajes</a></li>
+
+        <!-- Cierra la lista de menú -->
+        </ul>
+
+      <!-- Cierra la barra de navegación -->
+      </nav>
+
+      <a href="/src/templates/comprador/login.html" title="Iniciar Sesión" class="link-perfil">
+        <img src="/src/static/imagenes/INICIO/inicio-de-sesion-de-usuario.png" alt="Iniciar Sesión" class="icono-usuario">
+      </a>
+
+    <!-- Cierra el contenedor de la barra de navegación -->
+    </div>
+
+  <!-- Cierra el encabezado (header) -->
+  </header>
 
   <!-- Sección principal (Hero) -->
   <section class="hero">
@@ -42,36 +88,59 @@
       <h1 class="hero__title">BIENVENIDOS A EDELLE - "Viajar es vivir." Celebramos 64 años de historia juntos</h1>
       
       <!-- Formulario de búsqueda -->
-      <div class="search-form">
+      <form class="search-form">
         <div class="search-form__group">
           <label for="origin" class="search-form__label">Origen</label>
-          <input type="text" id="origin" class="search-form__input" placeholder="Ciudad de donde sales">
+          <select id="origin" class="search-form__select" required>
+            <option value="">Selecciona ciudad de origen</option>
+            <option value="bogota">Bogotá</option>
+            <option value="medellin">Medellín</option>
+            <option value="cali">Cali</option>
+            <option value="barranquilla">Barranquilla</option>
+            <option value="cartagena">Cartagena</option>
+            <option value="bucaramanga">Bucaramanga</option>
+            <option value="cucuta">Cúcuta</option>
+            <option value="pereira">Pereira</option>
+            <option value="manizales">Manizales</option>
+            <option value="santa-marta">Santa Marta</option>
+          </select>
         </div>
-        
+
         <div class="search-form__group">
           <label for="destination" class="search-form__label">Destino</label>
-          <input type="text" id="destination" class="search-form__input" placeholder="Ciudad a donde viajas">
+          <select id="destination" class="search-form__select" required>
+            <option value="">Selecciona ciudad de destino</option>
+            <option value="bogota">Bogotá</option>
+            <option value="medellin">Medellín</option>
+            <option value="cali">Cali</option>
+            <option value="barranquilla">Barranquilla</option>
+            <option value="cartagena">Cartagena</option>
+            <option value="bucaramanga">Bucaramanga</option>
+            <option value="cucuta">Cúcuta</option>
+            <option value="pereira">Pereira</option>
+            <option value="manizales">Manizales</option>
+            <option value="santa-marta">Santa Marta</option>
+          </select>
         </div>
         
         <div class="search-form__group">
           <label for="departure" class="search-form__label">Fecha de salida</label>
-          <input type="text" id="departure" class="search-form__input" placeholder="11 Feb 2026">
+          <input type="date" id="departure" class="search-form__input" required>
         </div>
         
         <div class="search-form__group">
-          <label for="return" class="search-form__label">Fecha de regreso</label>
-          <input type="text" id="return" class="search-form__input" placeholder="Regreso (Opc.)">
+          <label for="return" class="search-form__label">Fecha de regreso (Opcional)</label>
+          <input type="date" id="return" class="search-form__input">
         </div>
         
         <button type="submit" class="search-form__button">Buscar</button>
-      </div>
-      
+      </form>
     </div>
   </section>
 
   <!-- Pie de página -->
   <footer class="footer">
-    <p class="footer__text">© 2026 Grupo Coomotor. Todos los derechos reservados.</p>
+    <p class="footer__text">© 2026 Todos los derechos reservados.</p>
   </footer>
 </body>
 </html>
