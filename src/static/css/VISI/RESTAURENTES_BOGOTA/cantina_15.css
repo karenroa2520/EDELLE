@@ -1,0 +1,715 @@
+:root {
+  /* --> Colores principales del sitio: azul oscuro para encabezado y pie, azules más claros para fondos, y blanco/claros para texto. */
+  --color-encabezado: #03045E;
+  --color-pie: #03045E;
+  --color-fondo-cuerpo: #033F8A;
+  --color-fondo-seccion: #448ec7;
+  --color-texto-claro: #ffffff;
+  --color-texto-secundario: #e0e0e0;
+  --color-primario: #4cc9f0;
+  --color-primario-hover: #3a9fd0;
+
+  /* --> Fuente principal para todo el contenido: moderna, legible y compatible en la mayoría de dispositivos. */
+  --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  /* --> Medidas de diseño reutilizables: bordes redondeados para botones y tarjetas, y duración de transiciones suaves. */
+  --radio-boton: 25px;
+  --radio-tarjeta: 20px;
+  --transicion-rapida: 0.3s ease;
+}
+
+/* --> Reseteo universal: elimina márgenes y rellenos por defecto del navegador y asegura que el ancho y alto incluyan bordes y rellenos. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --> Estilo base del cuerpo de la página: usa la fuente definida, fondo azul oscuro y texto blanco con buen espaciado entre líneas. */
+body {
+  font-family: var(--fuente-principal);
+  background-color: var(--color-texto-claro);
+  color: var(--color-texto-claro);
+  line-height: 1.6;
+}
+
+/* === BARRA DE NAVEGACIÓN === */
+
+/* --> Contenedor de la barra superior: fija en la parte de arriba, con fondo oscuro, sombra sutil y contenido alineado horizontalmente. */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--color-encabezado);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* --> Asegura que la barra esté por encima de otros elementos al hacer scroll. */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* --> Sombra suave para separarla visualmente del contenido. */
+}
+
+/* --> Contenedor del logo: alinea verticalmente el logo dentro de la barra. */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+/* --> Marco circular blanco para el logo, con sombra, que recorta la imagen si no es redonda. */
+.logo-container {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* --> Hace que el contenedor sea un círculo. */
+  overflow: hidden; /* --> Recorta la imagen si sobresale del círculo. */
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* --> Estilo de la imagen del logo: ocupa todo el contenedor circular y se ajusta sin deformarse. */
+.logo-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* --> Rellena el espacio sin deformar la imagen. */
+  object-position: center; /* --> Centra la parte visible de la imagen. */
+}
+
+/* --> Lista del menú de navegación: elementos en fila horizontal, sin viñetas, con espacio entre ellos. */
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* --> Enlaces del menú: texto blanco, sin subrayado, con peso negrita suave y transición suave al pasar el mouse. */
+nav ul li a {
+  color: var(--color-texto-claro);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color var(--transicion-rapida);
+  white-space: nowrap; /* --> Evita que el texto se parta en dos líneas. */
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+}
+
+/* --> Efecto al pasar el mouse sobre un enlace: cambia a color primario y añade fondo ligeramente transparente. */
+nav ul li a:hover {
+  color: var(--color-primario);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* --> Estilo del ícono de usuario (SVG): tamaño fijo, color blanco, con transición al cambiar de color. */
+.user-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--color-texto-claro);
+  transition: stroke var(--transicion-rapida);
+}
+
+/* --> Enlace del ícono: zona clickeable más grande con redondeo y transición de fondo. */
+.user-icon a {
+  display: block;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: background-color var(--transicion-rapida);
+}
+
+/* --> Al pasar el mouse sobre el ícono: fondo ligeramente blanco y el ícono cambia al color primario. */
+.user-icon a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  stroke: var(--color-primario);
+}
+
+
+.sub-header {
+  background: var(--color-texto-claro); /* Fondo blanco */
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  margin-top: 70px; /* Espacio para que no se solape con el navbar fijo */
+  position: relative;
+  z-index: 999;
+}
+
+.sub-header__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.sub-header__item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-pie); /* Texto gris oscuro */
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all var(--transicion-rapida);
+}
+
+.sub-header__item:hover,
+.sub-header__item--active {
+  background: var(--color-encabezado); /* Azul oscuro */
+  color: var(--color-texto-claro); /* Blanco */
+}
+
+.sub-header__item--active {
+  font-weight: bold;
+}
+
+.sub-header__icon {
+  font-size: 1.1rem;
+  color: var(--color-encabezado); /* Icono azul oscuro */
+}
+
+/* === CONTENIDO PRINCIPAL DEL HOTEL === */
+
+.hotel-detail {
+  padding-top: 50px; /* Espacio para el navbar fijo + subheader */
+  min-height: 100vh;
+}
+
+.hotel-detail__header {
+  max-width: 1200px;
+  margin: 2rem auto 1rem;
+  padding: 0 1rem;
+}
+
+.hotel-detail__title {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-encabezado);
+}
+
+.hotel-detail__rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.hotel-detail__score {
+  font-weight: bold;
+  color: #ffcc00;
+}
+
+.hotel-detail__stars {
+  color: #ffcc00;
+}
+
+.hotel-detail__address {
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: var(--color-encabezado);
+}
+
+.hotel-detail__write-review {
+  display: inline-block;
+  color: var(--color-primario);
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radio-boton);
+  background: rgba(76, 201, 240, 0.2);
+  transition: var(--transicion-rapida);
+}
+
+.hotel-detail__write-review:hover {
+  background: rgba(76, 201, 240, 0.4);
+  text-decoration: underline;
+}
+
+/* === GALERÍA === */
+
+.gallery {
+  max-width: 1200px;
+  margin: 1rem auto;
+  padding: 0 1rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.gallery__main {
+  position: relative;
+  flex: 1;
+  min-width: 300px;
+}
+
+.gallery__image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: var(--radio-tarjeta);
+}
+
+.gallery__count {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: var(--color-texto-claro);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radio-boton);
+  font-size: 0.9rem;
+}
+
+.gallery__thumbnails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 150px;
+}
+
+.gallery__thumbnail {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: var(--radio-tarjeta);
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.gallery__thumbnail:hover {
+  border-color: var(--color-encabezado);
+}
+
+/* === SECCIÓN DE INFORMACIÓN === */
+
+.info-section {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.info-section__title {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--color-texto-claro);
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.info-grid__left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.section-title {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-dorado); /* COLOR DORADO PARA TODAS LAS SECCIONES */
+  font-weight: bold;
+}
+
+.closing-time {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-encabezado);
+}
+
+.highlight {
+  color: #0ae447;
+  font-weight: bold;
+}
+
+.address {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-encabezado);
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.contact-links a {
+  color: var(--color-primario);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color var(--transicion-rapida);
+}
+
+.contact-links a:hover {
+  text-decoration: underline;
+  color: var(--color-primario-hover);
+}
+
+.description {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-encabezado);
+}
+
+.characteristics-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0;
+}
+
+.characteristics-list li {
+  margin: 0.3rem 0;
+  font-size: 1rem;
+  color: var(--color-encabezado);
+}
+
+.view-all {
+  color: var(--color-primario);
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+.map-container {
+  margin-top: 0.5rem;
+}
+
+.map-image {
+  width: 100%;
+  border-radius: var(--radio-tarjeta);
+  margin-bottom: 0.5rem;
+}
+
+.map-address {
+  margin: 0.3rem 0;
+  font-size: 0.9rem;
+  color: var(--color-encabezado);
+}
+
+.parking-info {
+  color: var(--color-primario);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.info-grid__right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hours-list {
+  margin: 0.5rem 0;
+}
+
+.hour-item {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.3rem 0;
+  font-size: 1rem;
+  color: var(--color-encabezado);
+}
+
+.edit-hours {
+  color: var(--color-primario);
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+.time-slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.time-slot {
+  background: var(--color-primario);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--transicion-rapida);
+}
+
+.time-slot:hover {
+  background: var(--color-primario-hover);
+}
+
+.guardar-btn {
+  background: white;
+  color: var(--color-primario);
+  border: 2px solid var(--color-primario);
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  transition: var(--transicion-rapida);
+}
+
+.guardar-btn:hover {
+  background: var(--color-primario);
+  color: white;
+}
+
+/* === SECCIÓN DE RESEÑAS === */
+
+.reviews-section {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.reviews-section__title {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 2px solid var(--color-encabezado);
+  padding-bottom: 0.5rem;
+  color: var(--color-encabezado);
+}
+
+.reviews-section__subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--color-encabezado);
+}
+
+.review-card {
+  background: var(--color-encabezado);
+  color: var(--color-texto-claro);
+  padding: 1.5rem;
+  border-radius: var(--radio-tarjeta);
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.review-card__header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.review-card__avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.review-card__user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.review-card__name {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.review-card__date {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.review-card__rating {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: #ffcc00;
+}
+
+.review-card__content {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.review-card__meta {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.review-card--placeholder {
+  background: #f0f0f0;
+  color: #666;
+  text-align: center;
+  padding: 3rem;
+}
+
+.review-card__placeholder-content {
+  font-size: 1rem;
+  font-style: italic;
+}
+
+
+.cart-item {
+  display: none; 
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+  justify-content: space-between;
+}
+
+.cart-item b { 
+  color: #000000; 
+}
+
+/* Activar sidebar y items cuando el checkbox está checked */
+.cart-control:checked ~ .reserva {
+  right: 0;
+}
+
+.cart-control:checked ~ .reserva .cart-item {
+  display: flex;
+}
+
+
+
+/* ==============================================
+   RESPONSIVE - MOBILE FIRST
+   ============================================== */
+
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 0.75rem 1rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  nav ul {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hotel-detail__header {
+    margin: 1.5rem auto;
+    padding: 0 0.5rem;
+  }
+
+  .hotel-detail__title {
+    font-size: 1.8rem;
+  }
+
+  .gallery {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .gallery__main {
+    min-width: auto;
+  }
+
+  .gallery__image {
+    height: 300px;
+  }
+
+  .gallery__thumbnails {
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 0.5rem;
+  }
+
+  .booking-banner {
+    padding: 1rem;
+    margin: 1rem auto;
+  }
+
+  .booking-banner__title {
+    font-size: 1.5rem;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-section__btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .reviews-section {
+    padding: 0 0.5rem;
+  }
+
+  .review-card {
+    padding: 1rem;
+  }
+
+  /* Submenu Responsive */
+  .sub-header__container {
+    gap: 0.75rem;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .sub-header__item {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .sub-header {
+    margin-top: 60px;
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-container {
+    padding: 0.5rem 1rem;
+  }
+
+  nav ul li a {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.6rem;
+  }
+
+  .hotel-detail__title {
+    font-size: 1.5rem;
+  }
+
+  .review-card__name {
+    font-size: 1rem;
+  }
+
+  .review-card__date {
+    font-size: 0.8rem;
+  }
+
+  .review-card__rating {
+    font-size: 1rem;
+  }
+
+  .review-card__meta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .sub-header__item {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.6rem;
+  }
+}
