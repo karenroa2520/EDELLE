@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hoteles en Bucaramanga</title>
+  <link rel="stylesheet" href="/src/static/css/VISI/BUCARAMANGA/hoteles-bucara.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="navbar-container">
+      <div class="logo">
+        <div class="logo-container">
+          <img src="/src/static/imagenes/INICIO/logo_edelle.jpg" alt="Edelle - Tu Próxima Gran Aventura" />
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/index.html">Inicio</a></li>
+          <li><a href="/src/templates/visitante/quienes-somos.html">Quienes Somos</a></li>
+          <li><a href="/src/templates/visitante/servicios.html">Servicios</a></li>
+          <li><a href="/src/templates/visitante/destinos.html">Destinos</a></li>
+          <li><a href="/src/templates/visitante/pasajes.html">Pasajes</a></li>
+        </ul>
+      </nav>
+      <div class="user-icon">
+        <a href="/src/templates/comprador/login.html" title="Iniciar Sesión">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-5.656-3.656L12 17l-2.344-2.344A4 4 0 0 0 4 17v2"></path>
+            <circle cx="12" cy="9" r="4"></circle>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section class="sub-header">
+    <div class="sub-header__container">
+      <a href="/src/templates/visitante/BOGOTA.html" class="sub-header__item sub-header__item--active">
+        <span class="sub-header__icon">📍</span>
+        Bucaramanga
+      </a>
+      <a href="/src/templates/visitante/BUCARAMANGA/hoteles-bucara.html" class="sub-header__item">Hoteles</a>
+      <a href="/src/templates/visitante/" class="sub-header__item">Cosas Por Hacer</a>
+      <a href="/src/templates/visitante/" class="sub-header__item">Restaurantes</a>
+      <a href="#" class="sub-header__item">Reseñas</a>
+    </div>
+  </section>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <img src="/src/static/imagenes/HOTELES/BUCARAMANGA/principal-1.jpg" alt="Fondo de Bucaramanga" class="hero__image" />
+    <div class="hero__content">
+      <h1 class="hero__title">Hoteles en Bucaramanga la ciudad Bonita</h1>
+      <div class="hero__filters">
+        <!--  CHECK-IN -->
+        <div class="filter-date-item">
+          <label for="checkin" class="filter-date-label">📅 Check-in</label>
+          <input type="date" id="checkin" class="filter-date-input" />
+        </div>
+        <!--  CHECK-OUT -->
+        <div class="filter-date-item">
+          <label for="checkout" class="filter-date-label">📅 Check-out</label>
+          <input type="date" id="checkout" class="filter-date-input" />
+        </div>
+        <!--  HUÉSPEDES / HABITACIONES -->
+        <div class="filter-select-item">
+          <label for="guests" class="filter-select-label">👥 Huéspedes / Habitaciones</label>
+          <select id="guests" class="filter-select-input">
+            <option value="1-1">1 huésped, 1 habitación</option>
+            <option value="2-1">2 huéspedes, 1 habitación</option>
+            <option value="2-2">2 huéspedes, 2 habitaciones</option>
+            <option value="3-1">3 huéspedes, 1 habitación</option>
+            <option value="3-2">3 huéspedes, 2 habitaciones</option>
+            <option value="4-1">4 huéspedes, 1 habitación</option>
+            <option value="4-2">4 huéspedes, 2 habitaciones</option>
+            <option value="4-3">4 huéspedes, 3 habitaciones</option>
+            <option value="5-2">5 huéspedes, 2 habitaciones</option>
+            <option value="5-2">5 huéspedes, 3 habitaciones</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filtros -->
+  <section class="filters">
+    <div class="filters__container">
+      <h2 class="filters__title">FILTROS</h2>
+    </div>
+  </section>
+
+  <!-- Sección de Hoteles -->
+  <section class="hotels-section">
+    <div class="hotels-section__header">
+      <h2 class="hotels-section__title">Las Mejores Elecciones de los Aventureros</h2>
+      <a href="#" class="hotels-section__view-all">Ver Todos</a>
+    </div>
+
+    <div class="hotels-grid">
+      <!-- Hotel 1 -->
+      <article class="hotel-card">
+        <img src="/src/static/imagenes/HOTELES/BUCARAMANGA/Hotel Dann Carlton de Bucaramanga/1.jpg" alt="Hotel Dann Carlton de Bucaramanga" class="hotel-card__image" />
+        <div class="hotel-card__content">
+          <h3 class="hotel-card__name">Hotel Dann Carlton de Bucaramanga</h3>
+          <div class="hotel-card__rating">
+            <span class="hotel-card__score">4.5</span>
+            <span class="hotel-card__stars">★★★★★</span>
+          </div>
+          <div class="hotel-card__price">
+            <span class="hotel-card__label">Desde</span>
+            <span class="hotel-card__amount">$310.149</span>
+          </div>
+          <a href="/src/templates/visitante/BUCARAMANGA/HOTELES-BUCARAMANGA/Hotel_Dann_Carlton.html" class="hotel-card__btn">Consultar Disponibilidad</a>
+        </div>
+      </article>
+
+      <!-- Hotel 2 -->
+      <article class="hotel-card">
+        <img src="/src/static/imagenes/HOTELES/BUCARAMANGA/Hotel Ciudad Bonita/1.jpg" alt="Hotel Ciudad Bonita" class="hotel-card__image" />
+        <div class="hotel-card__content">
+          <h3 class="hotel-card__name">Hotel Ciudad Bonita</h3>
+          <div class="hotel-card__rating">
+            <span class="hotel-card__score">4.0</span>
+            <span class="hotel-card__stars">★★★★☆</span>
+          </div>
+          <div class="hotel-card__price">
+            <span class="hotel-card__label">Desde</span>
+            <span class="hotel-card__amount">$181.140</span>
+          </div>
+          <a href="/src/templates/visitante/BUCARAMANGA/HOTELES-BUCARAMANGA/index2.html" class="hotel-card__btn">Consultar Disponibilidad</a>
+        </div>
+      </article>
+
+      <!-- Hotel 3 -->
+      <article class="hotel-card">
+        <img src="/src/static/imagenes/HOTELES/BUCARAMANGA/Hampton by Hilton Bucaramanga/1.jpg" alt="Hampton by Hilton Bucaramanga" class="hotel-card__image" />
+        <div class="hotel-card__content">
+          <h3 class="hotel-card__name">Hampton by Hilton Bucaramanga</h3>
+          <div class="hotel-card__rating">
+            <span class="hotel-card__score">4.3</span>
+            <span class="hotel-card__stars">★★★★☆</span>
+          </div>
+          <div class="hotel-card__price">
+            <span class="hotel-card__label">Desde</span>
+            <span class="hotel-card__amount">$278.295</span>
+          </div>
+          <a href="/src/templates/visitante/BUCARAMANGA/HOTELES-BUCARAMANGA/index3.html" class="hotel-card__btn">Consultar Disponibilidad</a>
+        </div>
+      </article>
+
+      <!-- Hotel 4 -->
+      <article class="hotel-card">
+        <img src="/src/static/imagenes/HOTELES/BUCARAMANGA/Hotel Buena Vista/1.jpg" alt="Hotel Buena Vista" class="hotel-card__image" />
+        <div class="hotel-card__content">
+          <h3 class="hotel-card__name">Hotel Buena Vista</h3>
+          <div class="hotel-card__rating">
+            <span class="hotel-card__score">4.3</span>
+            <span class="hotel-card__stars">★★★★★</span>
+          </div>
+          <div class="hotel-card__price">
+            <span class="hotel-card__label">Desde</span>
+            <span class="hotel-card__amount">$232.290</span>
+          </div>
+          <a href="/src/templates/visitante/BUCARAMANGA/HOTELES-BUCARAMANGA/" class="hotel-card__btn">Consultar Disponibilidad</a>
+        </div>
+      </article>
+
+      <!-- Hotel 5 -->
+      <article class="hotel-card">
+        <img src="/src/static/imagenes/HOTELES/BUCARAMANGA/Hotel Buena Vista Express/1.jpg" alt="Hotel Buena Vista Express" class="hotel-card__image" />
+        <div class="hotel-card__content">
+          <h3 class="hotel-card__name">Hotel Buena Vista Express</h3>
+          <div class="hotel-card__rating">
+            <span class="hotel-card__score">4.1</span>
+            <span class="hotel-card__stars">★★★★☆</span>
+          </div>
+          <div class="hotel-card__price">
+            <span class="hotel-card__label">Desde</span>
+            <span class="hotel-card__amount">$164.013</span>
+          </div>
+          <a href="/src/templates/visitante/BUCARAMANGA/HOTELES-BUCARAMANGA/" class="hotel-card__btn">Consultar Disponibilidad</a>
+        </div>
+      </article>
+
+      <!-- Hotel 6 -->
+      <article class="hotel-card">
+        <img src="/src/static/imagenes/HOTELES/BUCARAMANGA/Hotel Ruittoque D' Prada/1.jpg" alt="Hotel Ruittoque D' Prada" class="hotel-card__image" />
+        <div class="hotel-card__content">
+          <h3 class="hotel-card__name">Hotel Ruittoque D' Prada</h3>
+          <div class="hotel-card__rating">
+            <span class="hotel-card__score">4.2</span>
+            <span class="hotel-card__stars">★★★★☆</span>
+          </div>
+          <div class="hotel-card__price">
+            <span class="hotel-card__label">Desde</span>
+            <span class="hotel-card__amount">$184.500</span>
+          </div>
+          <a href="/src/templates/visitante/BUCARAMANGA/HOTELES-BUCARAMANGA/" class="hotel-card__btn">Consultar Disponibilidad</a>
+        </div>
+      </article>
+    </div>
+  </section>
+</body>
+</html>
