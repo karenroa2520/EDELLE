@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EDELLE – Confirmación de viaje</title>
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+
+  <!-- Librería para exportar PDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="/src/static/css/VISI/factura.css"/>
+</head>
+<body>
+
+  <!-- ── BARRA DE NAVEGACIÓN ─────────────────────────────────── -->
+  <header>
+    <div class="navbar-container">
+
+      <!-- Logo -->
+      <div class="logo">
+        <div class="logo-container">
+          <img
+            src="/src/static/imagenes/INICIO/logo_edelle.jpg"
+            alt="Edelle - Tu Próxima Gran Aventura"
+          />
+        </div>
+      </div>
+
+      <!-- Menú -->
+      <nav>
+        <ul>
+          <li><a href="/index.html">Inicio</a></li>
+          <li><a href="/src/templates/visitante/quienes-somos.html">Quienes Somos</a></li>
+          <li><a href="/src/templates/visitante/servicios.html">Servicios</a></li>
+          <li><a href="#destinos">Destinos</a></li>
+          <li><a href="/src/templates/visitante/pasajes.html">Pasajes</a></li>
+        </ul>
+      </nav>
+
+      <!-- Ícono de usuario -->
+      <div class="user-icon">
+        <a href="/src/templates/comprador/login.html" title="Iniciar Sesión">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24" height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M20 21v-2a4 4 0 0 0-5.656-3.656L12 17l-2.344-2.344A4 4 0 0 0 4 17v2"/>
+            <circle cx="12" cy="9" r="4"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+<div class="page-wrapper">
+
+  <!-- ── HEADER ────────────────────────────────────────────── -->
+  <div class="header">
+    <div class="brand">EDELLE</div>
+    <h1>¡Hagámoslo realidad!</h1>
+    <p>Completa tus datos para confirmar el viaje de tus sueños</p>
+  </div>
+
+  <!-- ── RESUMEN DEL VIAJE SELECCIONADO ────────────────────── -->
+  <div class="resumen-viaje" id="resumen-viaje">
+    <span class="resumen-titulo">Tu selección</span>
+    <!-- Se llena dinámicamente por logica.js -->
+  </div>
+
+  <!-- ── GRID PRINCIPAL ────────────────────────────────────── -->
+  <div class="main-grid">
+
+    <!-- COLUMNA IZQUIERDA: FORMULARIO -->
+    <div>
+
+      <!-- Sección 1: Datos personales -->
+      <div class="card">
+        <div class="card-title">
+          <span class="num">1</span> Datos personales
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="inp-nombre">Nombre</label>
+            <input type="text" id="inp-nombre" placeholder="Karen"/>
+            <span class="error-msg" id="err-nombre">Este campo es obligatorio</span>
+          </div>
+          <div class="form-group">
+            <label for="inp-apellido">Apellido</label>
+            <input type="text" id="inp-apellido" placeholder="Roa"/>
+            <span class="error-msg" id="err-apellido">Este campo es obligatorio</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inp-telefono">Número de teléfono</label>
+          <input type="tel" id="inp-telefono" placeholder="3001234567"/>
+          <span class="error-msg" id="err-telefono">Ingresa un número válido</span>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="sel-departamento">Departamento</label>
+            <div class="select-wrap">
+              <select id="sel-departamento">
+                <option value="">Selecciona...</option>
+                <option value="Cundinamarca">Cundinamarca</option>
+                <option value="Antioquia">Antioquia</option>
+                <option value="Valle del Cauca">Valle del Cauca</option>
+                <option value="Santander">Santander</option>
+                <option value="Bolívar">Bolívar</option>
+                <option value="Atlántico">Atlántico</option>
+              </select>
+            </div>
+            <span class="error-msg" id="err-departamento">Selecciona un departamento</span>
+          </div>
+          <div class="form-group">
+            <label for="sel-municipio">Municipio</label>
+            <div class="select-wrap">
+              <select id="sel-municipio">
+                <option value="">Selecciona...</option>
+              </select>
+            </div>
+            <span class="error-msg" id="err-municipio">Selecciona un municipio</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sección 2: Método de pago -->
+      <div class="card" style="margin-top:20px;">
+        <div class="card-title">
+          <span class="num">2</span> Método de pago
+        </div>
+
+        <div class="form-group">
+          <label for="sel-metodo">Método de pago</label>
+          <div class="select-wrap">
+            <select id="sel-metodo" onchange="toggleCamposCuenta()">
+              <option value="">Selecciona...</option>
+              <option value="Tarjeta de crédito">Tarjeta de crédito</option>
+              <option value="Tarjeta débito">Tarjeta débito</option>
+              <option value="PSE">PSE</option>
+              <option value="Nequi">Nequi</option>
+              <option value="Daviplata">Daviplata</option>
+            </select>
+          </div>
+          <span class="error-msg" id="err-metodo">Selecciona un método de pago</span>
+        </div>
+
+        <div class="form-group" id="grupo-cuenta">
+          <label for="inp-cuenta" id="lbl-cuenta">Número de cuenta / tarjeta</label>
+          <input type="text" id="inp-cuenta" placeholder="**** **** **** 1234" maxlength="19"/>
+          <span class="error-msg" id="err-cuenta">Este campo es obligatorio</span>
+        </div>
+
+        <div class="check-wrap">
+          <input type="checkbox" id="chk-terminos"/>
+          <label for="chk-terminos">
+            Acepto los <a href="#">términos y condiciones</a> y la
+            <a href="#">política de privacidad</a> de EDELLE.
+          </label>
+        </div>
+        <span class="error-msg" id="err-terminos" style="margin-top:6px;">
+          Debes aceptar los términos
+        </span>
+      </div>
+
+    </div><!-- /columna izquierda -->
+
+    <!-- COLUMNA DERECHA: SIDEBAR -->
+    <div class="sidebar">
+
+      <!-- Control de noches -->
+      <div class="card">
+        <div class="card-title" style="font-size:15px;margin-bottom:16px;">
+          🌙 Noches de estadía
+        </div>
+        <div class="noches-wrap">
+          <label>Noches</label>
+          <div class="noches-ctrl">
+            <button onclick="cambiarNoches(-1)">−</button>
+            <span id="display-noches">1</span>
+            <button onclick="cambiarNoches(1)">+</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Resumen de costos -->
+      <div class="card">
+        <div class="card-title" style="font-size:15px;margin-bottom:16px;">
+          📋 Resumen de costos
+        </div>
+        <div id="lista-costos">
+          <!-- Se llena dinámicamente por logica.js -->
+        </div>
+        <div class="divider">total</div>
+        <div class="total-box">
+          <div>
+            <div class="label">Total a pagar</div>
+            <div style="font-size:11px;color:var(--grey);margin-top:4px;">IVA incluido</div>
+          </div>
+          <div class="valor" id="display-total">$0</div>
+        </div>
+      </div>
+
+      <!-- Botón de pago -->
+      <button class="btn-pagar" id="btn-pagar" onclick="procesarCompra()">
+        CONFIRMAR Y PAGAR
+      </button>
+
+      <div style="text-align:center;font-size:12px;color:var(--grey);margin-top:-8px;">
+        🔒 Pago seguro · Datos cifrados
+      </div>
+
+    </div><!-- /sidebar -->
+  </div><!-- /main-grid -->
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       SECCIÓN DE RESULTADOS — se muestra tras pago exitoso
+  ══════════════════════════════════════════════════════════════ -->
+  <div id="seccion-resultados">
+
+    <div style="text-align:center;margin-bottom:36px;">
+      <div style="font-size:48px;margin-bottom:12px;">🎉</div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:32px;margin-bottom:8px;">
+        ¡Viaje confirmado!
+      </h2>
+      <p style="color:var(--grey);">Tu reserva ha sido procesada exitosamente.</p>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab-btn active" onclick="cambiarTab('factura', this)">Factura</button>
+      <button class="tab-btn" onclick="cambiarTab('itinerario', this)">Itinerario</button>
+    </div>
+
+    <!-- Panel: Factura -->
+    <div class="tab-panel active" id="tab-factura">
+      <button class="btn-descargar" onclick="descargarFacturaPDF()">
+        ⬇ Descargar factura PDF
+      </button>
+      <div id="factura-contenedor"></div>
+    </div>
+
+    <!-- Panel: Itinerario -->
+    <div class="tab-panel" id="tab-itinerario">
+      <div id="itinerario-contenedor"></div>
+    </div>
+
+  </div><!-- /seccion-resultados -->
+
+</div><!-- /page-wrapper -->
+
+<!-- Notificación flotante -->
+<div class="toast" id="toast"></div>
+
+<!-- Lógica principal -->
+<script src="/app.js"></script>
+
+</body>
+</html>
