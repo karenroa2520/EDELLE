@@ -1,0 +1,381 @@
+:root {
+  /* Colores */
+  --color-encabezado: #03045e;
+  --color-pie: #03045e;
+  --color-fondo-cuerpo: #033f8a;
+  --color-fondo-seccion: #448ec7;
+  --color-texto-claro: #ffffff;
+  --color-texto-secundario: #e0e0e0;
+  --color-primario: #4cc9f0;
+  --color-primario-hover: #3a9fd0;
+
+  /* Tipografía */
+  --fuente-principal: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  /* Diseño */
+  --radio-boton: 25px;
+  --radio-tarjeta: 20px;
+  --transicion-rapida: 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --> Estilo base del cuerpo de la página: usa la fuente definida, fondo azul oscuro y texto blanco con buen espaciado entre líneas. */
+body {
+  font-family: var(--fuente-principal);
+  background-color: var(--color-texto-claro);
+  color: var(--color-texto-claro);
+  line-height: 1.6;
+}
+
+/* === BARRA DE NAVEGACIÓN === */
+
+/* --> Contenedor de la barra superior: fija en la parte de arriba, con fondo oscuro, sombra sutil y contenido alineado horizontalmente. */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--color-encabezado);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* --> Contenedor del logo: alinea verticalmente el logo dentro de la barra. */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+/* --> Marco circular blanco para el logo, con sombra, que recorta la imagen si no es redonda. */
+.logo-container {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* --> Estilo de la imagen del logo: ocupa todo el contenedor circular y se ajusta sin deformarse. */
+.logo-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* --> Lista del menú de navegación: elementos en fila horizontal, sin viñetas, con espacio entre ellos. */
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* --> Enlaces del menú: texto blanco, sin subrayado, con peso negrita suave y transición suave al pasar el mouse. */
+nav ul li a {
+  color: var(--color-texto-claro);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color var(--transicion-rapida);
+  white-space: nowrap;
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+}
+
+/* --> Efecto al pasar el mouse sobre un enlace: cambia a color primario y añade fondo ligeramente transparente. */
+nav ul li a:hover {
+  color: var(--color-primario);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* --> Estilo del ícono de usuario (SVG): tamaño fijo, color blanco, con transición al cambiar de color. */
+.user-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--color-texto-claro);
+  transition: stroke var(--transicion-rapida);
+}
+
+/* --> Enlace del ícono: zona clickeable más grande con redondeo y transición de fondo. */
+.user-icon a {
+  display: block;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: background-color var(--transicion-rapida);
+}
+
+/* --> Al pasar el mouse sobre el ícono: fondo ligeramente blanco y el ícono cambia al color primario. */
+.user-icon a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  stroke: var(--color-primario);
+}
+
+/* === SUBMENU (Nuevo) === */
+.sub-header {
+  background: var(--color-texto-claro); /* Fondo blanco */
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  margin-top: 70px; /* Espacio para que no se solape con el navbar fijo */
+  position: relative;
+  z-index: 999;
+}
+
+.sub-header__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.sub-header__item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-pie);
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all var(--transicion-rapida);
+}
+
+.sub-header__item:hover,
+.sub-header__item--active {
+  background: var(--color-encabezado); /* Azul oscuro */
+  color: var(--color-texto-claro); /* Blanco */
+}
+
+.sub-header__item--active {
+  font-weight: bold;
+}
+
+.sub-header__icon {
+  font-size: 1.1rem;
+  color: var(--color-encabezado); /* Icono azul oscuro */
+}
+
+/* === NUEVO: Sección Hero (imagen grande de Bogotá) === */
+
+.hero-carousel {
+  position: relative;
+  height: 60vh;
+  overflow: hidden;
+  margin-top: 20px; /* Ajustado para dejar espacio debajo de ambos menús fijos */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 15%;
+}
+
+/* Aseguramos que el contenido no quede bajo la barra fija */
+.contenido-ciudad {
+  padding: 2.5rem 3rem;
+  background: var(--color-texto-claro);
+  max-width: 900px;
+  margin: 0 auto;
+  margin-top: 1px;
+}
+.contenido-ciudad h1 {
+  font-size: 2.5rem;
+  color: var(--color-encabezado);
+  margin-bottom: 1.2rem;
+}
+
+.contenido-ciudad p {
+  line-height: 1.8;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+.seccion-puntos {
+  padding: 2.5rem 3rem;
+  background: var(--color-fondo-seccion);
+}
+
+.seccion-puntos h2 {
+  font-size: 2rem;
+  color: var(--color-texto-claro);
+  margin-bottom: 1.4rem;
+}
+
+.categorias {
+  display: flex;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.categoria {
+  padding: 0.4rem 1rem;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: var(--radio-boton);
+  font-size: 0.95rem;
+  color: var(--color-texto-claro);
+  font-weight: 500;
+}
+
+.lista-lugares {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* === NUEVO: Estilos para tarjetas con imágenes y enlaces === */
+
+.tarjeta-enlace {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform var(--transicion-rapida);
+}
+
+.tarjeta-enlace:hover {
+  transform: translateY(-5px);
+}
+
+.tarjeta {
+  background: var(--color-texto-claro);
+  border-radius: var(--radio-tarjeta);
+  padding: 1.6rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  color: #333;
+}
+
+.imagen-tarjeta {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--radio-tarjeta) var(--radio-tarjeta) 0 0;
+  display: block;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.tarjeta h3 {
+  font-size: 1.25rem;
+  color: var(--color-encabezado);
+  margin-bottom: 0.7rem;
+  line-height: 1.35;
+}
+
+.calificacion {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.7rem;
+}
+
+.calificacion span:first-child {
+  font-weight: bold;
+  color: var(--color-encabezado);
+  font-size: 1.1rem;
+}
+
+.estrellas {
+  color: var(--color-encabezado);
+  font-size: 1.25rem;
+}
+
+.tipo {
+  color: #666;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* === MEDIA QUERY: solo para pantallas pequeñas (móvil y tablet) === */
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 1rem 1.5rem;
+  }
+
+  nav ul {
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .submenu-container {
+    padding: 0.5rem 1.5rem;
+    top: 80px;
+  }
+
+  .submenu ul {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .submenu ul li a {
+    font-size: 0.85rem;
+    padding: 0.2rem 0.4rem;
+  }
+
+  .contenido-ciudad,
+  .seccion-puntos {
+    padding: 1.8rem 1.5rem;
+  }
+
+  .contenido-ciudad {
+    margin-top: 90px;
+  }
+
+  .hero-carousel {
+    margin-top: 160px; /* Más espacio en móvil */
+  }
+
+  .contenido-ciudad h1 {
+    font-size: 2rem;
+  }
+
+  .seccion-puntos h2 {
+    font-size: 1.6rem;
+  }
+
+  .categorias {
+    gap: 0.8rem;
+    flex-wrap: wrap;
+  }
+
+  .categoria {
+    padding: 0.3rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .lista-lugares {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+    max-width: 100%;
+  }
+
+  .tarjeta {
+    padding: 1.2rem;
+  }
+
+  .tarjeta h3 {
+    font-size: 1.2rem;
+  }
+
+  .imagen-tarjeta {
+    height: 180px;
+  }
+}
