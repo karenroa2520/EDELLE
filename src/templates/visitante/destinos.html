@@ -1,134 +1,50 @@
-<!-- Declara que este documento es HTML5 -->
 <!DOCTYPE html>
-
-<!-- Define el idioma principal de la página como español -->
 <html lang="es">
-
-<!-- Sección de cabecera: contiene configuración y enlaces a recursos externos -->
 <head>
-
-  <!-- Establece la codificación de caracteres a UTF-8 para mostrar correctamente acentos y símbolos -->
   <meta charset="UTF-8" />
-
-  <!-- Hace que la página se vea bien en dispositivos móviles (responsive) -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Título que aparece en la pestaña del navegador -->
-  <title>Destinos</title>
-
-  <!-- Enlaza el archivo de estilos específico para esta página de destinos -->
+  <title>Pasajes – Edelle</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/src/static/css/VISI/estilos-destino.css" />
-
-<!-- Cierra la cabecera -->
+  <link rel="stylesheet" href="/src/static/css/USER/pasajes.css" />
 </head>
-
-<!-- Cuerpo visible de la página web -->
 <body>
 
-  <!-- Encabezado fijo en la parte superior (barra de navegación) -->
-  <header>
+<!-- ─── HEADER (sin modificar) ──────────────────────────── -->
+<header>
 
-    <!-- Contenedor que agrupa logo, menú e ícono de usuario -->
-    <div class="navbar-container">
+  <div class="navbar-container">
 
-      <!-- Sección del logo, alineado a la izquierda -->
-      <div class="logo">
-
-        <!-- Contenedor circular para el logo de la empresa -->
-        <div class="logo-container">
-
-          <!-- Imagen del logo con texto alternativo para accesibilidad -->
-          <img
-            src="/src/static/imagenes/INICIO/logo_edelle.jpg"
-            alt="Edelle - Tu Próxima Gran Aventura"
-          />
-
-        <!-- Cierra contenedor del logo -->
-        </div>
-
-      <!-- Cierra sección del logo -->
+    <div class="logo">
+      <div class="logo-container">
+        <img
+          src="/src/static/imagenes/INICIO/logo_edelle.jpg"
+          alt="Edelle - Tu Próxima Gran Aventura"
+        />
       </div>
-
-      <!-- Barra de navegación con enlaces a otras páginas del sitio -->
-      <nav>
-
-        <!-- Lista de enlaces del menú -->
-        <ul>
-
-          <!-- Enlace a la página de inicio -->
-          <li><a href="/index.html">Inicio</a></li>
-
-          <!-- Enlace a la página "Quiénes Somos" -->
-          <li>
-            <a href="/src/templates/visitante/quienes-somos.html">Quienes Somos</a>
-          </li>
-
-          <!-- Enlace a la página de servicios -->
-          <li>
-            <a href="/src/templates/visitante/servicios.html">Servicios</a>
-          </li>
-
-          <!-- Enlace anclado a la sección de destinos en esta misma página -->
-          <li><a href="#destinos">Destinos</a></li>
-
-          <li><a href="/src/templates/visitante/pasajes.html">Pasajes</a></li>
-
-        <!-- Cierra la lista del menú -->
-        </ul>
-
-      <!-- Cierra la barra de navegación -->
-      </nav>
-
-      <!-- Ícono de usuario (perfil) alineado a la derecha -->
-      <div class="user-icon">
-
-        <!-- Enlace al formulario de inicio de sesión con ícono SVG de usuario -->
-        <a href="/src/templates/comprador/login.html" title="Iniciar Sesión">
-
-          <!-- Icono de perfil en formato SVG (escalable y ligero) -->
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path
-              d="M20 21v-2a4 4 0 0 0-5.656-3.656L12 17l-2.344-2.344A4 4 0 0 0 4 17v2"></path>
-            <circle cx="12" cy="9" r="4"></circle>
-          </svg>
-
-        <!-- Cierra el enlace del ícono de usuario -->
-        </a>
-
-      <!-- Cierra contenedor del ícono -->
-      </div>
-
-    <!-- Cierra el contenedor de la barra de navegación -->
     </div>
 
-  <!-- Cierra el encabezado -->
-  </header>
+    <nav>
+      <ul>
+        <li><a href="/index.html">Inicio</a></li>
+        <li>
+          <a href="/src/templates/visitante/quienes-somos.html">Quienes Somos</a>
+        </li>
+        <li>
+          <a href="/src/templates/visitante/servicios.html">Servicios</a>
+        </li>
+        <li><a href="#destinos">Destinos</a></li>
+        <li><a href="/src/templates/visitante/pasajes.html">Pasajes</a></li>
+      </ul>
+    </nav>
 
-  <!-- Contenido principal de la página (destinos turísticos) -->
-  <main class="content">
-
-    <!-- Barra de búsqueda para filtrar destinos (aunque funcionalidad aún no implementada) -->
-    <div class="search-bar">
-
-      <!-- Campo de texto donde el usuario puede escribir el nombre de un destino -->
-      <input type="text" placeholder="Buscar destino..." />
-
-      <!-- Botón de búsqueda con ícono de lupa (SVG) -->
-      <button type="submit">
+    <div class="user-icon">
+      <a href="/src/templates/comprador/login.html" title="Iniciar Sesión">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
+          width="24"
+          height="24"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
@@ -136,74 +52,207 @@
           stroke-linecap="round"
           stroke-linejoin="round"
         >
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          <path
+            d="M20 21v-2a4 4 0 0 0-5.656-3.656L12 17l-2.344-2.344A4 4 0 0 0 4 17v2"></path>
+          <circle cx="12" cy="9" r="4"></circle>
         </svg>
-      </button>
-
-    <!-- Cierra la barra de búsqueda -->
+      </a>
     </div>
 
-    <!-- Sección en cuadrícula que muestra las tarjetas de destinos -->
-    <section class="destinations-grid">
+  </div>
 
-      <!-- Primera tarjeta: destino Bogotá -->
-      <div class="destination-card">
-        <!-- Imagen representativa de Bogotá -->
-        <img src="/src/static/imagenes/DESTINOS/BOGOTA/bogota 2.jpg" alt="Bogotá" />
-        <!-- Nombre del destino en mayúsculas -->
-        <h3>BOGOTÁ</h3>
-        <!-- Botón para ver más información (aún sin enlace funcional) -->
-        <a href="/src/templates/visitante/BOGOTA/BOGOTA.html" class="btn-more">Mas Informacion</a>
-    
+</header>
+
+<!-- ─── HERO ───────────────────────────────────────────── -->
+<div class="hero-strip">
+  <h1>Compra tu Pasaje</h1>
+  <p>Viaja seguro, cómodo y al mejor precio · Colombia</p>
+</div>
+
+<!-- ─── SEARCH PANEL ────────────────────────────────────── -->
+<div class="search-panel">
+  <h2>🔍 Buscar Rutas</h2>
+  <div class="search-grid">
+    <div class="field-group">
+      <label>Origen</label>
+      <select id="origen">
+        <option value="">Seleccionar ciudad…</option>
+        <option value="bogota">Bogotá</option>
+        <option value="medellin">Medellín</option>
+        <option value="cali">Cali</option>
+        <option value="bucaramanga">Bucaramanga</option>
+        <option value="barranquilla">Barranquilla</option>
+        <option value="cartagena">Cartagena</option>
+        <option value="cucuta">Cúcuta</option>
+        <option value="pereira">Pereira</option>
+      </select>
+    </div>
+    <div class="field-group">
+      <label>Destino</label>
+      <select id="destino">
+        <option value="">Seleccionar ciudad…</option>
+        <option value="bogota">Bogotá</option>
+        <option value="medellin">Medellín</option>
+        <option value="cali">Cali</option>
+        <option value="bucaramanga">Bucaramanga</option>
+        <option value="barranquilla">Barranquilla</option>
+        <option value="cartagena">Cartagena</option>
+        <option value="cucuta">Cúcuta</option>
+        <option value="pereira">Pereira</option>
+      </select>
+    </div>
+    <div class="field-group">
+      <label>Fecha de Viaje</label>
+      <input type="date" id="fecha" />
+    </div>
+    <div class="field-group">
+      <label>Pasajeros</label>
+      <select id="pasajeros">
+        <option value="1">1 pasajero</option>
+        <option value="2">2 pasajeros</option>
+        <option value="3">3 pasajeros</option>
+        <option value="4">4 pasajeros</option>
+      </select>
+    </div>
+    <button class="btn-search" onclick="buscarRutas()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+        <circle cx="11" cy="11" r="8"/>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      Buscar
+    </button>
+  </div>
+</div>
+
+<!-- ─── PAGE BODY ───────────────────────────────────────── -->
+<div class="page-body">
+
+  <!-- Columna de resultados -->
+  <div class="results-col">
+    <div class="results-header">
+      <h2 id="results-title">Rutas Disponibles</h2>
+      <span class="tag" id="results-count">Cargando…</span>
+    </div>
+    <div id="routes-container">
+      <!-- Rutas generadas por JS -->
+    </div>
+  </div>
+
+  <!-- Panel lateral: selector de asientos + formulario -->
+  <div class="side-panel">
+
+    <!-- PASO 2: Selector de asientos -->
+    <div class="panel-box" id="seat-panel">
+      <h3><span class="step-badge">2</span> Selecciona tu asiento</h3>
+      <div class="bus-wrapper">
+        <div class="bus-legend">
+          <span class="legend-item"><span class="legend-dot available"></span>Libre</span>
+          <span class="legend-item"><span class="legend-dot window"></span>Ventana</span>
+          <span class="legend-item"><span class="legend-dot selected"></span>Elegido</span>
+          <span class="legend-item"><span class="legend-dot occupied"></span>Ocupado</span>
+        </div>
+        <div class="bus-front">✦ CONDUCTOR ✦</div>
+        <div class="bus-body" id="bus-body">
+          <!-- Asientos generados por JS -->
+        </div>
+      </div>
+      <div class="selected-seats-info" id="seat-info">Elige una ruta primero</div>
+    </div>
+
+    <!-- PASO 3: Formulario de compra -->
+    <div class="panel-box">
+      <h3><span class="step-badge">3</span> Datos del Pasajero</h3>
+
+      <div class="form-group">
+        <label>Nombre completo</label>
+        <input type="text" id="f-nombre" placeholder="Ej: Juan Pérez" />
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Tipo Doc.</label>
+          <select id="f-tipo-doc">
+            <option>CC</option>
+            <option>CE</option>
+            <option>Pasaporte</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Número Doc.</label>
+          <input type="text" id="f-doc" placeholder="12345678" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Correo electrónico</label>
+        <input type="email" id="f-email" placeholder="correo@ejemplo.com" />
+      </div>
+      <div class="form-group">
+        <label>Teléfono</label>
+        <input type="tel" id="f-tel" placeholder="+57 300 000 0000" />
       </div>
 
-      <!-- Segunda tarjeta: destino Bucaramanga -->
-      <div class="destination-card">
-        <img
-          src="/src/static/imagenes/DESTINOS/BUCARAMANGA/bucaramanga 1.jpg"
-          alt="Bucaramanga"
-        />
-        <h3>BUCARAMANGA</h3>
-        <a href="/src/templates/visitante/BUCARAMANGA/BUCARAMANGA.html" class="btn-more">Mas Informacion</a>
+      <div class="divider"></div>
+      <h3 style="margin-bottom:1rem; font-size:.95rem;">
+        <span class="step-badge" style="background:var(--accent);">💳</span> Pago
+      </h3>
+
+      <div class="form-group">
+        <label>Número de tarjeta</label>
+        <div class="card-input-wrap">
+          <input type="text" id="f-card" placeholder="0000 0000 0000 0000" maxlength="19" oninput="formatCard(this)" />
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+            <line x1="1" y1="10" x2="23" y2="10"/>
+          </svg>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Vencimiento</label>
+          <input type="text" id="f-exp" placeholder="MM/AA" maxlength="5" oninput="formatExp(this)" />
+        </div>
+        <div class="form-group">
+          <label>CVV</label>
+          <input type="text" id="f-cvv" placeholder="123" maxlength="3" />
+        </div>
       </div>
 
-      <!-- Tercera tarjeta: destino Cali -->
-      <div class="destination-card">
-        <img src="/src/static/imagenes/DESTINOS/cali 1.jpg" alt="Cali" />
-        <h3>CALI</h3>
-        <button class="btn-more">Mas Informacion</button>
+      <div class="divider"></div>
+
+      <!-- Resumen del pedido -->
+      <div id="order-summary">
+        <div class="summary-row"><span class="label">Ruta</span><span class="val" id="sum-ruta">—</span></div>
+        <div class="summary-row"><span class="label">Fecha</span><span class="val" id="sum-fecha">—</span></div>
+        <div class="summary-row"><span class="label">Asiento(s)</span><span class="val" id="sum-asientos">—</span></div>
+        <div class="summary-row"><span class="label">Pasajeros</span><span class="val" id="sum-pasajeros">—</span></div>
+        <div class="summary-row total">
+          <span class="label">Total a pagar</span>
+          <span class="val" id="sum-total">$0</span>
+        </div>
       </div>
 
-      <!-- Cuarta tarjeta: destino Cartagena -->
-      <div class="destination-card">
-        <img
-          src="/src/static/imagenes/DESTINOS/cartagena 1.jpg"
-          alt="Cartagena"
-        />
-        <h3>CARTAGENA</h3>
-        <!-- Nota: hay un error tipográfico en "Imformacion" (falta la 'o'), debería corregirse -->
-        <button class="btn-more">Mas Imformacion</button>
-      </div>
+      <button class="btn-buy" id="btn-buy" onclick="procesarCompra()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+        </svg>
+        Confirmar Compra
+        <div class="spinner" id="spinner"></div>
+      </button>
+    </div>
 
-      <div class="destination-card">
-        <img
-          src="/src/static/imagenes/DESTINOS/cartagena 1.jpg"
-          alt="Cartagena"
-        />
-        <h3>CARTAGENA</h3>
-        <!-- Nota: hay un error tipográfico en "Imformacion" (falta la 'o'), debería corregirse -->
-        <button class="btn-more">Mas Imformacion</button>
-      </div>
+  </div><!-- /side-panel -->
+</div><!-- /page-body -->
 
-    <!-- Cierra la sección de destinos -->
-    </section>
+<!-- ─── MODAL DE ÉXITO ───────────────────────────────────── -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <div class="check-icon">✅</div>
+    <h2>¡Compra Exitosa!</h2>
+    <p>Tu pasaje ha sido reservado. Recibirás la confirmación en tu correo electrónico.</p>
+    <div class="booking-ref" id="booking-ref">EDL-000000</div>
+    <button class="btn-modal-close" onclick="cerrarModal()">Volver al inicio</button>
+  </div>
+</div>
 
-  <!-- Cierra el contenido principal -->
-  </main>
-
-<!-- Cierra el cuerpo de la página -->
+<script src="/pasajes.js"></script>
 </body>
-
-<!-- Cierra el documento HTML -->
 </html>
