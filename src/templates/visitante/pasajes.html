@@ -3,103 +3,71 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pasajes – Edelle</title>
+  <title>Comprar Pasajes — Edelle</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/src/static/css/VISI/estilos-destino.css" />
-  <link rel="stylesheet" href="/src/static/css/USER/pasajes.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/static/css/VISI/pasajes.css" />
 </head>
 <body>
 
-<!-- ─── HEADER (sin modificar) ──────────────────────────── -->
+<!-- ─── HEADER ──────────────────────────── -->
 <header>
-
   <div class="navbar-container">
 
     <div class="logo">
       <div class="logo-container">
-        <img
-          src="/src/static/imagenes/INICIO/logo_edelle.jpg"
-          alt="Edelle - Tu Próxima Gran Aventura"
-        />
+        <img src="/src/static/imagenes/INICIO/icono-krenga.svg" alt="Edelle - Tu Próxima Gran Aventura" />
       </div>
     </div>
 
     <nav>
       <ul>
         <li><a href="/index.html">Inicio</a></li>
-        <li>
-          <a href="/src/templates/visitante/quienes-somos.html">Quienes Somos</a>
-        </li>
-        <li>
-          <a href="/src/templates/visitante/servicios.html">Servicios</a>
-        </li>
-        <li><a href="#destinos">Destinos</a></li>
-        <li><a href="/src/templates/visitante/pasajes.html">Pasajes</a></li>
+        <li><a href="/src/templates/visitante/quienes-somos.html">Quienes Somos</a></li>
+        <li><a href="/src/templates/visitante/servicios.html">Servicios</a></li>
+        <li><a href="/src/templates/visitante/destinos.html">Destinos</a></li>
+        <li><a href="/src/templates/visitante/pasajes.html" class="activo">Pasajes</a></li>
       </ul>
     </nav>
 
-    <div class="user-icon">
-      <a href="/src/templates/comprador/login.html" title="Iniciar Sesión">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <path
-            d="M20 21v-2a4 4 0 0 0-5.656-3.656L12 17l-2.344-2.344A4 4 0 0 0 4 17v2"></path>
-          <circle cx="12" cy="9" r="4"></circle>
-        </svg>
-      </a>
-    </div>
+    <a href="/src/templates/comprador/login.html" title="Iniciar Sesión" class="link-perfil">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 21v-2a4 4 0 0 0-5.656-3.656L12 17l-2.344-2.344A4 4 0 0 0 4 17v2"></path>
+        <circle cx="12" cy="9" r="4"></circle>
+      </svg>
+    </a>
 
   </div>
-
 </header>
 
 <!-- ─── HERO ───────────────────────────────────────────── -->
-<div class="hero-strip">
-  <h1>Compra tu Pasaje</h1>
-  <p>Viaja seguro, cómodo y al mejor precio · Colombia</p>
-</div>
+<section class="hero-pasajes">
+  <div class="hero-pasajes__deco" aria-hidden="true"></div>
+  <div class="hero-pasajes__content">
+    <span class="hero-eyebrow"><span class="linea"></span>Agencia de viajes Edelle</span>
+    <h1>Compra tu <em>Pasaje</em></h1>
+    <p>Viaja seguro, cómodo y al mejor precio por toda Colombia.</p>
+  </div>
+</section>
 
 <!-- ─── SEARCH PANEL ────────────────────────────────────── -->
 <div class="search-panel">
-  <h2>🔍 Buscar Rutas</h2>
+  <h2>
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    Buscar Rutas
+  </h2>
   <div class="search-grid">
-    <div class="field-group">
+    <div class="field-group field-autocomplete">
       <label>Origen</label>
-      <select id="origen">
-        <option value="">Seleccionar ciudad…</option>
-        <option value="bogota">Bogotá</option>
-        <option value="medellin">Medellín</option>
-        <option value="cali">Cali</option>
-        <option value="bucaramanga">Bucaramanga</option>
-        <option value="barranquilla">Barranquilla</option>
-        <option value="cartagena">Cartagena</option>
-        <option value="cucuta">Cúcuta</option>
-        <option value="pereira">Pereira</option>
-      </select>
+      <input type="text" id="origen-input" autocomplete="off" placeholder="Escribe una ciudad…" oninput="filtrarCiudades('origen')" />
+      <input type="hidden" id="origen-val" />
+      <ul class="sugerencias-list" id="sugerencias-origen"></ul>
     </div>
-    <div class="field-group">
+    <div class="field-group field-autocomplete">
       <label>Destino</label>
-      <select id="destino">
-        <option value="">Seleccionar ciudad…</option>
-        <option value="bogota">Bogotá</option>
-        <option value="medellin">Medellín</option>
-        <option value="cali">Cali</option>
-        <option value="bucaramanga">Bucaramanga</option>
-        <option value="barranquilla">Barranquilla</option>
-        <option value="cartagena">Cartagena</option>
-        <option value="cucuta">Cúcuta</option>
-        <option value="pereira">Pereira</option>
-      </select>
+      <input type="text" id="destino-input" autocomplete="off" placeholder="Escribe una ciudad…" oninput="filtrarCiudades('destino')" />
+      <input type="hidden" id="destino-val" />
+      <ul class="sugerencias-list" id="sugerencias-destino"></ul>
     </div>
     <div class="field-group">
       <label>Fecha de Viaje</label>
@@ -131,10 +99,14 @@
   <div class="results-col">
     <div class="results-header">
       <h2 id="results-title">Rutas Disponibles</h2>
-      <span class="tag" id="results-count">Cargando…</span>
+      <span class="tag" id="results-count">Elige origen y destino</span>
     </div>
     <div id="routes-container">
-      <!-- Rutas generadas por JS -->
+      <div class="empty-state">
+        <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7h12m-12 5h12m-12 5h6M4 7h.01M4 12h.01M4 17h.01"/></svg>
+        <h3>Aún no hay búsquedas</h3>
+        <p>Escribe tu origen y destino para ver las rutas disponibles.</p>
+      </div>
     </div>
   </div>
 
@@ -191,8 +163,14 @@
       </div>
 
       <div class="divider"></div>
-      <h3 style="margin-bottom:1rem; font-size:.95rem;">
-        <span class="step-badge" style="background:var(--accent);">💳</span> Pago
+      <h3 class="pago-title">
+        <span class="step-badge badge-pago">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+            <line x1="1" y1="10" x2="23" y2="10"/>
+          </svg>
+        </span>
+        Pago
       </h3>
 
       <div class="form-group">
@@ -245,7 +223,11 @@
 <!-- ─── MODAL DE ÉXITO ───────────────────────────────────── -->
 <div class="modal-overlay" id="modal">
   <div class="modal">
-    <div class="check-icon">✅</div>
+    <div class="check-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 13l4 4L19 7"/>
+      </svg>
+    </div>
     <h2>¡Compra Exitosa!</h2>
     <p>Tu pasaje ha sido reservado. Recibirás la confirmación en tu correo electrónico.</p>
     <div class="booking-ref" id="booking-ref">EDL-000000</div>

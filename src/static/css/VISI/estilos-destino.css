@@ -1,336 +1,309 @@
-/* --> Define variables reutilizables para colores, fuentes y medidas. Facilita mantener un estilo consistente en todo el sitio. */
+/* =========================================================
+   EDELLE / KRENGA — Destinos
+   Mismos tokens de marca. Lenguaje propio para esta vista de
+   catálogo: tarjetas estilo "postal" ligeramente inclinadas
+   (como fotos pinchadas en un corcho) que se enderezan al
+   pasar el mouse, más una barra de búsqueda que sí filtra.
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=Baloo+2:wght@700;800&display=swap');
+
 :root {
-  /* --> Paleta de colores: azules profesionales para encabezado, fondo y acentos; textos en blanco y gris claro. */
-  --color-encabezado: #03045e;
-  --color-pie: #03045e;
-  --color-fondo-cuerpo: #033f8a;
-  --color-fondo-seccion: #448ec7;
-  --color-texto-claro: #ffffff;
-  --color-texto-secundario: #e0e0e0;
-  --color-primario: #4cc9f0;
-  --color-primario-hover: #3a9fd0;
-  --color-botones: #D9D9D9;
+  --color-wasabi: #7FB800;
+  --color-wasabi-oscuro: #628F00;
+  --color-wasabi-tenue: #EDF5D6;
+  --color-limon: #FFFF66;
+  --color-limon-suave: #FFFDE3;
+  --color-ciruela: #4A1F3D;
+  --color-ciruela-suave: #6E3F5E;
 
-  /* --> Fuente principal: moderna, legible y compatible en la mayoría de dispositivos. */
-  --fuente-principal: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --color-crema: #FFFCF3;
+  --color-texto-suave: #6B5568;
+  --color-blanco: #FFFFFF;
 
-  /* --> Medidas de diseño reutilizables: bordes redondeados para botones y tarjetas, y transición suave en interacciones. */
-  --radio-boton: 25px;
+  --fuente-display: 'Fraunces', Georgia, serif;
+  --fuente-principal: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  --radio-boton: 999px;
   --radio-tarjeta: 20px;
-  --transicion-rapida: 0.3s ease;
+  --transicion-rapida: 0.25s ease;
+  --transicion-suave: 0.7s cubic-bezier(.19,1,.22,1);
+  --sombra-suave: 0 10px 30px rgba(74, 31, 61, 0.14);
+  --sombra-fuerte: 0 18px 40px rgba(74, 31, 61, 0.24);
 }
 
-/* --> Reseteo universal: elimina márgenes/rellenos por defecto y asegura que ancho/alto incluyan bordes y padding. */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
-/* --> Estilo base del cuerpo: fuente definida, fondo azul oscuro, texto blanco y buen espaciado entre líneas. */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
 body {
   font-family: var(--fuente-principal);
-  background-color: var(--color-fondo-cuerpo);
-  color: var(--color-texto-claro);
+  background-color: var(--color-crema);
+  color: var(--color-ciruela);
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* === BARRA DE NAVEGACIÓN === */
+/* === BARRA DE NAVEGACIÓN (idéntica al resto del sitio) === */
 
-/* --> Barra superior fija: fondo azul oscuro, sombra sutil y contenido distribuido horizontalmente. */
 .navbar-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background-color: var(--color-encabezado);
+  padding: 0.85rem 2.2rem;
+  background-color: rgba(74, 31, 61, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1000; /* --> Asegura que la barra quede por encima del contenido al hacer scroll. */
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* --> Sombra ligera para mejor separación visual. */
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(46, 19, 39, 0.2);
 }
 
-/* --> Contenedor del logo: alinea verticalmente el logo dentro de la barra. */
-.logo {
-  display: flex;
-  align-items: center;
-}
+.logo { display: flex; align-items: center; }
 
-/* --> Marco circular blanco para el logo con sombra y recorte interno. */
 .logo-container {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%; /* --> Hace el contenedor circular. */
-  overflow: hidden; /* --> Recorta la imagen si sobresale. */
-  background-color: white;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: var(--color-crema);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 0 2px rgba(127, 184, 0, 0.45);
 }
 
-/* --> Imagen del logo: ocupa todo el círculo y se ajusta sin deformarse. */
-.logo-container img {
-  width: 100%;
-  height: auto;
-  object-fit: cover; /* --> Rellena el espacio manteniendo proporción. */
-  object-position: center; /* --> Centra la parte visible de la imagen. */
-}
+.logo-container img { width: 100%; height: auto; object-fit: cover; object-position: center; }
 
-/* --> Menú de navegación: elementos en fila, sin viñetas, con espacio entre enlaces. */
-nav ul {
-  display: flex;
-  list-style: none;
-  gap: 2rem;
-  margin: 0;
-  padding: 0;
-}
+nav ul { display: flex; list-style: none; gap: 0.3rem; }
 
-/* --> Enlaces del menú: texto blanco, sin subrayado, con peso medio y transición suave. */
 nav ul li a {
-  color: var(--color-texto-claro);
+  position: relative;
+  color: var(--color-limon-suave);
   text-decoration: none;
-  font-weight: 600;
-  font-size: 1.1rem;
+  font-weight: 500;
+  font-size: 0.98rem;
   transition: color var(--transicion-rapida);
-  white-space: nowrap; /* --> Evita que el texto se parta. */
-  padding: 0.4rem 0.6rem;
-  border-radius: 8px;
+  white-space: nowrap;
+  padding: 0.5rem 0.9rem;
 }
 
-/* --> Efecto al pasar el mouse: cambia a color primario y añade fondo semitransparente. */
-nav ul li a:hover {
-  color: var(--color-primario);
-  background-color: rgba(255, 255, 255, 0.1);
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0.9rem; right: 0.9rem; bottom: 0.3rem;
+  height: 2px;
+  background-color: var(--color-limon);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transicion-rapida);
 }
 
-/* --> Ícono de usuario (SVG): tamaño fijo, color blanco, con transición al cambiar. */
-.user-icon svg {
-  width: 24px;
-  height: 24px;
-  stroke: var(--color-texto-claro);
-  transition: stroke var(--transicion-rapida);
-}
+nav ul li a:hover { color: var(--color-limon); }
+nav ul li a:hover::after { transform: scaleX(1); }
 
-/* --> Zona clickeable del ícono: con padding y redondeo para mejor usabilidad. */
-.user-icon a {
-  display: block;
-  padding: 0.5rem;
-  border-radius: 8px;
-  transition: background-color var(--transicion-rapida);
-}
-
-/* --> Efecto hover en ícono: fondo semitransparente y SVG cambia a color primario. */
-.user-icon a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  stroke: var(--color-primario);
-}
+.user-icon svg { width: 22px; height: 22px; stroke: var(--color-limon); transition: stroke var(--transicion-rapida); }
+.user-icon a { display: block; padding: 0.5rem; border-radius: 50%; transition: background-color var(--transicion-rapida); }
+.user-icon a:hover { background-color: rgba(255, 255, 102, 0.12); }
+.user-icon a:hover svg { stroke: var(--color-wasabi); }
 
 /* ===== CONTENIDO PRINCIPAL ===== */
 
-/* --> Contenedor del cuerpo principal: espacio superior para evitar que quede bajo la barra fija, fondo blanco y centrado. */
 .content {
-  padding-top: 100px; /* --> Compensa la barra de navegación fija (más alto que 90px para seguridad en móviles). */
-  min-height: 100vh; /* --> Ocupa al menos toda la altura de la ventana. */
-  padding: 2rem;
-  background: white; /* --> Fondo blanco para destacar el contenido sobre el fondo azul del body. */
-  flex-direction: column; /* --> Nota: esta regla no tiene efecto porque no es un contenedor flex; probablemente innecesaria. */
+  min-height: 100vh;
+  padding: 7.5rem 2.2rem 4rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.content__titulo {
+  text-align: center;
+  font-family: var(--fuente-display);
+  font-weight: 600;
+  font-size: clamp(2rem, 3.2vw, 2.6rem);
+  color: var(--color-ciruela);
+  margin-bottom: 0.6rem;
+}
+
+.content__subtitulo {
+  text-align: center;
+  color: var(--color-texto-suave);
+  font-size: 1.05rem;
+  margin-bottom: 2.6rem;
 }
 
 /* === BARRA DE BÚSQUEDA === */
 
-/* --> Contenedor centrado de la barra de búsqueda, con ancho máximo y margen vertical grande. */
 .search-bar {
   display: flex;
   justify-content: center;
-  margin: 4rem auto;
-  max-width: 500px;
+  align-items: center;
+  gap: 0;
+  margin: 0 auto 3.2rem;
+  max-width: 480px;
   width: 100%;
+  background-color: var(--color-blanco);
+  border-radius: var(--radio-boton);
+  box-shadow: var(--sombra-suave);
+  padding: 0.35rem;
+  transition: box-shadow var(--transicion-rapida);
 }
 
-/* --> Campo de texto: ocupa el espacio restante, con borde redondeado a la izquierda y sin contorno al enfocar. */
+.search-bar:focus-within {
+  box-shadow: 0 0 0 3px var(--color-wasabi-tenue), var(--sombra-suave);
+}
+
 .search-bar input {
   flex: 1;
-  padding: 0.75rem 1rem;
-  border: 2px solid #ccc;
-  border-radius: 25px 0 0 25px;
+  border: none;
+  outline: none;
+  padding: 0.65rem 1.2rem;
   font-size: 1rem;
-  outline: none; /* --> Elimina el borde azul por defecto al hacer clic. */
+  font-family: var(--fuente-principal);
+  background: transparent;
+  color: var(--color-ciruela);
 }
 
-/* --> Botón de búsqueda: estilo continuo con el input, redondeado a la derecha, sin borde izquierdo. */
+.search-bar input::placeholder { color: var(--color-texto-suave); }
+
 .search-bar button {
-  background-color: #f0f0f0;
-  border: 2px solid #ccc;
-  border-left: none; /* --> Elimina el borde doble entre input y botón. */
-  border-radius: 0 25px 25px 0;
-  padding: 0.75rem 1rem;
+  background-color: var(--color-ciruela);
+  border: none;
+  color: var(--color-limon-suave);
+  border-radius: var(--radio-boton);
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  flex-shrink: 0;
+  transition: background-color var(--transicion-rapida);
 }
 
-/* --> Efecto hover en botón: fondo más oscuro al pasar el mouse. */
-.search-bar button:hover {
-  background-color: #e0e0e0;
+.search-bar button:hover { background-color: var(--color-wasabi-oscuro); }
+.search-bar button svg { stroke: currentColor; width: 18px; height: 18px; }
+
+.content__sin-resultados {
+  display: none;
+  text-align: center;
+  color: var(--color-texto-suave);
+  font-size: 1rem;
+  padding: 2rem 0;
 }
 
-/* --> Color del ícono de lupa (SVG): gris oscuro para mejor contraste. */
-.search-bar button svg {
-  stroke: #333;
-}
+.content__sin-resultados.visible { display: block; }
 
-/* === TARJETAS DE DESTINOS === */
+/* === TARJETAS DE DESTINOS: estilo postal === */
 
-/* --> Cuadrícula de destinos: 2 columnas, con espacio entre tarjetas. */
 .destinations-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* --> Equivalente a dos columnas iguales (mejor usar 1fr 1fr). */
-  gap: 2.9rem;
-  padding: 2.6rem 0;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2.6rem;
 }
 
-/* --> Cada tarjeta: fondo azul claro, redondeada, con sombra y transición suave. */
 .destination-card {
-  background-color: var(--color-fondo-seccion);
-  border-radius: 20px;
-  padding: 1.8rem;
+  position: relative;
+  background-color: var(--color-blanco);
+  border-radius: var(--radio-tarjeta);
+  padding: 0.9rem 0.9rem 1.5rem;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
-  /* --> Limita el ancho para evitar que se estiren demasiado en pantallas anchas. */
-  max-width: 300px;
-  margin: 0 auto; /* --> Centra cada tarjeta horizontalmente. */
+  box-shadow: var(--sombra-suave);
+  transition: transform var(--transicion-suave), box-shadow var(--transicion-rapida);
+
+  opacity: 0;
+  transform: translateY(24px) rotate(0deg);
 }
 
-/* --> Efecto al pasar el mouse: la tarjeta se eleva ligeramente. */
+.destination-card.visible {
+  opacity: 1;
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(.19,1,.22,1), box-shadow var(--transicion-rapida);
+}
+
+.destination-card:nth-child(odd).visible { transform: translateY(0) rotate(-1.6deg); }
+.destination-card:nth-child(even).visible { transform: translateY(0) rotate(1.6deg); }
+
 .destination-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px) rotate(0deg) !important;
+  box-shadow: var(--sombra-fuerte);
+  z-index: 2;
 }
 
-/* --> Imagen dentro de la tarjeta: altura fija, sin deformar, con bordes redondeados. */
+.destination-card__marcador {
+  position: absolute;
+  top: -12px;
+  left: 18px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: var(--color-limon);
+  border: 3px solid var(--color-blanco);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--sombra-suave);
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+.destination-card:hover .destination-card__marcador { transform: rotate(-10deg) scale(1.08); }
+.destination-card__marcador svg { width: 18px; height: 18px; color: var(--color-ciruela); }
+
 .destination-card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  border-radius: 15px;
-  margin-bottom: 1rem;
+  border-radius: 14px;
+  margin-bottom: 1.1rem;
+  display: block;
 }
 
-/* --> Título del destino: mayúsculas, negrita, tamaño moderado. */
 .destination-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  color: var(--color-texto-oscuro); /* --> ¡Advertencia! Esta variable NO está definida en :root. Debería ser un color fijo o usar --color-texto-claro. */
-  font-weight: bold;
+  font-family: var(--fuente-display);
+  font-weight: 600;
+  font-size: 1.25rem;
+  letter-spacing: 0.03em;
+  color: var(--color-ciruela);
+  margin-bottom: 0.9rem;
   text-transform: uppercase;
 }
 
-/* --> Botón "Más Información": fondo definido por variable (pero esta variable no existe), texto oscuro, redondeado. */
 .btn-more {
-  background-color: var(--color-botones); /* --> ¡Error! --color-botones NO está definido en :root. Debería usar --color-primario o un color fijo. */
-  color: #333;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: none;
   border: none;
-  border-radius: 25px;
-  padding: 0.75rem 1.5rem;
-  font-weight: bold;
+  color: var(--color-wasabi-oscuro);
+  font-weight: 700;
+  font-size: 0.92rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  font-size: 0.9rem;
-  width: 100%;
   text-decoration: none;
+  transition: gap var(--transicion-rapida), color var(--transicion-rapida);
 }
 
-/* --> Efecto hover en botón: fondo gris más oscuro. */
-.btn-more:hover {
-  background-color: #d0d0d0;
-}
+.btn-more::after { content: '→'; transition: transform var(--transicion-rapida); }
+.btn-more:hover { color: var(--color-ciruela); gap: 0.65rem; }
 
-/* === DECORACIÓN DE ONDAS AZULES === */
+/* === RESPONSIVE === */
 
-/* --> Elementos decorativos posicionados de forma fija, detrás del contenido. */
-.wave-decoration {
-  position: fixed;
-  z-index: -1; /* --> Quedan detrás de todo el contenido. */
-  /* background: linear-gradient(135deg, #3283b9, #033f8a); */
-  /* --> Esta línea está comentada, así que no tiene efecto. */
-}
-
-/* --> Onda vertical decorativa a la izquierda (estilo geométrico con clip-path). */
-.wave-decoration.left {
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 40px;
-  clip-path: polygon(
-    0 0,
-    100% 0,
-    100% 100%,
-    0 100%,
-    0 80%,
-    20px 70%,
-    0 60%,
-    20px 50%,
-    0 40%,
-    20px 30%,
-    0 20%,
-    20px 10%,
-    0 0
-  );
-}
-
-/* --> Onda horizontal decorativa en la parte inferior. */
-.wave-decoration.bottom {
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 40px;
-  clip-path: polygon(
-    0 0,
-    100% 0,
-    100% 20px,
-    80px 0,
-    60px 20px,
-    40px 0,
-    20px 20px,
-    0 0
-  );
-}
-
-/* ===== RESPONSIVE (adaptación a móviles) ===== */
-
-/* --> Estilos para pantallas de hasta 768px de ancho. */
 @media (max-width: 768px) {
-  /* --> Barra de navegación más compacta. */
-  .navbar-container {
-    padding: 1rem;
-  }
+  .navbar-container { padding: 1rem; }
+  .content { padding: 6.5rem 1.4rem 3rem; }
 
-  /* --> Menú más pequeño y con menos espacio entre enlaces. */
-  nav ul {
-    gap: 1rem;
-    font-size: 0.9rem;
-  }
+  .destinations-grid { grid-template-columns: 1fr; gap: 1.8rem; }
+  .destination-card img { height: 180px; }
 
-  /* --> Cuadrícula de destinos en una sola columna. */
-  .destinations-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  /* --> Tarjetas más pequeñas y ocupan todo el ancho. */
-  .destination-card {
-    padding: 1rem;
-    max-width: 100%;
-  }
-
-  /* --> Imágenes más cortas en móvil. */
-  .destination-card img {
-    height: 150px;
-  }
-
-  /* --> Barra de búsqueda ocupa todo el ancho en móvil. */
-  .search-bar {
-    max-width: 100%;
-  }
+  .destination-card:nth-child(odd).visible,
+  .destination-card:nth-child(even).visible { transform: translateY(0) rotate(0deg); }
 }

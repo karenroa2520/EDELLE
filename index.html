@@ -1,4 +1,3 @@
-<!-- Declara el tipo de documento como HTML5 -->
 <!DOCTYPE html>
 
 <!-- Define el idioma principal de la página como español -->
@@ -16,8 +15,8 @@
   <!-- Define el título que aparece en la pestaña del navegador -->
   <title>Tu Proxima Gran Aventura</title>
 
-  <!-- Enlaza la hoja de estilos externa 'styles.css' para aplicar estilos a la página -->
-  <link rel="stylesheet" href="/styles.css" />
+   <!-- Enlaza la hoja de estilos externa 'styles.css' para aplicar estilos a la página -->
+  <link rel="stylesheet" href="src/static/css/styles.css">
 
 <!-- Cierra la sección <head> -->
 </head>
@@ -38,7 +37,7 @@
         <div class="logo-container">
 
           <!-- Imagen del logo de la empresa (Edelle) con texto alternativo para accesibilidad -->
-          <img src="/src/static/imagenes/INICIO/logo_edelle.jpg" alt="Edelle - Tu Próxima Gran Aventura" />
+          <img class="encabezado__imagen" src="src/static/imagenes/INICIO/icono-krenga.svg" alt="Krenga" />
 
         <!-- Cierra el contenedor del logo -->
         </div>
@@ -56,15 +55,16 @@
           <li><a href="/index.html">Inicio</a></li>
 
           <!-- Enlace a la página "Quiénes Somos" -->
-          <li><a href="/src/templates/visitante/quienes-somos.html">Quienes Somos</a></li>
+          <li><a href="src/templates/visitante/quienes-somos.html">Quienes Somos</a></li>
 
           <!-- Enlace a la página de servicios -->
-          <li><a href="/src/templates/visitante/servicios.html">Servicios</a></li>
+          <li><a href="src/templates/visitante/servicios.html">Servicios</a></li>
 
           <!-- Enlace a la página de destinos turísticos -->
-          <li><a href="/src/templates/visitante/destinos.html">Destinos</a></li>
+          <li><a href="src/templates/visitante/destinos.html">Destinos</a></li>
 
-          <li><a href="/src/templates/visitante/pasajes.html">Pasajes</a></li>
+          <li><a href="src/templates/visitante/pasajes.html">Pasajes</a></li>
+
 
         <!-- Cierra la lista de menú -->
         </ul>
@@ -72,8 +72,8 @@
       <!-- Cierra la barra de navegación -->
       </nav>
 
-      <a href="/src/templates/comprador/login.html" title="Iniciar Sesión" class="link-perfil">
-        <img src="/src/static/imagenes/INICIO/inicio-de-sesion-de-usuario.png" alt="Iniciar Sesión" class="icono-usuario">
+      <a href="src/templates/comprador/login.html" title="Iniciar Sesión" class="link-perfil">
+        <img src="src/static/imagenes/INICIO/inicio-de-sesion-de-usuario.png" alt="Iniciar Sesión" class="icono-usuario">
       </a>
 
     <!-- Cierra el contenedor de la barra de navegación -->
@@ -88,10 +88,8 @@
     <!-- Contenedor del carrusel (aunque solo tiene una imagen estática) -->
     <div class="carousel-container">
 
-      <!-- Comentario con una nota sobre funcionalidad futura de animación (aunque actualmente no se usa) -->
-
-      <!-- Imagen principal del hero, estática (sin animación real implementada) -->
-      <img src="/src/static/imagenes/INICIO/frame1.jpg" alt="Viaje Tranquilo" class="carousel-image">
+      <!-- Imagen principal del hero, con leve zoom animado para dar sensación de vida sin distraer -->
+      <img src="src/static/imagenes/INICIO/frame1.jpg" alt="Viaje Tranquilo" class="carousel-image">
 
     <!-- Cierra contenedor del carrusel -->
     </div>
@@ -99,27 +97,69 @@
     <!-- Contenido superpuesto sobre la imagen del hero -->
     <div class="hero-content">
 
+      <!-- Eyebrow: pequeña etiqueta que ubica la marca antes del titular -->
+      <span class="hero-eyebrow"><span class="linea"></span>Agencia de viajes Edelle</span>
+
       <!-- Título llamativo para captar la atención del visitante -->
-      <h1>Tu Próxima Gran Aventura<br>Comienza Aquí</h1>
+      <h1>Tu Próxima Gran Aventura<br>Comienza <em>Aquí</em></h1>
 
       <!-- Subtítulo con eslogan promocional -->
       <p>Viaja tranquilo, gasta poquito, vive bonito.</p>
 
       <!-- Botón principal que redirige a la página de servicios -->
-      <a href="/src/templates/visitante/servicios.html" class="boton-principal">Explora Nuestros Servicios</a>
+      <a href="src/templates/visitante/servicios.jsp" class="boton-principal">Explora Nuestros Servicios</a>
 
     <!-- Cierra el contenedor de contenido del hero -->
     </div>
 
+    <!-- Elemento firma: una ruta de viaje punteada que se dibuja al cargar la página,
+         reforzando visualmente la idea de itinerario/aventura -->
+    <svg class="ruta-firma" viewBox="0 0 500 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M5 45 C 120 5, 200 55, 320 20 S 470 10, 495 25" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="5" cy="45" r="5"/>
+      <circle cx="495" cy="25" r="5"/>
+    </svg>
+
+    <!-- Indicador de scroll: invita a seguir bajando, refuerza el "enganche" inicial -->
+    <a href="#servicios-destacados" class="hero-scroll" aria-label="Ver más">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+    </a>
+
   <!-- Cierra sección hero -->
   </section>
 
+  <!-- Franja de destinos en movimiento: refuerza el músculo de "agencia de viajes"
+       sin necesitar todavía contenido real de precios/fotos de cada destino -->
+  <section class="ticker-destinos" aria-hidden="true">
+    <div class="ticker-destinos__pista">
+      <span>Bogotá</span><span class="ticker-destinos__punto">&#9992;</span>
+      <span>Medellín</span><span class="ticker-destinos__punto">&#9992;</span>
+      <span>Cartagena</span><span class="ticker-destinos__punto">&#9992;</span>
+      <span>Santa Marta</span><span class="ticker-destinos__punto">&#9992;</span>
+      <span>San Andrés</span><span class="ticker-destinos__punto">&#9992;</span>
+      <span>Guatapé</span><span class="ticker-destinos__punto">&#9992;</span>
+      <span>Salento</span><span class="ticker-destinos__punto">&#9992;</span>
+      <span>Bogotá</span><span class="ticker-destinos__punto">&#9992;</span>
+      <span>Medellín</span><span class="ticker-destinos__punto">&#9992;</span>
+      <span>Cartagena</span><span class="ticker-destinos__punto">&#9992;</span>
+      <span>Santa Marta</span><span class="ticker-destinos__punto">&#9992;</span>
+      <span>San Andrés</span><span class="ticker-destinos__punto">&#9992;</span>
+      <span>Guatapé</span><span class="ticker-destinos__punto">&#9992;</span>
+      <span>Salento</span><span class="ticker-destinos__punto">&#9992;</span>
+    </div>
+  </section>
+
   <!-- Sección que muestra los servicios principales de la empresa -->
-  <section class="services">
+  <section class="services" id="servicios-destacados">
 
     <!-- Primera tarjeta de servicio: crear viaje a medida -->
     <div class="service-card">
-      <img src="/src/static/imagenes/INICIO/Crea tu Tour 1.jpg" alt="Crea Tu Propio Viaje" />
+      <div class="service-card__media">
+        <img src="src/static/imagenes/INICIO/Crea tu Tour 1.jpg" alt="Crea Tu Propio Viaje" />
+        <span class="service-card__badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15 9l-2 6-6 2 2-6 6-2z"/></svg>
+        </span>
+      </div>
       <h3>Crea Tu Propio Viaje</h3>
       <p>Tu viaje, tus reglas. Diseñamos tu experiencia a medida para una aventura única.</p>
       <a href="#" class="boton-secundario">Conoce Más</a>
@@ -127,17 +167,27 @@
 
     <!-- Segunda tarjeta de servicio: compra de pasajes -->
     <div class="service-card">
-      <img src="/src/static/imagenes/INICIO/comprar pasajes 2.jpg" alt="Comprar Pasajes" />
+      <div class="service-card__media">
+        <img src="src/static/imagenes/INICIO/comprar pasajes 2.jpg" alt="Comprar Pasajes" />
+        <span class="service-card__badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l0 2m0 4l0 2m0 4l0 2M5 5h14a2 2 0 0 1 2 2v3a2 2 0 0 0 0 4v3a2 2 0 0 1 -2 2H5a2 2 0 0 1 -2 -2v-3a2 2 0 0 0 0 -4v-3a2 2 0 0 1 2 -2"/></svg>
+        </span>
+      </div>
       <h3>Comprar Pasajes</h3>
       <p>Comparamos las mejores ofertas. Ahorra en tu viaje con el mejor precio y comodidad.</p>
       <a href="#" class="boton-secundario">Conoce Más</a>
     </div>
 
-    <!-- Tercera tarjeta de servicio: alquiler de vehículos -->
+    <!-- Tercera tarjeta de servicio: conocer ciudades -->
     <div class="service-card">
-      <img src="/src/static/imagenes/INICIO/conocer ciudades.jpg" alt="Alquila Un Vehículo" />
+      <div class="service-card__media">
+        <img src="src/static/imagenes/INICIO/conocer ciudades.jpg" alt="Conocer Ciudades" />
+        <span class="service-card__badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"/><path d="M17.657 16.657L13.414 20.9a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z"/></svg>
+        </span>
+      </div>
       <h3>Conocer ciudades</h3>
-      <p>Tu aventura no se detiene. Descubre las ciudades menos conocidad de colombia y llenate te experiencias involdables.</p>
+      <p>Tu aventura no se detiene. Descubre las ciudades menos conocidas de Colombia y llénate de experiencias inolvidables.</p>
       <a href="#" class="boton-secundario">Conoce Más</a>
     </div>
 
@@ -175,6 +225,31 @@
 
   <!-- Cierra el pie de página -->
   </footer>
+
+  <!-- Script ligero para revelar las tarjetas de servicio con un fade-up escalonado
+       a medida que entran en el viewport (sin dependencias externas) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var tarjetas = document.querySelectorAll('.service-card');
+      var prefiereMenosMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (prefiereMenosMovimiento || !('IntersectionObserver' in window)) {
+        tarjetas.forEach(function (tarjeta) { tarjeta.classList.add('visible'); });
+        return;
+      }
+
+      var observador = new IntersectionObserver(function (entradas) {
+        entradas.forEach(function (entrada) {
+          if (entrada.isIntersecting) {
+            entrada.target.classList.add('visible');
+            observador.unobserve(entrada.target);
+          }
+        });
+      }, { threshold: 0.15 });
+
+      tarjetas.forEach(function (tarjeta) { observador.observe(tarjeta); });
+    });
+  </script>
 
 <!-- Cierra el cuerpo de la página -->
 </body>

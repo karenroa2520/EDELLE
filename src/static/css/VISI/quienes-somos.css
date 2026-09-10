@@ -1,322 +1,448 @@
+/* =========================================================
+   EDELLE / KRENGA — Quiénes Somos
+   Mismos tokens de marca que el resto del sitio. Vida propia:
+   revelado en scroll, fotos con reacción al hover, insignia
+   flotante, forma decorativa que "respira", y una franja de
+   valores con íconos.
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=Baloo+2:wght@700;800&display=swap');
+
 :root {
-  --color-encabezado: #03045E;
-  --color-fondo-seccion : #3384BA;
-  --color-texto-claro: #ffffff;
-  --color-texto : #000;
-  --color-primario: #4cc9f0;
-  --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  --radio-boton: 25px;
-  --transicion-rapida: 0.3s ease;
+  --color-wasabi: #7FB800;
+  --color-wasabi-oscuro: #628F00;
+  --color-wasabi-tenue: #EDF5D6;
+  --color-limon: #FFFF66;
+  --color-limon-suave: #FFFDE3;
+  --color-ciruela: #4A1F3D;
+  --color-ciruela-suave: #6E3F5E;
+
+  --color-crema: #FFFCF3;
+  --color-texto-suave: #6B5568;
+  --color-blanco: #FFFFFF;
+
+  --fuente-display: 'Fraunces', Georgia, serif;
+  --fuente-principal: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  --radio-boton: 999px;
+  --radio-tarjeta: 22px;
+  --transicion-rapida: 0.25s ease;
+  --transicion-suave: 0.7s cubic-bezier(.19,1,.22,1);
+  --sombra-suave: 0 10px 30px rgba(74, 31, 61, 0.14);
+  --sombra-fuerte: 0 18px 40px rgba(74, 31, 61, 0.24);
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
 body {
   font-family: var(--fuente-principal);
-  background-color: var(--color-texto-claro);
-  color: var(--color-texto);
-  padding-top: 80px;
-  /* Para la navbar fija */
+  background-color: var(--color-crema);
+  color: var(--color-ciruela);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Navbar */
+.iconos-sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+
+/* === BARRA DE NAVEGACIÓN (idéntica al resto del sitio) === */
+
 .navbar-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background-color: var(--color-encabezado);
+  padding: 0.85rem 2.2rem;
+  background-color: rgba(74, 31, 61, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 20px rgba(46, 19, 39, 0.2);
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-}
+.logo { display: flex; align-items: center; }
 
 .logo-container {
-  width: 50px;
-  height: 50px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
   overflow: hidden;
-  background-color: white;
+  background-color: var(--color-crema);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 0 2px rgba(127, 184, 0, 0.45);
 }
 
-.logo-container img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  object-position: center;
-}
+.logo-container img { width: 100%; height: auto; object-fit: cover; object-position: center; }
 
-nav ul {
-  display: flex;
-  list-style: none;
-  gap: 2rem;
-  margin: 0;
-  padding: 0;
-}
+nav ul { display: flex; list-style: none; gap: 0.3rem; }
 
 nav ul li a {
-  color: var(--color-texto-claro);
+  position: relative;
+  color: var(--color-limon-suave);
   text-decoration: none;
-  font-weight: 600;
-  font-size: 1.1rem;
+  font-weight: 500;
+  font-size: 0.98rem;
   transition: color var(--transicion-rapida);
   white-space: nowrap;
-  padding: 0.4rem 0.6rem;
-  border-radius: 8px;
+  padding: 0.5rem 0.9rem;
 }
 
-nav ul li a:hover {
-  color: var(--color-primario);
-  background-color: rgba(255, 255, 255, 0.1);
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0.9rem; right: 0.9rem; bottom: 0.3rem;
+  height: 2px;
+  background-color: var(--color-limon);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transicion-rapida);
 }
 
-.user-icon svg {
-  width: 24px;
-  height: 24px;
-  stroke: var(--color-texto-claro);
-  transition: stroke var(--transicion-rapida);
-}
+nav ul li a:hover { color: var(--color-limon); }
+nav ul li a:hover::after { transform: scaleX(1); }
 
-.user-icon a {
-  display: block;
-  padding: 0.5rem;
-  border-radius: 8px;
-  transition: background-color var(--transicion-rapida);
-}
+.user-icon svg { width: 22px; height: 22px; stroke: var(--color-limon); transition: stroke var(--transicion-rapida); }
+.user-icon a { display: block; padding: 0.5rem; border-radius: 50%; transition: background-color var(--transicion-rapida); }
+.user-icon a:hover { background-color: rgba(255, 255, 102, 0.12); }
+.user-icon a:hover svg { stroke: var(--color-wasabi); }
 
-.user-icon a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  stroke: var(--color-primario);
-}
+/* === CONTENEDOR PRINCIPAL === */
 
-/* Contenedor principal */
 main {
-  max-width: 1024px;
-  margin: 100px auto 40px;
-  /* ↑ espacio extra para navbar fija */
-  padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 7.5rem 2.2rem 2rem;
 }
 
-/* Estilos sección "Sobre nosotros" */
-.sobre-nosotros {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  margin-bottom: 80px;
-  position: relative;
-  background-color: #ffffff;
+/* --> Revelado en scroll: todas las secciones arrancan
+       apagadas y se activan al entrar en el viewport (JS
+       agrega .visible) */
+.sobre-nosotros, .mision, .historia, .valores {
+  opacity: 0;
+  transform: translateY(28px);
 }
+
+.sobre-nosotros.visible, .mision.visible, .historia.visible, .valores.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(.19,1,.22,1);
+}
+
+/* === SECCIÓN "SOBRE NOSOTROS": foto en marco orgánico === */
+
+.sobre-nosotros {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 5.5rem;
+}
+
+.texto-sobre .eyebrow {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--color-wasabi-oscuro);
+  margin-bottom: 1rem;
+}
+
+.texto-sobre .eyebrow .linea { width: 34px; height: 1px; background-color: var(--color-wasabi); display: inline-block; }
 
 .texto-sobre h1 {
-  font-size: 2.5rem;
-  /* ≈40px */
-  font-weight: 700;
-  line-height: 1.3;
-  letter-spacing: 0.02em;
-  margin-bottom: 1rem;
+  font-family: var(--fuente-display);
+  font-weight: 600;
+  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+  line-height: 1.15;
+  color: var(--color-ciruela);
+  margin-bottom: 1.2rem;
 }
 
 .texto-sobre p {
   font-size: 1.08rem;
-  /* 14px */
-  max-width: 460px;
+  line-height: 1.8;
+  color: var(--color-texto-suave);
+  max-width: 46ch;
 }
 
 .img-sobre {
   position: relative;
-  width: 390px;
-}
-
-.img-sobre img {
-  width: 100%;
-  border-radius: var(--radio-tarjeta);
-  object-fit: cover;
-  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.15);
-  z-index: 2;
-  position: relative;
 }
 
 .img-sobre::before {
-  content: "";
+  content: '';
   position: absolute;
-  top: -30px;
-  left: -60px;
-  width: 280px;
-  height: 220px;
-  background-color: #102c77;
-  transform: rotate(-13deg);
-  border-radius: 15px 50px 0 20px;
+  width: 90%; height: 90%;
+  top: 5%; left: 8%;
+  background-color: var(--color-wasabi-tenue);
+  border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+  transform: rotate(-6deg);
+  z-index: 0;
+  animation: respirar 7s ease-in-out infinite alternate;
+}
+
+@keyframes respirar {
+  from { transform: rotate(-6deg) scale(1); }
+  to   { transform: rotate(-2deg) scale(1.04); }
+}
+
+.img-sobre__marco {
+  position: relative;
   z-index: 1;
+  border-radius: 63% 37% 54% 46% / 43% 37% 63% 57%;
+  overflow: hidden;
+  box-shadow: var(--sombra-fuerte);
+  aspect-ratio: 1 / 1;
 }
 
-/* Sección misión */
-.mision {
-  display: flex;
-  background-color: var(--color-fondo-seccion);
-  color: var(--color-texto);
-  /* más coherente que #0b2035 */
-  border-radius: 15px;
-  padding: 1.875rem 2.5rem;
-  /* 30px / 40px */
-  gap: 24px;
-  margin-bottom: 80px;
-  align-items: center;
+.img-sobre__marco img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(.19,1,.22,1);
 }
 
-.contenido-mision {
-  flex: 1;
+.img-sobre__marco:hover img { transform: scale(1.08) rotate(1deg); }
+
+/* --> Insignia flotante: mismo recurso que las páginas de
+       destino, para que se sienta la misma familia de marca */
+.insignia-flotante {
+  position: absolute;
+  z-index: 2;
+  left: -1.2rem;
+  bottom: 6%;
+  background-color: var(--color-blanco);
+  border-radius: 16px;
+  padding: 0.85rem 1.15rem;
+  box-shadow: var(--sombra-fuerte);
+  display: flex; align-items: center; gap: 0.6rem;
+  transform: rotate(-4deg);
   font-weight: 700;
-  font-size: 1.45rem;
-  /* 20px */
-  line-height: 1.4;
+  color: var(--color-ciruela);
+  font-size: 0.88rem;
+  max-width: 190px;
+  line-height: 1.3;
+  animation: pasePop 0.6s cubic-bezier(.34,1.56,.64,1) 0.5s backwards;
 }
+
+@keyframes pasePop {
+  from { opacity: 0; transform: rotate(-4deg) translateY(14px); }
+  to { opacity: 1; transform: rotate(-4deg) translateY(0); }
+}
+
+.insignia-flotante svg { width: 20px; height: 20px; color: var(--color-wasabi); flex-shrink: 0; }
+
+/* === SECCIÓN MISIÓN: franja ciruela === */
+
+.mision {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 3rem;
+  background-color: var(--color-ciruela);
+  border-radius: 28px;
+  padding: 3.2rem;
+  margin-bottom: 5.5rem;
+  color: var(--color-limon-suave);
+}
+
+.mision.mision-invertida { grid-template-columns: 0.9fr 1.1fr; }
+.mision.mision-invertida .img-mision { order: -1; }
 
 .contenido-mision h2 {
-  margin-bottom: 1rem;
-  font-weight: 700;
-  letter-spacing: 0.015em;
+  font-family: var(--fuente-display);
+  font-weight: 600;
+  font-size: clamp(1.7rem, 2.6vw, 2.2rem);
+  line-height: 1.3;
+  color: var(--color-limon);
+  margin-bottom: 1.1rem;
 }
 
 .contenido-mision p {
-  font-weight: 400;
-  font-size: 1.08rem;
-  line-height: 1.4;
-  margin-top: 0.625rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(255, 253, 227, 0.85);
 }
 
 .img-mision {
-  position: relative;
-  width: 380px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--sombra-fuerte);
 }
 
 .img-mision img {
-  width: 100%;
-  border-radius: 30px;
+  width: 100%; height: 100%;
   object-fit: cover;
-  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.15);
+  display: block;
+  aspect-ratio: 4 / 3.4;
+  transition: transform 0.6s cubic-bezier(.19,1,.22,1);
 }
 
-.img-mision::before {
-  content: "";
-  position: absolute;
-  top: -45px;
-  left: -35px;
-  width: 280px;
-  height: 220px;
-  border-radius: 70% 100% 90% 20% / 80% 120% 40% 50%;
-  background-color: #fff;
-  z-index: -1;
-}
+.img-mision:hover img { transform: scale(1.06); }
 
-/* Invierte la segunda sección de misión */
-.mision.mision-invertida {
-  flex-direction: row-reverse;
-}
+/* === SECCIÓN HISTORIA: acento de ruta === */
 
-/* Sección historia */
 .historia {
-  display: flex;
-  justify-content: space-between;
-  gap: 24px;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
   align-items: center;
-  margin-bottom: 60px;
-  background-color: var(--color-texto-claro)
+  gap: 3rem;
+  margin-bottom: 5.5rem;
 }
 
 .texto-historia {
-  flex: 1;
-  max-width: 480px;
+  position: relative;
+  padding-left: 1.8rem;
+  border-left: 3px dashed var(--color-wasabi);
+}
+
+.texto-historia::before {
+  content: '';
+  position: absolute;
+  left: -8px; top: -4px;
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background-color: var(--color-wasabi);
+  box-shadow: 0 0 0 4px var(--color-wasabi-tenue);
 }
 
 .texto-historia h3 {
-  font-size: 2rem;
-  /* 20px */
-  font-weight: 900;
+  font-family: var(--fuente-display);
+  font-weight: 600;
+  font-size: clamp(1.7rem, 2.4vw, 2.1rem);
+  color: var(--color-ciruela);
   margin-bottom: 1rem;
 }
 
 .texto-historia p {
-  max-width: 460px;
-  font-size: 1.08rem;
-  line-height: 1.5;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--color-texto-suave);
+  max-width: 50ch;
 }
 
 .img-historia {
-  position: relative;
-  width: 390px;
+  border-radius: var(--radio-tarjeta);
+  overflow: hidden;
+  box-shadow: var(--sombra-suave);
 }
 
 .img-historia img {
-  width: 100%;
-  border-radius: var(--radio-tarjeta);
+  width: 100%; height: 100%;
   object-fit: cover;
-  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.15);
-  z-index: 2;
-  position: relative;
+  display: block;
+  aspect-ratio: 4 / 3.2;
+  transition: transform 0.6s cubic-bezier(.19,1,.22,1);
 }
 
-.img-historia::before {
-  content: "";
-  position: absolute;
-  top: -35px;
-  left: -40px;
-  width: 280px;
-  height: 180px;
-  background-color: #102c77;
-  transform: rotate(-10deg);
-  border-radius: 15px 50px 0 20px;
-  z-index: 1;
+.img-historia:hover img { transform: scale(1.06); }
+
+/* === SECCIÓN VALORES: franja de íconos === */
+
+.valores {
+  margin-bottom: 3rem;
 }
 
-/* Responsividad básica */
-@media (max-width: 768px) {
+.valores__titulo {
+  font-family: var(--fuente-display);
+  font-weight: 600;
+  font-size: clamp(1.5rem, 2.2vw, 1.9rem);
+  color: var(--color-ciruela);
+  text-align: center;
+  margin-bottom: 2.2rem;
+}
 
-  .sobre-nosotros,
-  .mision,
-  .historia {
-    flex-direction: column;
+.valores__grilla {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.6rem;
+}
+
+.valor {
+  background-color: var(--color-blanco);
+  border-radius: 20px;
+  padding: 1.8rem 1.4rem;
+  text-align: center;
+  box-shadow: var(--sombra-suave);
+  transition: transform var(--transicion-rapida), box-shadow var(--transicion-rapida);
+}
+
+.valor:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--sombra-fuerte);
+}
+
+.valor__icono {
+  width: 52px; height: 52px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  background-color: var(--color-wasabi-tenue);
+  display: flex; align-items: center; justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.valor:hover .valor__icono { transform: rotate(-8deg) scale(1.08); }
+
+.valor__icono svg { width: 24px; height: 24px; color: var(--color-wasabi-oscuro); }
+
+.valor h4 {
+  font-family: var(--fuente-display);
+  font-weight: 600;
+  font-size: 1.08rem;
+  color: var(--color-ciruela);
+  margin-bottom: 0.4rem;
+}
+
+.valor p {
+  font-size: 0.88rem;
+  color: var(--color-texto-suave);
+  line-height: 1.5;
+}
+
+/* === RESPONSIVO === */
+
+@media (max-width: 900px) {
+  .sobre-nosotros, .historia {
+    grid-template-columns: 1fr;
     text-align: center;
-    gap: 20px;
+  }
+  .texto-sobre p, .texto-historia p { margin: 0 auto; }
+  .img-sobre { max-width: 380px; margin: 0 auto; }
+  .insignia-flotante { left: 50%; transform: translateX(-50%) rotate(-3deg); }
+
+  .mision, .mision.mision-invertida {
+    grid-template-columns: 1fr;
+    padding: 2.2rem;
+    text-align: center;
+  }
+  .mision.mision-invertida .img-mision { order: 0; }
+  .contenido-mision p { margin: 0 auto; }
+
+  .texto-historia {
+    border-left: none;
+    border-top: 3px dashed var(--color-wasabi);
+    padding-left: 0;
+    padding-top: 1.6rem;
+  }
+  .texto-historia::before {
+    left: 50%; top: -8px; transform: translateX(-50%);
   }
 
-  .texto-sobre p,
-  .texto-historia p,
-  .contenido-mision p {
-    max-width: 100%;
-  }
+  .valores__grilla { grid-template-columns: repeat(2, 1fr); }
+}
 
-  .img-sobre,
-  .img-mision,
-  .img-historia {
-    width: 90%;
-    max-width: 320px;
-  }
-
-  .navbar-container {
-    flex-direction: column;
-    padding: 1rem;
-    gap: 1rem;
-  }
-
-  .navbar-container nav ul {
-    gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+@media (max-width: 600px) {
+  main { padding: 6.5rem 1.4rem 1rem; }
+  .sobre-nosotros, .mision, .historia, .valores { margin-bottom: 3.5rem; }
+  .valores__grilla { grid-template-columns: 1fr; }
 }

@@ -1,86 +1,376 @@
 /* ==============================================
-   PASAJES.JS — Edelle
+   PASAJES.JS — Edelle (Lista Completa + Filtro Inteligente)
    ============================================== */
 
-/* ─── DATOS DE PRUEBA ───────────────────────── */
-const RUTAS = [
-  { id:1,  origen:'bogota',      destino:'medellin',     origen_n:'Bogotá',      destino_n:'Medellín',     hora:'06:00', duracion:'8h',  precio:85000,  empresa:'Expreso Bolivariano', asientos_libres:24, tipo:'Ejecutivo' },
-  { id:2,  origen:'bogota',      destino:'medellin',     origen_n:'Bogotá',      destino_n:'Medellín',     hora:'10:30', duracion:'8h',  precio:72000,  empresa:'Flota Magdalena',     asientos_libres:5,  tipo:'Estándar'  },
-  { id:3,  origen:'bogota',      destino:'cali',         origen_n:'Bogotá',      destino_n:'Cali',         hora:'07:00', duracion:'10h', precio:95000,  empresa:'Expreso Bolivariano', asientos_libres:18, tipo:'Ejecutivo' },
-  { id:4,  origen:'bogota',      destino:'bucaramanga',  origen_n:'Bogotá',      destino_n:'Bucaramanga',  hora:'08:00', duracion:'7h',  precio:78000,  empresa:'Berlinas del Fonce',  asientos_libres:30, tipo:'Ejecutivo' },
-  { id:5,  origen:'bogota',      destino:'barranquilla', origen_n:'Bogotá',      destino_n:'Barranquilla', hora:'21:00', duracion:'18h', precio:130000, empresa:'Copetran',            asientos_libres:12, tipo:'Cama'      },
-  { id:6,  origen:'medellin',    destino:'bogota',       origen_n:'Medellín',    destino_n:'Bogotá',       hora:'05:30', duracion:'8h',  precio:85000,  empresa:'Expreso Bolivariano', asientos_libres:20, tipo:'Ejecutivo' },
-  { id:7,  origen:'medellin',    destino:'cali',         origen_n:'Medellín',    destino_n:'Cali',         hora:'09:00', duracion:'9h',  precio:88000,  empresa:'Flota Occidental',    asientos_libres:8,  tipo:'Estándar'  },
-  { id:8,  origen:'cali',        destino:'bogota',       origen_n:'Cali',        destino_n:'Bogotá',       hora:'06:30', duracion:'10h', precio:95000,  empresa:'Expreso Palmira',     asientos_libres:15, tipo:'Ejecutivo' },
-  { id:9,  origen:'bucaramanga', destino:'bogota',       origen_n:'Bucaramanga', destino_n:'Bogotá',       hora:'04:00', duracion:'7h',  precio:78000,  empresa:'Berlinas del Fonce',  asientos_libres:22, tipo:'Ejecutivo' },
-  { id:10, origen:'cartagena',   destino:'bogota',       origen_n:'Cartagena',   destino_n:'Bogotá',       hora:'20:00', duracion:'14h', precio:120000, empresa:'Brasilia',            asientos_libres:3,  tipo:'Cama'      },
-  { id:11, origen:'bogota',      destino:'pereira',      origen_n:'Bogotá',      destino_n:'Pereira',      hora:'07:00', duracion:'6h',  precio:68000,  empresa:'Flota Occidental',    asientos_libres:27, tipo:'Estándar'  },
-  { id:12, origen:'pereira',     destino:'cali',         origen_n:'Pereira',     destino_n:'Cali',         hora:'11:00', duracion:'3h',  precio:42000,  empresa:'Expreso Palmira',     asientos_libres:14, tipo:'Estándar'  },
+// 1. BASE DE DATOS DE CIUDADES Y DEPARTAMENTOS
+// Organizado para facilitar la búsqueda y el filtrado
+const CIUDADES_DB = [
+  // ATLANTICO
+  { val: 'barranquilla', label: 'Barranquilla', dept: 'atlantico' },
+  { val: 'sabana-larga', label: 'Sabana Larga', dept: 'atlantico' },
+  { val: 'baranoa', label: 'Baranoa', dept: 'atlantico' },
+  { val: 'campeche', label: 'Campeche', dept: 'atlantico' },
+  { val: 'campo-cruz', label: 'Campo de la Cruz', dept: 'atlantico' },
+  { val: 'luruaco', label: 'Luruaco', dept: 'atlantico' },
+
+  // CUNDINAMARCA
+  { val: 'bogota', label: 'Bogotá', dept: 'cundinamarca' },
+  { val: 'facatativa', label: 'Facatativá', dept: 'cundinamarca' },
+  { val: 'fontibon', label: 'Fontibón', dept: 'cundinamarca' },
+  { val: 'villeta', label: 'Villeta', dept: 'cundinamarca' },
+  { val: 'guaduas', label: 'Guaduas', dept: 'cundinamarca' },
+  { val: 'puerto-salgar', label: 'Puerto Salgar', dept: 'cundinamarca' },
+  { val: 'alban', label: 'Albán', dept: 'cundinamarca' },
+  { val: 'madrid', label: 'Madrid', dept: 'cundinamarca' },
+  { val: 'mosquera', label: 'Mosquera', dept: 'cundinamarca' },
+  { val: 'sotome', label: 'Subachoque/Sotaquirá?', dept: 'cundinamarca' }, // Asumí Sotaquirá o corrección ortográfica
+
+  // ANTIOQUIA
+  { val: 'medellin', label: 'Medellín', dept: 'antioquia' },
+  { val: 'caucasia', label: 'Caucasia', dept: 'antioquia' },
+  { val: 'taraza', label: 'Tarazá', dept: 'antioquia' },
+  { val: 'bello', label: 'Bello', dept: 'antioquia' },
+  { val: 'yarumal', label: 'Yarumal', dept: 'antioquia' },
+  { val: 'doradal', label: 'Doradal', dept: 'antioquia' },
+  { val: 'marinilla', label: 'Marinilla', dept: 'antioquia' },
+  { val: 'p-valdivia', label: 'Puerto Valdivia', dept: 'antioquia' },
+  { val: 'don-matias', label: 'Don Matías', dept: 'antioquia' },
+  { val: 'cisneros', label: 'Cisneros', dept: 'antioquia' },
+  { val: 'san-luis', label: 'San Luis', dept: 'antioquia' },
+  { val: 'arboletes', label: 'Arboletes', dept: 'antioquia' },
+  { val: 'copacabana', label: 'Copacabana', dept: 'antioquia' },
+  { val: 'llanos-cuiva', label: 'Llanos de Cuivá', dept: 'antioquia' },
+  { val: 'p-serviez', label: 'Puerto Serviez', dept: 'antioquia' },
+  { val: 'rionegro', label: 'Rionegro', dept: 'antioquia' },
+
+  // BOLIVAR
+  { val: 'cartagena', label: 'Cartagena', dept: 'bolivar' },
+  { val: 'magangue', label: 'Magangué', dept: 'bolivar' },
+  { val: 'carmen-bolivar', label: 'El Carmen de Bolívar', dept: 'bolivar' },
+  { val: 'mompox', label: 'Mompox', dept: 'bolivar' },
+  { val: 'el-vizo', label: 'El Viso', dept: 'bolivar' },
+  { val: 'san-juan-nep', label: 'San Juan Nepomuceno', dept: 'bolivar' },
+  { val: 'talaigua', label: 'Talaigua', dept: 'bolivar' },
+  { val: 'san-jacinto', label: 'San Jacinto', dept: 'bolivar' },
+  { val: 'arjona', label: 'Arjona', dept: 'bolivar' },
+  { val: 'maria-baja', label: 'María La Baja', dept: 'bolivar' },
+  { val: 'carreto', label: 'Carreto', dept: 'bolivar' },
+  { val: 'clemencia', label: 'Clemencia', dept: 'bolivar' },
+  { val: 'bayunca', label: 'Bayunca', dept: 'bolivar' },
+  { val: 'calamar', label: 'Calamar', dept: 'bolivar' },
+  { val: 'cicuco', label: 'Cicuco', dept: 'bolivar' },
+  { val: 'juan-arias', label: 'Juan Arias', dept: 'bolivar' },
+  { val: 'los-pendales', label: 'Los Pendales', dept: 'bolivar' },
+  { val: 'mahates', label: 'Mahates', dept: 'bolivar' },
+  { val: 'malaga', label: 'Málaga', dept: 'bolivar' },
+  { val: 'santa-catalina', label: 'Santa Catalina', dept: 'bolivar' },
+
+  // CESAR
+  { val: 'valledupar', label: 'Valledupar', dept: 'cesar' },
+  { val: 'san-martin', label: 'San Martín', dept: 'cesar' },
+  { val: 'la-mata', label: 'La Mata', dept: 'cesar' },
+  { val: 'san-roque', label: 'San Roque', dept: 'cesar' },
+  { val: 'bosconia', label: 'Bosconia', dept: 'cesar' },
+  { val: 'aguachica', label: 'Aguachica', dept: 'cesar' },
+  { val: 'codazzi', label: 'Codazzi', dept: 'cesar' },
+  { val: 'jagua-ibrico', label: 'La Jagua de Ibirico', dept: 'cesar' },
+  { val: 'curumani', label: 'Curumaní', dept: 'cesar' },
+  { val: 'becerril', label: 'Becerril', dept: 'cesar' },
+  { val: 'chiriguana', label: 'Cruce de Chiriguana', dept: 'cesar' },
+  { val: 'el-copey', label: 'El Copey', dept: 'cesar' },
+  { val: 'pelaya', label: 'Pelaya', dept: 'cesar' },
+  { val: 'drumman', label: 'Puente Drumman', dept: 'cesar' },
+  { val: 'chimichagua', label: 'Chimichagua', dept: 'cesar' },
+  { val: 'cuatro-vientos', label: 'Cuatro Vientos', dept: 'cesar' },
+  { val: 'la-paz', label: 'La Paz', dept: 'cesar' },
+  { val: 'el-burro', label: 'El Burro', dept: 'cesar' },
+  { val: 'el-paso', label: 'El Paso', dept: 'cesar' },
+  { val: 'balsamo', label: 'Loma del Bálsamo', dept: 'cesar' },
+  { val: 'aguas-blancas', label: 'Aguas Blancas', dept: 'cesar' },
+  { val: 'urimita', label: 'Urimita', dept: 'cesar' },
+
+  // MAGDALENA
+  { val: 'santa-marta', label: 'Santa Marta', dept: 'magdalena' },
+  { val: 'cienaga', label: 'Ciénaga', dept: 'magdalena' },
+  { val: 'plato', label: 'Plato', dept: 'magdalena' },
+  { val: 'el-banco', label: 'El Banco', dept: 'magdalena' },
+  { val: 'mendihuaca', label: 'Mendihuaca', dept: 'magdalena' },
+  { val: 'fundacion', label: 'Fundación', dept: 'magdalena' },
+  { val: 'guamal', label: 'Guamal', dept: 'magdalena' },
+  { val: 'el-dificil', label: 'El Difícil', dept: 'magdalena' },
+  { val: 'mamatoco', label: 'Mamatoco', dept: 'magdalena' },
+  { val: 'santa-ana', label: 'Santa Ana', dept: 'magdalena' },
+  { val: 'aracatoca', label: 'Aracataca', dept: 'magdalena' },
+  { val: 'tayrona', label: 'Tayrona', dept: 'magdalena' },
+  { val: 'buritaca', label: 'Buritaca', dept: 'magdalena' },
+  { val: 'tamalameque', label: 'Tamalameque', dept: 'magdalena' },
+  { val: 'tucurinca', label: 'Tucurinca', dept: 'magdalena' },
+
+  // CORDOBA
+  { val: 'monteria', label: 'Montería', dept: 'cordoba' },
+  { val: 'lorica', label: 'Lorica', dept: 'cordoba' },
+  { val: 'cerete', label: 'Cereté', dept: 'cordoba' },
+  { val: 'sahagun', label: 'Sahagún', dept: 'cordoba' },
+  { val: 'planeta-rica', label: 'Planeta Rica', dept: 'cordoba' },
+  { val: 'chinu', label: 'Chinú', dept: 'cordoba' },
+  { val: 'la-apartada', label: 'La Apartada', dept: 'cordoba' },
+  { val: 'cienaga-oro', label: 'Ciénaga de Oro', dept: 'cordoba' },
+  { val: 'san-antero', label: 'San Antero', dept: 'cordoba' },
+  { val: 'monteelibano', label: 'Montelíbano', dept: 'cordoba' },
+  { val: 'el-viajano', label: 'El Viajano', dept: 'cordoba' },
+  { val: 'la-ye', label: 'La Ye', dept: 'cordoba' },
+  { val: 'el-quince', label: 'El Quince', dept: 'cordoba' },
+  { val: 'tierralta', label: 'Tierralta', dept: 'cordoba' },
+  { val: 'buenavista', label: 'Buenavista', dept: 'cordoba' },
+  { val: 'san-pelayo', label: 'San Pelayo', dept: 'cordoba' },
+
+  // SUCRE
+  { val: 'sincelejo', label: 'Sincelejo', dept: 'sucre' },
+  { val: 'covenas', label: 'Coveñas', dept: 'sucre' },
+  { val: 'corozal', label: 'Corozal', dept: 'sucre' },
+  { val: 'tolu', label: 'Tolú', dept: 'sucre' },
+  { val: 'san-onofre', label: 'San Onofre', dept: 'sucre' },
+  { val: 'san-pedro', label: 'San Pedro', dept: 'sucre' },
+  { val: 'sampues', label: 'Sampués', dept: 'sucre' },
+  { val: 'ovejas', label: 'Ovejas', dept: 'sucre' },
+  { val: 'san-marcos', label: 'San Marcos', dept: 'sucre' },
+  { val: 'tolu-viejo', label: 'Tolú Viejo', dept: 'sucre' },
+  { val: 'puerta-hierro', label: 'Puerta de Hierro', dept: 'sucre' },
+  { val: 'el-pinal', label: 'El Piñal', dept: 'sucre' },
+  { val: 'galeras', label: 'Galeras', dept: 'sucre' },
+  { val: 'palmitos', label: 'Los Palmitos', dept: 'sucre' },
+  { val: 'betulia', label: 'San Juan de Betulia', dept: 'sucre' },
+
+  // LA GUAJIRA
+  { val: 'maicao', label: 'Maicao', dept: 'guajira' },
+  { val: 'riohacha', label: 'Riohacha', dept: 'guajira' },
+  { val: 'camarones', label: 'Camarones', dept: 'guajira' },
+  { val: 'fonseca', label: 'Fonseca', dept: 'guajira' },
+  { val: 'palomino', label: 'Palomino', dept: 'guajira' },
+  { val: 'albania-guajira', label: 'Albania', dept: 'guajira' },
+  { val: 'cuatro-vias-guajira', label: 'Cuatro Vías', dept: 'guajira' },
+  { val: 'san-juan-cesar', label: 'San Juan del Cesar', dept: 'guajira' },
+  { val: 'hatonuevo', label: 'Hatonuevo', dept: 'guajira' },
+  { val: 'barrancas', label: 'Barrancas', dept: 'guajira' },
+  { val: 'mingueo', label: 'Mingueo', dept: 'guajira' },
+  { val: 'villanueva', label: 'Villanueva', dept: 'guajira' },
+  { val: 'distraccion', label: 'Distracción', dept: 'guajira' },
+  { val: 'ariguani', label: 'Ariguaní', dept: 'guajira' },
+  { val: 'carraipia', label: 'Carraipia', dept: 'guajira' },
+  { val: 'dibulla', label: 'Dibulla', dept: 'guajira' },
+  { val: 'el-molino', label: 'El Molino', dept: 'guajira' },
+  { val: 'paraguachon', label: 'Paraguachón', dept: 'guajira' },
+
+  // SANTANDER
+  { val: 'bucaramanga', label: 'Bucaramanga', dept: 'santander' },
+  { val: 'barrancabermeja', label: 'Barrancabermeja', dept: 'santander' },
+  { val: 'la-gomez', label: 'La Gómez', dept: 'santander' },
+  { val: 'dagota', label: 'Dagota', dept: 'santander' },
+  { val: 'p-araujo', label: 'Puerto Araujo', dept: 'santander' },
+  { val: 'la-lisama', label: 'La Lisama', dept: 'santander' },
+  { val: 'san-gil', label: 'San Gil', dept: 'santander' },
+  { val: 'el-socorro', label: 'El Socorro', dept: 'santander' },
+  { val: 'rio-negro', label: 'Río Negro', dept: 'santander' },
+  { val: 'piedecuesta', label: 'Piedecuesta', dept: 'santander' },
+  { val: 'barbosa', label: 'Barbosa', dept: 'santander' },
+  { val: 'oiba', label: 'Oiba', dept: 'santander' },
+  { val: 'el-playon', label: 'El Playón', dept: 'santander' },
+  { val: 'km-23', label: 'Kilómetro 23', dept: 'santander' },
+  { val: 'olival', label: 'Olival', dept: 'santander' },
+  { val: 'berlin', label: 'Berlín', dept: 'santander' },
+  { val: 'cimitarra', label: 'Cimitarra', dept: 'santander' },
+  { val: 'floridablanca', label: 'Floridablanca', dept: 'santander' },
+  { val: 'giron', label: 'Girón', dept: 'santander' },
+  { val: 'p-parra', label: 'Puerto Parra', dept: 'santander' },
+
+  // VALLE DEL CAUCA
+  { val: 'cali', label: 'Cali', dept: 'valle' },
+  { val: 'buga', label: 'Buga', dept: 'valle' },
+  { val: 'tulua', label: 'Tuluá', dept: 'valle' }
 ];
 
-/* ─── ESTADO ────────────────────────────────── */
+// 2. LISTA DE RUTAS PROHIBIDAS (Cercanía extrema / Transporte Urbano)
+// Aquí definimos qué pares NO venderemos porque son muy cercanos.
+const RUTAS_PROHIBIDAS = [
+  // Santander Área Metropolitana
+  ['bucaramanga', 'giron'],
+  ['bucaramanga', 'floridablanca'],
+  ['bucaramanga', 'piedecuesta'], // A veces se permite, pero si dices que no, lo quitamos. Si quieres permitirlo, borra esta línea.
+  ['giron', 'floridablanca'],
+  
+  // Antioquia Área Metropolitana
+  ['medellin', 'bello'],
+  ['medellin', 'copacabana'],
+  ['medellin', 'envigado'], // No estaba en lista pero por si acaso
+  ['bello', 'copacabana'],
+
+  // Bogotá Sabana Cercana
+  ['bogota', 'madrid'],
+  ['bogota', 'mosquera'],
+  ['bogota', 'fontibon'],
+  ['madrid', 'mosquera'],
+  ['madrid', 'facatativa'],
+
+  // Magdalena Cerca de Santa Marta
+  ['santa-marta', 'mamatoco'],
+  ['santa-marta', 'taganga'], // Si existiera
+  
+  // Sucre Cerca de Sincelejo
+  ['sincelejo', 'corozal'], // Muy cerca a veces se considera urbano
+  ['sincelejo', 'trinitaria'] // No estaba pero es cerca
+];
+
+/* ─── ESTADO GLOBAL ───────────────────────── */
 let selectedRoute    = null;
 let selectedSeats    = [];
-let ocupadosActuales = [];
+let lastRenderedRoutes = [];
 
-/* ─── HELPERS ───────────────────────────────── */
-const fmt = n =>
-  new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', minimumFractionDigits: 0 }).format(n);
-
-const fmtDate = s => {
-  if (!s) return '—';
-  const [y, m, d] = s.split('-');
-  return `${d}/${m}/${y}`;
-};
-
+/* ─── HELPERS DE FORMATO ──────────────────── */
+const fmt = n => new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', minimumFractionDigits: 0 }).format(n);
+const fmtDate = s => { if (!s) return '—'; const [y, m, d] = s.split('-'); return `${d}/${m}/${y}`; };
 const genRef = () => 'EDL-' + Math.random().toString(36).substr(2, 6).toUpperCase();
-
 const pax = () => parseInt(document.getElementById('pasajeros').value) || 1;
 
-/* ─── BUSCAR RUTAS ──────────────────────────── */
-function buscarRutas() {
-  const ori   = document.getElementById('origen').value;
-  const des   = document.getElementById('destino').value;
-  const fecha = document.getElementById('fecha').value;
+/* ─── LÓGICA DE AUTOCOMPLETADO ────────────── */
 
-  let filtered = RUTAS;
-  if (ori) filtered = filtered.filter(r => r.origen  === ori);
-  if (des) filtered = filtered.filter(r => r.destino === des);
+function filtrarCiudades(tipo) {
+  const inputId = tipo === 'origen' ? 'origen-input' : 'destino-input';
+  const listId = tipo === 'origen' ? 'sugerencias-origen' : 'sugerencias-destino';
+  const hiddenId = tipo === 'origen' ? 'origen-val' : 'destino-val';
 
-  renderRoutes(filtered, fecha);
+  const input = document.getElementById(inputId);
+  const list = document.getElementById(listId);
+  const texto = input.value.toLowerCase();
+  
+  list.innerHTML = '';
+  if (!texto) { list.style.display = 'none'; return; }
+
+  const coincidencias = CIUDADES_DB.filter(c => c.label.toLowerCase().includes(texto));
+
+  if (coincidencias.length > 0) {
+    list.style.display = 'block';
+    coincidencias.forEach(ciudad => {
+      const li = document.createElement('li');
+      li.textContent = ciudad.label;
+      li.onclick = () => {
+        document.getElementById(inputId).value = ciudad.label;
+        document.getElementById(hiddenId).value = ciudad.val;
+        list.style.display = 'none';
+      };
+      list.appendChild(li);
+    });
+  } else {
+    list.style.display = 'none';
+  }
 }
 
-/* ─── RENDERIZAR TARJETAS ───────────────────── */
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.field-group')) {
+    document.getElementById('sugerencias-origen').style.display = 'none';
+    document.getElementById('sugerencias-destino').style.display = 'none';
+  }
+});
+
+/* ─── VALIDADOR DE RUTAS PROHIBIDAS ───────── */
+
+function esRutaProhibida(origenVal, destinoVal) {
+  // Verifica si el par existe en la lista negra (en cualquier orden)
+  return RUTAS_PROHIBIDAS.some(par => 
+    (par[0] === origenVal && par[1] === destinoVal) || 
+    (par[1] === origenVal && par[0] === destinoVal)
+  );
+}
+
+/* ─── GENERADOR DE RUTAS SIMULADAS ────────── */
+
+function generarRutasSimuladas(origenVal, destinoVal, fecha) {
+  const ciudadOrigen = CIUDADES_DB.find(c => c.val === origenVal)?.label || origenVal;
+  const ciudadDestino = CIUDADES_DB.find(c => c.val === destinoVal)?.label || destinoVal;
+
+  const cantidad = Math.floor(Math.random() * 3) + 3; // 3 a 5 rutas
+  const rutasGeneradas = [];
+  const EMPRESAS = ['Copetran', 'Berlinas del Fonce', 'Expreso Brasilia', 'Rapido Ochoa', 'Uniturco'];
+
+  for (let i = 0; i < cantidad; i++) {
+    const horaInicio = Math.floor(Math.random() * 18) + 5; 
+    const minuto = Math.random() > 0.5 ? '00' : '30';
+    const horaStr = `${horaInicio.toString().padStart(2, '0')}:${minuto}`;
+    const duracionH = Math.floor(Math.random() * 8) + 4;
+    const precioBase = Math.floor(Math.random() * 110000) + 40000;
+    
+    rutasGeneradas.push({
+      id: Date.now() + i,
+      origen: origenVal,
+      destino: destinoVal,
+      origen_n: ciudadOrigen,
+      destino_n: ciudadDestino,
+      hora: horaStr,
+      duracion: `${duracionH}h`,
+      precio: precioBase,
+      empresa: EMPRESAS[Math.floor(Math.random() * EMPRESAS.length)],
+      asientos_libres: Math.floor(Math.random() * 35) + 1,
+      tipo: Math.random() > 0.5 ? 'Ejecutivo' : 'Estándar'
+    });
+  }
+  return rutasGeneradas.sort((a, b) => a.hora.localeCompare(b.hora));
+}
+
+/* ─── FUNCIÓN PRINCIPAL DE BÚSQUEDA ───────── */
+
+function buscarRutas() {
+  const oriVal = document.getElementById('origen-val').value;
+  const desVal = document.getElementById('destino-val').value;
+  const fecha = document.getElementById('fecha').value;
+
+  if (!oriVal || !desVal) {
+    alert("Por favor selecciona una ciudad válida de la lista desplegable.");
+    return;
+  }
+
+  if (oriVal === desVal) {
+    alert("El origen y el destino no pueden ser la misma ciudad.");
+    return;
+  }
+
+  // 1. VERIFICAR SI ES RUTA PROHIBIDA (CERCANÍA)
+  if (esRutaProhibida(oriVal, desVal)) {
+    alert(`Lo sentimos. La ruta entre ${CIUDADES_DB.find(c=>c.val===oriVal).label} y ${CIUDADES_DB.find(c=>c.val===desVal).label} es muy corta y no ofrecemos servicio de transporte público intermunicipal para este trayecto.`);
+    document.getElementById('routes-container').innerHTML = '';
+    document.getElementById('results-count').textContent = '0 opciones';
+    return;
+  }
+
+  // 2. GENERAR RESULTADOS (SIMULACIÓN)
+  // Como tenemos muchas ciudades, simularemos todas las búsquedas válidas para tener siempre datos
+  const resultados = generarRutasSimuladas(oriVal, desVal, fecha);
+
+  renderRoutes(resultados, fecha);
+}
+
+/* ─── RENDERIZADO EN PANTALLA ─────────────── */
+
 function renderRoutes(rutas, fecha) {
+  lastRenderedRoutes = rutas; // Guardar para selección posterior
   const container = document.getElementById('routes-container');
   const countEl   = document.getElementById('results-count');
+  const titleEl   = document.getElementById('results-title');
 
-  countEl.textContent = `${rutas.length} ruta${rutas.length !== 1 ? 's' : ''} encontrada${rutas.length !== 1 ? 's' : ''}`;
+  const origenTxt = document.getElementById('origen-input').value;
+  const destinoTxt = document.getElementById('destino-input').value;
+  if(origenTxt && destinoTxt) {
+      titleEl.textContent = `Rutas: ${origenTxt} → ${destinoTxt}`;
+  }
+
+  countEl.textContent = `${rutas.length} opciones disponibles`;
 
   if (rutas.length === 0) {
-    container.innerHTML = `
-      <div class="empty-state">
-        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-          <circle cx="12" cy="12" r="10"/>
-          <line x1="12" y1="8" x2="12" y2="12"/>
-          <line x1="12" y1="16" x2="12.01" y2="16"/>
-        </svg>
-        <h3>No hay rutas disponibles</h3>
-        <p>Intenta con otra combinación de ciudades o fecha.</p>
-      </div>`;
+    container.innerHTML = `<div class="empty-state"><h3>No hay rutas</h3></div>`;
     return;
   }
 
   container.innerHTML = rutas.map(r => {
-    const badge = r.asientos_libres > 10
-      ? `<span class="seats-badge ok">✓ ${r.asientos_libres} asientos</span>`
-      : r.asientos_libres > 0
-      ? `<span class="seats-badge low">⚠ ${r.asientos_libres} asientos</span>`
-      : `<span class="seats-badge full">✗ Agotado</span>`;
-
-    const fechaDisplay = fecha
-      ? fmtDate(fecha)
-      : '<em style="color:var(--muted)">—</em>';
+    const badgeClass = r.asientos_libres > 10 ? 'ok' : r.asientos_libres > 3 ? 'low' : 'full';
+    const badgeText = r.asientos_libres > 10 ? `${r.asientos_libres} disp.` : r.asientos_libres > 0 ? `¡Solo ${r.asientos_libres}!` : 'Agotado';
 
     return `
       <div class="route-card" id="card-${r.id}" onclick="seleccionarRuta(${r.id})">
@@ -96,49 +386,46 @@ function renderRoutes(rutas, fecha) {
           <div class="detail-chip"><div class="label">Salida</div><div class="val">${r.hora}</div></div>
           <div class="detail-chip"><div class="label">Duración</div><div class="val">${r.duracion}</div></div>
           <div class="detail-chip"><div class="label">Tipo</div><div class="val">${r.tipo}</div></div>
-          <div class="detail-chip"><div class="label">Fecha</div><div class="val">${fechaDisplay}</div></div>
+          <div class="detail-chip"><div class="label">Empresa</div><div class="val">${r.empresa}</div></div>
         </div>
         <div class="route-footer">
-          <div>${badge}</div>
-          <div class="company-tag">${r.empresa}</div>
-          <button class="select-btn" onclick="event.stopPropagation(); seleccionarRuta(${r.id})">Seleccionar →</button>
+          <div><span class="seats-badge ${badgeClass}">${badgeText}</span></div>
+          <button class="select-btn" onclick="event.stopPropagation(); seleccionarRuta(${r.id})">Ver Asientos →</button>
         </div>
       </div>`;
   }).join('');
 }
 
-/* ─── SELECCIONAR RUTA ──────────────────────── */
+/* ─── SELECCIÓN Y ASIENTOS ────────────────── */
+
 function seleccionarRuta(id) {
-  selectedRoute = RUTAS.find(r => r.id === id);
+  let route = lastRenderedRoutes.find(r => r.id === id);
+  if (!route) return;
+
+  selectedRoute = route;
   selectedSeats = [];
 
-  // Resaltar tarjeta seleccionada
   document.querySelectorAll('.route-card').forEach(c => c.classList.remove('selected'));
-  document.getElementById(`card-${id}`)?.classList.add('selected');
+  const card = document.getElementById(`card-${id}`);
+  if(card) card.classList.add('selected');
 
-  // Construir mapa de bus
   buildBus(selectedRoute.asientos_libres);
-
   updateSummary();
 
-  // En móvil, hacer scroll al panel de asientos
   if (window.innerWidth < 900) {
-    document.getElementById('seat-panel').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    document.getElementById('seat-panel').scrollIntoView({ behavior: 'smooth' });
   }
 }
 
-/* ─── CONSTRUIR BUS ─────────────────────────── */
 function buildBus(libres) {
-  const total   = 40;
+  const total = 40;
   const ocupados = [];
-
   while (ocupados.length < total - libres) {
     const n = Math.ceil(Math.random() * total);
     if (!ocupados.includes(n)) ocupados.push(n);
   }
-
-  ocupadosActuales = ocupados;
-  selectedSeats    = [];
+  
+  selectedSeats = [];
   updateSeatInfo();
 
   const body = document.getElementById('bus-body');
@@ -147,23 +434,19 @@ function buildBus(libres) {
   for (let row = 0; row < 10; row++) {
     const rowEl = document.createElement('div');
     rowEl.className = 'seat-row';
-
-    // Layout: [A][B][ pasillo ][C][D]
     for (let col = 0; col < 5; col++) {
-      if (col === 2) {
+      if (col === 2) { 
         const aisle = document.createElement('div');
         aisle.className = 'aisle';
         rowEl.appendChild(aisle);
         continue;
       }
-
       const realCol = col > 2 ? col - 1 : col;
       const seatNum = row * 4 + realCol + 1;
-
       const el = document.createElement('div');
-      el.className     = 'seat';
-      el.textContent   = seatNum;
-      el.dataset.seat  = seatNum;
+      el.className = 'seat';
+      el.textContent = seatNum;
+      el.dataset.seat = seatNum;
 
       if (ocupados.includes(seatNum)) {
         el.classList.add('occupied');
@@ -171,155 +454,91 @@ function buildBus(libres) {
         if (col === 0 || col === 4) el.classList.add('window');
         el.addEventListener('click', () => toggleSeat(el, seatNum));
       }
-
       rowEl.appendChild(el);
     }
-
     body.appendChild(rowEl);
   }
 }
 
-/* ─── TOGGLE ASIENTO ────────────────────────── */
 function toggleSeat(el, num) {
   const max = pax();
-
   if (el.classList.contains('selected')) {
     el.classList.remove('selected');
     selectedSeats = selectedSeats.filter(s => s !== num);
   } else {
     if (selectedSeats.length >= max) {
-      // Desmarcar el más antiguo
       const old = selectedSeats.shift();
       document.querySelector(`.seat[data-seat="${old}"]`)?.classList.remove('selected');
     }
     el.classList.add('selected');
     selectedSeats.push(num);
   }
-
   updateSeatInfo();
   updateSummary();
 }
 
-/* ─── INFO DE ASIENTOS ──────────────────────── */
 function updateSeatInfo() {
   const info = document.getElementById('seat-info');
-
-  if (!selectedRoute) {
-    info.textContent = 'Elige una ruta primero';
-    return;
-  }
-  if (selectedSeats.length === 0) {
-    info.textContent = 'Ningún asiento seleccionado';
-    return;
-  }
-
-  info.innerHTML = `Asiento(s) elegido(s): <strong>${selectedSeats.join(', ')}</strong> · ${selectedSeats.length}/${pax()} seleccionado(s)`;
+  if (!selectedRoute) { info.textContent = 'Elige una ruta primero'; return; }
+  if (selectedSeats.length === 0) { info.textContent = 'Selecciona tus asientos en el mapa'; return; }
+  info.innerHTML = `Asiento(s): <strong>${selectedSeats.join(', ')}</strong>`;
 }
 
-/* ─── ACTUALIZAR RESUMEN ────────────────────── */
 function updateSummary() {
   if (!selectedRoute) return;
-
   const pasajeros = pax();
-  const total     = selectedRoute.precio * pasajeros;
-  const fecha     = document.getElementById('fecha').value;
+  const total = selectedRoute.precio * pasajeros;
+  const fecha = document.getElementById('fecha').value;
 
-  document.getElementById('sum-ruta').textContent     = `${selectedRoute.origen_n} → ${selectedRoute.destino_n}`;
-  document.getElementById('sum-fecha').textContent    = fmtDate(fecha);
+  document.getElementById('sum-ruta').textContent = `${selectedRoute.origen_n} → ${selectedRoute.destino_n}`;
+  document.getElementById('sum-fecha').textContent = fmtDate(fecha);
   document.getElementById('sum-asientos').textContent = selectedSeats.length ? selectedSeats.join(', ') : '—';
   document.getElementById('sum-pasajeros').textContent = pasajeros;
-  document.getElementById('sum-total').textContent    = fmt(total);
+  document.getElementById('sum-total').textContent = fmt(total);
 }
 
-/* ─── FORMATO TARJETA ───────────────────────── */
+/* ─── FORMATEO Y COMPRA ───────────────────── */
 function formatCard(el) {
-  let v  = el.value.replace(/\D/g, '').substring(0, 16);
+  let v = el.value.replace(/\D/g, '').substring(0, 16);
   el.value = v.replace(/(.{4})/g, '$1 ').trim();
 }
-
 function formatExp(el) {
-  let v  = el.value.replace(/\D/g, '');
+  let v = el.value.replace(/\D/g, '');
   if (v.length > 2) v = v.substring(0, 2) + '/' + v.substring(2, 4);
   el.value = v;
 }
 
-/* ─── PROCESAR COMPRA ───────────────────────── */
 function procesarCompra() {
-  if (!selectedRoute) {
-    alert('Por favor selecciona una ruta.');
-    return;
-  }
+  if (!selectedRoute) return alert('Selecciona una ruta.');
+  if (selectedSeats.length < pax()) return alert(`Selecciona ${pax()} asiento(s).`);
+  if (!document.getElementById('f-nombre').value) return alert('Ingresa tu nombre.');
+  if (!document.getElementById('f-card').value) return alert('Datos de tarjeta incompletos.');
 
-  const fecha = document.getElementById('fecha').value;
-  if (!fecha) {
-    alert('Por favor selecciona una fecha de viaje.');
-    return;
-  }
-
-  if (selectedSeats.length < pax()) {
-    alert(`Por favor selecciona ${pax()} asiento(s) para continuar.`);
-    return;
-  }
-
-  if (!document.getElementById('f-nombre').value.trim()) {
-    alert('Por favor ingresa tu nombre completo.');
-    return;
-  }
-
-  if (!document.getElementById('f-email').value.trim()) {
-    alert('Por favor ingresa tu correo electrónico.');
-    return;
-  }
-
-  if (!document.getElementById('f-card').value.trim()) {
-    alert('Por favor ingresa los datos de tu tarjeta.');
-    return;
-  }
-
-  // Simular procesamiento
-  const btn     = document.getElementById('btn-buy');
+  const btn = document.getElementById('btn-buy');
   const spinner = document.getElementById('spinner');
-  const icon    = btn.querySelector('svg');
+  const icon = btn.querySelector('svg');
 
-  btn.disabled       = true;
+  btn.disabled = true;
   spinner.style.display = 'block';
-  icon.style.display    = 'none';
+  icon.style.display = 'none';
 
   setTimeout(() => {
-    btn.disabled          = false;
+    btn.disabled = false;
     spinner.style.display = 'none';
-    icon.style.display    = '';
-
+    icon.style.display = '';
     document.getElementById('booking-ref').textContent = genRef();
     document.getElementById('modal').classList.add('open');
-  }, 2000);
+  }, 1500);
 }
 
-/* ─── CERRAR MODAL ──────────────────────────── */
 function cerrarModal() {
   document.getElementById('modal').classList.remove('open');
-
-  // Resetear estado
-  selectedRoute = null;
-  selectedSeats = [];
-
-  document.querySelectorAll('.route-card').forEach(c => c.classList.remove('selected'));
-  document.getElementById('bus-body').innerHTML = '';
-  document.getElementById('seat-info').textContent = 'Elige una ruta primero';
-
-  ['f-nombre', 'f-doc', 'f-email', 'f-tel', 'f-card', 'f-exp', 'f-cvv'].forEach(id => {
-    document.getElementById(id).value = '';
-  });
-
-  updateSummary();
+  location.reload();
 }
 
-/* ─── INICIALIZACIÓN ────────────────────────── */
+/* ─── INIT ────────────────────────────────── */
 (function init() {
   const today = new Date().toISOString().split('T')[0];
-  const fechaEl = document.getElementById('fecha');
-  fechaEl.min   = today;
-  fechaEl.value = today;
-
-  renderRoutes(RUTAS, today);
+  document.getElementById('fecha').min = today;
+  document.getElementById('fecha').value = today;
 })();

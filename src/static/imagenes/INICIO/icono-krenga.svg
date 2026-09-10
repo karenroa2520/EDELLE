@@ -1,0 +1,28 @@
+<svg viewBox="0 0 440 500" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>Icono Krenga</title>
+  <desc>Ícono de la mascota de Krenga, sin texto, para favicon o avatar de redes sociales.</desc>
+
+  <g transform="translate(0,40)">
+    <ellipse cx="175" cy="80" rx="35" ry="95" fill="#FFFCF3" stroke="#4A1F3D" stroke-width="6" transform="rotate(-12 175 80)"/>
+    <ellipse cx="175" cy="92" rx="15" ry="68" fill="#FFFF66" transform="rotate(-12 175 80)"/>
+
+    <ellipse cx="258" cy="98" rx="30" ry="76" fill="#FFFCF3" stroke="#4A1F3D" stroke-width="6" transform="rotate(20 258 98)"/>
+    <ellipse cx="258" cy="108" rx="13" ry="55" fill="#FFFF66" transform="rotate(20 258 98)"/>
+
+    <circle cx="210" cy="220" r="192" fill="none" stroke="#7FB800" stroke-width="3" stroke-dasharray="2 10"/>
+
+    <ellipse cx="210" cy="235" rx="116" ry="104" fill="#FFFCF3" stroke="#4A1F3D" stroke-width="7"/>
+
+    <rect x="140" y="198" width="60" height="40" rx="18" fill="#4A1F3D"/>
+    <rect x="216" y="198" width="60" height="40" rx="18" fill="#4A1F3D"/>
+    <rect x="198" y="211" width="20" height="9" rx="4" fill="#4A1F3D"/>
+    <ellipse cx="160" cy="210" rx="8" ry="5" fill="#7FB800" opacity="0.85"/>
+    <ellipse cx="236" cy="210" rx="8" ry="5" fill="#7FB800" opacity="0.85"/>
+
+    <circle cx="210" cy="258" r="6" fill="#4A1F3D"/>
+    <path d="M177 268 Q210 296 243 268" fill="none" stroke="#4A1F3D" stroke-width="6" stroke-linecap="round"/>
+
+    <circle cx="325" cy="305" r="42" fill="#FFFCF3" stroke="#4A1F3D" stroke-width="6"/>
+    <rect x="340" y="258" width="27" height="56" rx="13.5" fill="#FFFCF3" stroke="#4A1F3D" stroke-width="6"/>
+  </g>
+</svg>

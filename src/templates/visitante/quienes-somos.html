@@ -7,12 +7,35 @@
     <link rel="stylesheet" href="/src/static/css/VISI/quienes-somos.css" />
 </head>
 <body>
+
+    <!-- Sprite de íconos reutilizados en la insignia y los valores -->
+    <svg class="iconos-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <g id="icon-compass" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="9"/><path d="M15 9l-2 6-6 2 2-6 6-2z"/>
+        </g>
+        <g id="icon-gema" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 3h12l3 5-9 13L3 8Z"/><line x1="3" y1="8" x2="21" y2="8"/>
+        </g>
+        <g id="icon-corazon" fill="currentColor">
+          <path d="M12 21s-7.5-5-9.5-9C1 8 2 4 6 4c2 0 3.5 1.2 4 2.5.5-1.3 2-2.5 4-2.5 4 0 5 4 3.5 8-2 4-9.5 9-9.5 9z"/>
+        </g>
+        <g id="icon-mirador" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 19l6-10 4 6 3-4 5 8H3z"/>
+        </g>
+        <g id="icon-comunidad" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="9" cy="8" r="3"/><path d="M2.5 20c0-3.3 2.9-5.5 6.5-5.5s6.5 2.2 6.5 5.5"/>
+          <circle cx="17" cy="9" r="2.4"/><path d="M15.2 13c2.6.2 4.8 1.9 4.8 4.6"/>
+        </g>
+      </defs>
+    </svg>
+
     <header>
     <div class="navbar-container">
       <!-- Logo a la izquierda (imagen dentro de contenedor circular) -->
       <div class="logo">
         <div class="logo-container">
-          <img src="/src/static/imagenes/INICIO/logo_edelle.jpg" alt="Edelle - Tu Próxima Gran Aventura" />
+          <img src="/src/static/imagenes/INICIO/icono-krenga.svg" alt="Krenga" />
         </div>
       </div>
 
@@ -42,12 +65,19 @@
     <main>
         <section class="sobre-nosotros">
             <div class="texto-sobre">
+                <span class="eyebrow"><span class="linea"></span>Krenga</span>
                 <h1>Sobre <br> nosotros</h1>
                 <p>Nuestra agencia de viajes, al igual que los destinos que ofrecemos, está diseñada con un propósito: 
                   brindarte una experiencia de viaje sencillamente placentera, sin dejar espacio a la improvisación.</p>
             </div>
             <div class="img-sobre">
-                <img src="/src/static/imagenes/INICIO/quienes1.jpg" alt="Ciudad en miniatura" />
+                <div class="img-sobre__marco">
+                    <img src="/src/static/imagenes/INICIO/quienes1.jpg" alt="Ciudad en miniatura" />
+                </div>
+                <div class="insignia-flotante">
+                    <svg><use href="#icon-compass"/></svg>
+                    Viajamos con vos, no para vos
+                </div>
             </div>
         </section>
 
@@ -73,6 +103,56 @@
                 <img src="/src/static/imagenes/INICIO/quienes3.jpg" alt="Playa al atardecer" />
             </div>
         </section>
+
+        <section class="valores">
+            <h2 class="valores__titulo">Lo que nos mueve</h2>
+            <div class="valores__grilla">
+                <div class="valor">
+                    <div class="valor__icono"><svg><use href="#icon-gema"/></svg></div>
+                    <h4>Autenticidad</h4>
+                    <p>Experiencias reales, no vitrinas para turistas.</p>
+                </div>
+                <div class="valor">
+                    <div class="valor__icono"><svg><use href="#icon-corazon"/></svg></div>
+                    <h4>Confianza</h4>
+                    <p>Sin letra chica ni improvisación de último momento.</p>
+                </div>
+                <div class="valor">
+                    <div class="valor__icono"><svg><use href="#icon-mirador"/></svg></div>
+                    <h4>Aventura</h4>
+                    <p>Te acompañamos a salir de la zona conocida.</p>
+                </div>
+                <div class="valor">
+                    <div class="valor__icono"><svg><use href="#icon-comunidad"/></svg></div>
+                    <h4>Comunidad</h4>
+                    <p>Viajeros ayudando a otros viajeros a moverse mejor.</p>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <!-- Revelado en scroll de cada sección -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var secciones = document.querySelectorAll('.sobre-nosotros, .mision, .historia, .valores');
+            var prefiereMenosMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            if (prefiereMenosMovimiento || !('IntersectionObserver' in window)) {
+                secciones.forEach(function (s) { s.classList.add('visible'); });
+                return;
+            }
+
+            var observador = new IntersectionObserver(function (entradas) {
+                entradas.forEach(function (entrada) {
+                    if (entrada.isIntersecting) {
+                        entrada.target.classList.add('visible');
+                        observador.unobserve(entrada.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+
+            secciones.forEach(function (s) { observador.observe(s); });
+        });
+    </script>
 </body>
 </html>
