@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cosas por hacer en Bucaramanga</title>
+  <title>Cosas por hacer en Bucaramanga | EDELLE</title>
   <link rel="stylesheet" href="/src/static/css/VISI/estilo-cosas-hacer.css" />
 </head>
 <body class="pagina">
-  <!-- Header (SIN CAMBIOS) -->
+
+  <!-- Header -->
   <header>
     <div class="navbar-container">
       <div class="logo">
@@ -35,7 +36,7 @@
     </div>
   </header>
 
-  <!-- Submenu (SIN CAMBIOS) -->
+  <!-- Submenu -->
   <section class="sub-header">
     <div class="sub-header__container">
       <a href="/src/templates/visitante/BUCARAMANGA/BUCARAMANGA.html" class="sub-header__item sub-header__item--active">
@@ -49,18 +50,56 @@
     </div>
   </section>
 
-  <!-- Sección Hero -->
+  <!-- Hero: la foto, el relato y la ruta que los conecta -->
   <section class="hero">
     <div class="hero__contenedor-imagen">
-      <img src="/src/static/imagenes/HOTELES/BUCARAMANGA/Hoteles-Bucaramanga.jpg" alt="Atardecer en Bucaramanga" class="hero__imagen" />
+      <img src="/src/static/imagenes/DESTINOS/BUCARAMANGA/bucaramanga-hero.jpg" alt="Atardecer en Bucaramanga" class="hero__imagen" />
+      <span class="hero__insignia">+30<br>experiencias</span>
     </div>
+
+    <!-- Ruta punteada, firma visual de la marca -->
+    <svg class="hero__ruta" viewBox="0 0 90 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M2 30 C 30 5, 60 5, 88 20" />
+      <circle cx="88" cy="20" r="4" />
+    </svg>
+
     <div class="hero__texto">
-      <h1 class="hero__titulo">Cosas por hacer en Bucaramanga</h1>
+      <span class="hero__eyebrow"><span class="linea"></span>Bucaramanga, Colombia</span>
+      <h1 class="hero__titulo">Cosas por hacer en <em>la Ciudad Bonita</em></h1>
       <p class="hero__descripcion">
-        Dale un vistazo a estas experiencias que no te puedes perder:La Sagrada Familia, Casa del Libro Total, Recorridos de fauna y naturaleza, Espacios verdes y parques.
+        No te pierdas estas experiencias y lugares de interés esenciales: el Embalse del Topocoro, 
+        los encantadores pueblos de Barichara y Curití, el majestuoso Páramo de Santurbán, 
+        y los mejores parques que cuentan la historia viva de la región.
       </p>
+      <a href="#recomendaciones" class="hero__cta">
+        Explorar experiencias
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </a>
     </div>
   </section>
+
+  <!-- Ticker: un vistazo rápido a los atractivos, antes del detalle -->
+  <div class="ticker-atractivos" aria-hidden="true">
+    <div class="ticker-atractivos__pista">
+      <span>Embalse del Topocoro</span><span class="ticker-atractivos__punto">●</span>
+      <span>Barichara</span><span class="ticker-atractivos__punto">●</span>
+      <span>San Gil</span><span class="ticker-atractivos__punto">●</span>
+      <span>Páramo de Santurbán</span><span class="ticker-atractivos__punto">●</span>
+      <span>Cañón del Chicamocha</span><span class="ticker-atractivos__punto">●</span>
+      <span>Parque del Agua</span><span class="ticker-atractivos__punto">●</span>
+      <span>Zapatoca</span><span class="ticker-atractivos__punto">●</span>
+      <span>Casa del Libro Total</span><span class="ticker-atractivos__punto">●</span>
+      <!-- Se repite para el loop continuo del ticker -->
+      <span>Embalse del Topocoro</span><span class="ticker-atractivos__punto">●</span>
+      <span>Barichara</span><span class="ticker-atractivos__punto">●</span>
+      <span>San Gil</span><span class="ticker-atractivos__punto">●</span>
+      <span>Páramo de Santurbán</span><span class="ticker-atractivos__punto">●</span>
+      <span>Cañón del Chicamocha</span><span class="ticker-atractivos__punto">●</span>
+      <span>Parque del Agua</span><span class="ticker-atractivos__punto">●</span>
+      <span>Zapatoca</span><span class="ticker-atractivos__punto">●</span>
+      <span>Casa del Libro Total</span><span class="ticker-atractivos__punto">●</span>
+    </div>
+  </div>
 
   <!-- Sección Experiencias -->
   <section class="experiencias">
@@ -70,101 +109,190 @@
     </p>
     <div class="experiencias__etiquetas">
       <span class="experiencias__etiqueta">
-        <img src="/src/static/imagenes/COSAS-PORHACER/ruta.png" alt="Reloj" class="experiencias__icono" /> Recorridos de medio día
+        <img src="/src/static/imagenes/COSAS-PORHACER/ruta.png" alt="" class="experiencias__icono" /> Recorridos de medio día
       </span>
       <span class="experiencias__etiqueta">
-        <img src="/src/static/imagenes/COSAS-PORHACER/paseo-en-taza-de-te.png" alt="Maleta" class="experiencias__icono" /> Paseos de un día
+        <img src="/src/static/imagenes/COSAS-PORHACER/paseo-en-taza-de-te.png" alt="" class="experiencias__icono" /> Paseos de un día
       </span>
       <span class="experiencias__etiqueta">
-        <img src="/src/static/imagenes/COSAS-PORHACER/bolsa-de-la-compra.png" alt="Edificio" class="experiencias__icono" /> Centros Comerciales
+        <img src="/src/static/imagenes/COSAS-PORHACER/bolsa-de-la-compra.png" alt="" class="experiencias__icono" /> Centros Comerciales
       </span>
       <span class="experiencias__etiqueta">
-        <img src="/src/static/imagenes/COSAS-PORHACER/rumba.png" alt="Luna" class="experiencias__icono" /> Rumba
+        <img src="/src/static/imagenes/COSAS-PORHACER/rumba.png" alt="" class="experiencias__icono" /> Rumba
       </span>
       <span class="experiencias__etiqueta">
-        <img src="/src/static/imagenes/COSAS-PORHACER/montana.png" alt="Animal" class="experiencias__icono" /> Avistamiento de fauna
+        <img src="/src/static/imagenes/COSAS-PORHACER/montana.png" alt="" class="experiencias__icono" /> Avistamiento de fauna
       </span>
       <span class="experiencias__etiqueta">
-        <img src="/src/static/imagenes/COSAS-PORHACER/galeria-de-arte.png" alt="Museo" class="experiencias__icono" /> Galerías de arte
+        <img src="/src/static/imagenes/COSAS-PORHACER/galeria-de-arte.png" alt="" class="experiencias__icono" /> Galerías de arte
       </span>
       <span class="experiencias__etiqueta">
-        <img src="/src/static/imagenes/COSAS-PORHACER/mapa.png" alt="Persona" class="experiencias__icono" /> Recorridos privados
+        <img src="/src/static/imagenes/COSAS-PORHACER/mapa.png" alt="" class="experiencias__icono" /> Recorridos privados
       </span>
       <span class="experiencias__etiqueta experiencias__etiqueta--seleccionada">
-        <img src="/src/static/imagenes/COSAS-PORHACER/autobus-escolar.png" alt="Bus" class="experiencias__icono" /> Recorridos en bus
+        <img src="/src/static/imagenes/COSAS-PORHACER/autobus-escolar.png" alt="" class="experiencias__icono" /> Recorridos en bus
       </span>
       <span class="experiencias__etiqueta">
-        <img src="/src/static/imagenes/COSAS-PORHACER/mercado.png" alt="Mercado" class="experiencias__icono" /> Mercados campesinos
+        <img src="/src/static/imagenes/COSAS-PORHACER/mercado.png" alt="" class="experiencias__icono" /> Mercados campesinos
       </span>
       <span class="experiencias__etiqueta">
-        <img src="/src/static/imagenes/COSAS-PORHACER/ruta-de-esqui.png" alt="Cultura" class="experiencias__icono" /> Recorridos culturales
+        <img src="/src/static/imagenes/COSAS-PORHACER/ruta-de-esqui.png" alt="" class="experiencias__icono" /> Recorridos culturales
       </span>
       <span class="experiencias__etiqueta">
-        <img src="/src/static/imagenes/COSAS-PORHACER/taza-de-cafe.png" alt="Café" class="experiencias__icono" /> Rutas del café
+        <img src="/src/static/imagenes/COSAS-PORHACER/taza-de-cafe.png" alt="" class="experiencias__icono" /> Rutas del café
       </span>
     </div>
   </section>
 
   <!-- Sección Recomendaciones -->
-  <section class="recomendaciones">
-    <h2 class="recomendaciones__titulo">RECOMENDACIONES</h2>
+  <section class="recomendaciones" id="recomendaciones">
+    <h2 class="recomendaciones__titulo">Recomendaciones</h2>
     <div class="recomendaciones__tarjetas">
+
       <!-- Tarjeta 1 -->
       <article class="tarjeta">
         <div class="tarjeta__contenedor-imagen">
-          <img src="/src/static/imagenes/COSAS-PORHACER/BUCARAMANGA/COSA1.jpg" alt="Tour Catedral de Sal" class="tarjeta__imagen" />
+          <span class="tarjeta__ribbon">🔥 Tendencia</span>
+          <img src="/src/static/imagenes/COSAS-PORHACER/BUCARAMANGA/COSA1.jpg" alt="Tour Embalse Topocoro" class="tarjeta__imagen" />
+          <span class="tarjeta__overlay">Privado · Nivel fácil</span>
         </div>
         <div class="tarjeta__contenido">
           <h3 class="tarjeta__titulo">Tour Privado - Lancha Embalse Topocoro</h3>
           <div class="tarjeta__calificacion">
             <span class="tarjeta__valor-calificacion">5.0</span>
-            <span class="tarjeta__estrellas">★★★★★</span>      
+            <span class="tarjeta__estrellas">★★★★★</span>
           </div>
-          <div class="tarjeta__info">Escapadas de un dia</div>
+          <div class="tarjeta__info">Escapadas de un día</div>
           <div class="tarjeta__info-precio">Desde $98.180</div>
-          <div class="tarjeta__por-persona">Por Adulto(El precio varia segun el tamaño del grupo)</div>
-           <a href="/src/templates/visitante/BUCARAMANGA/COSAS_HACER-BUCARAMANGA/Embalse_Topocoro.html" class="tarjeta__boton-reservar">RESERVAR</a>
+          <div class="tarjeta__por-persona">Por Adulto (El precio varía según el tamaño del grupo)</div>
+          <a href="/src/templates/visitante/BUCARAMANGA/COSAS_HACER-BUCARAMANGA/Embalse_Topocoro.html" class="tarjeta__boton-reservar">Reservar</a>
         </div>
       </article>
 
       <!-- Tarjeta 2 -->
       <article class="tarjeta">
         <div class="tarjeta__contenedor-imagen">
-          <img src="/src/static/imagenes/COSAS-PORHACER/BUCARAMANGA/COSA2.jpg" alt="Tour Catedral de Sal" class="tarjeta__imagen" />
+          <span class="tarjeta__ribbon">🔥 Tendencia</span>
+          <img src="/src/static/imagenes/COSAS-PORHACER/BUCARAMANGA/COSA2.jpg" alt="Tour Barichara" class="tarjeta__imagen" />
+          <span class="tarjeta__overlay">Privado · Nivel moderado</span>
         </div>
         <div class="tarjeta__contenido">
-          <h3 class="tarjeta__titulo">Tour Privado - Barichara / San Gil / Curiti</h3>
+          <h3 class="tarjeta__titulo">Tour Privado - Barichara, San Gil y Curití</h3>
           <div class="tarjeta__calificacion">
             <span class="tarjeta__valor-calificacion">5.0</span>
-            <span class="tarjeta__estrellas">★★★★★</span>      
+            <span class="tarjeta__estrellas">★★★★★</span>
           </div>
-          <div class="tarjeta__info">Escapadas de un dia</div>
+          <div class="tarjeta__info">Tours en grupo · Transporte incluido</div>
           <div class="tarjeta__info-precio">Desde $220.459</div>
-          <div class="tarjeta__por-persona">Por Adulto(El precio varia segun el tamaño del grupo)</div>
-           <a href="/src/templates/visitante/BUCARAMANGA/COSAS_HACER-BUCARAMANGA/tour_barichara.html" class="tarjeta__boton-reservar">RESERVAR</a>
+          <div class="tarjeta__por-persona">Por Adulto (El precio varía según el tamaño del grupo)</div>
+          <a href="/src/templates/visitante/BUCARAMANGA/COSAS_HACER-BUCARAMANGA/tour_barichara.html" class="tarjeta__boton-reservar">Reservar</a>
         </div>
       </article>
 
       <!-- Tarjeta 3 -->
       <article class="tarjeta">
         <div class="tarjeta__contenedor-imagen">
-          <img src="/src/static/imagenes/COSAS-PORHACER/BUCARAMANGA/COSA3.jpg" alt="Tour Catedral de Sal" class="tarjeta__imagen" />
+          <img src="/src/static/imagenes/COSAS-PORHACER/BUCARAMANGA/COSA3.jpg" alt="Páramo de Santurbán" class="tarjeta__imagen" />
+          <span class="tarjeta__flecha">→</span>
+          <span class="tarjeta__overlay">Privado · Grupos reducidos</span>
         </div>
         <div class="tarjeta__contenido">
-          <h3 class="tarjeta__titulo">Tour Privado - Páramo de Santurban</h3>
+          <h3 class="tarjeta__titulo">Tour Privado - Páramo de Santurbán</h3>
           <div class="tarjeta__calificacion">
             <span class="tarjeta__valor-calificacion">5.0</span>
-            <span class="tarjeta__estrellas">★★★★★</span>      
+            <span class="tarjeta__estrellas">★★★★★</span>
           </div>
-          <div class="tarjeta__info">Escapadas de un dia</div>
+          <div class="tarjeta__info">Privados y de Lujo</div>
           <div class="tarjeta__info-precio">Desde $230.277</div>
-          <div class="tarjeta__por-persona">Por Adulto(El precio varia segun el tamaño del grupo)</div>
-           <a href="/src/templates/visitante/BUCARAMANGA/COSAS_HACER-BUCARAMANGA/Páramo_Santurban.html" class="tarjeta__boton-reservar">RESERVAR</a>
+          <div class="tarjeta__por-persona">Por Adulto (El precio varía según el tamaño del grupo)</div>
+          <a href="/src/templates/visitante/BUCARAMANGA/COSAS_HACER-BUCARAMANGA/Páramo_Santurban.html" class="tarjeta__boton-reservar">Reservar</a>
         </div>
       </article>
 
+      <!-- Tarjeta 4 -->
+      <article class="tarjeta">
+        <div class="tarjeta__contenedor-imagen">
+          <img src="/src/static/imagenes/COSAS-PORHACER/BUCARAMANGA/COSA4.jpg" alt="Cañón del Chicamocha" class="tarjeta__imagen" />
+          <span class="tarjeta__flecha">→</span>
+          <span class="tarjeta__overlay">Tour en grupo · Transporte incluido</span>
+        </div>
+        <div class="tarjeta__contenido">
+          <h3 class="tarjeta__titulo">Aventura en el Cañón del Chicamocha</h3>
+          <div class="tarjeta__calificacion">
+            <span class="tarjeta__valor-calificacion">4.8</span>
+            <span class="tarjeta__estrellas">★★★★★</span>
+          </div>
+          <div class="tarjeta__info">Tours en Autos</div>
+          <div class="tarjeta__info-precio">Desde $185.000</div>
+          <div class="tarjeta__por-persona">Por Adulto</div>
+          <a href="#" class="tarjeta__boton-reservar">Reservar</a>
+        </div>
+      </article>
+
+      <!-- Tarjeta 5 -->
+      <article class="tarjeta">
+        <div class="tarjeta__contenedor-imagen">
+          <img src="/src/static/imagenes/COSAS-PORHACER/BUCARAMANGA/COSA5.jpg" alt="Parque del Agua" class="tarjeta__imagen" />
+          <span class="tarjeta__overlay">Privado · Grupos reducidos</span>
+        </div>
+        <div class="tarjeta__contenido">
+          <h3 class="tarjeta__titulo">Relajación y naturaleza en el Parque del Agua</h3>
+          <div class="tarjeta__calificacion">
+            <span class="tarjeta__valor-calificacion">4.9</span>
+            <span class="tarjeta__estrellas">★★★★★</span>
+          </div>
+          <div class="tarjeta__info">Privados y de Lujo</div>
+          <div class="tarjeta__info-precio">Desde $120.000</div>
+          <div class="tarjeta__por-persona">Por Adulto</div>
+          <a href="#" class="tarjeta__boton-reservar">Reservar</a>
+        </div>
+      </article>
+
+      <!-- Tarjeta 6 -->
+      <article class="tarjeta">
+        <div class="tarjeta__contenedor-imagen">
+          <img src="/src/static/imagenes/COSAS-PORHACER/BUCARAMANGA/COSA6.jpg" alt="Zapatoca" class="tarjeta__imagen" />
+          <span class="tarjeta__overlay">Privado · Grupos reducidos</span>
+        </div>
+        <div class="tarjeta__contenido">
+          <h3 class="tarjeta__titulo">Tour gastronómico y cultural en Zapatoca</h3>
+          <div class="tarjeta__calificacion">
+            <span class="tarjeta__valor-calificacion">4.9</span>
+            <span class="tarjeta__estrellas">★★★★★</span>
+          </div>
+          <div class="tarjeta__info">Recorridos culturales</div>
+          <div class="tarjeta__info-precio">Desde $150.000</div>
+          <div class="tarjeta__por-persona">Por Adulto</div>
+          <a href="#" class="tarjeta__boton-reservar">Reservar</a>
+        </div>
+      </article>
 
     </div>
   </section>
+
+  <script>
+    // Revela cada tarjeta al hacer scroll, con el mismo patrón que
+    // ya usan las vistas de experiencias del sitio.
+    const tarjetas = document.querySelectorAll('.tarjeta');
+    const observador = new IntersectionObserver((entradas) => {
+      entradas.forEach((entrada) => {
+        if (entrada.isIntersecting) {
+          entrada.target.classList.add('visible');
+          observador.unobserve(entrada.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    tarjetas.forEach((tarjeta) => observador.observe(tarjeta));
+
+    // Filtros de experiencias: alterna cuál etiqueta luce seleccionada.
+    const etiquetas = document.querySelectorAll('.experiencias__etiqueta');
+    etiquetas.forEach((etiqueta) => {
+      etiqueta.addEventListener('click', () => {
+        etiquetas.forEach((e) => e.classList.remove('experiencias__etiqueta--seleccionada'));
+        etiqueta.classList.add('experiencias__etiqueta--seleccionada');
+      });
+    });
+  </script>
+
 </body>
 </html>

@@ -1,247 +1,223 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Embassy Suites by Hilton Bogotá Rosales</title>
-<link rel="stylesheet" href="/src/static/css/VISI/BOGOTA/HOTELES-BOGOTA/hotel-emmbasy.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Embassy Suites by Hilton Bogotá Rosales | EDELLE</title>
+  <!-- Vinculamos el CSS con el estilo Avani -->
+  <link rel="stylesheet" href="/src/static/css/VISI/BOGOTA/HOTELES-BOGOTA/hotel-emmbasy.css" />
 </head>
 <body>
 
-<!-- CHECKBOX HACK PARA EL CARRITO -->
-<input type="checkbox" id="cart-toggle" class="cart-control">
+  <!-- CHECKBOX HACK PARA EL CARRITO (Debe ir al inicio para que el selector ~ funcione) -->
+  <input type="checkbox" id="cart-toggle" class="cart-control">
 
-<!-- Header Principal -->
-<header>
+  <!-- Header Principal -->
+  <header>
     <div class="navbar-container">
-    <div class="logo">
+      <div class="logo">
         <div class="logo-container">
-        <img src="/src/static/imagenes/INICIO/logo_edelle.jpg" alt="Edelle - Tu Próxima Gran Aventura" />
+          <img src="/src/static/imagenes/INICIO/logo_edelle.jpg" alt="Edelle - Tu Próxima Gran Aventura" />
         </div>
-    </div>
-
-    <nav>
+      </div>
+      <nav>
         <ul>
-        <li><a href="/index.html">Inicio</a></li>
-        <li><a href="/src/templates/visitante/quienes-somos.html">Quienes Somos</a></li>
-        <li><a href="/src/templates/visitante/servicios.html">Servicios</a></li>
-        <li><a href="/src/templates/visitante/destinos.html">Destinos</a></li>
-        <li><a href="/src/templates/visitante/pasajes.html">Pasajes</a></li>
+          <li><a href="/index.html">Inicio</a></li>
+          <li><a href="/src/templates/visitante/quienes-somos.html">Quienes Somos</a></li>
+          <li><a href="/src/templates/visitante/servicios.html">Servicios</a></li>
+          <li><a href="/src/templates/visitante/destinos.html">Destinos</a></li>
+          <li><a href="/src/templates/visitante/pasajes.html">Pasajes</a></li>
         </ul>
-    </nav>
-
-    <div class="user-icon">
+      </nav>
+      <div class="user-icon">
         <a href="/src/templates/comprador/login.html" title="Iniciar Sesión">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M20 21v-2a4 4 0 0 0-5.656-3.656L12 17l-2.344-2.344A4 4 0 0 0 4 17v2"></path>
             <circle cx="12" cy="9" r="4"></circle>
-        </svg>
+          </svg>
         </a>
+      </div>
     </div>
-    </div>
-</header>
+  </header>
 
-<!-- Sub-header / Submenu -->
-<section class="sub-header">
+  <!-- Sub-header / Submenu -->
+  <section class="sub-header">
     <div class="sub-header__container">
-    <a href="#" class="sub-header__item sub-header__item--active">
-        <span class="sub-header__icon"> 𖡡 </span>
-        Bogotá
-    </a>
-    <a href="/src/templates/visitante/BOGOTA/hoteles-bogota.html" class="sub-header__item">Hoteles</a>
-    <a href="/src/templates/visitante/BOGOTA/cosas-porHacer-bogota.html" class="sub-header__item">Cosas Por Hacer</a>
-    <a href="/src/templates/visitante/BOGOTA/restaurates-bogota.html" class="sub-header__item">Restaurantes</a>
-    <a href="#" class="sub-header__item">Reseñas</a>
+      <a href="/src/templates/visitante/BOGOTA/BOGOTA.html" class="sub-header__item">
+        <span class="sub-header__icon">📍</span> Bogotá
+      </a>
+      <a href="/src/templates/visitante/BOGOTA/hoteles-bogota.html" class="sub-header__item sub-header__item--active">Hoteles</a>
+      <a href="/src/templates/visitante/BOGOTA/cosas-porHacer-bogota.html" class="sub-header__item">Cosas Por Hacer</a>
+      <a href="/src/templates/visitante/BOGOTA/restaurates-bogota.html" class="sub-header__item">Restaurantes</a>
     </div>
+  </section>
+
+  <main class="hotel-main">
+    
+    <!-- Hero Section: Título + Galería Mosaico -->
+    <section class="hotel-hero">
+      <div class="hotel-hero__content">
+        <span class="hotel-hero__badge">Hotel Familiar & Ejecutivo</span>
+        <h1 class="hotel-hero__title">Embassy Suites by Hilton Bogotá Rosales</h1>
+        <div class="hotel-hero__meta">
+          <span class="hotel-hero__rating">
+            <span class="hotel-hero__score">4.5</span>
+            <span class="hotel-hero__stars">★★★★☆</span>
+            <span class="hotel-hero__reviews">(Muy Buena)</span>
+          </span>
+          <span class="hotel-hero__address">📍 Cl. 70 #6-22, Chapinero, Bogotá</span>
+        </div>
+        <a href="#reservar" class="hotel-hero__cta">Consultar disponibilidad</a>
+      </div>
+
+      <div class="hotel-hero__gallery">
+        <div class="hotel-hero__gallery-main">
+          <img src="/src/static/imagenes/HOTELES/BOGOTA/embasy/1.jpg" alt="Interior Embassy Suites" />
+          <button class="hotel-hero__gallery-btn">📷 Ver 50 fotos</button>
+        </div>
+        <div class="hotel-hero__gallery-thumbs">
+          <img src="/src/static/imagenes/HOTELES/BOGOTA/embasy/2.jpg" alt="Suite" />
+          <img src="/src/static/imagenes/HOTELES/BOGOTA/embasy/3.jpg" alt="Desayuno Buffet" />
+          <img src="/src/static/imagenes/HOTELES/BOGOTA/embasy/4.jpg" alt="Piscina" />
+        </div>
+      </div>
     </section>
 
-    <!-- Hotel Detail Section -->
-    <main class="hotel-detail">
-        <div class="hotel-detail__header">
-        <h1 class="hotel-detail__title">Embassy Suites by Hilton Bogotá Rosales</h1>
-        <div class="hotel-detail__rating">
-            <span class="hotel-detail__score">4.5</span>
-            <span class="hotel-detail__stars">★★★★☆</span>
+    <!-- Barra de Reserva Flotante -->
+    <section class="booking-bar" id="reservar">
+      <div class="booking-bar__inner">
+        <div class="booking-bar__field">
+          <span class="booking-bar__label">Llegada</span>
+          <span class="booking-bar__value">Seleccionar fecha</span>
         </div>
-        <p class="hotel-detail__address">
-            <span> 𖡡 </span> Cl. 70 #6-22, Chapinero, Bogotá, Cundinamarca</p>
-        <a href="#reviews-section" class="hotel-detail__write-review">✎ Escribir una Opinión</a>
+        <div class="booking-bar__divider"></div>
+        <div class="booking-bar__field">
+          <span class="booking-bar__label">Salida</span>
+          <span class="booking-bar__value">Seleccionar fecha</span>
         </div>
-
-        <!-- Gallery -->
-        <div class="gallery">
-        <div class="gallery__main">
-            <img src="/src/static/imagenes/HOTELES/BOGOTA/embasy/1.jpg" alt="Interior del hotel" class="gallery__image" />
-            <span class="gallery__count">50</span>
+        <div class="booking-bar__divider"></div>
+        <div class="booking-bar__field">
+          <span class="booking-bar__label">Huéspedes</span>
+          <span class="booking-bar__value">1 hab, 2 adultos</span>
         </div>
-        <div class="gallery__thumbnails">
-            <img src="/src/static/imagenes/HOTELES/BOGOTA/embasy/2.jpg" alt="Cama" class="gallery__thumbnail" />
-            <img src="/src/static/imagenes/HOTELES/BOGOTA/embasy/3.jpg" alt="Desayuno" class="gallery__thumbnail" />
-            <img src="/src/static/imagenes/HOTELES/BOGOTA/embasy/4.jpg" alt="Exterior" class="gallery__thumbnail" />
-            <img src="/src/static/imagenes/HOTELES/BOGOTA/embasy/5.jpg" alt="Salón" class="gallery__thumbnail" />
-        </div>
-        </div>
-
-        <!-- Booking Banner -->
-        <section class="booking-banner">
-        <h2 class="booking-banner__title">Hoteles en Bogotá y lugares donde alojarse</h2>
-        <div class="booking-banner__filters">
-            <div class="filter-item">
-            <span>📅 Check-in</span>
-            <span class="filter-value">-/-/-</span>
-            </div>
-            <div class="filter-item">
-            <span>📅 Check-out</span>
-            <span class="filter-value">-/-/-</span>
-            </div>
-            <div class="filter-item">
-            <span>👥 Habitaciones/huéspedes</span>
-            <span class="filter-value">1 habitación, 2 huéspedes</span>
-            </div>
-        </div>
-        </section>
-
-        <!-- Information Section -->
-        <section class="info-section">
-        <h2 class="info-section__title">Información</h2>
-
-        <div class="info-grid">
-            <div class="info-grid__left">
-            <div class="rating-summary">
-                <div class="rating-summary__overall">
-                <span class="rating-summary__score">4.5</span>
-                <span class="rating-summary__label">Muy Buena</span>
-                <div class="rating-summary__stars">★★★★☆</div>
-                </div>
-                <div class="rating-summary__details">
-                <div class="rating-summary__detail">
-                    <span>4.8 ★★★★★ Ubicación</span>
-                </div>
-                <div class="rating-summary__detail">
-                    <span>4.4 ★★★★☆ Habitaciones</span>
-                </div>
-                <div class="rating-summary__detail">
-                    <span>4.4 ★★★★☆ Calidad/precio</span>
-                </div>
-                <div class="rating-summary__detail">
-                    <span>4.6 ★★★★☆ Limpieza</span>
-                </div>
-                <div class="rating-summary__detail">
-                    <span>4.6 ★★★★☆ Servicio</span>
-                </div>
-                <div class="rating-summary__detail">
-                    <span>4.5 ★★★★☆ Sueño</span>
-                </div>
-                </div>
-            </div>
-
-        <div class="description">
-            <p>Embassy Suites by Hilton Bogota-Rosales es una magnífica elección para los viajeros que visiten Bogotá, ya que ofrece 
-                un ambiente para familias, además de numerosos servicios diseñados para mejorar tu estancia. Al contar con muchos conocidos 
-                puntos de referencia en las inmediaciones, como Capitolio Nacional (1,6 km) y Carrera 7 (3,6 km), los huéspedes de Bogota 
-                Embassy Suites tienen la oportunidad de visitar con facilidad algunas de las atracciones más populares de Bogotá....
-            </p>
-        </div>
-        </div>
-
-        <div class="info-grid__right">
-        <div class="services">
-            <h3 class="services__title">Servicios del establecimiento</h3>
-            <ul class="services__list">
-            
-            <li><span>🚗</span> Estacionamiento gratis</li>
-            <li><span>🏋️‍♀️</span> Gimnasio / Sala de entrenamiento</li>
-            <li><span>🥗</span> Desayuno gratis</li>
-            <li><span>👩‍👩‍👧</span> Actividades infantiles (ideales para niños)</li>
-            <li><span>🌐</span> Internet de alta velocidad gratuito (WiFi)</li>
-            <li><span>🛀🏻</span> Bañera de hidromasaje</li>
-            <li><span>👶🏻</span> Guarderia</li>
-            <li><span>🐶</span> Se admiten mascotas (se aceptan perros/mascotas)</li>
-            </ul>
-            <button class="services__btn">Mostrar más ▼</button>
-        </div>
-
-            <div class="features">
-                <h3 class="features__title">Características de la habitación</h3>
-                <ul class="features__list">
-                    
-                <li><span>❄</span> Aire acondicionado</li>
-                <li><span>🧧</span> Caja fuerte</li>
-                <li><span>🥂</span> Minibar</li>
-                <li><span>✅</span> TV pantalla plana</li>
-                <li><span>☎</span> Servicio de limpieza</li>
-                <li><span>🍴</span> Microondas</li>
-                <li><span>🍴</span> Refrigerador</li>
-                </ul>
-            <button class="features__btn">Mostrar más ▼</button>
-        </div>
-
-        <div class="room-types">
-            <h3 class="room-types__title">Tipos de Habitación</h3>
-            <ul class="room-types__list">
-                <li><span>🚭</span> Habitaciones para no fumadores</li>
-                <li><span>🛏️</span> Suites</li>
-                <li><span>👨‍👩‍👧‍👦</span> Habitaciones para familias</li>
-                </ul>
-        </div>
-        </div>
-    </div>
+        <label for="cart-toggle" class="booking-bar__cta">
+          Agregar a mi tour · $810.774
+        </label>
+      </div>
     </section>
 
-    <!-- BOTÓN DE ACCIÓN CON LABEL VINCULADO AL CHECKBOX -->
-    <div class="cta-button">
-    <label for="cart-toggle" class="cta-button__btn">¡AGREGAR A MI TOUR POR $ 810.774!</label>
-    </div>
+    <!-- Grid de Contenido Principal -->
+    <section class="hotel-content">
+      
+      <!-- Columna Izquierda: Información -->
+      <div class="hotel-content__main">
+        
+        <article class="content-card">
+          <h2 class="content-card__title">Sobre este alojamiento</h2>
+          <p class="content-card__text">
+            Embassy Suites by Hilton Bogota-Rosales es una magnífica elección para los viajeros que visiten Bogotá, ya que ofrece un ambiente para familias. Al contar con muchos conocidos puntos de referencia en las inmediaciones, como Capitolio Nacional (1,6 km) y Carrera 7 (3,6 km), los huéspedes tienen la oportunidad de visitar con facilidad algunas de las atracciones más populares de Bogotá. Sus amplias suites y servicios premium lo convierten en una opción ideal tanto para negocios como para turismo.
+          </p>
+        </article>
 
-    <!-- Reviews Section -->
-    <section id="reviews-section" class="reviews-section">
-    <h2 class="reviews-section__title">¡RESEÑAS!</h2>
-    <h3 class="reviews-section__subtitle">Todas las reseñas</h3>
+        <article class="content-card">
+          <h2 class="content-card__title">Servicios y Características</h2>
+          <div class="amenities-grid">
+            <div class="amenity-item"><span class="amenity-icon">🚗</span> Estacionamiento gratis</div>
+            <div class="amenity-item"><span class="amenity-icon">🏋️‍♀️</span> Gimnasio / Sala de entrenamiento</div>
+            <div class="amenity-item"><span class="amenity-icon">🥗</span> Desayuno gratis</div>
+            <div class="amenity-item"><span class="amenity-icon">👩‍👩‍👧</span> Actividades infantiles</div>
+            <div class="amenity-item"><span class="amenity-icon">🌐</span> WiFi de alta velocidad</div>
+            <div class="amenity-item"><span class="amenity-icon">🛀🏻</span> Bañera de hidromasaje</div>
+            <div class="amenity-item"><span class="amenity-icon">👶🏻</span> Guardería</div>
+            <div class="amenity-item"><span class="amenity-icon">🐶</span> Se admiten mascotas</div>
+          </div>
+          <button class="content-card__btn">Mostrar todos los servicios ▼</button>
+        </article>
 
-    <!-- Review 1 -->
-    <article class="review-card">
-        <div class="review-card__header">
-        <img src="https://placehold.co/50x50/ccc/000?text=AM  " alt="Alba Martinez" class="review-card__avatar" />
-        <div class="review-card__user-info">
-            <span class="review-card__name">Alba Martinez B</span>
-            <span class="review-card__date">5-12-2025</span>
-        </div>
-        </div>
-        <div class="review-card__rating">
-        <span class="review-card__score">★★★★★</span>
-        </div>
-        <div class="review-card__content">
-        <p>Tuvimos una estancia maravillosa. La atención y el servicio fueron excepcionales. Me sentí como en casa. Además, la comida estaba deliciosa. ¡Muchas gracias!</p>
-        <div class="review-card__meta">
-            <span>Fecha de estadia: Octubre de 2025</span>
-            <span>Tipo de viaje: Viajé con mi familia</span>
-        </div>
-        </div>
-    </article>
+        <article class="content-card" id="reviews-section">
+          <h2 class="content-card__title">Opiniones de viajeros</h2>
+          
+          <div class="reviews-summary">
+            <div class="reviews-summary__score">
+              <span class="reviews-summary__number">4.5</span>
+              <span class="reviews-summary__text">Muy Buena</span>
+              <span class="reviews-summary__stars">★★★★☆</span>
+            </div>
+            <div class="reviews-summary__bars">
+              <div class="bar-item"><span>Ubicación</span><div class="bar-track"><div class="bar-fill" style="width: 96%"></div></div><span>4.8</span></div>
+              <div class="bar-item"><span>Limpieza</span><div class="bar-track"><div class="bar-fill" style="width: 92%"></div></div><span>4.6</span></div>
+              <div class="bar-item"><span>Servicio</span><div class="bar-track"><div class="bar-fill" style="width: 92%"></div></div><span>4.6</span></div>
+            </div>
+          </div>
 
-    <!-- Review 2 (Empty placeholder) -->
-    <article class="review-card review-card--placeholder">
-        <div class="review-card__placeholder-content">
-        <p>Próximamente nuevas reseñas...</p>
+          <div class="reviews-list">
+            <article class="review-card">
+              <div class="review-card__header">
+                <img src="https://placehold.co/50x50/EDF5D6/628F00?text=AM" alt="Alba Martinez" class="review-card__avatar" />
+                <div class="review-card__user">
+                  <span class="review-card__name">Alba Martinez B</span>
+                  <span class="review-card__date">Octubre 2025</span>
+                </div>
+              </div>
+              <div class="review-card__rating">★★★★★</div>
+              <p class="review-card__text">Tuvimos una estancia maravillosa. La atención y el servicio fueron excepcionales. Me sentí como en casa y la comida estaba deliciosa. ¡Muchas gracias!</p>
+              <div class="review-card__meta">Viajé con mi familia</div>
+            </article>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Columna Derecha: Sidebar Sticky -->
+      <aside class="hotel-content__sidebar">
+        <div class="sidebar-card sticky-card">
+          <div class="sidebar-card__price">
+            <span class="price-label">Desde</span>
+            <span class="price-amount">$810.774</span>
+            <span class="price-night">/ noche</span>
+          </div>
+          <div class="sidebar-card__features">
+            <span>✓ Cancelación gratuita</span>
+            <span>✓ Desayuno incluido</span>
+            <span>✓ Mejor precio garantizado</span>
+          </div>
+          <label for="cart-toggle" class="sidebar-card__cta">¡Agregar a mi tour!</label>
+          <p class="sidebar-card__hint">No se realizará ningún cargo aún</p>
         </div>
-    </article>
+      </aside>
+
     </section>
-</main>
+  </main>
 
-<!-- PANEL LATERAL (RESUMEN CARRITO) -->
-<aside class="reserva">
-    <h3>TU RESERVA</h3>
-    <div class="cart-list">
-    <div class="cart-item item-1"><span>NH Collection Bogotá Hacienda Royal</span> <b>$810.774</b></div>
+  <!-- PANEL LATERAL (CARRITO) -->
+  <aside class="cart-sidebar">
+    <div class="cart-sidebar__header">
+      <h3>Tu Reserva</h3>
+      <label for="cart-toggle" class="cart-sidebar__close">✕</label>
     </div>
-    <a href="/src/templates/visitante/registro_visitante.html" class="btn-checkout">Realizar Compra</a>
-    <p class="hint">Toca el producto de nuevo para quitarlo</p>
-</aside>
+    <div class="cart-sidebar__body">
+      <div class="cart-item">
+        <div class="cart-item__info">
+          <span class="cart-item__name">Embassy Suites by Hilton</span>
+          <span class="cart-item__desc">1 noche · 2 huéspedes</span>
+        </div>
+        <span class="cart-item__price">$810.774</span>
+      </div>
+      <div class="cart-sidebar__total">
+        <span>Total</span>
+        <strong>$810.774</strong>
+      </div>
+      <a href="/src/templates/comprador/factura.html" class="cart-sidebar__checkout">Continuar a pagar</a>
+      <p class="cart-sidebar__hint">Toca el producto de nuevo para quitarlo</p>
+    </div>
+  </aside>
 
-<!-- VENTANA EMERGENTE -->
-<div class="notice-container">
-    <div class="notice">¡Producto añadido al carrito!</div>
-</div>
+  <!-- VENTANA EMERGENTE (TOAST) -->
+  <div class="notice-container">
+    <div class="notice">
+      <span>✓</span> ¡Producto añadido a tu tour!
+    </div>
+  </div>
 
 </body>
 </html>

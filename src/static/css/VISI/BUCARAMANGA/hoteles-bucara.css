@@ -1,8 +1,11 @@
 /* =========================================================
-   EDELLE — Hoteles en Bucaramanga
-   Diseño basado en la referencia de Bogotá:
+   EDELLE — Hoteles en Bogotá
+   Hereda el sistema de diseño de la vista principal:
    Wasabi Green (#7FB800) + Soft Lemon (#FFFF66) + Plum Noir (#4A1F3D)
    Fraunces (display) + Inter (cuerpo).
+   Esta hoja NO redefine la marca: la aplica a una vista de listado,
+   así que el vocabulario visual (botones, tarjetas, tipografía)
+   es el mismo que en index — solo cambia la composición.
    ========================================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap');
@@ -44,6 +47,11 @@
 
 html { scroll-behavior: smooth; }
 
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   font-family: var(--fuente-principal);
   background-color: var(--color-crema);
@@ -52,7 +60,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* === BARRA DE NAVEGACIÓN === */
+/* === BARRA DE NAVEGACIÓN (idéntica al resto del sitio) === */
 
 .navbar-container {
   display: flex;
@@ -194,6 +202,8 @@ nav ul li a:hover::after { transform: scaleX(1); }
 .sub-header__icon { font-size: 1rem; }
 
 /* === HERO CON VIDEO ENMARCADO === */
+/* Se enmarca el video como una fotografía editorial, igual que el
+   carrusel de la home, en vez de un video "wallpaper" a pantalla completa. */
 
 .hero {
   position: relative;
@@ -283,7 +293,8 @@ nav ul li a:hover::after { transform: scaleX(1); }
   color: var(--color-limon);
 }
 
-/* Panel de búsqueda flotante */
+/* Panel de búsqueda flotante: se apoya sobre el borde inferior del
+   video enmarcado, como una tarjeta de itinerario. */
 .hero__filters {
   display: flex;
   gap: 1rem;
@@ -648,7 +659,7 @@ select:focus-visible {
   .hotel-card__image { height: 190px; }
 }
 
-/* === FOOTER === */
+/* === FOOTER (idéntico al de la home, para consistencia de marca) === */
 
 footer {
   background-color: var(--color-ciruela);

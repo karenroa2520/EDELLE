@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>NH Collection Bogotá Hacienda Royal</title>
+  <title>NH Collection Bogotá Hacienda Royal | EDELLE</title>
+  <!-- Vinculamos el CSS con el estilo Avani -->
   <link rel="stylesheet" href="/src/static/css/VISI/BOGOTA/HOTELES-BOGOTA/hotel-nh-collection-royal.css" />
 </head>
 <body>
 
-  <!-- CHECKBOX HACK PARA EL CARRITO -->
+  <!-- CHECKBOX HACK PARA EL CARRITO (Debe ir al inicio para que el selector ~ funcione) -->
   <input type="checkbox" id="cart-toggle" class="cart-control">
 
   <!-- Header Principal -->
@@ -19,7 +20,6 @@
           <img src="/src/static/imagenes/INICIO/logo_edelle.jpg" alt="Edelle - Tu Próxima Gran Aventura" />
         </div>
       </div>
-
       <nav>
         <ul>
           <li><a href="/index.html">Inicio</a></li>
@@ -29,7 +29,6 @@
           <li><a href="/src/templates/visitante/pasajes.html">Pasajes</a></li>
         </ul>
       </nav>
-
       <div class="user-icon">
         <a href="/src/templates/comprador/login.html" title="Iniciar Sesión">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -44,202 +43,180 @@
   <!-- Sub-header / Submenu -->
   <section class="sub-header">
     <div class="sub-header__container">
-      <a href="#" class="sub-header__item sub-header__item--active">
-        <span class="sub-header__icon">📍</span>
-        Bogotá
+      <a href="/src/templates/visitante/BOGOTA/BOGOTA.html" class="sub-header__item">
+        <span class="sub-header__icon">📍</span> Bogotá
       </a>
-      <a href="/src/templates/visitante/BOGOTA/hoteles-bogota.html" class="sub-header__item">Hoteles</a>
+      <a href="/src/templates/visitante/BOGOTA/hoteles-bogota.html" class="sub-header__item sub-header__item--active">Hoteles</a>
       <a href="/src/templates/visitante/BOGOTA/cosas-porHacer-bogota.html" class="sub-header__item">Cosas Por Hacer</a>
       <a href="/src/templates/visitante/BOGOTA/restaurates-bogota.html" class="sub-header__item">Restaurantes</a>
-      <a href="#" class="sub-header__item">Reseñas</a>
     </div>
   </section>
 
-  <!-- Hotel Detail Section -->
-  <main class="hotel-detail">
-    <div class="hotel-detail__header">
-      <h1 class="hotel-detail__title">NH Collection Bogotá Hacienda Royal</h1>
-      <div class="hotel-detail__rating">
-        <span class="hotel-detail__score">4.7</span>
-        <span class="hotel-detail__stars">★★★★★</span>
-      </div>
-      <p class="hotel-detail__address">
-        <span>📍</span> Calle 114 N 6-02, Bogotá Colombia</p>
-      <a href="#reviews-section" class="hotel-detail__write-review">✏️ Escribir una Opinión</a>
-    </div>
-
-    <!-- Gallery -->
-    <div class="gallery">
-      <div class="gallery__main">
-        <img src="/src/static/imagenes/HOTELES/BOGOTA/nh-colletion-royal/1.jpg" alt="Interior del hotel" class="gallery__image" />
-        <span class="gallery__count">50</span>
-      </div>
-      <div class="gallery__thumbnails">
-        <img src="/src/static/imagenes/HOTELES/BOGOTA/nh-colletion-royal/2.jpg" alt="Cama" class="gallery__thumbnail" />
-        <img src="/src/static/imagenes/HOTELES/BOGOTA/nh-colletion-royal/3.jpg" alt="Desayuno" class="gallery__thumbnail" />
-        <img src="/src/static/imagenes/HOTELES/BOGOTA/nh-colletion-royal/4.jpg" alt="Exterior" class="gallery__thumbnail" />
-        <img src="/src/static/imagenes/HOTELES/BOGOTA/nh-colletion-royal/5.jpg" alt="Salón" class="gallery__thumbnail" />
-      </div>
-    </div>
-
-    <!-- Booking Banner -->
-    <section class="booking-banner">
-      <h2 class="booking-banner__title">Hoteles en Bogotá y lugares donde alojarse</h2>
-      <div class="booking-banner__filters">
-        <div class="filter-item">
-          <span>📅 Check-in</span>
-          <span class="filter-value">-/-/-</span>
+  <main class="hotel-main">
+    
+    <!-- Hero Section: Título + Galería Mosaico -->
+    <section class="hotel-hero">
+      <div class="hotel-hero__content">
+        <span class="hotel-hero__badge">Hotel de Lujo Premium</span>
+        <h1 class="hotel-hero__title">NH Collection Bogotá Hacienda Royal</h1>
+        <div class="hotel-hero__meta">
+          <span class="hotel-hero__rating">
+            <span class="hotel-hero__score">4.7</span>
+            <span class="hotel-hero__stars">★★★★★</span>
+            <span class="hotel-hero__reviews">(Muy Buena)</span>
+          </span>
+          <span class="hotel-hero__address">📍 Calle 114 N 6-02, Bogotá, Colombia</span>
         </div>
-        <div class="filter-item">
-          <span>📅 Check-out</span>
-          <span class="filter-value">-/-/-</span>
+        <a href="#reservar" class="hotel-hero__cta">Consultar disponibilidad</a>
+      </div>
+
+      <div class="hotel-hero__gallery">
+        <div class="hotel-hero__gallery-main">
+          <img src="/src/static/imagenes/HOTELES/BOGOTA/nh-colletion-royal/1.jpg" alt="Interior NH Collection" />
+          <button class="hotel-hero__gallery-btn">📷 Ver 50 fotos</button>
         </div>
-        <div class="filter-item">
-          <span>👥 Habitaciones/huéspedes</span>
-          <span class="filter-value">1 habitación, 2 huéspedes</span>
+        <div class="hotel-hero__gallery-thumbs">
+          <img src="/src/static/imagenes/HOTELES/BOGOTA/nh-colletion-royal/2.jpg" alt="Suite" />
+          <img src="/src/static/imagenes/HOTELES/BOGOTA/nh-colletion-royal/3.jpg" alt="Restaurante" />
+          <img src="/src/static/imagenes/HOTELES/BOGOTA/nh-colletion-royal/4.jpg" alt="Spa" />
         </div>
       </div>
     </section>
 
-    <!-- Information Section -->
-    <section class="info-section">
-      <h2 class="info-section__title">Información</h2>
-
-      <div class="info-grid">
-        <div class="info-grid__left">
-          <div class="rating-summary">
-            <div class="rating-summary__overall">
-              <span class="rating-summary__score">4.7</span>
-              <span class="rating-summary__label">Muy buena</span>
-              <div class="rating-summary__stars">★★★★★</div>
-            </div>
-            <div class="rating-summary__details">
-              <div class="rating-summary__detail">
-                <span>4.7 ★★★★★ Ubicación</span>
-              </div>
-              <div class="rating-summary__detail">
-                <span>4.6 ★★★★☆ Habitaciones</span>
-              </div>
-              <div class="rating-summary__detail">
-                <span>4.5 ★★★★☆ Calidad/precio</span>
-              </div>
-              <div class="rating-summary__detail">
-                <span>4.7 ★★★★★ Limpieza</span>
-              </div>
-              <div class="rating-summary__detail">
-                <span>4.8 ★★★★★ Servicio</span>
-              </div>
-              <div class="rating-summary__detail">
-                <span>4.6 ★★★★☆ Sueño</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="description">
-            <p>Regálese el lujo de una estadia excepcional en el NH Collection Bogotá Hacienda Rotal, donde el paisaje montañoso
-                que abraza a Bogotá se encuentra con un espacio acogedor y sotisficado. Ubicado frente a un encantador parque en una 
-                de las areas mas prestigiosas de la capital, este hotel le brinda conexion directa con el exclusivo Hacienda Santa 
-                Barbara, ademas de estar rodeado de excelentes opciones para disfrutar, comer y...
-            </p>
-          </div>
+    <!-- Barra de Reserva Flotante -->
+    <section class="booking-bar" id="reservar">
+      <div class="booking-bar__inner">
+        <div class="booking-bar__field">
+          <span class="booking-bar__label">Llegada</span>
+          <span class="booking-bar__value">Seleccionar fecha</span>
         </div>
-
-        <div class="info-grid__right">
-          <div class="services">
-            <h3 class="services__title">Servicios del establecimiento</h3>
-            <ul class="services__list">
-              <li><span>🚗</span> Estacionamiento privado de pago en el establecimiento</li>
-              <li><span>🏋️‍♀️</span> Gimnasio / Sala de entrenamiento</li>
-              <li><span>💼</span> Centro de negocios con acceso a Internet</li>
-              <li><span>🌿</span> Spa</li>
-              <li><span>🌐</span> Internet de alta velocidad gratuito (WiFi)</li>
-              <li><span>🍷</span> Bar/Salón</li>
-              <li><span>📊</span> Instalaciones para conferencias</li>
-              <li><span>📦</span> Almacenamiento de equipo</li>
-            </ul>
-            <button class="services__btn">Mostrar más ▼</button>
-          </div>
-
-          <div class="features">
-            <h3 class="features__title">Características de la habitación</h3>
-            <ul class="features__list">
-              <li><span>🛏️</span> Habitación libre de alérgenos</li>
-              <li><span>❄</span> Aire acondicionado</li>
-              <li><span>🧧</span> Caja fuerte</li>
-              <li><span>📺</span> TV pantalla plana</li>
-              <li><span>🔈</span> Habitaciones insonorizadas</li>
-              <li><span>☎</span> Servicio a la habitación</li>
-              <li><span>🍴</span> Minibar</li>
-            </ul>
-            <button class="features__btn">Mostrar más ▼</button>
-          </div>
-
-          <div class="room-types">
-            <h3 class="room-types__title">Tipos de Habitación</h3>
-            <ul class="room-types__list">
-              <li><span>🌟</span> Suite nupcial</li>
-              <li><span>🛏️</span> Habitaciones para no fumadores</li>
-              <li><span>👨‍👩‍👧‍👦</span> Habitaciones para familias</li>
-              <li><span>🌫</span> Suites</li>
-            </ul>
-          </div>
+        <div class="booking-bar__divider"></div>
+        <div class="booking-bar__field">
+          <span class="booking-bar__label">Salida</span>
+          <span class="booking-bar__value">Seleccionar fecha</span>
         </div>
+        <div class="booking-bar__divider"></div>
+        <div class="booking-bar__field">
+          <span class="booking-bar__label">Huéspedes</span>
+          <span class="booking-bar__value">1 hab, 2 adultos</span>
+        </div>
+        <label for="cart-toggle" class="booking-bar__cta">
+          Agregar a mi tour · $219.295
+        </label>
       </div>
     </section>
 
-    <!-- BOTÓN DE ACCIÓN CON LABEL VINCULADO AL CHECKBOX -->
-    <div class="cta-button">
-      <label for="cart-toggle" class="cta-button__btn">¡AGREGAR A MI TOUR POR $ 219.295!</label>
-    </div>
+    <!-- Grid de Contenido Principal -->
+    <section class="hotel-content">
+      
+      <!-- Columna Izquierda: Información -->
+      <div class="hotel-content__main">
+        
+        <article class="content-card">
+          <h2 class="content-card__title">Sobre este alojamiento</h2>
+          <p class="content-card__text">
+            Regálese el lujo de una estadía excepcional en el NH Collection Bogotá Hacienda Royal, donde el paisaje montañoso que abraza a Bogotá se encuentra con un espacio acogedor y sofisticado. Ubicado frente a un encantador parque en una de las áreas más prestigiosas de la capital, este hotel le brinda conexión directa con el exclusivo Hacienda Santa Bárbara, además de estar rodeado de excelentes opciones para disfrutar, comer y relajarse. Ideal tanto para viajeros de negocios como para escapadas de lujo.
+          </p>
+        </article>
 
-    <!-- Reviews Section -->
-    <section id="reviews-section" class="reviews-section">
-      <h2 class="reviews-section__title">¡RESEÑAS!</h2>
-      <h3 class="reviews-section__subtitle">Todas las reseñas</h3>
-
-      <!-- Review 1 -->
-      <article class="review-card">
-        <div class="review-card__header">
-          <img src="https://placehold.co/50x50/ccc/000?text=AM  " alt="Alba Martinez" class="review-card__avatar" />
-          <div class="review-card__user-info">
-            <span class="review-card__name">Alba Martinez B</span>
-            <span class="review-card__date">5-12-2025</span>
+        <article class="content-card">
+          <h2 class="content-card__title">Servicios y Características</h2>
+          <div class="amenities-grid">
+            <div class="amenity-item"><span class="amenity-icon">🚗</span> Estacionamiento privado</div>
+            <div class="amenity-item"><span class="amenity-icon">🏋️‍♀️</span> Gimnasio</div>
+            <div class="amenity-item"><span class="amenity-icon">🌿</span> Spa y Bienestar</div>
+            <div class="amenity-item"><span class="amenity-icon">🌐</span> WiFi de alta velocidad</div>
+            <div class="amenity-item"><span class="amenity-icon">💼</span> Centro de negocios</div>
+            <div class="amenity-item"><span class="amenity-icon">🍷</span> Bar / Salón</div>
+            <div class="amenity-item"><span class="amenity-icon">📊</span> Salas de conferencias</div>
+            <div class="amenity-item"><span class="amenity-icon">🔈</span> Habitaciones insonorizadas</div>
           </div>
-        </div>
-        <div class="review-card__rating">
-          <span class="review-card__score">★★★★★</span>
-        </div>
-        <div class="review-card__content">
-          <p>Tuvimos una estancia maravillosa. La atención y el servicio fueron excepcionales. Me sentí como en casa. Además, la comida estaba deliciosa. ¡Muchas gracias!</p>
-          <div class="review-card__meta">
-            <span>Fecha de estadia: Octubre de 2025</span>
-            <span>Tipo de viaje: Viajé con mi familia</span>
-          </div>
-        </div>
-      </article>
+          <button class="content-card__btn">Mostrar todos los servicios ▼</button>
+        </article>
 
-      <!-- Review 2 (Empty placeholder) -->
-      <article class="review-card review-card--placeholder">
-        <div class="review-card__placeholder-content">
-          <p>Próximamente nuevas reseñas...</p>
+        <article class="content-card" id="reviews-section">
+          <h2 class="content-card__title">Opiniones de viajeros</h2>
+          
+          <div class="reviews-summary">
+            <div class="reviews-summary__score">
+              <span class="reviews-summary__number">4.7</span>
+              <span class="reviews-summary__text">Muy Buena</span>
+              <span class="reviews-summary__stars">★★★★★</span>
+            </div>
+            <div class="reviews-summary__bars">
+              <div class="bar-item"><span>Ubicación</span><div class="bar-track"><div class="bar-fill" style="width: 94%"></div></div><span>4.7</span></div>
+              <div class="bar-item"><span>Limpieza</span><div class="bar-track"><div class="bar-fill" style="width: 94%"></div></div><span>4.7</span></div>
+              <div class="bar-item"><span>Servicio</span><div class="bar-track"><div class="bar-fill" style="width: 96%"></div></div><span>4.8</span></div>
+            </div>
+          </div>
+
+          <div class="reviews-list">
+            <article class="review-card">
+              <div class="review-card__header">
+                <img src="https://placehold.co/50x50/EDF5D6/628F00?text=AM" alt="Alba Martinez" class="review-card__avatar" />
+                <div class="review-card__user">
+                  <span class="review-card__name">Alba Martinez B</span>
+                  <span class="review-card__date">Octubre 2025</span>
+                </div>
+              </div>
+              <div class="review-card__rating">★★★★★</div>
+              <p class="review-card__text">Tuvimos una estancia maravillosa. La atención y el servicio fueron excepcionales. Me sentí como en casa y la comida estaba deliciosa. ¡Muchas gracias!</p>
+              <div class="review-card__meta">Viajé con mi familia</div>
+            </article>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Columna Derecha: Sidebar Sticky -->
+      <aside class="hotel-content__sidebar">
+        <div class="sidebar-card sticky-card">
+          <div class="sidebar-card__price">
+            <span class="price-label">Desde</span>
+            <span class="price-amount">$219.295</span>
+            <span class="price-night">/ noche</span>
+          </div>
+          <div class="sidebar-card__features">
+            <span>✓ Cancelación gratuita</span>
+            <span>✓ Desayuno incluido</span>
+            <span>✓ Mejor precio garantizado</span>
+          </div>
+          <label for="cart-toggle" class="sidebar-card__cta">¡Agregar a mi tour!</label>
+          <p class="sidebar-card__hint">No se realizará ningún cargo aún</p>
         </div>
-      </article>
+      </aside>
+
     </section>
   </main>
 
-  <!-- PANEL LATERAL (RESUMEN CARRITO) -->
-  <aside class="reserva">
-    <h3>TU RESERVA</h3>
-    <div class="cart-list">
-      <div class="cart-item item-1"><span>NH Collection Bogotá Hacienda Royal</span> <b>$219.295</b></div>
+  <!-- PANEL LATERAL (CARRITO) -->
+  <aside class="cart-sidebar">
+    <div class="cart-sidebar__header">
+      <h3>Tu Reserva</h3>
+      <label for="cart-toggle" class="cart-sidebar__close">✕</label>
     </div>
-    <a href="/src/templates/visitante/registro_visitante.html" class="btn-checkout">Realizar Compra</a>
-    <p class="hint">Toca el producto de nuevo para quitarlo</p>
+    <div class="cart-sidebar__body">
+      <div class="cart-item">
+        <div class="cart-item__info">
+          <span class="cart-item__name">NH Collection Hacienda Royal</span>
+          <span class="cart-item__desc">1 noche · 2 huéspedes</span>
+        </div>
+        <span class="cart-item__price">$219.295</span>
+      </div>
+      <div class="cart-sidebar__total">
+        <span>Total</span>
+        <strong>$219.295</strong>
+      </div>
+      <a href="/src/templates/comprador/factura.html" class="cart-sidebar__checkout">Continuar a pagar</a>
+      <p class="cart-sidebar__hint">Toca el producto de nuevo para quitarlo</p>
+    </div>
   </aside>
 
-  <!-- VENTANA EMERGENTE -->
+  <!-- VENTANA EMERGENTE (TOAST) -->
   <div class="notice-container">
-    <div class="notice">¡Producto añadido al carrito!</div>
+    <div class="notice">
+      <span>✓</span> ¡Producto añadido a tu tour!
+    </div>
   </div>
 
 </body>

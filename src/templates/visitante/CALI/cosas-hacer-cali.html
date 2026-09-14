@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cosas por hacer en Bucaramanga</title>
+  <title>Cosas por hacer en Cali | EDELLE</title>
+  <!-- Nota: Asegúrate de que este CSS sea el mismo que usaste para Bucaramanga -->
   <link rel="stylesheet" href="/src/static/css/VISI/estilo-cosas-hacer.css" />
 </head>
 <body class="pagina">
-  <!-- Header (SIN CAMBIOS) -->
+  
+  <!-- Header -->
   <header>
     <div class="navbar-container">
       <div class="logo">
@@ -35,7 +37,7 @@
     </div>
   </header>
 
-  <!-- Submenu (SIN CAMBIOS) -->
+  <!-- Submenu -->
   <section class="sub-header">
     <div class="sub-header__container">
       <a href="/src/templates/visitante/CALI/CALI.html" class="sub-header__item sub-header__item--active">
@@ -52,17 +54,54 @@
   <!-- Sección Hero -->
   <section class="hero">
     <div class="hero__contenedor-imagen">
-      <img src="/src/static/imagenes/HOTELES/BUCARAMANGA/Hoteles-Bucaramanga.jpg" alt="Atardecer en Bucaramanga" class="hero__imagen" />
+      <!-- Sugerencia: Usar una foto icónica de Cali como el Gato de Tejada o vista nocturna -->
+      <img src="/src/static/imagenes/HOTELES/CALI/Hoteles-Cali.jpg" alt="Vista de Cali" class="hero__imagen" />
+      <span class="hero__insignia">+25<br>experiencias</span>
     </div>
+    
+    <!-- Ruta punteada decorativa (si tu CSS la soporta) -->
+    <svg class="hero__ruta" viewBox="0 0 90 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M2 30 C 30 5, 60 5, 88 20" />
+      <circle cx="88" cy="20" r="4" />
+    </svg>
+
     <div class="hero__texto">
-      <h1 class="hero__titulo">Cosas por hacer en Cali</h1>
+      <span class="hero__eyebrow"><span class="linea"></span>Cali, Colombia</span>
+      <h1 class="hero__titulo">Cosas por hacer en <em>la Sucursal del Cielo</em></h1>
       <p class="hero__descripcion">
         Échales un vistazo a estas actividades y atracciones imperdibles:
-        Bosque El Descanso, Zoologico de Cali, Parques acuáticos, Tours de naturaleza 
-        y vida silvestre.
+        Bosque El Descanso, Zoológico de Cali, Parques acuáticos, Tours de naturaleza 
+        y vida silvestre en el Río Pance.
       </p>
+      <a href="#recomendaciones" class="hero__cta">
+        Explorar experiencias
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </a>
     </div>
   </section>
+
+  <!-- Ticker de atractivos (Elemento visual extra si tu CSS lo permite) -->
+  <div class="ticker-atractivos" aria-hidden="true">
+    <div class="ticker-atractivos__pista">
+      <span>Río Pance</span><span class="ticker-atractivos__punto">●</span>
+      <span>Zoológico de Cali</span><span class="ticker-atractivos__punto">●</span>
+      <span>Cristo Rey</span><span class="ticker-atractivos__punto">●</span>
+      <span>Salsa en el Barrio Obrero</span><span class="ticker-atractivos__punto">●</span>
+      <span>Jamundí</span><span class="ticker-atractivos__punto">●</span>
+      <span>Panachi</span><span class="ticker-atractivos__punto">●</span>
+      <span>Río Jordán</span><span class="ticker-atractivos__punto">●</span>
+      <span>Museo La Tertulia</span><span class="ticker-atractivos__punto">●</span>
+      <!-- Repetición para loop -->
+      <span>Río Pance</span><span class="ticker-atractivos__punto">●</span>
+      <span>Zoológico de Cali</span><span class="ticker-atractivos__punto">●</span>
+      <span>Cristo Rey</span><span class="ticker-atractivos__punto">●</span>
+      <span>Salsa en el Barrio Obrero</span><span class="ticker-atractivos__punto">●</span>
+      <span>Jamundí</span><span class="ticker-atractivos__punto">●</span>
+      <span>Panachi</span><span class="ticker-atractivos__punto">●</span>
+      <span>Río Jordán</span><span class="ticker-atractivos__punto">●</span>
+      <span>Museo La Tertulia</span><span class="ticker-atractivos__punto">●</span>
+    </div>
+  </div>
 
   <!-- Sección Experiencias -->
   <section class="experiencias">
@@ -72,49 +111,52 @@
     </p>
     <div class="experiencias__etiquetas">
       <span class="experiencias__etiqueta">
-        <img src="/src/static/imagenes/COSAS-PORHACER/ruta.png" alt="Reloj" class="experiencias__icono" /> Recorridos de medio día
+        <img src="/src/static/imagenes/COSAS-PORHACER/ruta.png" alt="" class="experiencias__icono" /> Recorridos de medio día
       </span>
       <span class="experiencias__etiqueta">
-        <img src="/src/static/imagenes/COSAS-PORHACER/paseo-en-taza-de-te.png" alt="Maleta" class="experiencias__icono" /> Paseos de un día
+        <img src="/src/static/imagenes/COSAS-PORHACER/paseo-en-taza-de-te.png" alt="" class="experiencias__icono" /> Paseos de un día
       </span>
       <span class="experiencias__etiqueta">
-        <img src="/src/static/imagenes/COSAS-PORHACER/bolsa-de-la-compra.png" alt="Edificio" class="experiencias__icono" /> Centros Comerciales
+        <img src="/src/static/imagenes/COSAS-PORHACER/bolsa-de-la-compra.png" alt="" class="experiencias__icono" /> Centros Comerciales
       </span>
       <span class="experiencias__etiqueta">
-        <img src="/src/static/imagenes/COSAS-PORHACER/rumba.png" alt="Luna" class="experiencias__icono" /> Rumba
+        <img src="/src/static/imagenes/COSAS-PORHACER/rumba.png" alt="" class="experiencias__icono" /> Rumba
       </span>
       <span class="experiencias__etiqueta">
-        <img src="/src/static/imagenes/COSAS-PORHACER/montana.png" alt="Animal" class="experiencias__icono" /> Avistamiento de fauna
+        <img src="/src/static/imagenes/COSAS-PORHACER/montana.png" alt="" class="experiencias__icono" /> Avistamiento de fauna
       </span>
       <span class="experiencias__etiqueta">
-        <img src="/src/static/imagenes/COSAS-PORHACER/galeria-de-arte.png" alt="Museo" class="experiencias__icono" /> Galerías de arte
+        <img src="/src/static/imagenes/COSAS-PORHACER/galeria-de-arte.png" alt="" class="experiencias__icono" /> Galerías de arte
       </span>
       <span class="experiencias__etiqueta">
-        <img src="/src/static/imagenes/COSAS-PORHACER/mapa.png" alt="Persona" class="experiencias__icono" /> Recorridos privados
+        <img src="/src/static/imagenes/COSAS-PORHACER/mapa.png" alt="" class="experiencias__icono" /> Recorridos privados
       </span>
       <span class="experiencias__etiqueta experiencias__etiqueta--seleccionada">
-        <img src="/src/static/imagenes/COSAS-PORHACER/autobus-escolar.png" alt="Bus" class="experiencias__icono" /> Recorridos en bus
+        <img src="/src/static/imagenes/COSAS-PORHACER/autobus-escolar.png" alt="" class="experiencias__icono" /> Recorridos en bus
       </span>
       <span class="experiencias__etiqueta">
-        <img src="/src/static/imagenes/COSAS-PORHACER/mercado.png" alt="Mercado" class="experiencias__icono" /> Mercados campesinos
+        <img src="/src/static/imagenes/COSAS-PORHACER/mercado.png" alt="" class="experiencias__icono" /> Mercados campesinos
       </span>
       <span class="experiencias__etiqueta">
-        <img src="/src/static/imagenes/COSAS-PORHACER/ruta-de-esqui.png" alt="Cultura" class="experiencias__icono" /> Recorridos culturales
+        <img src="/src/static/imagenes/COSAS-PORHACER/ruta-de-esqui.png" alt="" class="experiencias__icono" /> Recorridos culturales
       </span>
       <span class="experiencias__etiqueta">
-        <img src="/src/static/imagenes/COSAS-PORHACER/taza-de-cafe.png" alt="Café" class="experiencias__icono" /> Rutas del café
+        <img src="/src/static/imagenes/COSAS-PORHACER/taza-de-cafe.png" alt="" class="experiencias__icono" /> Rutas del café
       </span>
     </div>
   </section>
 
   <!-- Sección Recomendaciones -->
-  <section class="recomendaciones">
-    <h2 class="recomendaciones__titulo">RECOMENDACIONES</h2>
+  <section class="recomendaciones" id="recomendaciones">
+    <h2 class="recomendaciones__titulo">Recomendaciones</h2>
     <div class="recomendaciones__tarjetas">
+      
       <!-- Tarjeta 1 -->
       <article class="tarjeta">
         <div class="tarjeta__contenedor-imagen">
+          <span class="tarjeta__ribbon">🔥 Tendencia</span>
           <img src="/src/static/imagenes/COSAS-PORHACER/CALI/río Jordán/uno.jpg" alt="río Jordán" class="tarjeta__imagen" />
+          <span class="tarjeta__overlay">Privado · Nivel fácil</span>
         </div>
         <div class="tarjeta__contenido">
           <h3 class="tarjeta__titulo">Un día para disfrutar de la naturaleza y vivir una aventura en el río Jordán</h3>
@@ -124,15 +166,17 @@
           </div>
           <div class="tarjeta__info">Tours a pie</div>
           <div class="tarjeta__info-precio">Desde $247.963</div>
-          <div class="tarjeta__por-persona">Por Adulto(El precio varia segun el tamaño del grupo)</div>
-           <a href="/src/templates/visitante/CALI/COSAS-PORHACER-CALI/río_Jordán.html" class="tarjeta__boton-reservar">RESERVAR</a>
+          <div class="tarjeta__por-persona">Por Adulto (El precio varía según el tamaño del grupo)</div>
+           <a href="/src/templates/visitante/CALI/COSAS-PORHACER-CALI/río_Jordán.html" class="tarjeta__boton-reservar">Reservar</a>
         </div>
       </article>
 
       <!-- Tarjeta 2 -->
       <article class="tarjeta">
         <div class="tarjeta__contenedor-imagen">
+          <span class="tarjeta__ribbon">🔥 Tendencia</span>
           <img src="/src/static/imagenes/COSAS-PORHACER/CALI/Cascadas de Pance/uno.jpg" alt="Cascadas de Pance" class="tarjeta__imagen" />
+          <span class="tarjeta__overlay">Privado · Naturaleza</span>
         </div>
         <div class="tarjeta__contenido">
           <h3 class="tarjeta__titulo">Cascadas de Pance: Caminata para descubrir la biodiversidad del valle</h3>
@@ -140,10 +184,10 @@
             <span class="tarjeta__valor-calificacion">4.9</span>
             <span class="tarjeta__estrellas">★★★★★</span>      
           </div>
-          <div class="tarjeta__info">Escapadas de un dia</div>
+          <div class="tarjeta__info">Escapadas de un día</div>
           <div class="tarjeta__info-precio">Desde $370.038</div>
-          <div class="tarjeta__por-persona">Por Adulto(El precio varia segun el tamaño del grupo)</div>
-           <a href="/src/templates/visitante/CALI/COSAS-PORHACER-CALI/Cascadas_Pance.html" class="tarjeta__boton-reservar">RESERVAR</a>
+          <div class="tarjeta__por-persona">Por Adulto (El precio varía según el tamaño del grupo)</div>
+           <a href="/src/templates/visitante/CALI/COSAS-PORHACER-CALI/Cascadas_Pance.html" class="tarjeta__boton-reservar">Reservar</a>
         </div>
       </article>
 
@@ -151,6 +195,8 @@
       <article class="tarjeta">
         <div class="tarjeta__contenedor-imagen">
           <img src="/src/static/imagenes/COSAS-PORHACER/CALI/Cristo Rey/uno.jpg" alt="Cristo rey" class="tarjeta__imagen" />
+          <span class="tarjeta__flecha">→</span>
+          <span class="tarjeta__overlay">Privado · Grupos reducidos</span>
         </div>
         <div class="tarjeta__contenido">
           <h3 class="tarjeta__titulo">Tour Cristo Rey, Museo de la Tertulia y Centro Histórico Cali</h3>
@@ -158,15 +204,37 @@
             <span class="tarjeta__valor-calificacion">4.9</span>
             <span class="tarjeta__estrellas">★★★★★</span>      
           </div>
-          <div class="tarjeta__info">Tours privados a lugares de interes</div>
+          <div class="tarjeta__info">Tours privados a lugares de interés</div>
           <div class="tarjeta__info-precio">Desde $335.704</div>
-          <div class="tarjeta__por-persona">Por Adulto(El precio varia segun el tamaño del grupo)</div>
-           <a href="/src/templates/visitante/CALI/COSAS-PORHACER-CALI/Tour_Cristo_Rey.html" class="tarjeta__boton-reservar">RESERVAR</a>
+          <div class="tarjeta__por-persona">Por Adulto (El precio varía según el tamaño del grupo)</div>
+           <a href="/src/templates/visitante/CALI/COSAS-PORHACER-CALI/Tour_Cristo_Rey.html" class="tarjeta__boton-reservar">Reservar</a>
         </div>
       </article>
 
-
     </div>
   </section>
+
+  <script>
+    // Script para animación de scroll (mismo que Bogotá/Bucaramanga)
+    const tarjetas = document.querySelectorAll('.tarjeta');
+    const observador = new IntersectionObserver((entradas) => {
+      entradas.forEach((entrada) => {
+        if (entrada.isIntersecting) {
+          entrada.target.classList.add('visible');
+          observador.unobserve(entrada.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    tarjetas.forEach((tarjeta) => observador.observe(tarjeta));
+
+    // Filtros de experiencias
+    const etiquetas = document.querySelectorAll('.experiencias__etiqueta');
+    etiquetas.forEach((etiqueta) => {
+      etiqueta.addEventListener('click', () => {
+        etiquetas.forEach((e) => e.classList.remove('experiencias__etiqueta--seleccionada'));
+        etiqueta.classList.add('experiencias__etiqueta--seleccionada');
+      });
+    });
+  </script>
 </body>
 </html>

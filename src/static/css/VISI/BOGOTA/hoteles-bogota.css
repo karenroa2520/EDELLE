@@ -47,6 +47,11 @@
 
 html { scroll-behavior: smooth; }
 
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   font-family: var(--fuente-principal);
   background-color: var(--color-crema);

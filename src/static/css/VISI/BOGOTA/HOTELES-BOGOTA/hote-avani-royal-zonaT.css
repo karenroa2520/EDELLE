@@ -1,776 +1,346 @@
-/* ==============================================
-   VARIABLES GLOBALES - BEM + THEMING
-   ============================================== */
+/* =========================================================
+   EDELLE — Vista de Detalle de Hotel (Avani Royal)
+   Paleta: Wasabi Green + Soft Lemon + Plum Noir
+   Tipografía: Fraunces (Display) + Inter (Cuerpo)
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap');
+
 :root {
-  /* --> Colores principales del sitio: azul oscuro para encabezado y pie, azules más claros para fondos, y blanco/claros para texto. */
-  --color-encabezado: #03045E;
-  --color-pie: #03045E;
-  --color-fondo-cuerpo: #033F8A;
-  --color-fondo-seccion: #448ec7;
-  --color-texto-claro: #ffffff;
-  --color-texto-secundario: #e0e0e0;
-  --color-primario: #4cc9f0;
-  --color-primario-hover: #3a9fd0;
+  --color-wasabi: #7FB800;
+  --color-wasabi-oscuro: #628F00;
+  --color-wasabi-tenue: #EDF5D6;
+  --color-limon: #FFFF66;
+  --color-limon-suave: #FFFDE3;
+  --color-ciruela: #4A1F3D;
+  --color-ciruela-suave: #6E3F5E;
+  --color-ciruela-noche: #2E1327;
+  --color-crema: #FFFCF3;
+  --color-texto-suave: #6B5568;
+  --color-blanco: #FFFFFF;
 
-  /* --> Fuente principal para todo el contenido: moderna, legible y compatible en la mayoría de dispositivos. */
-  --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --fuente-display: 'Fraunces', Georgia, serif;
+  --fuente-principal: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
-  /* --> Medidas de diseño reutilizables: bordes redondeados para botones y tarjetas, y duración de transiciones suaves. */
-  --radio-boton: 25px;
+  --radio-boton: 999px;
   --radio-tarjeta: 20px;
-  --transicion-rapida: 0.3s ease;
+  --transicion-rapida: 0.25s ease;
+  --transicion-suave: 0.7s cubic-bezier(.19,1,.22,1);
+  --sombra-suave: 0 10px 30px rgba(46, 19, 39, 0.10);
+  --sombra-fuerte: 0 16px 40px rgba(46, 19, 39, 0.20);
+  --sombra-flotante: 0 20px 50px rgba(46, 19, 39, 0.15);
 }
 
-/* --> Reseteo universal: elimina márgenes y rellenos por defecto del navegador y asegura que el ancho y alto incluyan bordes y rellenos. */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
-/* --> Estilo base del cuerpo de la página: usa la fuente definida, fondo azul oscuro y texto blanco con buen espaciado entre líneas. */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
 body {
   font-family: var(--fuente-principal);
-  background-color: var(--color-texto-claro);
-  color: var(--color-texto-claro);
+  background-color: var(--color-crema);
+  color: var(--color-ciruela);
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* === BARRA DE NAVEGACIÓN PRINCIPAL === */
-
+/* === BARRA DE NAVEGACIÓN Y SUB-HEADER (Consistencia de marca) === */
 .navbar-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: var(--color-encabezado);
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0.85rem 2.2rem;
+  background-color: rgba(74, 31, 61, 0.95);
+  backdrop-filter: blur(10px);
+  position: fixed; top: 0; width: 100%; z-index: 1000;
+  box-shadow: 0 4px 20px rgba(46, 19, 39, 0.2);
 }
-
-.logo {
-  display: flex;
-  align-items: center;
-}
-
+.logo { display: flex; align-items: center; }
 .logo-container {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  overflow: hidden;
-  background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  width: 46px; height: 46px; border-radius: 50%; overflow: hidden;
+  background-color: var(--color-crema);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 0 0 2px rgba(127, 184, 0, 0.45);
 }
-
-.logo-container img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  object-position: center;
-}
-
-nav ul {
-  display: flex;
-  list-style: none;
-  gap: 2rem;
-  margin: 0;
-  padding: 0;
-}
-
+.logo-container img { width: 100%; height: auto; object-fit: cover; }
+nav ul { display: flex; list-style: none; gap: 0.3rem; }
 nav ul li a {
-  color: var(--color-texto-claro);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1.1rem;
+  position: relative; color: var(--color-limon-suave); text-decoration: none;
+  font-weight: 500; font-size: 0.98rem; padding: 0.5rem 0.9rem;
   transition: color var(--transicion-rapida);
-  white-space: nowrap;
-  padding: 0.4rem 0.6rem;
-  border-radius: 8px;
 }
+nav ul li a:hover { color: var(--color-limon); }
+.user-icon svg { width: 22px; height: 22px; stroke: var(--color-limon); }
+.user-icon a { display: block; padding: 0.5rem; border-radius: 50%; transition: background-color var(--transicion-rapida); }
+.user-icon a:hover { background-color: rgba(255, 255, 102, 0.12); }
 
-nav ul li a:hover {
-  color: var(--color-primario);
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.user-icon svg {
-  width: 24px;
-  height: 24px;
-  stroke: var(--color-texto-claro);
-  transition: stroke var(--transicion-rapida);
-}
-
-.user-icon a {
-  display: block;
-  padding: 0.5rem;
-  border-radius: 8px;
-  transition: background-color var(--transicion-rapida);
-}
-
-.user-icon a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  stroke: var(--color-primario);
-}
-
-/* === SUB-MENU / SUB-HEADER === */
 .sub-header {
-  background: var(--color-texto-claro); /* Fondo blanco */
-  padding: 0.75rem 1rem;
-  border-bottom: 1px solid #ddd;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  margin-top: 70px; /* Espacio para que no se solape con el navbar fijo */
-  position: relative;
-  z-index: 999;
+  background-color: var(--color-crema); padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(127, 184, 0, 0.2);
+  margin-top: 82px; position: relative; z-index: 999;
 }
-
 .sub-header__container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  align-items: center;
-  justify-content: center;
+  max-width: 1200px; margin: 0 auto;
+  display: flex; flex-wrap: wrap; gap: 0.6rem;
+  align-items: center; justify-content: center;
 }
-
 .sub-header__item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--color-pie); /* Texto gris oscuro */
-  text-decoration: none;
-  font-size: 0.95rem;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  transition: all var(--transicion-rapida);
+  display: flex; align-items: center; gap: 0.5rem;
+  color: var(--color-ciruela); text-decoration: none;
+  font-size: 0.95rem; font-weight: 500; padding: 0.55rem 1.15rem;
+  border-radius: var(--radio-boton); transition: all var(--transicion-rapida);
+}
+.sub-header__item:hover, .sub-header__item--active {
+  background-color: var(--color-ciruela); color: var(--color-limon-suave);
+}
+.sub-header__item--active { font-weight: 700; }
+
+/* === HERO DEL HOTEL === */
+.hotel-main { max-width: 1300px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+
+.hotel-hero {
+  display: grid; grid-template-columns: 1fr 1.2fr; gap: 3rem;
+  align-items: center; margin-bottom: 3rem;
+}
+.hotel-hero__badge {
+  display: inline-block; background-color: var(--color-wasabi-tenue);
+  color: var(--color-wasabi-oscuro); font-weight: 700; font-size: 0.8rem;
+  padding: 0.4rem 1rem; border-radius: var(--radio-boton);
+  text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem;
+}
+.hotel-hero__title {
+  font-family: var(--fuente-display); font-size: clamp(2rem, 4vw, 2.8rem);
+  color: var(--color-ciruela); line-height: 1.15; margin-bottom: 1rem;
+}
+.hotel-hero__meta {
+  display: flex; flex-direction: column; gap: 0.5rem;
+  margin-bottom: 1.5rem; color: var(--color-texto-suave); font-size: 0.95rem;
+}
+.hotel-hero__rating { display: flex; align-items: center; gap: 0.5rem; font-weight: 600; color: var(--color-ciruela); }
+.hotel-hero__score { font-size: 1.2rem; }
+.hotel-hero__stars { color: var(--color-wasabi); letter-spacing: 2px; }
+.hotel-hero__reviews { font-weight: 400; color: var(--color-texto-suave); text-decoration: underline; }
+.hotel-hero__cta {
+  display: inline-flex; align-items: center; justify-content: center;
+  background-color: var(--color-ciruela); color: var(--color-limon-suave);
+  text-decoration: none; padding: 0.9rem 2rem; border-radius: var(--radio-boton);
+  font-weight: 700; font-size: 1rem; transition: all var(--transicion-rapida);
+}
+.hotel-hero__cta:hover { background-color: var(--color-wasabi); color: var(--color-blanco); transform: translateY(-2px); }
+
+.hotel-hero__gallery {
+  display: grid; grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr;
+  gap: 0.8rem; height: 420px;
+}
+.hotel-hero__gallery-main {
+  grid-row: 1 / 3; position: relative; border-radius: var(--radio-tarjeta); overflow: hidden;
+}
+.hotel-hero__gallery-main img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+.hotel-hero__gallery-main:hover img { transform: scale(1.03); }
+.hotel-hero__gallery-btn {
+  position: absolute; bottom: 1rem; right: 1rem;
+  background-color: rgba(255, 255, 255, 0.95); color: var(--color-ciruela);
+  border: none; padding: 0.6rem 1.2rem; border-radius: var(--radio-boton);
+  font-weight: 600; font-size: 0.9rem; cursor: pointer;
+  box-shadow: var(--sombra-suave); transition: all var(--transicion-rapida);
+}
+.hotel-hero__gallery-btn:hover { background-color: var(--color-blanco); transform: translateY(-2px); }
+.hotel-hero__gallery-thumbs { display: contents; }
+.hotel-hero__gallery-thumbs img {
+  width: 100%; height: 100%; object-fit: cover; border-radius: 16px;
+  cursor: pointer; transition: opacity var(--transicion-rapida);
+}
+.hotel-hero__gallery-thumbs img:hover { opacity: 0.85; }
+
+/* === BARRA DE RESERVA FLOTANTE === */
+.booking-bar {
+  position: sticky; top: 90px; z-index: 900;
+  background-color: var(--color-blanco); border-radius: var(--radio-tarjeta);
+  box-shadow: var(--sombra-flotante); padding: 1rem 1.5rem;
+  margin-bottom: 3rem; border: 1px solid rgba(127, 184, 0, 0.15);
+}
+.booking-bar__inner {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+}
+.booking-bar__field { display: flex; flex-direction: column; gap: 0.2rem; flex: 1; }
+.booking-bar__label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--color-texto-suave); letter-spacing: 0.05em; }
+.booking-bar__value { font-weight: 600; color: var(--color-ciruela); font-size: 0.95rem; }
+.booking-bar__divider { width: 1px; height: 40px; background-color: rgba(74, 31, 61, 0.1); }
+.booking-bar__cta {
+  background-color: var(--color-wasabi); color: var(--color-blanco);
+  padding: 0.9rem 1.8rem; border-radius: var(--radio-boton);
+  font-weight: 700; font-size: 1rem; cursor: pointer; white-space: nowrap;
+  transition: all var(--transicion-rapida); display: flex; align-items: center;
+}
+.booking-bar__cta:hover { background-color: var(--color-wasabi-oscuro); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(127, 184, 0, 0.3); }
+
+/* === GRID DE CONTENIDO === */
+.hotel-content { display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; }
+
+.content-card {
+  background-color: var(--color-blanco); border-radius: var(--radio-tarjeta);
+  padding: 2rem; margin-bottom: 2rem; box-shadow: var(--sombra-suave);
+}
+.content-card__title {
+  font-family: var(--fuente-display); font-size: 1.5rem; color: var(--color-ciruela);
+  margin-bottom: 1.2rem; padding-bottom: 0.8rem; border-bottom: 2px solid var(--color-wasabi-tenue);
+}
+.content-card__text { font-size: 1.05rem; line-height: 1.8; color: var(--color-texto-suave); }
+
+.amenities-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 1.5rem;
+}
+.amenity-item {
+  display: flex; align-items: center; gap: 0.8rem;
+  font-size: 0.95rem; color: var(--color-ciruela); font-weight: 500;
+}
+.amenity-icon {
+  width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;
+  background-color: var(--color-wasabi-tenue); border-radius: 50%; font-size: 1.1rem;
+}
+.content-card__btn {
+  background: none; border: none; color: var(--color-wasabi-oscuro);
+  font-weight: 700; font-size: 0.95rem; cursor: pointer; text-decoration: underline;
 }
 
-.sub-header__item:hover,
-.sub-header__item--active {
-  background: var(--color-encabezado); /* Azul oscuro */
-  color: var(--color-texto-claro); /* Blanco */
+/* === RESÚMEN DE RESEÑAS === */
+.reviews-summary {
+  display: flex; gap: 2rem; background-color: var(--color-wasabi-tenue);
+  padding: 1.5rem; border-radius: 16px; margin-bottom: 2rem;
 }
-
-.sub-header__item--active {
-  font-weight: bold;
+.reviews-summary__score {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  min-width: 100px; border-right: 1px solid rgba(74, 31, 61, 0.1); padding-right: 2rem;
 }
+.reviews-summary__number { font-family: var(--fuente-display); font-size: 2.5rem; font-weight: 700; color: var(--color-ciruela); }
+.reviews-summary__text { font-weight: 700; color: var(--color-wasabi-oscuro); margin: 0.2rem 0; }
+.reviews-summary__stars { color: var(--color-wasabi); font-size: 1.1rem; letter-spacing: 2px; }
+.reviews-summary__bars { flex: 1; display: flex; flex-direction: column; gap: 0.8rem; justify-content: center; }
+.bar-item { display: flex; align-items: center; gap: 1rem; font-size: 0.9rem; font-weight: 600; color: var(--color-ciruela); }
+.bar-track { flex: 1; height: 8px; background-color: rgba(74, 31, 61, 0.1); border-radius: 99px; overflow: hidden; }
+.bar-fill { height: 100%; background-color: var(--color-wasabi); border-radius: 99px; }
 
-.sub-header__icon {
-  font-size: 1.1rem;
-  color: var(--color-encabezado); /* Icono azul oscuro */
-}
-
-/* === CONTENIDO PRINCIPAL DEL HOTEL === */
-
-.hotel-detail {
-  padding-top: 50px; /* Espacio para el navbar fijo + subheader */
-  min-height: 100vh;
-}
-
-.hotel-detail__header {
-  max-width: 1200px;
-  margin: 2rem auto 1rem;
-  padding: 0 1rem;
-}
-
-.hotel-detail__title {
-  font-size: 2.2rem;
-  margin-bottom: 0.5rem;
-  color: var(--color-encabezado);
-}
-
-.hotel-detail__rating {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 0.5rem;
-  font-size: 1.2rem;
-}
-
-.hotel-detail__score {
-  font-weight: bold;
-  color: #ffcc00;
-}
-
-.hotel-detail__stars {
-  color: #ffcc00;
-}
-
-.hotel-detail__address {
-  margin-bottom: 1rem;
-  font-size: 0.9rem;
-  color: var(--color-encabezado);
-}
-
-.hotel-detail__write-review {
-  display: inline-block;
-  color: var(--color-primario);
-  text-decoration: none;
-  font-size: 0.9rem;
-  padding: 0.5rem 1rem;
-  border-radius: var(--radio-boton);
-  background: rgba(76, 201, 240, 0.2);
-  transition: var(--transicion-rapida);
-}
-
-.hotel-detail__write-review:hover {
-  background: rgba(76, 201, 240, 0.4);
-  text-decoration: underline;
-}
-
-/* === GALERÍA === */
-
-.gallery {
-  max-width: 1200px;
-  margin: 1rem auto;
-  padding: 0 1rem;
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.gallery__main {
-  position: relative;
-  flex: 1;
-  min-width: 300px;
-}
-
-.gallery__image {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-  border-radius: var(--radio-tarjeta);
-}
-
-.gallery__count {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  background: rgba(0, 0, 0, 0.7);
-  color: var(--color-encabezado);
-  padding: 0.5rem 1rem;
-  border-radius: var(--radio-boton);
-  font-size: 0.9rem;
-}
-
-.gallery__thumbnails {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  width: 150px;
-}
-
-.gallery__thumbnail {
-  width: 100%;
-  height: 100px;
-  object-fit: cover;
-  border-radius: var(--radio-tarjeta);
-  cursor: pointer;
-  border: 2px solid transparent;
-}
-
-.gallery__thumbnail:hover {
-  border-color: var(--color-encabezado);
-}
-
-/* === BANNER DE RESERVA === */
-
-.booking-banner {
-  background: var(--color-fondo-seccion);
-  padding: 1.5rem;
-  margin: 1.5rem auto;
-  max-width: 1200px;
-  border-radius: var(--radio-tarjeta);
-  text-align: center;
-}
-
-.booking-banner__title {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  color: var(--color-encabezado);
-}
-
-.booking-banner__filters {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.filter-item {
-  background: rgba(255, 255, 255, 0.9);
-  color: var(--color-encabezado);
-  padding: 0.5rem 1rem;
-  border-radius: var(--radio-boton);
-  font-size: 0.9rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.filter-value {
-  font-weight: bold;
-  margin-left: 0.5rem;
-}
-
-/* === SECCIÓN DE INFORMACIÓN === */
-
-.info-section {
-  max-width: 1200px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-}
-
-.info-section__title {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  color: var(--color-texto-claro);
-}
-
-.info-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-}
-
-.info-grid__left {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.rating-summary {
-  background: var(--color-fondo-seccion);
-  padding: 1.5rem;
-  border-radius: var(--radio-tarjeta);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  color: var(--color-encabezado);
-}
-
-.rating-summary__overall {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.rating-summary__score {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #000000;
-}
-
-.rating-summary__label {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: var(--color-encabezado);
-}
-
-.rating-summary__stars {
-  color: #ffcc00;
-  font-size: 1.2rem;
-}
-
-.rating-summary__details {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.rating-summary__detail {
-  font-size: 0.9rem;
-  color: var(--color-encabezado);
-}
-
-.description {
-  font-size: 1.02rem;
-  line-height: 1.9;
-  color: var(--color-encabezado);
-}
-
-.info-grid__right {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.services,
-.features,
-.room-types {
-  background: var(--color-texto-claro);
-  padding: 1.5rem;
-  border-radius: var(--radio-tarjeta);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  color: var(--color-encabezado);
-}
-
-.services__title,
-.features__title,
-.room-types__title {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-  font-weight: bold;
-  color: var(--color-encabezado);
-}
-
-.services__list,
-.features__list,
-.room-types__list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.services__list li,
-.features__list li,
-.room-types__list li {
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--color-encabezado);
-}
-
-.services__btn,
-.features__btn {
-  background: transparent;
-  border: none;
-  color: var(--color-encabezado);
-  text-decoration: underline;
-  cursor: pointer;
-  font-size: 0.9rem;
-  margin-top: 0.5rem;
-  padding: 0;
-}
-
-/* === BOTÓN "AGREGAR A MI TOUR" === */
-
-.cta-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 50px 0 60px;
-  width: 100%;
-}
-
-.cta-button__btn {
-  background-color: var(--color-primario);
-  color: white;
-  border: none;
-  padding: 16px 32px;
-  border-radius: var(--radio-boton);
-  font-size: 1.2rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: background-color var(--transicion-rapida);
-  width: 100%;
-  max-width: 650px;
-  box-shadow: 0 4px 12px rgba(76, 201, 240, 0.3);
-  text-align: center;
-}
-
-.cta-button__btn:hover {
-  background-color: var(--color-primario-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(76, 201, 240, 0.4);
-}
-
-/* === SECCIÓN DE RESEÑAS === */
-
-.reviews-section {
-  max-width: 1200px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-}
-
-.reviews-section__title {
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
-  border-bottom: 2px solid var(--color-encabezado);
-  padding-bottom: 0.5rem;
-  color: var(--color-encabezado);
-}
-
-.reviews-section__subtitle {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  color: var(--color-encabezado);
-}
-
+.reviews-list { display: flex; flex-direction: column; gap: 1.5rem; }
 .review-card {
-  background: var(--color-encabezado);
-  color: var(--color-texto-claro);
-  padding: 1.5rem;
-  border-radius: var(--radio-tarjeta);
-  margin-bottom: 1rem;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  background-color: var(--color-crema); border-radius: 16px; padding: 1.5rem;
+  border: 1px solid rgba(127, 184, 0, 0.15);
 }
+.review-card__header { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.8rem; }
+.review-card__avatar { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-blanco); }
+.review-card__user { display: flex; flex-direction: column; }
+.review-card__name { font-weight: 700; color: var(--color-ciruela); font-size: 1rem; }
+.review-card__date { font-size: 0.85rem; color: var(--color-texto-suave); }
+.review-card__rating { color: var(--color-wasabi); font-size: 1.1rem; letter-spacing: 2px; margin-bottom: 0.8rem; }
+.review-card__text { font-size: 0.95rem; line-height: 1.6; color: var(--color-texto-suave); margin-bottom: 1rem; }
+.review-card__meta { font-size: 0.8rem; font-weight: 600; color: var(--color-wasabi-oscuro); background-color: var(--color-wasabi-tenue); display: inline-block; padding: 0.3rem 0.8rem; border-radius: var(--radio-boton); }
 
-.review-card__header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
+/* === SIDEBAR STICKY === */
+.hotel-content__sidebar { position: relative; }
+.sidebar-card {
+  background-color: var(--color-blanco); border-radius: var(--radio-tarjeta);
+  padding: 1.8rem; box-shadow: var(--sombra-fuerte); border: 1px solid rgba(127, 184, 0, 0.1);
 }
-
-.review-card__avatar {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  object-fit: cover;
+.sticky-card { position: sticky; top: 180px; }
+.sidebar-card__price { text-align: center; margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--color-wasabi-tenue); }
+.price-label { display: block; font-size: 0.85rem; color: var(--color-texto-suave); margin-bottom: 0.3rem; }
+.price-amount { font-family: var(--fuente-display); font-size: 2.2rem; font-weight: 700; color: var(--color-ciruela); }
+.price-night { font-size: 0.9rem; color: var(--color-texto-suave); }
+.sidebar-card__features { display: flex; flex-direction: column; gap: 0.8rem; margin-bottom: 1.5rem; font-size: 0.9rem; color: var(--color-texto-suave); }
+.sidebar-card__features span { display: flex; align-items: center; gap: 0.5rem; }
+.sidebar-card__features span::before { content: '✓'; color: var(--color-wasabi); font-weight: 900; }
+.sidebar-card__cta {
+  display: block; width: 100%; text-align: center;
+  background-color: var(--color-ciruela); color: var(--color-limon-suave);
+  padding: 1rem; border-radius: var(--radio-boton); font-weight: 700; font-size: 1.05rem;
+  cursor: pointer; transition: all var(--transicion-rapida); margin-bottom: 0.8rem;
 }
+.sidebar-card__cta:hover { background-color: var(--color-wasabi); color: var(--color-blanco); transform: translateY(-2px); }
+.sidebar-card__hint { text-align: center; font-size: 0.8rem; color: var(--color-texto-suave); }
 
-.review-card__user-info {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+/* === LÓGICA DEL CARRITO (CHECKBOX HACK) === */
+.cart-control { display: none; }
+
+.cart-sidebar {
+  position: fixed; top: 0; right: -360px; width: 340px; height: 100vh;
+  background-color: var(--color-ciruela-noche); color: var(--color-limon-suave);
+  box-shadow: -10px 0 40px rgba(0,0,0,0.3); z-index: 2000;
+  transition: right 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  display: flex; flex-direction: column;
 }
+.cart-control:checked ~ .cart-sidebar { right: 0; }
 
-.review-card__name {
-  font-weight: bold;
-  font-size: 1.1rem;
+.cart-sidebar__header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.5rem; border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
+.cart-sidebar__header h3 { font-family: var(--fuente-display); font-size: 1.3rem; color: var(--color-limon); }
+.cart-sidebar__close { cursor: pointer; font-size: 1.5rem; color: var(--color-texto-suave); transition: color var(--transicion-rapida); }
+.cart-sidebar__close:hover { color: var(--color-limon); }
 
-.review-card__date {
-  font-size: 0.9rem;
-  opacity: 0.8;
-}
-
-.review-card__rating {
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
-  color: #ffcc00;
-}
-
-.review-card__content {
-  font-size: 0.9rem;
-  line-height: 1.5;
-}
-
-.review-card__meta {
-  display: flex;
-  gap: 1rem;
-  margin-top: 0.5rem;
-  font-size: 0.8rem;
-  opacity: 0.8;
-}
-
-.review-card--placeholder {
-  background: #f0f0f0;
-  color: #666;
-  text-align: center;
-  padding: 3rem;
-}
-
-.review-card__placeholder-content {
-  font-size: 1rem;
-  font-style: italic;
-}
-
-/* --- LÓGICA DEL CARRITO (CHECKBOX HACK) --- */
-.cart-control { 
-  display: none; 
-}
-
-/* RESERVA */
-.reserva {
-  position: fixed;
-  right: -320px; 
-  top: 80px;
-  width: 280px;
-  background-color: var(--color-fondo-seccion);
-  box-shadow: -10px 0 30px rgba(0,0,0,0.1);
-  padding: 2rem;
-  border-radius: 20px 0 0 20px;
-  transition: right 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  z-index: 100;
-  border-left: 6px solid #03045E;
-}
-
-.reserva h3 { 
-  margin-top: 0; 
-  border-bottom: 1px solid #eee; 
-  padding-bottom: 10px; 
-}
-
+.cart-sidebar__body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
 .cart-item {
-  display: none; 
-  font-size: 0.9rem;
-  margin-bottom: 12px;
-  justify-content: space-between;
+  display: flex; justify-content: space-between; align-items: flex-start;
+  background-color: rgba(255, 255, 255, 0.05); padding: 1rem; border-radius: 12px; margin-bottom: 1.5rem;
 }
+.cart-item__name { display: block; font-weight: 700; color: var(--color-blanco); margin-bottom: 0.3rem; }
+.cart-item__desc { display: block; font-size: 0.85rem; color: var(--color-texto-suave); }
+.cart-item__price { font-family: var(--fuente-display); font-size: 1.2rem; color: var(--color-limon); font-weight: 700; }
 
-.cart-item b { 
-  color: #000000; 
+.cart-sidebar__total {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: auto; padding-top: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 1.1rem; color: var(--color-blanco);
 }
+.cart-sidebar__total strong { font-family: var(--fuente-display); font-size: 1.5rem; color: var(--color-limon); }
 
-/* Activar sidebar y items cuando el checkbox está checked */
-.cart-control:checked ~ .reserva {
-  right: 0;
+.cart-sidebar__checkout {
+  display: block; text-align: center; background-color: var(--color-wasabi);
+  color: var(--color-blanco); text-decoration: none; padding: 1rem;
+  border-radius: var(--radio-boton); font-weight: 700; margin-top: 1rem;
+  transition: background-color var(--transicion-rapida);
 }
+.cart-sidebar__checkout:hover { background-color: var(--color-wasabi-oscuro); }
+.cart-sidebar__hint { text-align: center; font-size: 0.8rem; color: var(--color-texto-suave); margin-top: 1rem; }
 
-.cart-control:checked ~ .reserva .cart-item {
-  display: flex;
-}
-
-/* Ventana Emergente (Toast) */
+/* === TOAST NOTIFICATION === */
 .notice-container {
-  position: fixed;
-  top: -100px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1000;
-  transition: top 0.5s;
+  position: fixed; top: -100px; left: 50%; transform: translateX(-50%);
+  z-index: 3000; transition: top 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
-
+.cart-control:checked ~ .notice-container { top: 100px; }
 .notice {
-  background-color: var(--color-primario-hover);
-  color: white;
-  padding: 1rem 2rem;
-  border-radius: 50px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-  font-weight: bold;
+  background-color: var(--color-wasabi); color: var(--color-blanco);
+  padding: 1rem 2rem; border-radius: var(--radio-boton);
+  font-weight: 700; font-size: 1rem; box-shadow: var(--sombra-fuerte);
+  display: flex; align-items: center; gap: 0.8rem;
 }
+.notice span { font-size: 1.2rem; }
 
-/* Mostrar notificación cuando se marca el checkbox */
-.cart-control:checked ~ .notice-container {
-  top: 20px;
+/* === RESPONSIVE === */
+@media (max-width: 1024px) {
+  .hotel-content { grid-template-columns: 1fr; }
+  .hotel-content__sidebar { order: -1; margin-bottom: 2rem; }
+  .sticky-card { position: static; }
 }
-
-
-
-/* ==============================================
-   RESPONSIVE - MOBILE FIRST
-   ============================================== */
 
 @media (max-width: 768px) {
-  .navbar-container {
-    padding: 0.75rem 1rem;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  nav ul {
-    gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .hotel-detail__header {
-    margin: 1.5rem auto;
-    padding: 0 0.5rem;
-  }
-
-  .hotel-detail__title {
-    font-size: 1.8rem;
-  }
-
-  .gallery {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .gallery__main {
-    min-width: auto;
-  }
-
-  .gallery__image {
-    height: 300px;
-  }
-
-  .gallery__thumbnails {
-    width: 100%;
-    flex-direction: row;
-    overflow-x: auto;
-    gap: 0.5rem;
-  }
-
-  .booking-banner {
-    padding: 1rem;
-    margin: 1rem auto;
-  }
-
-  .booking-banner__title {
-    font-size: 1.5rem;
-  }
-
-  .info-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .cta-section__btn {
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-  }
-
-  .reviews-section {
-    padding: 0 0.5rem;
-  }
-
-  .review-card {
-    padding: 1rem;
-  }
-
-  /* Submenu Responsive */
-  .sub-header__container {
-    gap: 0.75rem;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-  }
-
-  .sub-header__item {
-    font-size: 0.85rem;
-    padding: 0.4rem 0.8rem;
-  }
-
-  .sub-header {
-    margin-top: 60px;
-    padding: 0.5rem 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .navbar-container {
-    padding: 0.5rem 1rem;
-  }
-
-  nav ul li a {
-    font-size: 0.9rem;
-    padding: 0.4rem 0.6rem;
-  }
-
-  .hotel-detail__title {
-    font-size: 1.5rem;
-  }
-
-  .review-card__name {
-    font-size: 1rem;
-  }
-
-  .review-card__date {
-    font-size: 0.8rem;
-  }
-
-  .review-card__rating {
-    font-size: 1rem;
-  }
-
-  .review-card__meta {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .sub-header__item {
-    font-size: 0.8rem;
-    padding: 0.4rem 0.6rem;
-  }
+  .navbar-container { padding: 1rem; }
+  nav ul { display: none; } /* En móvil real se usaría un menú hamburguesa */
+  
+  .hotel-hero { grid-template-columns: 1fr; gap: 1.5rem; }
+  .hotel-hero__gallery { height: 300px; }
+  
+  .booking-bar { position: static; margin-bottom: 2rem; padding: 1rem; }
+  .booking-bar__inner { flex-direction: column; align-items: stretch; gap: 1rem; }
+  .booking-bar__divider { display: none; }
+  .booking-bar__cta { justify-content: center; }
+  
+  .amenities-grid { grid-template-columns: 1fr; }
+  
+  .reviews-summary { flex-direction: column; gap: 1.5rem; text-align: center; }
+  .reviews-summary__score { border-right: none; border-bottom: 1px solid rgba(74, 31, 61, 0.1); padding-right: 0; padding-bottom: 1rem; }
 }
