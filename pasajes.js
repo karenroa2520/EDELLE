@@ -23,7 +23,6 @@ const CIUDADES_DB = [
   { val: 'alban', label: 'Albán', dept: 'cundinamarca' },
   { val: 'madrid', label: 'Madrid', dept: 'cundinamarca' },
   { val: 'mosquera', label: 'Mosquera', dept: 'cundinamarca' },
-  { val: 'sotome', label: 'Subachoque/Sotaquirá?', dept: 'cundinamarca' }, // Asumí Sotaquirá o corrección ortográfica
 
   // ANTIOQUIA
   { val: 'medellin', label: 'Medellín', dept: 'antioquia' },
@@ -40,7 +39,6 @@ const CIUDADES_DB = [
   { val: 'arboletes', label: 'Arboletes', dept: 'antioquia' },
   { val: 'copacabana', label: 'Copacabana', dept: 'antioquia' },
   { val: 'llanos-cuiva', label: 'Llanos de Cuivá', dept: 'antioquia' },
-  { val: 'p-serviez', label: 'Puerto Serviez', dept: 'antioquia' },
   { val: 'rionegro', label: 'Rionegro', dept: 'antioquia' },
 
   // BOLIVAR
@@ -59,17 +57,13 @@ const CIUDADES_DB = [
   { val: 'bayunca', label: 'Bayunca', dept: 'bolivar' },
   { val: 'calamar', label: 'Calamar', dept: 'bolivar' },
   { val: 'cicuco', label: 'Cicuco', dept: 'bolivar' },
-  { val: 'juan-arias', label: 'Juan Arias', dept: 'bolivar' },
   { val: 'los-pendales', label: 'Los Pendales', dept: 'bolivar' },
   { val: 'mahates', label: 'Mahates', dept: 'bolivar' },
-  { val: 'malaga', label: 'Málaga', dept: 'bolivar' },
   { val: 'santa-catalina', label: 'Santa Catalina', dept: 'bolivar' },
 
   // CESAR
   { val: 'valledupar', label: 'Valledupar', dept: 'cesar' },
   { val: 'san-martin', label: 'San Martín', dept: 'cesar' },
-  { val: 'la-mata', label: 'La Mata', dept: 'cesar' },
-  { val: 'san-roque', label: 'San Roque', dept: 'cesar' },
   { val: 'bosconia', label: 'Bosconia', dept: 'cesar' },
   { val: 'aguachica', label: 'Aguachica', dept: 'cesar' },
   { val: 'codazzi', label: 'Codazzi', dept: 'cesar' },
@@ -78,15 +72,7 @@ const CIUDADES_DB = [
   { val: 'becerril', label: 'Becerril', dept: 'cesar' },
   { val: 'chiriguana', label: 'Cruce de Chiriguana', dept: 'cesar' },
   { val: 'el-copey', label: 'El Copey', dept: 'cesar' },
-  { val: 'pelaya', label: 'Pelaya', dept: 'cesar' },
-  { val: 'drumman', label: 'Puente Drumman', dept: 'cesar' },
   { val: 'chimichagua', label: 'Chimichagua', dept: 'cesar' },
-  { val: 'cuatro-vientos', label: 'Cuatro Vientos', dept: 'cesar' },
-  { val: 'la-paz', label: 'La Paz', dept: 'cesar' },
-  { val: 'el-burro', label: 'El Burro', dept: 'cesar' },
-  { val: 'el-paso', label: 'El Paso', dept: 'cesar' },
-  { val: 'balsamo', label: 'Loma del Bálsamo', dept: 'cesar' },
-  { val: 'aguas-blancas', label: 'Aguas Blancas', dept: 'cesar' },
   { val: 'urimita', label: 'Urimita', dept: 'cesar' },
 
   // MAGDALENA
@@ -94,17 +80,11 @@ const CIUDADES_DB = [
   { val: 'cienaga', label: 'Ciénaga', dept: 'magdalena' },
   { val: 'plato', label: 'Plato', dept: 'magdalena' },
   { val: 'el-banco', label: 'El Banco', dept: 'magdalena' },
-  { val: 'mendihuaca', label: 'Mendihuaca', dept: 'magdalena' },
-  { val: 'fundacion', label: 'Fundación', dept: 'magdalena' },
-  { val: 'guamal', label: 'Guamal', dept: 'magdalena' },
-  { val: 'el-dificil', label: 'El Difícil', dept: 'magdalena' },
-  { val: 'mamatoco', label: 'Mamatoco', dept: 'magdalena' },
   { val: 'santa-ana', label: 'Santa Ana', dept: 'magdalena' },
   { val: 'aracatoca', label: 'Aracataca', dept: 'magdalena' },
   { val: 'tayrona', label: 'Tayrona', dept: 'magdalena' },
   { val: 'buritaca', label: 'Buritaca', dept: 'magdalena' },
   { val: 'tamalameque', label: 'Tamalameque', dept: 'magdalena' },
-  { val: 'tucurinca', label: 'Tucurinca', dept: 'magdalena' },
 
   // CORDOBA
   { val: 'monteria', label: 'Montería', dept: 'cordoba' },
@@ -113,58 +93,37 @@ const CIUDADES_DB = [
   { val: 'sahagun', label: 'Sahagún', dept: 'cordoba' },
   { val: 'planeta-rica', label: 'Planeta Rica', dept: 'cordoba' },
   { val: 'chinu', label: 'Chinú', dept: 'cordoba' },
-  { val: 'la-apartada', label: 'La Apartada', dept: 'cordoba' },
   { val: 'cienaga-oro', label: 'Ciénaga de Oro', dept: 'cordoba' },
   { val: 'san-antero', label: 'San Antero', dept: 'cordoba' },
   { val: 'monteelibano', label: 'Montelíbano', dept: 'cordoba' },
-  { val: 'el-viajano', label: 'El Viajano', dept: 'cordoba' },
-  { val: 'la-ye', label: 'La Ye', dept: 'cordoba' },
-  { val: 'el-quince', label: 'El Quince', dept: 'cordoba' },
-  { val: 'tierralta', label: 'Tierralta', dept: 'cordoba' },
-  { val: 'buenavista', label: 'Buenavista', dept: 'cordoba' },
   { val: 'san-pelayo', label: 'San Pelayo', dept: 'cordoba' },
 
   // SUCRE
   { val: 'sincelejo', label: 'Sincelejo', dept: 'sucre' },
   { val: 'covenas', label: 'Coveñas', dept: 'sucre' },
   { val: 'corozal', label: 'Corozal', dept: 'sucre' },
-  { val: 'tolu', label: 'Tolú', dept: 'sucre' },
   { val: 'san-onofre', label: 'San Onofre', dept: 'sucre' },
-  { val: 'san-pedro', label: 'San Pedro', dept: 'sucre' },
   { val: 'sampues', label: 'Sampués', dept: 'sucre' },
-  { val: 'ovejas', label: 'Ovejas', dept: 'sucre' },
   { val: 'san-marcos', label: 'San Marcos', dept: 'sucre' },
-  { val: 'tolu-viejo', label: 'Tolú Viejo', dept: 'sucre' },
-  { val: 'puerta-hierro', label: 'Puerta de Hierro', dept: 'sucre' },
-  { val: 'el-pinal', label: 'El Piñal', dept: 'sucre' },
-  { val: 'galeras', label: 'Galeras', dept: 'sucre' },
   { val: 'palmitos', label: 'Los Palmitos', dept: 'sucre' },
   { val: 'betulia', label: 'San Juan de Betulia', dept: 'sucre' },
-
+  
   // LA GUAJIRA
   { val: 'maicao', label: 'Maicao', dept: 'guajira' },
   { val: 'riohacha', label: 'Riohacha', dept: 'guajira' },
-  { val: 'camarones', label: 'Camarones', dept: 'guajira' },
-  { val: 'fonseca', label: 'Fonseca', dept: 'guajira' },
   { val: 'palomino', label: 'Palomino', dept: 'guajira' },
   { val: 'albania-guajira', label: 'Albania', dept: 'guajira' },
-  { val: 'cuatro-vias-guajira', label: 'Cuatro Vías', dept: 'guajira' },
   { val: 'san-juan-cesar', label: 'San Juan del Cesar', dept: 'guajira' },
   { val: 'hatonuevo', label: 'Hatonuevo', dept: 'guajira' },
   { val: 'barrancas', label: 'Barrancas', dept: 'guajira' },
-  { val: 'mingueo', label: 'Mingueo', dept: 'guajira' },
-  { val: 'villanueva', label: 'Villanueva', dept: 'guajira' },
   { val: 'distraccion', label: 'Distracción', dept: 'guajira' },
-  { val: 'ariguani', label: 'Ariguaní', dept: 'guajira' },
   { val: 'carraipia', label: 'Carraipia', dept: 'guajira' },
   { val: 'dibulla', label: 'Dibulla', dept: 'guajira' },
-  { val: 'el-molino', label: 'El Molino', dept: 'guajira' },
   { val: 'paraguachon', label: 'Paraguachón', dept: 'guajira' },
 
   // SANTANDER
   { val: 'bucaramanga', label: 'Bucaramanga', dept: 'santander' },
   { val: 'barrancabermeja', label: 'Barrancabermeja', dept: 'santander' },
-  { val: 'la-gomez', label: 'La Gómez', dept: 'santander' },
   { val: 'dagota', label: 'Dagota', dept: 'santander' },
   { val: 'p-araujo', label: 'Puerto Araujo', dept: 'santander' },
   { val: 'la-lisama', label: 'La Lisama', dept: 'santander' },
@@ -175,14 +134,13 @@ const CIUDADES_DB = [
   { val: 'barbosa', label: 'Barbosa', dept: 'santander' },
   { val: 'oiba', label: 'Oiba', dept: 'santander' },
   { val: 'el-playon', label: 'El Playón', dept: 'santander' },
-  { val: 'km-23', label: 'Kilómetro 23', dept: 'santander' },
   { val: 'olival', label: 'Olival', dept: 'santander' },
   { val: 'berlin', label: 'Berlín', dept: 'santander' },
   { val: 'cimitarra', label: 'Cimitarra', dept: 'santander' },
   { val: 'floridablanca', label: 'Floridablanca', dept: 'santander' },
   { val: 'giron', label: 'Girón', dept: 'santander' },
   { val: 'p-parra', label: 'Puerto Parra', dept: 'santander' },
-
+  
   // VALLE DEL CAUCA
   { val: 'cali', label: 'Cali', dept: 'valle' },
   { val: 'buga', label: 'Buga', dept: 'valle' },

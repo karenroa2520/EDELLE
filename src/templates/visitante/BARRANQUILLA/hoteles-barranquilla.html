@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hoteles en Barranquilla| Krenga</title>
+  <link rel="stylesheet" href="/src/static/css/VISI/BARRANQUILLA/hoteles-barranquilla.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="navbar-container">
+      <div class="logo">
+        <div class="logo-container">
+          <img src="/src/static/imagenes/INICIO/icono-krenga.svg" alt="krenga - Tu Próxima Gran Aventura" />
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/index.html">Inicio</a></li>
+          <li><a href="/src/templates/visitante/quienes-somos.html">Quienes Somos</a></li>
+          <li><a href="/src/templates/visitante/servicios.html">Servicios</a></li>
+          <li><a href="/src/templates/visitante/destinos.html">Destinos</a></li>
+          <li><a href="/src/templates/visitante/pasajes.html">Pasajes</a></li>
+        </ul>
+      </nav>
+      <div class="user-icon">
+        <a href="#" title="Iniciar Sesión">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-5.656-3.656L12 17l-2.344-2.344A4 4 0 0 0 4 17v2"></path>
+            <circle cx="12" cy="9" r="4"></circle>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Migas de la ciudad -->
+  <section class="sub-header">
+    <div class="sub-header__container">
+      <a href="#" class="sub-header__item">
+        <span class="sub-header__icon">📍</span>
+        Barranquilla
+      </a>
+      <a href="/src/templates/visitante/BARRANQUILLA/hoteles-barranquilla.html" class="sub-header__item sub-header__item--active">Hoteles</a>
+      <a href="/src/templates/visitante/BARRANQUILLA/cosas-porHacer-barranquilla.html" class="sub-header__item">Cosas Por Hacer</a>
+      <a href="/src/templates/visitante/BARRANQUILLA/restaurantes-barranquilla.html" class="sub-header__item">Restaurantes</a>
+    </div>
+  </section>
+
+  <!-- Hero con video enmarcado -->
+  <section class="hero">
+    <div class="hero__frame">
+      <video autoplay muted loop playsinline class="hero__video">
+        <source src="https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-city-traffic-at-night-11-large.mp4" type="video/mp4" />
+      </video>
+      <div class="hero__overlay"></div>
+
+      <div class="hero__content">
+        <span class="hero__eyebrow"><span class="linea"></span>Barranquilla, Colombia</span>
+        <h1 class="hero__title">Encuentra dónde alojarte en <em>la capital de los Andes</em></h1>
+      </div>
+    </div>
+
+    <form class="hero__filters">
+      <div class="filter-date-item">
+        <label for="checkin" class="filter-date-label">Check-in</label>
+        <input type="date" id="checkin" class="filter-date-input" />
+      </div>
+      <div class="filter-date-item">
+        <label for="checkout" class="filter-date-label">Check-out</label>
+        <input type="date" id="checkout" class="filter-date-input" />
+      </div>
+      <div class="filter-select-item">
+        <label for="guests" class="filter-select-label">Huéspedes / Habitaciones</label>
+        <select id="guests" class="filter-select-input">
+          <option value="1-1">1 huésped, 1 habitación</option>
+          <option value="2-1">2 huéspedes, 1 habitación</option>
+          <option value="2-2">2 huéspedes, 2 habitaciones</option>
+          <option value="3-1">3 huéspedes, 1 habitación</option>
+          <option value="3-2">3 huéspedes, 2 habitaciones</option>
+          <option value="4-1">4 huéspedes, 1 habitación</option>
+          <option value="4-2">4 huéspedes, 2 habitaciones</option>
+          <option value="4-3">4 huéspedes, 3 habitaciones</option>
+          <option value="5-2">5 huéspedes, 2 habitaciones</option>
+          <option value="5-3">5 huéspedes, 3 habitaciones</option>
+        </select>
+      </div>
+      <button type="submit" class="hero__buscar">Buscar hoteles</button>
+    </form>
+  </section>
+
+  <!-- Filtros rápidos -->
+  <section class="filters">
+    <div class="filters__container">
+      <span class="filters__title">FILTROS</span>
+      <button type="button" class="filters__chip filters__chip--active">Todos</button>
+      <button type="button" class="filters__chip">Desayuno incluido</button>
+      <button type="button" class="filters__chip">Piscina</button>
+      <button type="button" class="filters__chip">Admite mascotas</button>
+      <button type="button" class="filters__chip">Vista a la ciudad</button>
+    </div>
+  </section>
+
+  <!-- Sección de Hoteles -->
+  <section class="hotels-section">
+    <div class="hotels-section__header">
+      <h2 class="hotels-section__title">Las mejores elecciones de los aventureros</h2>
+      <a href="#" class="hotels-section__view-all">Ver todos</a>
+    </div>
+
+    <div class="hotels-grid">
+
+      <!-- Hotel 1 -->
+      <article class="hotel-card">
+        <div class="hotel-card__media">
+          <img src="/src/static/imagenes/HOTELES/BARRANQUILLA/Barranquilla-Marriott-Hotel/1.jpg" alt="Barranquilla Marriott Hotel" class="hotel-card__image" />
+          <span class="hotel-card__badge">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6L22 9.3l-5 4.9L18.2 22 12 18.3 5.8 22 7 14.2 2 9.3l7.1-.7z"/></svg>
+            4.0
+          </span>
+          <button type="button" class="hotel-card__fav" aria-label="Guardar en favoritos">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+          </button>
+        </div>
+        <div class="hotel-card__content">
+          <h3 class="hotel-card__name">Barranquilla Marriott Hotel</h3>
+          <div class="hotel-card__rating">
+            <span class="hotel-card__stars">★★★★☆</span>
+            <span>Excelente</span>
+          </div>
+          <div class="hotel-card__price">
+            <span class="hotel-card__label">Desde</span>
+            <span class="hotel-card__amount">$478.459</span>
+          </div>
+          <a href="/src/templates/visitante/BARRANQUILLA/HOTELES-BARRANQUILLA/Barranquilla Marriott Hotel.html" class="hotel-card__btn">Consultar disponibilidad</a>
+        </div>
+      </article>
+
+      <!-- Hotel 2 -->
+      <article class="hotel-card">
+        <div class="hotel-card__media">
+          <img src="/src/static/imagenes/HOTELES/BARRANQUILLA/Faranda-Collection-Barranquilla/1.jpg" alt="Faranda Collection Barranquilla" class="hotel-card__image" />
+          <span class="hotel-card__badge">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6L22 9.3l-5 4.9L18.2 22 12 18.3 5.8 22 7 14.2 2 9.3l7.1-.7z"/></svg>
+            4.9
+          </span>
+          <button type="button" class="hotel-card__fav" aria-label="Guardar en favoritos">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+          </button>
+        </div>
+        <div class="hotel-card__content">
+          <h3 class="hotel-card__name">Faranda Collection Barranquilla</h3>
+          <div class="hotel-card__rating">
+            <span class="hotel-card__stars">★★★★★</span>
+            <span>Muy bueno</span>
+          </div>
+          <div class="hotel-card__price">
+            <span class="hotel-card__label">Desde</span>
+            <span class="hotel-card__amount">$268.470</span>
+          </div>
+          <a href="/src/templates/visitante/BARRANQUILLA/HOTELES-BARRANQUILLA/Faranda Collection Barranquilla.html" class="hotel-card__btn">Consultar disponibilidad</a>
+        </div>
+      </article>
+
+      <!-- Hotel 3 -->
+      <article class="hotel-card">
+        <div class="hotel-card__media">
+          <img src="/src/static/imagenes/HOTELES/BARRANQUILLA/Estelar-Alto-Prado-Hotel/1.jpg" alt="Estelar En Alto Prado Hotel" class="hotel-card__image" />
+          <span class="hotel-card__badge">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6L22 9.3l-5 4.9L18.2 22 12 18.3 5.8 22 7 14.2 2 9.3l7.1-.7z"/></svg>
+            4.5
+          </span>
+          <button type="button" class="hotel-card__fav" aria-label="Guardar en favoritos">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+          </button>
+        </div>
+        <div class="hotel-card__content">
+          <h3 class="hotel-card__name">Estelar En Alto Prado Hotel</h3>
+          <div class="hotel-card__rating">
+            <span class="hotel-card__stars">★★★★☆</span>
+            <span>Muy bueno</span>
+          </div>
+          <div class="hotel-card__price">
+            <span class="hotel-card__label">Desde</span>
+            <span class="hotel-card__amount">$255.881</span>
+          </div>
+          <a href="/src/templates/visitante/BOGOTA/HOTELES-BOGOTA/avani-royal-zonaT.html" class="hotel-card__btn">Consultar disponibilidad</a>
+        </div>
+      </article>
+
+      <!-- Hotel 4 -->
+      <article class="hotel-card">
+        <div class="hotel-card__media">
+          <img src="/src/static/imagenes/HOTELES/BARRANQUILLA/NH-Collection-Barranquilla/1.jpg" alt="NH Collection Barranquilla Smartsuites Royal" class="hotel-card__image" />
+          <span class="hotel-card__badge">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6L22 9.3l-5 4.9L18.2 22 12 18.3 5.8 22 7 14.2 2 9.3l7.1-.7z"/></svg>
+            4.3
+          </span>
+          <button type="button" class="hotel-card__fav" aria-label="Guardar en favoritos">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+          </button>
+        </div>
+        <div class="hotel-card__content">
+          <h3 class="hotel-card__name">NH Collection Barranquilla Smartsuites Royal</h3>
+          <div class="hotel-card__rating">
+            <span class="hotel-card__stars">★★★★☆</span>
+            <span>Excelente</span>
+          </div>
+          <div class="hotel-card__price">
+            <span class="hotel-card__label">Desde</span>
+            <span class="hotel-card__amount">$245.122</span>
+          </div>
+          <a href="#" class="hotel-card__btn">Consultar disponibilidad</a>
+        </div>
+      </article>
+
+      <!-- Hotel 5 -->
+      <article class="hotel-card">
+        <div class="hotel-card__media">
+          <img src="/src/static/imagenes/HOTELES/BARRANQUILLA/Hilton-Garden-Inn-Barranquilla/1.jpg" alt="Hilton Garden Inn Barranquilla" class="hotel-card__image" />
+          <span class="hotel-card__badge">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6L22 9.3l-5 4.9L18.2 22 12 18.3 5.8 22 7 14.2 2 9.3l7.1-.7z"/></svg>
+            4.4
+          </span>
+          <button type="button" class="hotel-card__fav" aria-label="Guardar en favoritos">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+          </button>
+        </div>
+        <div class="hotel-card__content">
+          <h3 class="hotel-card__name">Hilton Garden Inn Barranquilla</h3>
+          <div class="hotel-card__rating">
+            <span class="hotel-card__stars">★★★★☆</span>
+            <span>Muy bueno</span>
+          </div>
+          <div class="hotel-card__price">
+            <span class="hotel-card__label">Desde</span>
+            <span class="hotel-card__amount">$249.122</span>
+          </div>
+          <a href="#" class="hotel-card__btn">Consultar disponibilidad</a>
+        </div>
+      </article>
+
+      <!-- Hotel 6 -->
+      <article class="hotel-card">
+        <div class="hotel-card__media">
+          <img src="/src/static/imagenes/HOTELES/BARRANQUILLA/Howard-Johnson-Hotel-Versalles/1.jpg" alt="Howard Johnson Hotel Versalles Barranquilla" class="hotel-card__image" />
+          <span class="hotel-card__badge">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6L22 9.3l-5 4.9L18.2 22 12 18.3 5.8 22 7 14.2 2 9.3l7.1-.7z"/></svg>
+            4.5
+          </span>
+          <button type="button" class="hotel-card__fav" aria-label="Guardar en favoritos">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+          </button>
+        </div>
+        <div class="hotel-card__content">
+          <h3 class="hotel-card__name">Howard Johnson Hotel Versalles Barranquilla</h3>
+          <div class="hotel-card__rating">
+            <span class="hotel-card__stars">★★★★☆</span>
+            <span>Muy bueno</span>
+          </div>
+          <div class="hotel-card__price">
+            <span class="hotel-card__label">Desde</span>
+            <span class="hotel-card__amount">$224.400</span>
+          </div>
+          <a href="#" class="hotel-card__btn">Consultar disponibilidad</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Pie de página (idéntico al de la home) -->
+  <footer>
+    <div class="footer-column">
+      <h4>EDELLE</h4>
+      <p>Tu próxima gran aventura empieza aquí. Rutas, hoteles y experiencias curadas por viajeros para viajeros.</p>
+    </div>
+    <div class="footer-column">
+      <h4>Explora</h4>
+      <a href="/src/templates/visitante/destinos.html">Destinos</a>
+      <a href="/src/templates/visitante/servicios.html">Servicios</a>
+      <a href="/src/templates/visitante/pasajes.html">Pasajes</a>
+    </div>
+    <div class="footer-column">
+      <h4>Recibe ofertas de viaje</h4>
+      <form>
+        <input type="email" placeholder="Tu correo electrónico" />
+        <button type="submit" class="boton-suscribir">Suscribirme</button>
+      </form>
+    </div>
+  </footer>
+
+  <script>
+    // Revela las tarjetas de hoteles al hacer scroll, igual que en la home.
+    const tarjetas = document.querySelectorAll('.hotel-card');
+    const observador = new IntersectionObserver((entradas) => {
+      entradas.forEach((entrada) => {
+        if (entrada.isIntersecting) {
+          entrada.target.classList.add('visible');
+          observador.unobserve(entrada.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    tarjetas.forEach((tarjeta) => observador.observe(tarjeta));
+
+    // Filtros rápidos: alterna el estado activo del chip pulsado.
+    const chips = document.querySelectorAll('.filters__chip');
+    chips.forEach((chip) => {
+      chip.addEventListener('click', () => {
+        chips.forEach((c) => c.classList.remove('filters__chip--active'));
+        chip.classList.add('filters__chip--active');
+      });
+    });
+  </script>
+
+</body>
+</html>

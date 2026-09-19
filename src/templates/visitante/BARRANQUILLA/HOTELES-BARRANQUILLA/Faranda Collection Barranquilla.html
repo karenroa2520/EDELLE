@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Faranda Collection Barranquilla | Krenga</title>
+  <!-- Vinculamos el CSS específico para este diseño -->
+  <link rel="stylesheet" href="/src/static/css/VISI/BARRANQUILLA/Hotel-barranquilla-general.css" />
+</head>
+<body>
+
+  <!-- CHECKBOX HACK PARA EL CARRITO (Debe ir al inicio para que el selector ~ funcione) -->
+  <input type="checkbox" id="cart-toggle" class="cart-control">
+
+  <!-- Header Principal -->
+  <header>
+    <div class="navbar-container">
+      <div class="logo">
+        <div class="logo-container">
+          <img src="/src/static/imagenes/INICIO/icono-krenga.svg" alt="Edelle - Tu Próxima Gran Aventura" />
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/index.html">Inicio</a></li>
+          <li><a href="/src/templates/visitante/quienes-somos.html">Quienes Somos</a></li>
+          <li><a href="/src/templates/visitante/servicios.html">Servicios</a></li>
+          <li><a href="/src/templates/visitante/destinos.html">Destinos</a></li>
+          <li><a href="/src/templates/visitante/pasajes.html">Pasajes</a></li>
+        </ul>
+      </nav>
+      <div class="user-icon">
+        <a href="/src/templates/comprador/login.html" title="Iniciar Sesión">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-5.656-3.656L12 17l-2.344-2.344A4 4 0 0 0 4 17v2"></path>
+            <circle cx="12" cy="9" r="4"></circle>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sub-header / Submenu -->
+  <section class="sub-header">
+    <div class="sub-header__container">
+      <a href="/src/templates/visitante/BARRANQUILLA/BARRANQUILLA.html" class="sub-header__item">
+        <span class="sub-header__icon">📍</span> Barranquilla
+      </a>
+      <a href="/src/templates/visitante/BARRANQUILLA/hoteles-barranquilla.html" class="sub-header__item sub-header__item--active">Hoteles</a>
+      <a href="/src/templates/visitante/BARRANQUILLA/cosas-porHacer-barranquilla.html" class="sub-header__item">Cosas Por Hacer</a>
+      <a href="/src/templates/visitante/BARRANQUILLA/restaurantes-barranquilla.html" class="sub-header__item">Restaurantes</a>
+    </div>
+  </section>
+
+  <main class="hotel-main">
+    
+    <!-- Hero Section: Título + Galería Mosaico -->
+    <section class="hotel-hero">
+      <div class="hotel-hero__content">
+        <span class="hotel-hero__badge">Faranda Collection Barranquilla</span>
+        <h1 class="hotel-hero__title">Faranda Collection Barranquilla</h1>
+        <div class="hotel-hero__meta">
+          <span class="hotel-hero__rating">
+            <span class="hotel-hero__score">4.9</span>
+            <span class="hotel-hero__stars">★★★★★</span>
+            <span class="hotel-hero__reviews">(Excelente)</span>
+          </span>
+          <span class="hotel-hero__address">📍 Portal del Genovés, Cl. 1A #25-40 Lote D7, Sabanilla Montecarmelo</span>
+        </div>
+        <a href="#reservar" class="hotel-hero__cta">Consultar disponibilidad</a>
+      </div>
+
+      <div class="hotel-hero__gallery">
+        <div class="hotel-hero__gallery-main">
+          <img src="/src/static/imagenes/HOTELES/BARRANQUILLA/Barranquilla-Marriott-Hotel/1.jpg" alt="Interior del hotel Casa Legado" />
+          <button class="hotel-hero__gallery-btn">📷 Ver 50 fotos</button>
+        </div>
+        <div class="hotel-hero__gallery-thumbs">
+          <img src="/src/static/imagenes/HOTELES/BARRANQUILLA/Barranquilla-Marriott-Hotel/2.jpg" alt="Habitación temática" />
+          <img src="/src/static/imagenes/HOTELES/BARRANQUILLA/Barranquilla-Marriott-Hotel/3.jpg" alt="Área social" />
+          <img src="/src/static/imagenes/HOTELES/BARRANQUILLA/Barranquilla-Marriott-Hotel/4.jpg" alt="Arquitectura años 50s" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Barra de Reserva Flotante -->
+    <section class="booking-bar" id="reservar">
+      <div class="booking-bar__inner">
+        <div class="booking-bar__field">
+          <span class="booking-bar__label">Llegada</span>
+          <span class="booking-bar__value">Seleccionar fecha</span>
+        </div>
+        <div class="booking-bar__divider"></div>
+        <div class="booking-bar__field">
+          <span class="booking-bar__label">Salida</span>
+          <span class="booking-bar__value">Seleccionar fecha</span>
+        </div>
+        <div class="booking-bar__divider"></div>
+        <div class="booking-bar__field">
+          <span class="booking-bar__label">Huéspedes</span>
+          <span class="booking-bar__value">1 hab, 2 adultos</span>
+        </div>
+        <label for="cart-toggle" class="booking-bar__cta">
+          Agregar a mi tour · $478.459
+        </label>
+      </div>
+    </section>
+
+    <!-- Grid de Contenido Principal -->
+    <section class="hotel-content">
+      
+      <!-- Columna Izquierda: Información -->
+      <div class="hotel-content__main">
+        
+        <article class="content-card">
+          <h2 class="content-card__title">Sobre este alojamiento</h2>
+          <p class="content-card__text">
+            Nos alegra darte la bienvenida al Barranquilla Marriott Hotel, tu puerta de entrada al espíritu vibrante de Colombia. 
+            A solo 40 minutos del Aeropuerto Internacional Ernesto Cortissoz, ofrecemos un retiro relajante en la costa norte del 
+            Caribe. Barranquilla, conocida como "La Puerta de Oro de Colombia", es un puerto prominente para el transporte fluvial 
+            y marítimo; también acoge el Carnaval de Barranquilla y se ha convertido en un popular destino de bodas.
+          </p>
+        </article>
+
+        <article class="content-card">
+          <h2 class="content-card__title">Servicios y Características</h2>
+          <div class="amenities-grid">
+            <div class="amenity-item"><span class="amenity-icon">🚗</span> Estacionamiento gratis</div>
+            <div class="amenity-item"><span class="amenity-icon">🧘‍♀️</span> Gimnasio / Sala de entrenamiento</div>
+            <div class="amenity-item"><span class="amenity-icon">🍸</span> Bar/Salón</div>
+            <div class="amenity-item"><span class="amenity-icon">🏟</span> Centro de negocios con acceso a Internet</div>
+            <div class="amenity-item"><span class="amenity-icon">🌐</span> Internet de alta velocidad gratuito (WiFi)</div>
+            <div class="amenity-item"><span class="amenity-icon">🌤</span> Piscina</div>
+            <div class="amenity-item"><span class="amenity-icon">🐶</span> Se admiten mascotas (Se aceptan perros / mascotas)</div>
+            <div class="amenity-item"><span class="amenity-icon">💼</span> Instalaciones para conferencias</div>
+          </div>
+          <button class="content-card__btn">Mostrar todos los servicios ▼</button>
+        </article>
+
+        <article class="content-card" id="reviews-section">
+          <h2 class="content-card__title">Opiniones de viajeros</h2>
+          
+          <div class="reviews-summary">
+            <div class="reviews-summary__score">
+              <span class="reviews-summary__number">4.0</span>
+              <span class="reviews-summary__text">Bueno</span>
+              <span class="reviews-summary__stars">★★★★☆</span>
+            </div>
+            <div class="reviews-summary__bars">
+              <div class="bar-item"><span>Ubicación</span><div class="bar-track"><div class="bar-fill" style="width: 100%"></div></div><span>4.0</span></div>
+              <div class="bar-item"><span>Limpieza</span><div class="bar-track"><div class="bar-fill" style="width: 98%"></div></div><span>4.7</span></div>
+              <div class="bar-item"><span>Servicio</span><div class="bar-track"><div class="bar-fill" style="width: 98%"></div></div><span>4.1</span></div>
+            </div>
+          </div>
+
+          <div class="reviews-list">
+            <article class="review-card">
+              <div class="review-card__header">
+                <img src="https://placehold.co/50x50/EDF5D6/628F00?text=AM" alt="Alba Martinez" class="review-card__avatar" />
+                <div class="review-card__user">
+                  <span class="review-card__name">Alba Martinez B</span>
+                  <span class="review-card__date">Octubre 2025</span>
+                </div>
+              </div>
+              <div class="review-card__rating">★★★★★</div>
+              <p class="review-card__text">Tuvimos una estancia maravillosa. La atención y el servicio fueron excepcionales. Me sentí como en casa y la comida estaba deliciosa. ¡Muchas gracias!</p>
+              <div class="review-card__meta">Viajé con mi familia</div>
+            </article>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Columna Derecha: Sidebar Sticky -->
+      <aside class="hotel-content__sidebar">
+        <div class="sidebar-card sticky-card">
+          <div class="sidebar-card__price">
+            <span class="price-label">Desde</span>
+            <span class="price-amount">$478.459</span>
+            <span class="price-night">/ noche</span>
+          </div>
+          <div class="sidebar-card__features">
+            <span>✓ Cancelación gratuita</span>
+            <span>✓ Desayuno incluido</span>
+            <span>✓ Mejor precio garantizado</span>
+          </div>
+          <label for="cart-toggle" class="sidebar-card__cta">¡Agregar a mi tour!</label>
+          <p class="sidebar-card__hint">No se realizará ningún cargo aún</p>
+        </div>
+      </aside>
+
+    </section>
+  </main>
+
+  <!-- PANEL LATERAL (CARRITO) -->
+  <aside class="cart-sidebar">
+    <div class="cart-sidebar__header">
+      <h3>Tu Reserva</h3>
+      <label for="cart-toggle" class="cart-sidebar__close">✕</label>
+    </div>
+    <div class="cart-sidebar__body">
+      <div class="cart-item">
+        <div class="cart-item__info">
+          <span class="cart-item__name">Casa Legado</span>
+          <span class="cart-item__desc">1 noche · 2 huéspedes</span>
+        </div>
+        <span class="cart-item__price">$478.459</span>
+      </div>
+      <div class="cart-sidebar__total">
+        <span>Total</span>
+        <strong>$478.459</strong>
+      </div>
+      <a href="/src/templates/comprador/factura.html" class="cart-sidebar__checkout">Continuar a pagar</a>
+      <p class="cart-sidebar__hint">Toca el producto de nuevo para quitarlo</p>
+    </div>
+  </aside>
+
+  <!-- VENTANA EMERGENTE (TOAST) -->
+  <div class="notice-container">
+    <div class="notice">
+      <span>✓</span> ¡Producto añadido a tu tour!
+    </div>
+  </div>
+
+</body>
+</html>

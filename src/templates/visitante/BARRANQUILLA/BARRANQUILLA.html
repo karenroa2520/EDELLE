@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Barranquilla, Colombia</title>
+  
+  <!-- Vinculación al archivo CSS externo -->
+  <link rel="stylesheet" href="/src/static/css/VISI/Estilos-Principal-Destinos.css" />
+</head>
+<body>
+
+  <!-- Sprite de íconos SVG -->
+  <svg class="iconos-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <g id="icon-compass" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="9"/><path d="M15 9l-2 6-6 2 2-6 6-2z"/>
+      </g>
+      <g id="icon-estrella" fill="currentColor">
+        <path d="M12 2l2.9 6.9L22 9.6l-5.5 5 1.6 7.4L12 18.2 5.9 22l1.6-7.4L2 9.6l7.1-.7L12 2Z"/>
+      </g>
+      <g id="icon-museo" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 9L12 4l8 5"/><line x1="4" y1="9" x2="20" y2="9"/>
+        <line x1="6" y1="11" x2="6" y2="18"/><line x1="12" y1="11" x2="12" y2="18"/><line x1="18" y1="11" x2="18" y2="18"/>
+        <line x1="4" y1="19" x2="20" y2="19"/>
+      </g>
+      <g id="icon-mirador" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 19l6-10 4 6 3-4 5 8H3z"/>
+      </g>
+      <g id="icon-hotel" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="13" width="18" height="6" rx="2"/>
+        <rect x="4" y="9" width="6" height="4" rx="1.5" fill="currentColor" stroke="none"/>
+        <line x1="3" y1="19" x2="3" y2="21"/><line x1="21" y1="19" x2="21" y2="21"/>
+      </g>
+      <g id="icon-restaurante" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="7" y1="3" x2="7" y2="10"/><line x1="5" y1="3" x2="5" y2="8"/><line x1="9" y1="3" x2="9" y2="8"/>
+        <line x1="7" y1="10" x2="7" y2="21"/>
+        <path d="M16 3c-1.4 1.4-1.8 2.8-1.8 4.6s.9 3.4 1.8 4.4v9"/>
+      </g>
+      <g id="icon-mercado" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/>
+      </g>
+      <g id="icon-jardin" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 19c0-8 6-14 14-14 0 8-6 14-14 14Z"/><path d="M6 18C10 14 14 10 18 6"/>
+      </g>
+      <g id="icon-barrio" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/>
+      </g>
+      <g id="icon-arbol" fill="currentColor">
+        <path d="M12 3l4 6h-3l3 5h-4v7h-2v-7H6l3-5H6l4-6Z"/>
+      </g>
+      <g id="icon-gema" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 3h12l3 5-9 13L3 8Z"/><line x1="3" y1="8" x2="21" y2="8"/>
+      </g>
+      <g id="icon-mascara" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="8"/><path d="M8 15c1.3 1.3 6.7 1.3 8 0"/>
+        <circle cx="9" cy="10" r="1" fill="currentColor" stroke="none"/><circle cx="15" cy="10" r="1" fill="currentColor" stroke="none"/>
+      </g>
+      <g id="icon-luna" fill="currentColor">
+        <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z"/>
+      </g>
+    </defs>
+  </svg>
+
+  <header>
+    <div class="navbar-container">
+      <div class="logo">
+        <div class="logo-container">
+          <!-- Placeholder Logo -->
+          <img src="/src/static/imagenes/INICIO/icono-krenga.svg" alt="Krenga" />
+        </div>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="/index.html">Inicio</a></li>
+          <li><a href="/src/templates/visitante/quienes-somos.html">Quienes Somos</a></li>
+          <li><a href="/src/templates/visitante/servicios.html">Servicios</a></li>
+          <li><a href="/src/templates/visitante/destinos.html">Destinos</a></li>
+          <li><a href="/src/templates/visitante/pasajes.html">Pasajes</a></li>
+        </ul>
+      </nav>
+
+      <div class="user-icon">
+        <a href="#" title="Iniciar Sesión">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-5.656-3.656L12 17l-2.344-2.344A4 4 0 0 0 4 17v2"></path>
+            <circle cx="12" cy="9" r="4"></circle>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section class="sub-header">
+    <div class="sub-header__container">
+      <a href="#" class="sub-header__item sub-header__item--active">
+        <span class="sub-header__icon">📍</span>
+        Barranquilla
+      </a>
+      <a href="/src/templates/visitante/BARRANQUILLA/hoteles-barranquilla.html" class="sub-header__item">Hoteles</a>
+      <a href="/src/templates/visitante/BARRANQUILLA/cosas-porHacer-barranquilla.html" class="sub-header__item">Cosas Por Hacer</a>
+      <a href="/src/templates/visitante/BARRANQUILLA/restaurantes-barranquilla.html" class="sub-header__item">Restaurantes</a>
+    </div>
+  </section>
+
+  <!-- Hero del destino -->
+  <section class="hero-destino">
+    <div class="hero-destino__texto">
+      <span class="eyebrow-destino"><span class="linea"></span>Colombia</span>
+      <h1>Barranquilla, Colombia</h1>
+      <p>
+        Barranquilla puede ser la cuarta ciudad más grande de Colombia, pero se destaca más de lo esperado. Allí te esperan 
+        iglesias barrocas, una legendaria escena de salsa y algunos de los mariscos más frescos de la costa caribeña. Luego está 
+        el Carnaval, una explosión de cuatro días de música, baile y elaborados disfraces que convierte a toda la ciudad en una 
+        enorme fiesta callejera. 
+      </p>
+      <div class="hero-destino__facts">
+        <span class="fact-chip"><svg><use href="#icon-compass"/></svg>Capital del Atlántico</span>
+        <span class="fact-chip"><svg><use href="#icon-mirador"/></svg>18 msnm</span>
+        <span class="fact-chip"><svg><use href="#icon-luna"/></svg>Clima tropical cálido</span>
+      </div>
+    </div>
+
+    <div class="hero-destino__visual">
+      <div class="forma-decorativa" aria-hidden="true"></div>
+      <div class="blob-imagen-marco">
+        <!-- Imagen Hero -->
+        <img src="/src/static/imagenes/DESTINOS/BARRANQUILLA/barranquilla-1.jpg" alt="Barranquilla, Colombia">
+      </div>
+      <div class="insignia-flotante">
+        <svg><use href="#icon-compass"/></svg>
+        +5 lugares imperdibles
+      </div>
+    </div>
+
+    <div class="divisor-ola" aria-hidden="true">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+        <path d="M0,32L60,42.7C120,53,240,75,360,74.7C480,75,600,53,720,42.7C840,32,960,32,1080,37.3C1200,43,1320,53,1380,58.7L1440,64L1440,80L0,80Z" fill="#4A1F3D"/>
+      </svg>
+    </div>
+  </section>
+
+  <main>
+    <section class="seccion-puntos">
+      <h2>Puntos esenciales en Barranquilla</h2>
+
+      <div class="categorias">
+        <span class="categoria"><svg><use href="#icon-gema"/></svg>Imprecindibles</span>
+        <span class="categoria"><svg><use href="#icon-museo"/></svg>Apto para toda la familia</span>
+        <span class="categoria"><svg><use href="#icon-arbol"/></svg>Joyas ocultas</span>
+        <span class="categoria"><svg><use href="#icon-mascara"/></svg>Artes y Teatro</span>
+        <span class="categoria"><svg><use href="#icon-luna"/></svg>Al aire libre</span>
+      </div>
+
+      <!-- Tarjeta destacada -->
+      <a href="#" class="tarjeta-enlace">
+        <article class="tarjeta-destacada">
+          <div class="tarjeta-destacada__imagen-wrap">
+            <img src="/src/static/imagenes/DESTINOS/BARRANQUILLA/Carnaval de barranquilla.jpg" alt="Carnaval de barranquilla">
+            <span class="cinta-imperdible">Imperdible</span>
+          </div>
+          <div class="tarjeta-destacada__contenido">
+            <h3>Carnaval de barranquilla</h3>
+            <span class="badge-calificacion badge-calificacion--estatica">
+              <svg><use href="#icon-estrella"/></svg> 4.1
+            </span>
+            <span class="pill-tipo">Eventos culturales</span>
+          </div>
+        </article>
+      </a>
+
+      <div class="lista-lugares">
+
+        <!-- Tarjeta 2 -->
+        <a href="#" class="tarjeta-enlace">
+          <article class="tarjeta">
+            <div class="tarjeta__media">
+              <img src="/src/static/imagenes/DESTINOS/BARRANQUILLA/Gran Malecon.jpg" alt="Gran Malecon">
+              <span class="badge-categoria"><svg><use href="#icon-mirador"/></svg></span>
+              <span class="badge-calificacion"><svg><use href="#icon-estrella"/></svg>4.7</span>
+            </div>
+            <h3>Gran Malecon</h3>
+            <span class="pill-tipo">Areas peatonales pintorescas</span>
+          </article>
+        </a>
+
+        <!-- Tarjeta 3 -->
+        <a href="#" class="tarjeta-enlace">
+          <article class="tarjeta">
+            <div class="tarjeta__media">
+              <img src="/src/static/imagenes/DESTINOS/BARRANQUILLA/Hilton garden inn baranquilla.jpg" alt="Hilton garden inn barranquilla">
+              <span class="badge-categoria"><svg><use href="#icon-hotel"/></svg></span>
+              <span class="badge-calificacion"><svg><use href="#icon-estrella"/></svg>4.8</span>
+            </div>
+            <h3>Hilton garden inn barranquilla</h3>
+            <span class="pill-tipo">Hoteles y hospedaje</span>
+          </article>
+        </a>
+
+        <!-- Tarjeta 4 -->
+        <a href="#" class="tarjeta-enlace">
+          <article class="tarjeta">
+            <div class="tarjeta__media">
+              <img src="/src/static/imagenes/DESTINOS/BARRANQUILLA/howard johnson hotel.jpg" alt="Howard johnson hotel">
+              <span class="badge-categoria"><svg><use href="#icon-restaurante"/></svg></span>
+              <span class="badge-calificacion"><svg><use href="#icon-estrella"/></svg>4.5</span>
+            </div>
+            <h3>Howard johnson hotel</h3>
+            <span class="pill-tipo">Hoteles y hospedaje</span>
+          </article>
+        </a>
+
+        <!-- Tarjeta 5 -->
+        <a href="#" class="tarjeta-enlace">
+          <article class="tarjeta">
+            <div class="tarjeta__media">
+              <img src="/src/static/imagenes/DESTINOS/BARRANQUILLA/Iglesia de la inmaculada concepcion.jpg" alt="Iglesia de la inmaculada concepcion">
+              <span class="badge-categoria"><svg><use href="#icon-hotel"/></svg></span>
+              <span class="badge-calificacion"><svg><use href="#icon-estrella"/></svg>4.8</span>
+            </div>
+            <h3>Iglesia de la inmaculada concepcion</h3>
+            <span class="pill-tipo">Iglesias y catedrales</span>
+          </article>
+        </a>
+
+        <!-- Tarjeta 6 -->
+        <a href="#" class="tarjeta-enlace">
+          <article class="tarjeta">
+            <div class="tarjeta__media">
+              <img src="/src/static/imagenes/DESTINOS/BARRANQUILLA/Monumento Ventana al mundo.jpg" alt="Monumento Ventana al mundo">
+              <span class="badge-categoria"><svg><use href="#icon-barrio"/></svg></span>
+              <span class="badge-calificacion"><svg><use href="#icon-estrella"/></svg>4.4</span>
+            </div>
+            <h3>Monumento Ventana al mundo</h3>
+            <span class="pill-tipo">Monumentos y estatuas</span>
+          </article>
+        </a>
+
+        <!-- Tarjeta 7 -->
+        <a href="#" class="tarjeta-enlace">
+          <article class="tarjeta">
+            <div class="tarjeta__media">
+              <img src="/src/static/imagenes/DESTINOS/BARRANQUILLA/bocas-de-cenizas.jpg" alt="Bocas de Cenizas">
+              <span class="badge-categoria"><svg><use href="#icon-barrio"/></svg></span>
+              <span class="badge-calificacion"><svg><use href="#icon-estrella"/></svg>4.4</span>
+            </div>
+            <h3>Bocas de Cenizas</h3>
+            <span class="pill-tipo">Formaciones geologicas</span>
+          </article>
+        </a>
+
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Vinculación al archivo JS externo -->
+  <script src="/src/static/js/hoteles-bogota.js"></script>
+</body>
+</html>

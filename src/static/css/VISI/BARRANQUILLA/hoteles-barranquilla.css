@@ -1,0 +1,727 @@
+/* =========================================================
+   EDELLE — Hoteles en Bogotá
+   Hereda el sistema de diseño de la vista principal:
+   Wasabi Green (#7FB800) + Soft Lemon (#FFFF66) + Plum Noir (#4A1F3D)
+   Fraunces (display) + Inter (cuerpo).
+   Esta hoja NO redefine la marca: la aplica a una vista de listado,
+   así que el vocabulario visual (botones, tarjetas, tipografía)
+   es el mismo que en index — solo cambia la composición.
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --color-wasabi: #7FB800;
+  --color-wasabi-oscuro: #628F00;
+  --color-wasabi-tenue: #EDF5D6;
+  --color-limon: #FFFF66;
+  --color-limon-suave: #FFFDE3;
+  --color-ciruela: #4A1F3D;
+  --color-ciruela-suave: #6E3F5E;
+  --color-ciruela-noche: #2E1327;
+  --color-crema: #FFFCF3;
+  --color-texto-suave: #6B5568;
+  --color-blanco: #FFFFFF;
+
+  --fuente-display: 'Fraunces', Georgia, serif;
+  --fuente-principal: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  --radio-boton: 999px;
+  --radio-tarjeta: 20px;
+  --transicion-rapida: 0.25s ease;
+  --transicion-suave: 0.6s cubic-bezier(.19,1,.22,1);
+  --sombra-suave: 0 10px 30px rgba(46, 19, 39, 0.14);
+  --sombra-fuerte: 0 16px 40px rgba(46, 19, 39, 0.26);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--fuente-principal);
+  background-color: var(--color-crema);
+  color: var(--color-ciruela);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* === BARRA DE NAVEGACIÓN (idéntica al resto del sitio) === */
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.9rem 2rem;
+  background-color: rgba(74, 31, 61, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(46, 19, 39, 0.2);
+}
+
+.logo { display: flex; align-items: center; }
+
+.logo-container {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: var(--color-crema);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 2px rgba(127, 184, 0, 0.45);
+  transition: box-shadow var(--transicion-rapida);
+}
+
+.logo-container:hover { box-shadow: 0 0 0 3px rgba(127, 184, 0, 0.7); }
+
+.logo-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+nav ul { display: flex; list-style: none; gap: 0.5rem; }
+
+nav ul li a {
+  position: relative;
+  color: var(--color-limon-suave);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.98rem;
+  transition: color var(--transicion-rapida);
+  white-space: nowrap;
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0.9rem;
+  right: 0.9rem;
+  bottom: 0.3rem;
+  height: 2px;
+  background-color: var(--color-limon);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transicion-rapida);
+}
+
+nav ul li a:hover { color: var(--color-limon); }
+nav ul li a:hover::after { transform: scaleX(1); }
+
+.user-icon a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 102, 0.4);
+  transition: border-color var(--transicion-rapida), background-color var(--transicion-rapida);
+}
+
+.user-icon a:hover {
+  border-color: var(--color-limon);
+  background-color: rgba(255, 255, 102, 0.1);
+}
+
+.user-icon svg { width: 20px; height: 20px; stroke: var(--color-limon); }
+
+/* === SUB-HEADER: migas de la ciudad === */
+
+.sub-header {
+  background: var(--color-crema);
+  padding: 0.9rem 1rem;
+  margin-top: 82px;
+  border-bottom: 1px solid var(--color-wasabi-tenue);
+  position: relative;
+  z-index: 900;
+}
+
+.sub-header__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.sub-header__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--color-ciruela);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 0.55rem 1.1rem;
+  border-radius: var(--radio-boton);
+  border: 1.5px solid transparent;
+  transition: all var(--transicion-rapida);
+}
+
+.sub-header__item:hover {
+  border-color: var(--color-wasabi);
+  color: var(--color-wasabi-oscuro);
+}
+
+.sub-header__item--active {
+  background: var(--color-ciruela);
+  color: var(--color-limon-suave);
+}
+
+.sub-header__item--active:hover {
+  border-color: transparent;
+  color: var(--color-limon);
+}
+
+.sub-header__icon { font-size: 1rem; }
+
+/* === HERO CON VIDEO ENMARCADO === */
+/* Se enmarca el video como una fotografía editorial, igual que el
+   carrusel de la home, en vez de un video "wallpaper" a pantalla completa. */
+
+.hero {
+  position: relative;
+  padding: 2.2rem clamp(1rem, 4vw, 3rem) 6rem;
+  background-color: var(--color-crema);
+}
+
+.hero__frame {
+  position: relative;
+  height: 62vh;
+  min-height: 440px;
+  max-width: 1400px;
+  margin: 0 auto;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--sombra-fuerte);
+}
+
+.hero__video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%) scale(1.02);
+  object-fit: cover;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(46,19,39,0.55) 0%, rgba(46,19,39,0.22) 42%, rgba(46,19,39,0.75) 100%);
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  opacity: 0;
+  transform: translateY(16px);
+  animation: heroReveal var(--transicion-suave) 0.1s forwards;
+}
+
+@keyframes heroReveal {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--color-limon);
+  margin-bottom: 1rem;
+}
+
+.hero__eyebrow .linea {
+  width: 30px;
+  height: 1px;
+  background-color: var(--color-wasabi);
+  display: inline-block;
+}
+
+.hero__title {
+  font-family: var(--fuente-display);
+  font-weight: 600;
+  font-size: clamp(2rem, 4.2vw, 3.1rem);
+  line-height: 1.15;
+  color: var(--color-blanco);
+  text-shadow: 0 4px 24px rgba(46, 19, 39, 0.4);
+  max-width: 720px;
+  margin-bottom: 2.1rem;
+}
+
+.hero__title em {
+  font-style: italic;
+  color: var(--color-limon);
+}
+
+/* Panel de búsqueda flotante: se apoya sobre el borde inferior del
+   video enmarcado, como una tarjeta de itinerario. */
+.hero__filters {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: rgba(255, 252, 243, 0.97);
+  padding: 1.4rem 1.6rem;
+  border-radius: var(--radio-tarjeta);
+  box-shadow: var(--sombra-fuerte);
+  position: relative;
+  z-index: 2;
+  margin-top: -3.2rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.filter-date-item,
+.filter-select-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-width: 190px;
+  text-align: left;
+}
+
+.filter-date-label,
+.filter-select-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-ciruela);
+}
+
+.filter-date-input,
+.filter-select-input {
+  padding: 0.7rem 0.9rem;
+  border: 1.5px solid var(--color-wasabi-tenue);
+  border-radius: 12px;
+  font-size: 0.95rem;
+  background: var(--color-blanco);
+  color: var(--color-ciruela);
+  font-family: var(--fuente-principal);
+  cursor: pointer;
+  transition: border-color var(--transicion-rapida);
+}
+
+.filter-date-input:focus,
+.filter-select-input:focus {
+  outline: none;
+  border-color: var(--color-wasabi);
+}
+
+.hero__buscar {
+  background-color: var(--color-limon);
+  color: var(--color-ciruela);
+  border: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.75rem 1.7rem;
+  border-radius: var(--radio-boton);
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(255, 255, 102, 0.35);
+  transition: background-color var(--transicion-rapida), transform 0.2s ease;
+  white-space: nowrap;
+}
+
+.hero__buscar:hover {
+  background-color: var(--color-wasabi);
+  color: var(--color-blanco);
+  transform: translateY(-2px);
+}
+
+/* === FILTROS RÁPIDOS === */
+
+.filters {
+  padding: 3.4rem 1.5rem 0.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.filters__container {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.filters__title {
+  background: var(--color-ciruela);
+  color: var(--color-limon-suave);
+  padding: 0.5rem 1.3rem;
+  border-radius: var(--radio-boton);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.filters__chip {
+  background: transparent;
+  color: var(--color-wasabi-oscuro);
+  border: 1.5px solid var(--color-wasabi);
+  padding: 0.5rem 1.1rem;
+  border-radius: var(--radio-boton);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--transicion-rapida), color var(--transicion-rapida), transform 0.2s ease;
+}
+
+.filters__chip:hover,
+.filters__chip--active {
+  background-color: var(--color-wasabi);
+  color: var(--color-blanco);
+  transform: translateY(-1px);
+}
+
+/* === SECCIÓN DE HOTELES === */
+
+.hotels-section {
+  padding: 2.6rem 1.5rem 5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.hotels-section::before {
+  content: '';
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  top: 60px;
+  right: -220px;
+  background: radial-gradient(circle, var(--color-wasabi-tenue) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hotels-section__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1.8rem;
+  position: relative;
+  z-index: 1;
+}
+
+.hotels-section__title {
+  font-family: var(--fuente-display);
+  font-weight: 600;
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  color: var(--color-ciruela);
+}
+
+.hotels-section__view-all {
+  position: relative;
+  color: var(--color-wasabi-oscuro);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding-bottom: 0.2rem;
+  border-bottom: 1.5px solid var(--color-wasabi);
+  transition: color var(--transicion-rapida);
+}
+
+.hotels-section__view-all:hover { color: var(--color-ciruela); }
+
+.hotels-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.8rem;
+  position: relative;
+  z-index: 1;
+}
+
+.hotel-card {
+  background: var(--color-blanco);
+  border-radius: var(--radio-tarjeta);
+  overflow: hidden;
+  box-shadow: var(--sombra-suave);
+  transition: transform 0.45s cubic-bezier(.19,1,.22,1), box-shadow 0.45s ease;
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.hotel-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(.19,1,.22,1), box-shadow 0.45s ease;
+}
+
+.hotel-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--sombra-fuerte);
+}
+
+.hotel-card__media { position: relative; }
+
+.hotel-card__image {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.hotel-card:hover .hotel-card__image { transform: scale(1.04); }
+
+.hotel-card__badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--color-limon);
+  color: var(--color-ciruela);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radio-boton);
+  box-shadow: var(--sombra-suave);
+}
+
+.hotel-card__badge svg { width: 14px; height: 14px; }
+
+.hotel-card__fav {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(74, 31, 61, 0.55);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: background-color var(--transicion-rapida);
+}
+
+.hotel-card__fav:hover { background: var(--color-ciruela); }
+.hotel-card__fav svg { width: 17px; height: 17px; stroke: var(--color-limon-suave); }
+
+.hotel-card__content {
+  padding: 1.4rem 1.4rem 1.6rem;
+}
+
+.hotel-card__name {
+  font-family: var(--fuente-display);
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--color-ciruela);
+  margin-bottom: 0.55rem;
+  line-height: 1.3;
+}
+
+.hotel-card__rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  margin-bottom: 0.9rem;
+  color: var(--color-texto-suave);
+}
+
+.hotel-card__score {
+  font-weight: 700;
+  color: var(--color-ciruela);
+  background: var(--color-wasabi-tenue);
+  padding: 0.1rem 0.5rem;
+  border-radius: 6px;
+}
+
+.hotel-card__stars { color: var(--color-wasabi); letter-spacing: 1px; }
+
+.hotel-card__price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  margin-bottom: 1.2rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--color-wasabi-tenue);
+}
+
+.hotel-card__label { color: var(--color-texto-suave); font-size: 0.86rem; }
+
+.hotel-card__amount {
+  font-family: var(--fuente-display);
+  font-weight: 600;
+  color: var(--color-ciruela);
+  font-size: 1.25rem;
+}
+
+.hotel-card__btn {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  background-color: transparent;
+  color: var(--color-wasabi-oscuro);
+  border: 1.5px solid var(--color-wasabi);
+  padding: 0.65rem 1rem;
+  border-radius: var(--radio-boton);
+  font-weight: 600;
+  font-size: 0.92rem;
+  transition: background-color var(--transicion-rapida), color var(--transicion-rapida), transform 0.2s ease;
+}
+
+.hotel-card__btn:hover {
+  background-color: var(--color-wasabi);
+  color: var(--color-blanco);
+  transform: translateY(-2px);
+}
+
+/* --> Foco visible accesible */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--color-wasabi);
+  outline-offset: 2px;
+}
+
+/* === RESPONSIVO === */
+
+@media (max-width: 900px) {
+  .hero__filters { margin-top: -2.4rem; }
+}
+
+@media (max-width: 768px) {
+  .navbar-container { padding: 1rem; flex-wrap: wrap; }
+  .logo { order: 1; }
+  .user-icon { order: 2; }
+  nav { order: 3; width: 100%; margin-top: 1rem; }
+  nav ul { justify-content: center; flex-wrap: wrap; gap: 0.4rem; }
+
+  .sub-header { margin-top: 128px; }
+
+  .hero { padding: 1.6rem 1rem 5rem; }
+  .hero__frame { height: 46vh; min-height: 340px; border-radius: 18px; }
+  .hero__title { font-size: 1.7rem; }
+  .hero__filters {
+    flex-direction: column;
+    align-items: stretch;
+    margin-top: -2rem;
+    padding: 1.2rem;
+  }
+  .filter-date-item, .filter-select-item { min-width: 100%; }
+  .hero__buscar { width: 100%; }
+
+  .filters { padding: 2.4rem 1rem 0; }
+  .hotels-section__header { flex-direction: column; align-items: flex-start; gap: 0.6rem; }
+  .hotels-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .hero__frame { height: 40vh; min-height: 300px; }
+  .hero__title { font-size: 1.45rem; }
+  .hotel-card__image { height: 190px; }
+}
+
+/* === FOOTER (idéntico al de la home, para consistencia de marca) === */
+
+footer {
+  background-color: var(--color-ciruela);
+  padding: 3.5rem 2rem 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  color: var(--color-limon-suave);
+}
+
+.footer-column { flex: 1; min-width: 250px; }
+
+.footer-column h4 {
+  margin-bottom: 1.1rem;
+  font-family: var(--fuente-display);
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--color-limon);
+}
+
+.footer-column p,
+.footer-column a {
+  color: rgba(255, 253, 227, 0.8);
+  margin-bottom: 0.6rem;
+  display: block;
+  text-decoration: none;
+  transition: color var(--transicion-rapida);
+}
+
+.footer-column a:hover { color: var(--color-limon); }
+
+input[type="email"] {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(127, 184, 0, 0.4);
+  margin-bottom: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.06);
+  color: var(--color-blanco);
+  font-family: var(--fuente-principal);
+}
+
+input[type="email"]::placeholder { color: rgba(255, 253, 227, 0.55); }
+
+input[type="email"]:focus { outline: none; border-color: var(--color-limon); }
+
+.boton-suscribir {
+  background-color: var(--color-limon);
+  color: var(--color-ciruela);
+  width: 100%;
+  padding: 0.85rem;
+  border-radius: var(--radio-boton);
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  margin-top: 1rem;
+  transition: background-color var(--transicion-rapida), transform 0.2s ease;
+}
+
+.boton-suscribir:hover { background-color: var(--color-blanco); transform: translateY(-2px); }
+
+@media (max-width: 768px) {
+  footer { flex-direction: column; text-align: center; }
+}
