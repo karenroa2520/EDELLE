@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cosas por hacer en Barranquilla | Krenga</title>
+  <link rel="stylesheet" href="/src/static/css/VISI/BARRANQUILLA/cosas-hace-barranquilla.css" />
+</head>
+<body class="pagina">
+
+  <!-- Header -->
+  <header>
+    <div class="navbar-container">
+      <div class="logo">
+        <div class="logo-container">
+          <img src="/src/static/imagenes/INICIO/icono-krenga.svg" alt="Edelle - Tu Próxima Gran Aventura" />
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/index.html">Inicio</a></li>
+          <li><a href="/src/templates/visitante/quienes-somos.html">Quienes Somos</a></li>
+          <li><a href="/src/templates/visitante/servicios.html">Servicios</a></li>
+          <li><a href="/src/templates/visitante/destinos.html">Destinos</a></li>
+          <li><a href="/src/templates/visitante/pasajes.html">Pasajes</a></li>
+        </ul>
+      </nav>
+      <div class="user-icon">
+        <a href="/src/templates/comprador/login.html" title="Iniciar Sesión">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-5.656-3.656L12 17l-2.344-2.344A4 4 0 0 0 4 17v2"></path>
+            <circle cx="12" cy="9" r="4"></circle>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Submenu -->
+  <section class="sub-header">
+    <div class="sub-header__container">
+      <a href="/src/templates/visitante/BARRANQUILLA/BARRANQUILLA.html" class="sub-header__item sub-header__item--active">
+        <span class="sub-header__icon">📍</span>
+        Barranquilla
+      </a>
+      <a href="/src/templates/visitante/BARRANQUILLA/hoteles-barranquilla.html" class="sub-header__item">Hoteles</a>
+      <a href="/src/templates/visitante/BARRANQUILLA/cosas-porHacer-barranquilla.html" class="sub-header__item">Cosas Por Hacer</a>
+      <a href="/src/templates/visitante/BARRANQUILLA/restaurantes-barranquilla.html" class="sub-header__item">Restaurantes</a>
+    </div>
+  </section>
+
+  <!-- Hero: la foto, el relato y la ruta que los conecta -->
+  <section class="hero">
+    <div class="hero__contenedor-imagen">
+      <img src="/src/static/imagenes/DESTINOS/BARRANQUILLA/barranquilla-1.jpg" alt="Atardecer en Bogotá" class="hero__imagen" />
+      <span class="hero__insignia">+40<br>experiencias</span>
+    </div>
+
+    <!-- Ruta punteada, firma visual de la marca -->
+    <svg class="hero__ruta" viewBox="0 0 90 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M2 30 C 30 5, 60 5, 88 20" />
+      <circle cx="88" cy="20" r="4" />
+    </svg>
+
+    <div class="hero__texto">
+      <span class="hero__eyebrow"><span class="linea"></span>Barranquilla, Colombia</span>
+      <h1 class="hero__titulo">Cosas por hacer en <em>la capital de los Carnavales</em></h1>
+      <p class="hero__descripcion">
+        Échales un vistazo a estas actividades y atracciones imperdibles:
+        Gran Malecón, Centro Comercial Buenavista L, Tours por la ciudad, Parques.
+      </p>
+      <a href="#recomendaciones" class="hero__cta">
+        Explorar experiencias
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Ticker: un vistazo rápido a los atractivos, antes del detalle -->
+  <div class="ticker-atractivos" aria-hidden="true">
+    <div class="ticker-atractivos__pista">
+      <span>Puerto Colombia</span><span class="ticker-atractivos__punto">●</span>
+      <span>Bicicleta Barranquilla</span><span class="ticker-atractivos__punto">●</span>
+      <span>Gran Malecon</span><span class="ticker-atractivos__punto">●</span>
+      <span>Rio Magdalena</span><span class="ticker-atractivos__punto">●</span>
+      <span>Ecoparque Mallorquin</span><span class="ticker-atractivos__punto">●</span>
+      <span>Parque Nacional Tayrona</span><span class="ticker-atractivos__punto">●</span>
+      <span>Centro Comercial Buenavista</span><span class="ticker-atractivos__punto">●</span>
+      <span>Zoologico de Barranquilla</span><span class="ticker-atractivos__punto">●</span>
+      <!-- Se repite para el loop continuo del ticker -->
+      <span>Puerto Colombia</span><span class="ticker-atractivos__punto">●</span>
+      <span>Bicicleta Barranquilla</span><span class="ticker-atractivos__punto">●</span>
+      <span>Gran Malecon</span><span class="ticker-atractivos__punto">●</span>
+      <span>Rio Magdalena</span><span class="ticker-atractivos__punto">●</span>
+      <span>Ecoparque Mallorquin</span><span class="ticker-atractivos__punto">●</span>
+      <span>Parque Nacional Tayrona</span><span class="ticker-atractivos__punto">●</span>
+      <span>Centro Comercial Buenavista</span><span class="ticker-atractivos__punto">●</span>
+      <span>Zoologico de Barranquilla</span><span class="ticker-atractivos__punto">●</span>
+    </div>
+  </div>
+
+  <!-- Sección Experiencias -->
+  <section class="experiencias">
+    <h2 class="experiencias__titulo">Las Mejores Experiencias</h2>
+    <p class="experiencias__subtitulo">
+      Descubre las experiencias favoritas de miles de viajeros como tú.
+    </p>
+    <div class="experiencias__etiquetas">
+      <span class="experiencias__etiqueta">
+        <img src="/src/static/imagenes/COSAS-PORHACER/ruta.png" alt="" class="experiencias__icono" /> Recorridos de medio día
+      </span>
+      <span class="experiencias__etiqueta">
+        <img src="/src/static/imagenes/COSAS-PORHACER/paseo-en-taza-de-te.png" alt="" class="experiencias__icono" /> Paseos de un día
+      </span>
+      <span class="experiencias__etiqueta">
+        <img src="/src/static/imagenes/COSAS-PORHACER/bolsa-de-la-compra.png" alt="" class="experiencias__icono" /> Centros Comerciales
+      </span>
+      <span class="experiencias__etiqueta">
+        <img src="/src/static/imagenes/COSAS-PORHACER/rumba.png" alt="" class="experiencias__icono" /> Rumba
+      </span>
+      <span class="experiencias__etiqueta">
+        <img src="/src/static/imagenes/COSAS-PORHACER/montana.png" alt="" class="experiencias__icono" /> Avistamiento de fauna
+      </span>
+      <span class="experiencias__etiqueta">
+        <img src="/src/static/imagenes/COSAS-PORHACER/galeria-de-arte.png" alt="" class="experiencias__icono" /> Galerías de arte
+      </span>
+      <span class="experiencias__etiqueta">
+        <img src="/src/static/imagenes/COSAS-PORHACER/mapa.png" alt="" class="experiencias__icono" /> Recorridos privados
+      </span>
+      <span class="experiencias__etiqueta experiencias__etiqueta--seleccionada">
+        <img src="/src/static/imagenes/COSAS-PORHACER/autobus-escolar.png" alt="" class="experiencias__icono" /> Recorridos en bus
+      </span>
+      <span class="experiencias__etiqueta">
+        <img src="/src/static/imagenes/COSAS-PORHACER/mercado.png" alt="" class="experiencias__icono" /> Mercados campesinos
+      </span>
+      <span class="experiencias__etiqueta">
+        <img src="/src/static/imagenes/COSAS-PORHACER/ruta-de-esqui.png" alt="" class="experiencias__icono" /> Recorridos culturales
+      </span>
+      <span class="experiencias__etiqueta">
+        <img src="/src/static/imagenes/COSAS-PORHACER/taza-de-cafe.png" alt="" class="experiencias__icono" /> Rutas del café
+      </span>
+    </div>
+  </section>
+
+  <!-- Sección Recomendaciones -->
+  <section class="recomendaciones" id="recomendaciones">
+    <h2 class="recomendaciones__titulo">Recomendaciones</h2>
+    <div class="recomendaciones__tarjetas">
+
+      <!-- Tarjeta 1 -->
+      <article class="tarjeta">
+        <div class="tarjeta__contenedor-imagen">
+          <span class="tarjeta__ribbon">🔥 Tendencia</span>
+          <img src="/src/static/imagenes/COSAS-PORHACER/BARRANQUILLA/barranquilla+puertocolombia/1.jpg" alt="Tour Catedral de Sal" class="tarjeta__imagen" />
+          <span class="tarjeta__overlay">Guías en audio · Grupo pequeño</span>
+        </div>
+        <div class="tarjeta__contenido">
+          <h3 class="tarjeta__titulo">Barranquilla + puerto colombia city tour</h3>
+          <div class="tarjeta__calificacion">
+            <span class="tarjeta__valor-calificacion">4.6</span>
+            <span class="tarjeta__estrellas">★★★★★</span>
+          </div>
+          <div class="tarjeta__info">Guías en Audio</div>
+          <div class="tarjeta__info-precio">Desde $255.795</div>
+          <div class="tarjeta__por-persona">Por Adulto</div>
+          <a href="#" class="tarjeta__boton-reservar">Reservar</a>
+        </div>
+      </article>
+
+      <!-- Tarjeta 2 -->
+      <article class="tarjeta">
+        <div class="tarjeta__contenedor-imagen">
+          <span class="tarjeta__ribbon">🔥 Tendencia</span>
+          <img src="/src/static/imagenes/COSAS-PORHACER/BARRANQUILLA/bocasdecenizas/1.jpg" alt="Caminata La Chorrera" class="tarjeta__imagen" />
+          <span class="tarjeta__overlay">No Solicitado</span>
+        </div>
+        <div class="tarjeta__contenido">
+          <h3 class="tarjeta__titulo">Bocas de Cenizas</h3>
+          <div class="tarjeta__calificacion">
+            <span class="tarjeta__valor-calificacion">3.7</span>
+            <span class="tarjeta__estrellas">★★★☆☆</span>
+          </div>
+          <div class="tarjeta__info">Privados y de Lujo</div>
+          <div class="tarjeta__info-precio">Desde $252.385 </div>
+          <div class="tarjeta__por-persona">Por Adulto</div>
+          <a href="#" class="tarjeta__boton-reservar">Reservar</a>
+        </div>
+      </article>
+
+      <!-- Tarjeta 3 -->
+      <article class="tarjeta">
+        <div class="tarjeta__contenedor-imagen">
+          <img src="/src/static/imagenes/COSAS-PORHACER/BOGOTA/3.jpg" alt="Candelaria, Monserrate y Museo del Oro" class="tarjeta__imagen" />
+          <span class="tarjeta__overlay">Privado · Grupos reducidos</span>
+        </div>
+        <div class="tarjeta__contenido">
+          <h3 class="tarjeta__titulo">La Candelaria, Monserrate y Museo del Oro Bogotá City Tour</h3>
+          <div class="tarjeta__calificacion">
+            <span class="tarjeta__valor-calificacion">4.9</span>
+            <span class="tarjeta__estrellas">★★★★★</span>
+          </div>
+          <div class="tarjeta__info">Privados y de Lujo</div>
+          <div class="tarjeta__info-precio">Desde $314.170</div>
+          <div class="tarjeta__por-persona">Por adulto (varía según el tamaño del grupo)</div>
+          <a href="/src/templates/visitante/BOGOTA/COSAS-POR-HACER-BOGOTA/Candelaria_Monserrate_y_Museo_Oro.html" class="tarjeta__boton-reservar">Reservar</a>
+        </div>
+      </article>
+
+      <!-- Tarjeta 4 -->
+      <article class="tarjeta">
+        <div class="tarjeta__contenedor-imagen">
+          <img src="/src/static/imagenes/COSAS-PORHACER/BOGOTA/4.jpg" alt="Viaje a Zipaquirá y catedral de sal" class="tarjeta__imagen" />
+          <span class="tarjeta__flecha">→</span>
+          <span class="tarjeta__overlay">Tour en grupo · Transporte incluido</span>
+        </div>
+        <div class="tarjeta__contenido">
+          <h3 class="tarjeta__titulo">Un viaje maravilloso a Zipaquirá y catedral de sal (tour en grupo)</h3>
+          <div class="tarjeta__calificacion">
+            <span class="tarjeta__valor-calificacion">4.7</span>
+            <span class="tarjeta__estrellas">★★★★★</span>
+          </div>
+          <div class="tarjeta__info">Tours en Autos</div>
+          <div class="tarjeta__info-precio">Desde $168.476</div>
+          <div class="tarjeta__por-persona">Por Adulto</div>
+          <a href="/src/templates/visitante/BOGOTA/COSAS-POR-HACER-BOGOTA/viaje_Zipaquira_y_catedral_sal.html" class="tarjeta__boton-reservar">Reservar</a>
+        </div>
+      </article>
+
+      <!-- Tarjeta 5 -->
+      <article class="tarjeta">
+        <div class="tarjeta__contenedor-imagen">
+          <img src="/src/static/imagenes/COSAS-PORHACER/BOGOTA/3.jpg" alt="Catedral de Sal" class="tarjeta__imagen" />
+          <span class="tarjeta__overlay">Privado · Grupos reducidos</span>
+        </div>
+        <div class="tarjeta__contenido">
+          <h3 class="tarjeta__titulo">La Candelaria, Monserrate y Museo del Oro Bogotá City Tour</h3>
+          <div class="tarjeta__calificacion">
+            <span class="tarjeta__valor-calificacion">4.9</span>
+            <span class="tarjeta__estrellas">★★★★★</span>
+          </div>
+          <div class="tarjeta__info">Privados y de Lujo</div>
+          <div class="tarjeta__info-precio">Desde $314.170</div>
+          <div class="tarjeta__por-persona">Por adulto (varía según el tamaño del grupo)</div>
+          <a href="#" class="tarjeta__boton-reservar">Reservar</a>
+        </div>
+      </article>
+
+      <!-- Tarjeta 6 -->
+      <article class="tarjeta">
+        <div class="tarjeta__contenedor-imagen">
+          <img src="/src/static/imagenes/COSAS-PORHACER/BOGOTA/3.jpg" alt="Catedral de Sal" class="tarjeta__imagen" />
+          <span class="tarjeta__overlay">Privado · Grupos reducidos</span>
+        </div>
+        <div class="tarjeta__contenido">
+          <h3 class="tarjeta__titulo">La Candelaria, Monserrate y Museo del Oro Bogotá City Tour</h3>
+          <div class="tarjeta__calificacion">
+            <span class="tarjeta__valor-calificacion">4.9</span>
+            <span class="tarjeta__estrellas">★★★★★</span>
+          </div>
+          <div class="tarjeta__info">Privados y de Lujo</div>
+          <div class="tarjeta__info-precio">Desde $314.170</div>
+          <div class="tarjeta__por-persona">Por adulto (varía según el tamaño del grupo)</div>
+          <a href="#" class="tarjeta__boton-reservar">Reservar</a>
+        </div>
+      </article>
+
+      <!-- Tarjeta 7 -->
+      <article class="tarjeta">
+        <div class="tarjeta__contenedor-imagen">
+          <img src="/src/static/imagenes/COSAS-PORHACER/BOGOTA/3.jpg" alt="Catedral de Sal" class="tarjeta__imagen" />
+          <span class="tarjeta__overlay">Privado · Grupos reducidos</span>
+        </div>
+        <div class="tarjeta__contenido">
+          <h3 class="tarjeta__titulo">La Candelaria, Monserrate y Museo del Oro Bogotá City Tour</h3>
+          <div class="tarjeta__calificacion">
+            <span class="tarjeta__valor-calificacion">4.9</span>
+            <span class="tarjeta__estrellas">★★★★★</span>
+          </div>
+          <div class="tarjeta__info">Privados y de Lujo</div>
+          <div class="tarjeta__info-precio">Desde $314.170</div>
+          <div class="tarjeta__por-persona">Por adulto (varía según el tamaño del grupo)</div>
+          <a href="#" class="tarjeta__boton-reservar">Reservar</a>
+        </div>
+      </article>
+
+      <!-- Tarjeta 8 -->
+      <article class="tarjeta">
+        <div class="tarjeta__contenedor-imagen">
+          <img src="/src/static/imagenes/COSAS-PORHACER/BOGOTA/3.jpg" alt="Catedral de Sal" class="tarjeta__imagen" />
+          <span class="tarjeta__overlay">Privado · Grupos reducidos</span>
+        </div>
+        <div class="tarjeta__contenido">
+          <h3 class="tarjeta__titulo">La Candelaria, Monserrate y Museo del Oro Bogotá City Tour</h3>
+          <div class="tarjeta__calificacion">
+            <span class="tarjeta__valor-calificacion">4.9</span>
+            <span class="tarjeta__estrellas">★★★★★</span>
+          </div>
+          <div class="tarjeta__info">Privados y de Lujo</div>
+          <div class="tarjeta__info-precio">Desde $314.170</div>
+          <div class="tarjeta__por-persona">Por adulto (varía según el tamaño del grupo)</div>
+          <a href="#" class="tarjeta__boton-reservar">Reservar</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <script>
+    // Revela cada tarjeta al hacer scroll, con el mismo patrón que
+    // ya usan las vistas de hoteles del sitio.
+    const tarjetas = document.querySelectorAll('.tarjeta');
+    const observador = new IntersectionObserver((entradas) => {
+      entradas.forEach((entrada) => {
+        if (entrada.isIntersecting) {
+          entrada.target.classList.add('visible');
+          observador.unobserve(entrada.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    tarjetas.forEach((tarjeta) => observador.observe(tarjeta));
+
+    // Filtros de experiencias: alterna cuál etiqueta luce seleccionada.
+    const etiquetas = document.querySelectorAll('.experiencias__etiqueta');
+    etiquetas.forEach((etiqueta) => {
+      etiqueta.addEventListener('click', () => {
+        etiquetas.forEach((e) => e.classList.remove('experiencias__etiqueta--seleccionada'));
+        etiqueta.classList.add('experiencias__etiqueta--seleccionada');
+      });
+    });
+  </script>
+
+</body>
+</html>
