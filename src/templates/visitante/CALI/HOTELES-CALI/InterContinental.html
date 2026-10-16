@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>InterContinental Cali by IHG</title>
+  <title>InterContinental Cali by IHG - Edelle</title>
   <link rel="stylesheet" href="/src/static/css/VISI/CALI/hotel-cali.css" />
 </head>
 
@@ -18,7 +18,7 @@
     <div class="navbar-container">
       <div class="logo">
         <div class="logo-container">
-          <img src="/src/static/imagenes/INICIO/logo_edelle.jpg" alt="Edelle - Tu Próxima Gran Aventura" />
+          <img src="/src/static/imagenes/INICIO/icono-krenga.svg" alt="Edelle - Tu Próxima Gran Aventura" />
         </div>
       </div>
 
@@ -54,225 +54,244 @@
       <a href="/src/templates/visitante/CALI/cosas-hacer-cali.html" class="sub-header__item">Hoteles</a>
       <a href="/src/templates/visitante/CALI/cosas-hacer-cali.html" class="sub-header__item">Cosas Por Hacer</a>
       <a href="/src/templates/visitante/CALI/restaurantes-cali.html" class="sub-header__item">Restaurantes</a>
-      <a href="#" class="sub-header__item">Reseñas</a>
+      
     </div>
   </section>
 
-  <!-- Hotel Detail Section -->
-  <main class="hotel-detail">
-    <div class="hotel-detail__header">
-      <h1 class="hotel-detail__title">InterContinental Cali by IHG
-      </h1>
-      <div class="hotel-detail__rating">
-        <span class="hotel-detail__score">4.3</span>
-        <span class="hotel-detail__stars">★★★★☆</span>
-      </div>
-      <p class="hotel-detail__address">
-        <span>📍</span> Av. Colombia #2-72, COMUNA 3, Cali, Valle del Cauca
-      </p>
-      <a href="#reviews-section" class="hotel-detail__write-review">✏️ Escribir una Opinión</a>
-    </div>
-
-    <!-- Gallery -->
-    <div class="gallery">
-      <div class="gallery__main">
-        <img src="/src/static/imagenes/HOTELES/CALI/InterContinental/uno.jpg" alt="Interior del hotel"
-          class="gallery__image" />
-        <span class="gallery__count">38</span>
-      </div>
-      <div class="gallery__thumbnails">
-        <img src="/src/static/imagenes/HOTELES/CALI/InterContinental/dos.jpg" alt="Cama"
-          class="gallery__thumbnail" />
-        <img src="/src/static/imagenes/HOTELES/CALI/InterContinental/tres.jpg" alt="Desayuno"
-          class="gallery__thumbnail" />
-        <img src="/src/static/imagenes/HOTELES/CALI/InterContinental/cuatro.jpg" alt="Exterior"
-          class="gallery__thumbnail" />
-        <img src="/src/static/imagenes/HOTELES/CALI/InterContinental/cinco.jpg" alt="Salón"
-          class="gallery__thumbnail" />
-      </div>
-    </div>
-
-    <!-- Booking Banner -->
-    <section class="booking-banner">
-      <h2 class="booking-banner__title">Hoteles en Cali y lugares donde alojarse</h2>
-      <div class="booking-banner__filters">
-        <div class="filter-item">
-          <span>📅 Check-in</span>
-          <span class="filter-value">-/-/-</span>
+  <!-- Contenido Principal del Hotel -->
+  <main class="hotel-main">
+    
+    <!-- Hero Section con Galería -->
+    <section class="hotel-hero">
+      <div>
+        <span class="hotel-hero__badge">Lujo y Confort</span>
+        <h1 class="hotel-hero__title">InterContinental Cali by IHG</h1>
+        
+        <div class="hotel-hero__meta">
+          <div class="hotel-hero__rating">
+            <span class="hotel-hero__score">4.3</span>
+            <span class="hotel-hero__stars">★★★★☆</span>
+            <span class="hotel-hero__reviews">(215 reseñas)</span>
+          </div>
+          <span>📍 Av. Colombia #2-72, COMUNA 3, Cali</span>
         </div>
-        <div class="filter-item">
-          <span>📅 Check-out</span>
-          <span class="filter-value">-/-/-</span>
+
+        <a href="#reservar" class="hotel-hero__cta">Reservar Ahora</a>
+      </div>
+
+      <!-- Galería de Imágenes -->
+      <div class="hotel-hero__gallery">
+        <div class="hotel-hero__gallery-main">
+          <img src="/src/static/imagenes/HOTELES/CALI/InterContinental/uno.jpg" alt="Interior del hotel" />
+          <button class="hotel-hero__gallery-btn">Ver 38 fotos</button>
         </div>
-        <div class="filter-item">
-          <span>👥 Habitaciones/huéspedes</span>
-          <span class="filter-value">1 habitación, 2 huéspedes</span>
+        <div class="hotel-hero__gallery-thumbs">
+          <img src="/src/static/imagenes/HOTELES/CALI/InterContinental/dos.jpg" alt="Cama" />
+          <img src="/src/static/imagenes/HOTELES/CALI/InterContinental/tres.jpg" alt="Desayuno" />
+          <img src="/src/static/imagenes/HOTELES/CALI/InterContinental/cuatro.jpg" alt="Exterior" />
+          <img src="/src/static/imagenes/HOTELES/CALI/InterContinental/cinco.jpg" alt="Salón" />
         </div>
       </div>
     </section>
 
-    <!-- Information Section -->
-    <section class="info-section">
-      <h2 class="info-section__title">Información</h2>
+    <!-- Barra de Reserva Flotante -->
+    <div class="booking-bar">
+      <div class="booking-bar__inner">
+        <div class="booking-bar__field">
+          <span class="booking-bar__label">Check-in</span>
+          <span class="booking-bar__value">Seleccionar fecha</span>
+        </div>
+        <div class="booking-bar__divider"></div>
+        <div class="booking-bar__field">
+          <span class="booking-bar__label">Check-out</span>
+          <span class="booking-bar__value">Seleccionar fecha</span>
+        </div>
+        <div class="booking-bar__divider"></div>
+        <div class="booking-bar__field">
+          <span class="booking-bar__label">Huéspedes</span>
+          <span class="booking-bar__value">1 habitación, 2 huéspedes</span>
+        </div>
+        <button class="booking-bar__cta" id="reservar">Ver Disponibilidad</button>
+      </div>
+    </div>
 
-      <div class="info-grid">
-        <div class="info-grid__left">
-          <div class="rating-summary">
-            <div class="rating-summary__overall">
-              <span class="rating-summary__score">4.3</span>
-              <span class="rating-summary__label">Muy Buena</span>
-              <div class="rating-summary__stars">★★★★☆</div>
+    <!-- Grid de Contenido Principal -->
+    <div class="hotel-content">
+      
+      <!-- Columna Izquierda - Contenido -->
+      <div>
+        <!-- Información del Hotel -->
+        <article class="content-card">
+          <h2 class="content-card__title">Sobre el Hotel</h2>
+          <p class="content-card__text">
+            Todo el mundo necesita un sitio donde reposar cuando está cansado. Para aquellos que visiten Cali, 
+            InterContinental Cali - Un Hotel Estelar es una magnífica elección para descansar. Conocido por su 
+            ambiente de lujo y su proximidad a fantásticos restaurantes y atracciones, te ayuda a disfrutar de 
+            lo mejor de la ciudad.
+          </p>
+        </article>
+
+        <!-- Servicios y Amenidades -->
+        <article class="content-card">
+          <h2 class="content-card__title">Servicios del Establecimiento</h2>
+          <div class="amenities-grid">
+            <div class="amenity-item">
+              <span class="amenity-icon">🚗</span>
+              <span>Estacionamiento con valet</span>
             </div>
-            <div class="rating-summary__details">
-              <div class="rating-summary__detail">
-                <span>4.5 ★★★★★ Ubicación</span>
+            <div class="amenity-item">
+              <span class="amenity-icon">☕</span>
+              <span>Desayuno disponible</span>
+            </div>
+            <div class="amenity-item">
+              <span class="amenity-icon">🏋️</span>
+              <span>Gimnasio completo</span>
+            </div>
+            <div class="amenity-item">
+              <span class="amenity-icon">🐶</span>
+              <span>Pet Friendly</span>
+            </div>
+            <div class="amenity-item">
+              <span class="amenity-icon">🌐</span>
+              <span>WiFi Alta Velocidad</span>
+            </div>
+            <div class="amenity-item">
+              <span class="amenity-icon">💼</span>
+              <span>Centro de negocios</span>
+            </div>
+          </div>
+          <button class="content-card__btn">Mostrar más servicios</button>
+        </article>
+
+        <!-- Reseñas -->
+        <article class="content-card">
+          <h2 class="content-card__title">Reseñas de Huéspedes</h2>
+          
+          <!-- Resumen de Reseñas -->
+          <div class="reviews-summary">
+            <div class="reviews-summary__score">
+              <span class="reviews-summary__number">4.3</span>
+              <span class="reviews-summary__text">Muy Buena</span>
+              <span class="reviews-summary__stars">★★★★☆</span>
+            </div>
+            <div class="reviews-summary__bars">
+              <div class="bar-item">
+                <span>Ubicación</span>
+                <div class="bar-track">
+                  <div class="bar-fill" style="width: 90%"></div>
+                </div>
+                <span>4.5</span>
               </div>
-              <div class="rating-summary__detail">
-                <span>4.3 ★★★★☆ Habitaciones</span>
+              <div class="bar-item">
+                <span>Limpieza</span>
+                <div class="bar-track">
+                  <div class="bar-fill" style="width: 90%"></div>
+                </div>
+                <span>4.5</span>
               </div>
-              <div class="rating-summary__detail">
-                <span>4.1 ★★★☆ Calidad/precio</span>
-              </div>
-              <div class="rating-summary__detail">
-                <span>4.5 ★★★★☆ Limpieza</span>
-              </div>
-              <div class="rating-summary__detail">
-                <span>4.4 ★★★★★ Servicio</span>
-              </div>
-              <div class="rating-summary__detail">
-                <span>4.4 ★★★★☆ Sueño</span>
+              <div class="bar-item">
+                <span>Servicio</span>
+                <div class="bar-track">
+                  <div class="bar-fill" style="width: 88%"></div>
+                </div>
+                <span>4.4</span>
               </div>
             </div>
           </div>
 
-          <div class="description">
-            <p>Todo el mundo necesita un sitio donde reposar cuando está cansado. Para 
-                aquellos que visiten Cali, InterContinental Cali - Un Hotel Estelar es una 
-                magnífica elección para descansar. Conocido por su ambiente de lujo y su 
-                proximidad a fantásticos restaurantes y atracciones, InterContinental Cali
-                - Un Hotel Estelar te ayuda a disfrutar de lo mejor de Cali...</p>
-          </div>
-        </div>
+          <!-- Lista de Reseñas -->
+          <div class="reviews-list">
+            <article class="review-card">
+              <div class="review-card__header">
+                <img src="https://placehold.co/50x50/ccc/000?text=AM" alt="Alba Martinez" class="review-card__avatar" />
+                <div class="review-card__user">
+                  <span class="review-card__name">Alba Martinez B</span>
+                  <span class="review-card__date">5 de Octubre, 2025</span>
+                </div>
+              </div>
+              <div class="review-card__rating">★★★★★</div>
+              <p class="review-card__text">
+                Tuvimos una estancia maravillosa. La atención y el servicio fueron excepcionales. 
+                Me sentí como en casa. Además, la comida estaba deliciosa. ¡Muchas gracias!
+              </p>
+              <span class="review-card__meta">Viajó con familia • Octubre 2025</span>
+            </article>
 
-        <div class="info-grid__right">
-          <div class="services">
-            <h3 class="services__title">Servicios del establecimiento</h3>
-            <ul class="services__list">
-              <li><span>🚗</span> Estacionamiento con servicio de valet</li>
-              <li><span>☕</span> Desayuno gratis</li>
-              <li><span>🏋️‍♂️</span> Gimnasio / Sala de entrenamiento</li>
-              <li><span>🐶</span> Se admiten mascotas (Se aceptan perros / mascotas)</li>
-              <li><span>🌐</span> Internet de alta velocidad gratuito</li>
-              <li><span>💼</span> Centro de negocios con acceso a Internet</li>
-              <li><span>👧</span> Actividades infantiles (Ideal para niños / familias)</li>
-              <li><span>💼</span> Centro de negocios con acceso a Internet</li>
-            </ul>
-            <button class="services__btn">Mostrar más ▼</button>
+            <article class="review-card">
+              <div class="review-card__header">
+                <img src="https://placehold.co/50x50/ccc/000?text=ER" alt="Edwar Roa" class="review-card__avatar" />
+                <div class="review-card__user">
+                  <span class="review-card__name">Edwar Roa</span>
+                  <span class="review-card__date">10 de Agosto, 2024</span>
+                </div>
+              </div>
+              <div class="review-card__rating">★★★★★</div>
+              <p class="review-card__text">
+                Un hotel clásico con mucho encanto. Las habitaciones son amplias y muy cómodas. 
+                La ubicación en la Avenida Colombia es perfecta para moverse por la ciudad.
+              </p>
+              <span class="review-card__meta">Viajó en pareja • Agosto 2024</span>
+            </article>
           </div>
-
-          <div class="features">
-            <h3 class="features__title">Características de la habitación</h3>
-            <ul class="features__list">
-
-              <li><span>🔇</span> Habitaciones insonorizadas</li>
-              <li><span>⌨️</span> Escritorio</li>
-              <li><span>📱</span> Teléfono</li>
-              <li><span>📺</span> TV pantalla plana</li>
-              <li><span>❄️</span> Aire acondicionado</li>
-              <li><span>🧰</span> Caja fuerte</li>
-              <li><span>☕</span> Máquina de café/té</li>
-              <li><span>✅</span> Productos de tocador de cortesía</li>
-            </ul>
-            <button class="features__btn">Mostrar más ▼</button>
-          </div>
-
-          <div class="room-types">
-            <h3 class="room-types__title">Tipos de Habitación</h3>
-            <ul class="room-types__list">
-              <li><span>🚭</span> Habitaciones para no fumadores</li>
-            </ul>
-          </div>
-        </div>
+        </article>
       </div>
-    </section>
 
-    <!-- BOTÓN DE ACCIÓN CON LABEL VINCULADO AL CHECKBOX -->
-    <div class="cta-button">
-      <label for="cart-toggle" class="cta-button__btn">¡AGREGAR A MI TOUR POR $ 401.193!</label>
+      <!-- Columna Derecha - Sidebar con Precio -->
+      <aside class="hotel-content__sidebar">
+        <div class="sidebar-card sticky-card">
+          <div class="sidebar-card__price">
+            <span class="price-label">Desde</span>
+            <span class="price-amount">$401.193</span>
+            <span class="price-night">por noche</span>
+          </div>
+          
+          <div class="sidebar-card__features">
+            <span>Cancelación gratuita</span>
+            <span>Mejor precio garantizado</span>
+            <span>Confirmación instantánea</span>
+            <span>Atención 24/7</span>
+          </div>
+
+          <label for="cart-toggle" class="sidebar-card__cta">Agregar a mi Tour</label>
+          <p class="sidebar-card__hint">Toca para añadir al carrito</p>
+        </div>
+      </aside>
+
     </div>
-
-    <!-- Reviews Section -->
-    <section id="reviews-section" class="reviews-section">
-      <h2 class="reviews-section__title">¡RESEÑAS!</h2>
-      <h3 class="reviews-section__subtitle">Todas las reseñas</h3>
-
-      <!-- Review 1 -->
-      <article class="review-card">
-        <div class="review-card__header">
-          <img src="https://placehold.co/50x50/ccc/000?text=AM  " alt="Alba Martinez" class="review-card__avatar" />
-          <div class="review-card__user-info">
-            <span class="review-card__name">Alba Martinez B</span>
-            <span class="review-card__date">5-10-2025</span>
-          </div>
-        </div>
-        <div class="review-card__rating">
-          <span class="review-card__score">★★★★★</span>
-        </div>
-        <div class="review-card__content">
-          <p>Tuvimos una estancia maravillosa. La atención y el servicio fueron excepcionales. Me sentí como en casa.
-            Además, la comida estaba deliciosa. ¡Muchas gracias!</p>
-          <div class="review-card__meta">
-            <span>Fecha de estancia: Octubre de 2025</span>
-            <span>Tipo de viaje: Viajé con mi familia</span>
-          </div>
-        </div>
-      </article>
-
-
-      <article class="review-card">
-        <div class="review-card__header">
-          <img src="https://placehold.co/50x50/ccc/000?text=ER  " alt="Edwar Roa" class="review-card__avatar" />
-          <div class="review-card__user-info">
-            <span class="review-card__name">Alba Martinez B</span>
-            <span class="review-card__date">10-08-2024</span>
-          </div>
-        </div>
-        <div class="review-card__rating">
-          <span class="review-card__score">★★★★★</span>
-        </div>
-        <div class="review-card__content">
-          <p>Tuvimos una estancia maravillosa. La atención y el servicio fueron excepcionales. Me sentí como en casa.
-            Además, la comida estaba deliciosa. ¡Muchas gracias!</p>
-          <div class="review-card__meta">
-            <span>Fecha de estancia: Agosto de 2024</span>
-            <span>Tipo de viaje: Viajé con mi pareja</span>
-          </div>
-        </div>
-      </article>
-
-
-      <!-- Review 2 (Empty placeholder) -->
-      <article class="review-card review-card--placeholder">
-        <div class="review-card__placeholder-content">
-          <p>Próximamente nuevas reseñas...</p>
-        </div>
-      </article>
-    </section>
   </main>
 
-  <!-- PANEL LATERAL (RESUMEN CARRITO) -->
-  <aside class="reserva">
-    <h3>TU RESERVA</h3>
-    <div class="cart-list">
-      <div class="cart-item item-3"><span>Hotel Ciudad Bonita</span> <b>$401.193</b></div>
+  <!-- PANEL LATERAL DEL CARRITO -->
+  <aside class="cart-sidebar">
+    <div class="cart-sidebar__header">
+      <h3>TU RESERVA</h3>
+      <label for="cart-toggle" class="cart-sidebar__close">✕</label>
     </div>
-    <a href="/src/templates/comprador/factura.html" class="btn-checkout">Realizar Compra</a>
-    <p class="hint">Toca el producto de nuevo para quitarlo</p>
+    
+    <div class="cart-sidebar__body">
+      <div class="cart-item">
+        <div>
+          <span class="cart-item__name">InterContinental Cali</span>
+          <span class="cart-item__desc">2 noches • 2 huéspedes</span>
+        </div>
+        <span class="cart-item__price">$401.193</span>
+      </div>
+
+      <div class="cart-sidebar__total">
+        <span>Total:</span>
+        <strong>$401.193</strong>
+      </div>
+
+      <a href="/src/templates/comprador/factura.html" class="cart-sidebar__checkout">Proceder al Pago</a>
+      <p class="cart-sidebar__hint">Toca el producto de nuevo para quitarlo</p>
+    </div>
   </aside>
 
-  <!-- VENTANA EMERGENTE -->
+  <!-- NOTIFICACIÓN TOAST -->
   <div class="notice-container">
-    <div class="notice">¡Producto añadido al carrito!</div>
+    <div class="notice">
+      <span>✓</span>
+      ¡Producto añadido al carrito!
+    </div>
   </div>
 
 </body>

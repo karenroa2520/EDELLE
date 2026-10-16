@@ -4,22 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ushin Japanese & Grill</title>
-  <link rel="stylesheet" href="/src/static/css/VISI/BOGOTA/RESTAURENTES_BOGOTA/Ushin.css" />
+  <link rel="stylesheet" href="/src/static/css/VISI/BOGOTA/RESTAURENTES_BOGOTA/autor.css" />
 </head>
 <body>
-
-  <!-- CHECKBOX HACK PARA EL CARRITO -->
-  <input type="checkbox" id="cart-toggle" class="cart-control">
 
   <!-- Header Principal -->
   <header>
     <div class="navbar-container">
       <div class="logo">
         <div class="logo-container">
-          <img src="/src/static/imagenes/INICIO/logo_edelle.jpg" alt="Edelle - Tu Próxima Gran Aventura" />
+          <img src="/src/static/imagenes/INICIO/icono-krenga.svg" alt="Edelle - Tu Próxima Gran Aventura" />
         </div>
       </div>
-
       <nav>
         <ul>
           <li><a href="/index.html">Inicio</a></li>
@@ -29,7 +25,6 @@
           <li><a href="/src/templates/visitante/pasajes.html">Pasajes</a></li>
         </ul>
       </nav>
-
       <div class="user-icon">
         <a href="/src/templates/comprador/login.html" title="Iniciar Sesión">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -44,152 +39,298 @@
   <!-- Sub-header / Submenu -->
   <section class="sub-header">
     <div class="sub-header__container">
-      <a href="#" class="sub-header__item sub-header__item--active">
-        <span class="sub-header__icon">📍</span>
-        Bogotá
+      <a href="/src/templates/visitante/BOGOTA/BOGOTA.html" class="sub-header__item sub-header__item--active">
+        <span class="sub-header__icon">📍</span> Bogotá
       </a>
       <a href="/src/templates/visitante/BOGOTA/hoteles-bogota.html" class="sub-header__item">Hoteles</a>
       <a href="/src/templates/visitante/BOGOTA/cosas-porHacer-bogota.html" class="sub-header__item">Cosas Por Hacer</a>
       <a href="/src/templates/visitante/BOGOTA/restaurates-bogota.html" class="sub-header__item">Restaurantes</a>
-      <a href="#" class="sub-header__item">Reseñas</a>
     </div>
   </section>
 
-  <!-- Hotel Detail Section -->
-  <main class="hotel-detail">
-    <div class="hotel-detail__header">
-      <h1 class="hotel-detail__title">Ushin Japanese & Grill</h1>
-      <div class="hotel-detail__rating">
-        <span class="hotel-detail__score">4.9</span>
-        <span class="hotel-detail__stars">★★★★★</span>
-      </div>
-      <p class="hotel-detail__address">
-        <span> 𖡡 </span> Cl. 24a #57-60-Bogotá Colombia</p>
-      <a href="#reviews-section" class="hotel-detail__write-review">✎ Escribir una Opinión</a>
-    </div>
+  <main class="restaurante">
 
-    <!-- Gallery -->
-    <div class="gallery">
-      <div class="gallery__main">
-        <img src="/src/static/imagenes/RESTAURANTES/BOGOTA/unshin/unshin.jpg" alt="Interior del hotel" class="gallery__image" />
-        <span class="gallery__count">50</span>
-      </div>
-      <div class="gallery__thumbnails">
-        <img src="/src/static/imagenes/RESTAURANTES/BOGOTA/unshin/dos.jpg" alt="Cama" class="gallery__thumbnail" />
-        <img src="/src/static/imagenes/RESTAURANTES/BOGOTA/unshin/tres.jpg" alt="Desayuno" class="gallery__thumbnail" />
-        <img src="/src/static/imagenes/RESTAURANTES/BOGOTA/unshin/cuatro.jpg" alt="Exterior" class="gallery__thumbnail" />
-        <img src="/src/static/imagenes/RESTAURANTES/BOGOTA/unshin/cinco.jpg" alt="Salón" class="gallery__thumbnail" />
-      </div>
-    </div>
-
-    <!-- Booking Banner -->
-    <section class="booking-banner">
-      <h2 class="booking-banner__title">Hoteles en Bogotá y lugares donde alojarse</h2>
-      <div class="booking-banner__filters">
-        <div class="filter-item">
-          <span>📅 Check-in</span>
-          <span class="filter-value">-/-/-</span>
+    <!-- HERO: galería interactiva + datos clave -->
+    <section class="restaurante-hero" id="restaurante-hero">
+      <div class="restaurante-hero__galeria">
+        <div class="restaurante-hero__principal">
+          <img id="galeria-principal" src="/src/static/imagenes/RESTAURANTES/BOGOTA/unshin/unshin.jpg" alt="Interior de Ushin Japanese & Grill" />
+          <span class="restaurante-hero__estado" id="estado-abierto">
+            <span class="restaurante-hero__punto"></span> Consultando horario…
+          </span>
         </div>
-        <div class="filter-item">
-          <span>📅 Check-out</span>
-          <span class="filter-value">-/-/-</span>
-        </div>
-        <div class="filter-item">
-          <span>👥 Habitaciones/huéspedes</span>
-          <span class="filter-value">1 habitación, 2 huéspedes</span>
+        <div class="restaurante-hero__miniaturas">
+          <img class="miniatura active" src="/src/static/imagenes/RESTAURANTES/BOGOTA/unshin/unshin.jpg" alt="Vista principal del restaurante" />
+          <img class="miniatura" src="/src/static/imagenes/RESTAURANTES/BOGOTA/unshin/dos.jpg" alt="Platos de sushi" />
+          <img class="miniatura" src="/src/static/imagenes/RESTAURANTES/BOGOTA/unshin/tres.jpg" alt="Ambiente y decoración" />
+          <img class="miniatura" src="/src/static/imagenes/RESTAURANTES/BOGOTA/unshin/cuatro.jpg" alt="Cocina y grill" />
+          <img class="miniatura" src="/src/static/imagenes/RESTAURANTES/BOGOTA/unshin/cinco.jpg" alt="Detalle gastronómico" />
         </div>
       </div>
-    </section>
 
-    <!-- Information Section -->
-    <section class="info-section">
-      <h2 class="info-section__title">Información</h2>
+      <div class="restaurante-hero__info">
+        <span class="restaurante-hero__eyebrow"><span class="linea"></span>Hotel Grand Hyatt, Piso 14</span>
+        <h1 class="restaurante-hero__titulo">Ushin Japanese & Grill</h1>
+        <div class="restaurante-hero__rating">
+          <span class="restaurante-hero__score">4.9</span>
+          <span class="restaurante-hero__stars">★★★★★</span>
+        </div>
+        <p class="restaurante-hero__direccion">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          Calle 24A # 57 - 60 Hotel Grand Hyatt Bogota Piso 14, Bogotá 111321 Colombia
+        </p>
 
-      <div class="info-grid">
-        <div class="info-grid__left">
-          <h3 class="section-title">Un vistazo al restaurante</h3>
-          <p class="closing-time"><span class="highlight">Abierto hasta las 9:45 pm</span> <a href="#">Ver todos los horarios</a></p>
-          <p class="address"><span> 𖡡 </span> Calle 24A # 57 - 60 Hotel Grand Hyatt Bogota Piso 14, Bogotá 111321 Colombia</p>
-          <div class="contact-links">
-            <a href="https://www.instagram.com/ushinjapanesegrill/?hl=es">Página web</a>
-            <a href="#">Menú</a>
-            <a href="tel:+573007688226">+57 316541253</a>
-            <a href="mailto:info@petronio.com">Correo electrónico</a>
-          </div>
-
-          <h3 class="section-title">Características</h3>
-          <ul class="characteristics-list">
-            <li>✓ Apto para vegetarianos, Opciones veganas, Opciones sin gluten</li>
-            <li>✓ Acepta tarjetas de crédito: American Express, Mastercard, Visa</li>
-            <li>✓ Almuerzo, Cena, Bebidas</li>
-          </ul>
-          <a href="#" class="view-all">Ver todas las características</a>
+        <div class="fusion">
+          <span class="fusion__chip">Japonesa</span>
+          <span class="fusion__signo">+</span>
+          <span class="fusion__chip">Grill</span>
+          <span class="fusion__signo">+</span>
+          <span class="fusion__chip">Vistas</span>
+          <span class="fusion__signo">=</span>
+          <span class="fusion__resultado">USHIN</span>
         </div>
 
-        <div class="info-grid__right">
-          <h3 class="section-title">Horas</h3>
-          <div class="hours-list">
-            <div class="hour-item"><span>Domingo</span> Del 12:00 PM al 09:45 PM</div>
-            <div class="hour-item"><span>Lunes</span> Del 12:00 PM al 09:45 PM</div>
-            <div class="hour-item"><span>Martes</span> Del 12:00 PM al 10:45 PM</div>
-            <div class="hour-item"><span>Miércoles</span> Del 12:00 PM al 10:45 PM</div>
-            <div class="hour-item"><span>Jueves</span> Del 12:00 PM al 10:45 PM</div>
-            <div class="hour-item"><span>Viernes</span> Del 12:00 PM al 10:45 PM</div>
-            <div class="hour-item"><span>Sábado</span> Del 12:00 PM al 10:45 PM</div>
-          </div>
-
-          <div class="reservation-section">
-            <h3 class="section-title">Reserva una mesa</h3>
-            <div class="reservation-filters">
-              <div class="filter-item"><span>Hoy</span></div>
-              <div class="filter-item"><span>8:00 p.m.</span></div>
-              <div class="filter-item"><span>2 Personas</span></div>
-            </div>
-            <div class="time-slots">
-              <button class="time-slot">16:00</button>
-              <button class="time-slot">16:30</button>
-            </div>
-            <button class="guardar-btn">Reservar este restaurante</button>
-          </div>
+        <div class="restaurante-hero__acciones">
+          <a href="#reservar" class="btn-primario">Reservar este restaurante</a>
+          <a href="#reviews-section" class="btn-fantasma">✎ Escribir una opinión</a>
         </div>
       </div>
     </section>
 
+    <!-- SUBNAV PEGAJOSA -->
+    <nav class="restaurante-subnav" id="restaurante-subnav">
+      <div class="restaurante-subnav__links">
+        <a href="#acerca">Acerca de</a>
+        <a href="#caracteristicas">Características</a>
+        <a href="#horarios">Horarios</a>
+        <a href="#reviews-section">Reseñas</a>
+      </div>
+      <a href="#reservar" class="btn-mini">Reservar</a>
+    </nav>
 
-    <!-- Reviews Section -->
+    <!-- DATOS RÁPIDOS -->
+    <section class="stats-row">
+      <div class="stat-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5s6 7 6 11.5a6 6 0 0 1-12 0c0-4.5 6-11.5 6-11.5z"/></svg>
+        <div><strong>$$$$</strong><span>Rango de precio</span></div>
+      </div>
+      <div class="stat-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C7 2 4 6 4 10c0 6 8 12 8 12s8-6 8-12c0-4-3-8-8-8z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <div><strong>Japonesa & Grill</strong><span>Tipo de cocina</span></div>
+      </div>
+      <div class="stat-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 20l4-4 4 4M12 16V4M5 9l7-7 7 7"/></svg>
+        <div><strong>Opciones veganas</strong><span>Sin gluten disponible</span></div>
+      </div>
+      <div class="stat-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        <div><strong>Almuerzo y cena</strong><span>Bebidas y coctelería</span></div>
+      </div>
+    </section>
+
+    <!-- CUERPO: información + reserva -->
+    <section class="restaurante-body">
+      <div class="restaurante-body__main">
+
+        <h2 class="restaurante-body__h2" id="acerca">Acerca de</h2>
+        <p class="restaurante-body__p">
+          Ubicado en el piso 14 del Hotel Grand Hyatt Bogotá, Ushin Japanese & Grill ofrece una experiencia culinaria única que combina la tradición japonesa con técnicas modernas de grill. Disfruta de vistas espectaculares mientras degustas sushi fresco, carnes premium y una selección exclusiva de bebidas.
+        </p>
+
+        <div class="contact-row">
+          <a href="https://www.instagram.com/ushinjapanesegrill/?hl=es" class="contact-chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+            Página web
+          </a>
+          <a href="#" class="contact-chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+            Ver menú
+          </a>
+          <a href="tel:+57316541253" class="contact-chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.8 2z"/></svg>
+            +57 316 541253
+          </a>
+          <a href="mailto:info@petronio.com" class="contact-chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+            Escribir correo
+          </a>
+        </div>
+
+        <h2 class="restaurante-body__h2" id="caracteristicas">Características</h2>
+        <div class="caracteristicas-grid">
+          <span class="caracteristica-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Apto para vegetarianos</span>
+          <span class="caracteristica-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Opciones veganas</span>
+          <span class="caracteristica-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Opciones sin gluten</span>
+          <span class="caracteristica-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Acepta American Express</span>
+          <span class="caracteristica-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Mastercard y Visa</span>
+          <span class="caracteristica-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Almuerzo y cena</span>
+          <span class="caracteristica-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Bebidas y coctelería</span>
+          <span class="caracteristica-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Vistas panorámicas</span>
+        </div>
+        <a href="#" class="restaurante-body__more">Ver todas las características</a>
+
+      </div>
+
+      <!-- TARJETA DE RESERVA (sigue al usuario mientras lee) -->
+      <aside class="reserva-box" id="reservar">
+        <h3 class="reserva-box__titulo" id="horarios">Horarios</h3>
+        <div class="horarios-lista" id="horarios-lista">
+          <div class="horario-item" data-dia="0" data-abre="12:00" data-cierra="21:45"><span>Domingo</span><em>12:00 PM – 09:45 PM</em></div>
+          <div class="horario-item" data-dia="1" data-abre="12:00" data-cierra="21:45"><span>Lunes</span><em>12:00 PM – 09:45 PM</em></div>
+          <div class="horario-item" data-dia="2" data-abre="12:00" data-cierra="22:45"><span>Martes</span><em>12:00 PM – 10:45 PM</em></div>
+          <div class="horario-item" data-dia="3" data-abre="12:00" data-cierra="22:45"><span>Miércoles</span><em>12:00 PM – 10:45 PM</em></div>
+          <div class="horario-item" data-dia="4" data-abre="12:00" data-cierra="22:45"><span>Jueves</span><em>12:00 PM – 10:45 PM</em></div>
+          <div class="horario-item" data-dia="5" data-abre="12:00" data-cierra="22:45"><span>Viernes</span><em>12:00 PM – 10:45 PM</em></div>
+          <div class="horario-item" data-dia="6" data-abre="12:00" data-cierra="22:45"><span>Sábado</span><em>12:00 PM – 10:45 PM</em></div>
+        </div>
+
+        <h3 class="reserva-box__titulo">Elige una hora</h3>
+        <div class="franjas-horarias" id="franjas-horarias">
+          <button type="button" class="franja">16:00</button>
+          <button type="button" class="franja">16:30</button>
+          <button type="button" class="franja">17:00</button>
+          <button type="button" class="franja">19:00</button>
+          <button type="button" class="franja">19:30</button>
+          <button type="button" class="franja">20:00</button>
+        </div>
+
+        <button class="reserva-box__btn" id="btn-reservar">Reservar este restaurante</button>
+      </aside>
+    </section>
+
+    <!-- RESEÑAS -->
     <section id="reviews-section" class="reviews-section">
-      <h2 class="reviews-section__title">¡RESEÑAS!</h2>
-      <h3 class="reviews-section__subtitle">Todas las reseñas</h3>
+      <h2 class="reviews-section__titulo">¡Reseñas!</h2>
+      <div class="reviews-section__divider"></div>
+      <h3 class="reviews-section__subtitulo">Todas las reseñas</h3>
 
-      <!-- Review 1 -->
-      <article class="review-card">
-        <div class="review-card__header">
-          <img src="https://placehold.co/50x50/ccc/000?text=AM    " alt="Alba Martinez" class="review-card__avatar" />
-          <div class="review-card__user-info">
-            <span class="review-card__name">Alba Martinez B</span>
-            <span class="review-card__date">5-12-2025</span>
+      <div class="reviews-section__lista">
+        <article class="review-card">
+          <div class="review-card__header">
+            <img src="https://placehold.co/50x50/EDF5D6/4A1F3D?text=AM" alt="Alba Martinez B" class="review-card__avatar" />
+            <div class="review-card__user-info">
+              <span class="review-card__nombre">Alba Martinez B</span>
+              <span class="review-card__fecha">5 de diciembre de 2025</span>
+            </div>
+            <span class="review-card__score">★★★★★</span>
           </div>
-        </div>
-        <div class="review-card__rating">
-          <span class="review-card__score">★★★★★</span>
-        </div>
-        <div class="review-card__content">
-          <p>Tuvimos una estancia maravillosa. La atención y el servicio fueron excepcionales. Me sentí como en casa. Además, la comida estaba deliciosa. ¡Muchas gracias!</p>
+          <p class="review-card__texto">
+            Tuvimos una estancia maravillosa. La atención y el servicio fueron excepcionales. Me sentí como en casa.
+            Además, la comida estaba deliciosa. ¡Muchas gracias!
+          </p>
           <div class="review-card__meta">
-            <span>Fecha de estadia: Octubre de 2025</span>
-            <span>Tipo de viaje: Viajé con mi familia</span>
+            <span class="tag">Octubre de 2025</span>
+            <span class="tag">Viajé con mi familia</span>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <!-- Review 2 (Empty placeholder) -->
-      <article class="review-card review-card--placeholder">
-        <div class="review-card__placeholder-content">
-          <p>Próximamente nuevas reseñas...</p>
-        </div>
-      </article>
+        <article class="review-card review-card--vacia">
+          <p>Próximamente nuevas reseñas.</p>
+          <a href="#" class="restaurante-body__more">Sé el primero en escribir una</a>
+        </article>
+      </div>
     </section>
+
   </main>
+
+  <!-- TOAST DE CONFIRMACIÓN -->
+  <div class="notice-container" id="notice-container">
+    <div class="notice">✓ Solicitud de reserva enviada</div>
+  </div>
+
+  <script>
+    // Galería: clic en miniatura cambia la imagen principal
+    (function () {
+      const principal = document.getElementById('galeria-principal');
+      const miniaturas = document.querySelectorAll('.miniatura');
+      miniaturas.forEach((mini) => {
+        mini.addEventListener('click', () => {
+          principal.src = mini.src;
+          principal.alt = mini.alt;
+          miniaturas.forEach((m) => m.classList.remove('active'));
+          mini.classList.add('active');
+        });
+      });
+    })();
+
+    // Estado "abierto ahora" calculado con la hora real del visitante
+    (function () {
+      const badge = document.getElementById('estado-abierto');
+      const items = document.querySelectorAll('.horario-item');
+      const ahora = new Date();
+      const diaHoy = ahora.getDay();
+      const minutosAhora = ahora.getHours() * 60 + ahora.getMinutes();
+
+      function aMinutos(hhmm) {
+        const [h, m] = hhmm.split(':').map(Number);
+        return h * 60 + m;
+      }
+
+      items.forEach((item) => {
+        if (Number(item.dataset.dia) === diaHoy) {
+          item.classList.add('horario-item--hoy');
+          const abre = aMinutos(item.dataset.abre);
+          const cierra = aMinutos(item.dataset.cierra);
+          
+          let abierto = false;
+          if (cierra <= 24 * 60) {
+            abierto = minutosAhora >= abre && minutosAhora < cierra;
+          } else {
+            abierto = minutosAhora >= abre || minutosAhora < (cierra - 24 * 60);
+          }
+
+          badge.classList.toggle('restaurante-hero__estado--cerrado', !abierto);
+          badge.innerHTML = abierto
+            ? '<span class="restaurante-hero__punto"></span> Abierto ahora · cierra ' + item.querySelector('em').textContent.split('–')[1].trim()
+            : '<span class="restaurante-hero__punto"></span> Cerrado ahora';
+        }
+      });
+    })();
+
+    // Franjas horarias: selección visual
+    (function () {
+      const franjas = document.querySelectorAll('.franja');
+      franjas.forEach((f) => {
+        f.addEventListener('click', () => {
+          franjas.forEach((x) => x.classList.remove('franja--activa'));
+          f.classList.add('franja--activa');
+        });
+      });
+    })();
+
+    // Botón reservar: muestra confirmación tipo toast
+    (function () {
+      const boton = document.getElementById('btn-reservar');
+      const notice = document.getElementById('notice-container');
+      boton.addEventListener('click', () => {
+        notice.classList.add('notice-container--visible');
+        setTimeout(() => notice.classList.remove('notice-container--visible'), 3200);
+      });
+    })();
+
+    // Subnav pegajosa: aparece tras salir del hero
+    (function () { 
+      const subnav = document.getElementById('restaurante-subnav');
+      const hero = document.getElementById('restaurante-hero');
+      const observador = new IntersectionObserver(([entrada]) => {
+        subnav.classList.toggle('restaurante-subnav--fija', !entrada.isIntersecting);
+      }, { threshold: 0 });
+      observador.observe(hero);
+    })();
+
+    // Revelado al hacer scroll
+    (function () {
+      const elementos = document.querySelectorAll('.stat-card, .caracteristica-chip, .review-card, .fusion__chip, .fusion__resultado');
+      const prefiereMenosMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefiereMenosMovimiento) { elementos.forEach((e) => e.classList.add('visible')); return; }
+      const observador = new IntersectionObserver((entradas) => {
+        entradas.forEach((entrada) => {
+          if (entrada.isIntersecting) { entrada.target.classList.add('visible'); observador.unobserve(entrada.target); }
+        });
+      }, { threshold: 0.15 });
+      elementos.forEach((el) => observador.observe(el));
+    })();
+  </script>
 
 </body>
 </html>

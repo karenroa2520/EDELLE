@@ -13,7 +13,7 @@
     <div class="navbar-container">
       <div class="logo">
         <div class="logo-container">
-          <img src="/src/static/imagenes/INICIO/logo_edelle.jpg" alt="Edelle - Tu Próxima Gran Aventura" />
+          <img src="/src/static/imagenes/INICIO/icono-krenga.svg" alt="Edelle - Tu Próxima Gran Aventura" />
         </div>
       </div>
       <nav>
@@ -45,7 +45,6 @@
       <a href="/src/templates/visitante/CALI/hoteles-cali.html" class="sub-header__item">Hoteles</a>
       <a href="/src/templates/visitante/CALI/cosas-hacer-cali.html" class="sub-header__item">Cosas Por Hacer</a>
       <a href="/src/templates/visitante/CALI/restaurantes-cali.html" class="sub-header__item">Restaurantes</a>
-      <a href="#" class="sub-header__item">Reseñas</a>
     </div>
   </section>
 
@@ -59,8 +58,8 @@
         <img class="tour-hero__slide" src="/src/static/imagenes/COSAS-PORHACER/CALI/Cascadas de Pance/tres.jpg" alt="Sendero del valle" />
         <img class="tour-hero__slide" src="/src/static/imagenes/COSAS-PORHACER/CALI/Cascadas de Pance/cuatro.jpg" alt="Grupo caminando por la reserva" />
         <img class="tour-hero__slide" src="/src/static/imagenes/COSAS-PORHACER/CALI/Cascadas de Pance/cinco.jpg" alt="Vista del río Pance" />
+        <div class="tour-hero__overlay"></div>
       </div>
-      <div class="tour-hero__overlay"></div>
 
       <div class="tour-hero__content">
         <span class="tour-hero__eyebrow"><span class="linea"></span>Cali · Parque Farallones</span>
@@ -87,7 +86,7 @@
       </div>
 
       <a href="#datos-rapidos" class="tour-hero__scroll" aria-label="Ver más">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
       </a>
     </section>
 
@@ -100,10 +99,9 @@
         <a href="#reviews">Reseñas</a>
       </div>
       <div class="tour-subnav__precio">
-        <span>Desde</span>
-        <strong>$370.038</strong>
-        <a href="#reservar" class="btn-mini">Reservar</a>
+        Desde <strong>$370.038</strong>
       </div>
+      <a href="#reservar" class="btn-mini">Reservar</a>
     </nav>
 
     <!-- DATOS RÁPIDOS -->
@@ -193,18 +191,24 @@
 
         <h2 class="tour-body__h2" id="incluye">Qué incluye</h2>
         <div class="include-columns">
-          <ul class="include-list include-list--si">
-            <li>Guía local certificado</li>
-            <li>Transporte ida y vuelta desde Cali</li>
-            <li>Seguro y asistencia médica</li>
-            <li>Entrada al Parque Farallones</li>
-            <li>Recorrido por cascadas y piscinas naturales</li>
-            <li>Almuerzo (menú del día)</li>
-          </ul>
-          <ul class="include-list include-list--no">
-            <li>Propinas</li>
-            <li>Productos o servicios extra no especificados en el plan</li>
-          </ul>
+          <div>
+            <h3 class="tour-body__h3">Sí incluye</h3>
+            <ul class="include-list include-list--si">
+              <li>Guía local certificado</li>
+              <li>Transporte ida y vuelta desde Cali</li>
+              <li>Seguro y asistencia médica</li>
+              <li>Entrada al Parque Farallones</li>
+              <li>Recorrido por cascadas y piscinas naturales</li>
+              <li>Almuerzo (menú del día)</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="tour-body__h3">No incluye</h3>
+            <ul class="include-list include-list--no">
+              <li>Propinas</li>
+              <li>Productos o servicios extra no especificados en el plan</li>
+            </ul>
+          </div>
         </div>
 
       </div>
@@ -262,9 +266,9 @@
         <article class="review-card">
           <span class="review-card__comilla">“</span>
           <div class="review-card__header">
-            <img src="/src/static/imagenes/USER/2.jpeg" alt="Avatar de Bob B" class="review-card__avatar" />
+            <img src="/src/static/imagenes/USER/2.jpeg" alt="Avatar de Maria G" class="review-card__avatar" />
             <div>
-              <span class="review-card__nombre">Bob B</span>
+              <span class="review-card__nombre">Maria G</span>
               <div class="review-card__rating"><span>4,9</span><span class="review-card__stars">★★★★★</span></div>
             </div>
           </div>
@@ -273,7 +277,7 @@
 
         <article class="review-card review-card--vacia">
           <p>Sé el próximo en contar tu experiencia.</p>
-          <a href="#" class="highlights__link">Escribir una opinión</a>
+          <a href="#" class="tour-body__more">Escribir una opinión</a>
         </article>
       </div>
     </section>

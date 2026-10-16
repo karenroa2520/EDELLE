@@ -5,33 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Tour Privado - Lancha Embalse Topocoro</title>
   <link rel="stylesheet" href="/src/static/css/VISI/cosas.hacer.css" />
+  <!-- NOTA: Asegúrate de que la ruta del CSS sea correcta -->
 </head>
 <body>
+
   <!-- Header Principal -->
   <header>
     <div class="navbar-container">
       <div class="logo">
         <div class="logo-container">
-          <img src="/src/static/imagenes/INICIO/logo_edelle.jpg" alt="Edelle - Tu Próxima Gran Aventura" />
+          <img src="/src/static/imagenes/INICIO/icono-krenga.svg" alt="Edelle" />
         </div>
       </div>
-
       <nav>
         <ul>
           <li><a href="/index.html">Inicio</a></li>
-          <li><a href="/src/templates/visitante/quienes-somos.html">Quienes Somos</a></li>
-          <li><a href="/src/templates/visitante/servicios.html">Servicios</a></li>
-          <li><a href="/src/templates/visitante/destinos.html">Destinos</a></li>
-          <li><a href="/src/templates/visitante/pasajes.html">Pasajes</a></li>
+          <li><a href="#">Quienes Somos</a></li>
+          <li><a href="#">Servicios</a></li>
+          <li><a href="#">Destinos</a></li>
+          <li><a href="#">Pasajes</a></li>
         </ul>
       </nav>
-
       <div class="user-icon">
-        <a href="/src/templates/comprador/login.html" title="Iniciar Sesión">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 21v-2a4 4 0 0 0-5.656-3.656L12 17l-2.344-2.344A4 4 0 0 0 4 17v2"></path>
-            <circle cx="12" cy="9" r="4"></circle>
-          </svg>
+        <a href="#" title="Iniciar Sesión">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-5.656-3.656L12 17l-2.344-2.344A4 4 0 0 0 4 17v2"></path><circle cx="12" cy="9" r="4"></circle></svg>
         </a>
       </div>
     </div>
@@ -41,206 +38,323 @@
   <section class="sub-header">
     <div class="sub-header__container">
       <a href="/src/templates/visitante/BUCARAMANGA/BUCARAMANGA.html" class="sub-header__item sub-header__item--active">
-        <span class="sub-header__icon">📍</span>
-        Bucaramanga
+        <span class="sub-header__icon">📍</span> Bucaramanga
       </a>
-      <a href="/src/templates/visitante/BUCARAMANGA/hoteles-bucara.html" class="sub-header__item">Hoteles</a>
-      <a href="/src/templates/visitante/BUCARAMANGA/cosas-porHacer-bucara.html" class="sub-header__item">Cosas Por Hacer</a>
-      <a href="/src/templates/visitante/BUCARAMANGA/restaurates-bucara.html" class="sub-header__item">Restaurantes</a>
-      <a href="#" class="sub-header__item">Reseñas</a>
+      <a href="#" class="sub-header__item">Hoteles</a>
+      <a href="#" class="sub-header__item">Cosas Por Hacer</a>
+      <a href="#" class="sub-header__item">Restaurantes</a>
     </div>
   </section>
 
-  <!-- Hotel Detail Section -->
-  <main class="hotel-detail">
-    <div class="hotel-detail__header">
-      <h1 class="hotel-detail__title">Tour Privado - Lancha Embalse Topocoro</h1>
-      <div class="hotel-detail__rating">
-        <span class="hotel-detail__score">5.0</span>
-        <span class="hotel-detail__stars">★★★★★</span>
-      </div>
-      <a href="#reviews" class="hotel-detail__write-review">✏️ Escribir una Opinión</a>
+  <!-- HERO: Estructura adaptada al CSS (tour-hero) -->
+  <section class="tour-hero" id="tour-hero">
+    <div class="tour-hero__slides">
+      <!-- Imágenes de fondo -->
+      <img class="tour-hero__slide active" src="/src/static/imagenes/COSAS-PORHACER/BUCARAMANGA/embalse-topocorp/1.jpg" alt="Vista 1" />
+      <img class="tour-hero__slide" src="/src/static/imagenes/COSAS-PORHACER/BUCARAMANGA/embalse-topocorp/2.jpg" alt="Vista 2" />
+      <img class="tour-hero__slide" src="/src/static/imagenes/COSAS-PORHACER/BUCARAMANGA/embalse-topocorp/3.jpg" alt="Vista 3" />
+      <img class="tour-hero__slide" src="/src/static/imagenes/COSAS-PORHACER/BUCARAMANGA/embalse-topocorp/4.jpg" alt="Vista 4" />
+      <div class="tour-hero__overlay"></div>
     </div>
 
-    <!-- Gallery con Carrusel (SIN MINIATURAS) -->
-    <div class="gallery">
-      <div class="carousel-container">
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img class="d-block w-100" src="/src/static/imagenes/COSAS-PORHACER/BUCARAMANGA/embalse-topocorp/1.jpg" alt="First slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="/src/static/imagenes/COSAS-PORHACER/BUCARAMANGA/embalse-topocorp/2.jpg" alt="Second slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="/src/static/imagenes/COSAS-PORHACER/BUCARAMANGA/embalse-topocorp/3.jpg" alt="Third slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="/src/static/imagenes/COSAS-PORHACER/BUCARAMANGA/embalse-topocorp/4.jpg" alt="Fourth slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="/src/static/imagenes/COSAS-PORHACER/BUCARAMANGA/embalse-topocorp/5.jpg" alt="Fifth slide">
-            </div>
-          </div>
-          
-          <!-- Controles del carrusel -->
-          <a class="carousel-control-prev" href="#carouselExampleSlidesOnly" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Anterior</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleSlidesOnly" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Siguiente</span>
-          </a>
+    <div class="tour-hero__content">
+      <span class="tour-hero__eyebrow"><span class="linea"></span>Aventura en Santander</span>
+      <h1 class="tour-hero__title">Tour Privado - Lancha <em>Embalse Topocoro</em></h1>
+      
+      <div class="tour-hero__meta">
+        <div class="tour-hero__rating">
+          <span class="tour-hero__score">5.0</span>
+          <span class="tour-hero__stars">★★★★★</span>
         </div>
-        <span class="gallery__count">5</span>
+        <span class="tour-hero__punto">•</span>
+        <span>Duración: 4 - 7 horas</span>
+      </div>
+
+      <div class="tour-hero__acciones">
+        <a href="#reservar" class="btn-primario">Reservar ahora</a>
+        <a href="#reviews" class="btn-fantasma">✎ Escribir opinión</a>
       </div>
     </div>
 
+    <!-- Puntos de navegación del slider -->
+    <div class="tour-hero__dots">
+      <button class="tour-hero__dot-btn active"></button>
+      <button class="tour-hero__dot-btn"></button>
+      <button class="tour-hero__dot-btn"></button>
+      <button class="tour-hero__dot-btn"></button>
+    </div>
     
-    <!-- Booking Banner -->
-    <section class="booking-banner">
-      <h2 class="booking-banner__title">Actividades en Bucramanga y lugares donde alojarse</h2>
-      <div class="booking-banner__filters">
-        <div class="filter-item">
-          <span>📅 Check-in</span>
-          <span class="filter-value">-/-/-</span>
-        </div>
-        <div class="filter-item">
-          <span>📅 Check-out</span>
-          <span class="filter-value">-/-/-</span>
-        </div>
-        <div class="filter-item">
-          <span>👥 Habitaciones/huéspedes</span>
-          <span class="filter-value">1 habitación, 2 huéspedes</span>
-        </div>
-      </div>
-    </section>
+    <div class="tour-hero__scroll">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
+    </div>
+  </section>
 
-  <!-- DESCRIPCIÓN GENERAL -->
-  <section class="description">
-    <h2 class="description__title">Descripción General</h2>
-    <div class="description__content">
-      <h3>Acerca de</h3>
-      <p>
-        El Embalse Topocoro es un bello lago que se formó después de que la Represa Hidrosogamoso fue construida. Este encantador lugar el cuál es relativamente nuevo, 
-        no es conocido por muchos turistas, convirtiéndolo en un sitio maravilloso para disfrutar de la naturaleza virgen. Conocerá partes de este lugar...
-        <a href="#" class="description__more">Mostrar más</a>
+  <!-- SUBNAV PEGAJOSA -->
+  <nav class="tour-subnav" id="tour-subnav">
+    <div class="tour-subnav__links">
+      <a href="#descripcion">Descripción</a>
+      <a href="#itinerario">Itinerario</a>
+      <a href="#incluye">Qué incluye</a>
+      <a href="#reviews">Reseñas</a>
+    </div>
+    <div class="tour-subnav__precio">
+      Desde <strong>$98.180</strong>
+    </div>
+    <a href="#reservar" class="btn-mini">Reservar</a>
+  </nav>
+
+  <!-- DATOS RÁPIDOS -->
+  <section class="stats-row">
+    <div class="stat-card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      <div><strong>4 - 7 Horas</strong><span>Duración total</span></div>
+    </div>
+    <div class="stat-card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <div><strong>Máx. 50 pers.</strong><span>Por grupo</span></div>
+    </div>
+    <div class="stat-card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      <div><strong>San Vicente</strong><span>Punto de encuentro</span></div>
+    </div>
+    <div class="stat-card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <div><strong>Seguro incluido</strong><span>Deportes extremos</span></div>
+    </div>
+  </section>
+
+  <!-- CUERPO: Información + Precio -->
+  <section class="tour-body">
+    <div class="tour-body__main">
+
+      <h2 class="tour-body__h2" id="descripcion">Descripción General</h2>
+      <p class="tour-body__p">
+        El Embalse Topocoro es un bello lago que se formó después de que la Represa Hidrosogamoso fue construida. Este encantador lugar, relativamente nuevo y poco conocido por muchos turistas, se convierte en un sitio maravilloso para disfrutar de la naturaleza virgen. Conocerá partes de este lugar privilegiado, visitando el Cañón del Chicamocha desde otra perspectiva, cascadas escondidas y piscinas naturales cristalinas.
       </p>
-    </div>
-    <div class="description__price-box">
-      <div class="price-box__price">
-        Desde $ 98.180
+
+      <h2 class="tour-body__h2" id="itinerario">Puntos destacados e Itinerario</h2>
+      <ul class="timeline" id="timeline-list">
+        <li class="timeline__item">
+          <span class="timeline__hora">08:00 AM</span>
+          <h4>Recogida y Transporte</h4>
+          <p>Transporte privado desde su hotel hacia San Vicente de Chucurí.</p>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__hora">09:30 AM</span>
+          <h4>Llegada al Embalse</h4>
+          <p>Breve charla de seguridad y entrega de chalecos salvavidas.</p>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__hora">10:00 AM</span>
+          <h4>Navegación y Naturaleza</h4>
+          <p>Paseo en lancha privada visitando cuevas, cascadas y el Cañón.</p>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__hora">02:00 PM</span>
+          <h4>Almuerzo Típico</h4>
+          <p>Disfrute de la gastronomía local (no incluido, recomendado).</p>
+        </li>
+      </ul>
+
+      <h2 class="tour-body__h2" id="incluye">¿Qué está incluido?</h2>
+      <div class="include-columns">
+        <div>
+          <h3 class="tour-body__h3">Sí incluye</h3>
+          <ul class="include-list include-list--si">
+            <li>Transporte privado ida y regreso</li>
+            <li>Paseo en lancha privada</li>
+            <li>Chaleco salvavidas obligatorio</li>
+            <li>Guía acompañante (Español/Inglés)</li>
+            <li>Seguro de viajero y deportes extremos</li>
+            <li>Entrada a San Vicente de Chucurí</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="tour-body__h3">No incluye</h3>
+          <ul class="include-list include-list--no">
+            <li>Alimentación y bebidas adicionales</li>
+            <li>Actividades opcionales (Wakeboard, Moto acuática)</li>
+            <li>Propinas al guía o conductor</li>
+          </ul>
+        </div>
       </div>
+
+    </div>
+
+    <!-- CAJA DE PRECIO FLOTANTE (Sidebar) -->
+    <aside class="price-box" id="reservar">
+      <span class="price-box__badge">Mejor precio garantizado</span>
+      <div class="price-box__precio">$ 98.180</div>
       <div class="price-box__label">Por adulto</div>
-      <div class="price-box__guarantee">El precio mas bajo garantizado</div>
+      
       <button class="price-box__btn">Consultar Disponibilidad</button>
-      <div class="price-box__features">
-        <div class="feature-item">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"></circle>
-            <path d="M8 12h8"></path>
-            <path d="M12 8v8"></path>
-          </svg>
-          Cancelación gratuita • Reembolso total si se cancela hasta 24 horas antes de que comience la experiencia (hora local).
-        </div>
-        <div class="feature-item">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-            <line x1="16" y1="2" x2="16" y2="6"></line>
-            <line x1="8" y1="2" x2="8" y2="6"></line>
-            <line x1="3" y1="10" x2="21" y2="10"></line>
-          </svg>
-          Reserva ahora y paga después • Asegura tu lugar mientras mantienes la flexibilidad.
-        </div>
-        <div class="feature-item">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-            <path d="M16 2h2a2 2 0 012 2v2H8V4a2 2 0 012-2h2"></path>
-            <path d="M12 11h4"></path>
-            <path d="M12 16h4"></path>
-          </svg>
-          Reserva con anticipación • Esto se reserva con 1 día de anticipación en promedio.
-        </div>
-      </div>
-    </div>
+      
+      <ul class="price-box__features">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M10 10l4 4m0-4l-4 4"/></svg>
+          <span>Cancelación gratuita hasta 24h antes</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg>
+          <span>Reserva ahora y paga después</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          <span>Confirmación inmediata</span>
+        </li>
+      </ul>
+    </aside>
   </section>
 
-  <!-- INFORMACIÓN GENERAL -->
-  <section class="info-general">
-    <h2 class="info-general__title">INFORMACION GENERAL</h2>
-    <ul class="info-general__list">
-      <li>Edades: de 0 a 59, máx. de 50 por grupo</li>
-      <li>Duración: De 4 a 7 horas</li>
-      <li>Horario de inicio: consultar disponibilidad</li>
-      <li>Entrada para dispositivos móviles</li>
-      <li>Guía en vivo: Alemán, Inglés, Español</li>
-    </ul>
+  <!-- BANDA CTA FINAL -->
+  <section class="cta-banner">
+    <div class="cta-banner__blob cta-banner__blob--1"></div>
+    <div class="cta-banner__blob cta-banner__blob--2"></div>
+    <h2>¿Listo para la aventura?</h2>
+    <p>Asegura tu cupo en el Embalse Topocoro hoy mismo.</p>
+    <button class="cta-banner__btn">¡AGREGAR A MI TOUR POR $ 98.180!</button>
   </section>
-
-  <!-- PUNTOS DESTACADOS -->
-  <section class="highlights">
-    <h2 class="highlights__title">Puntos destacados</h2>
-    <a href="#" class="highlights__link">Ver Itinerario</a>
-  </section>
-
-  <!-- INCLUIDO Y NO INCLUIDO -->
-  <section class="highlights">
-    <h2 class="highlights__title">Que esta incluido</h2>
-    <ul class="highlights__list">
-      <li>Transporte privado al Embalse Topocoro</li>
-      <li>Visita al Cañón del Chicamocha, cascadas y piscinas naturales</li>
-      <li>Chaleco salvavidas (si no sabe nadar)</li>
-      <li>Acompañamiento de hablante español o inglés.</li>
-      <li>Opcional con costo adicional: actividades como wakeboarding, esquiar, moto acuática u horas adicionales con la lancha</li>
-      <li>Seguro del viajero y seguro adicional para deportes extremos</li>
-      <li>Ingreso/entrada: San Vicente de Chucurí</li>
-    </ul>
-  </section>
-
-  <!-- BOTÓN DE ACCIÓN -->
-  <div class="cta-button">
-    <button class="cta-button__btn">¡AGREGAR A MI TOUR POR $ 98.180!</button>
-  </div>
 
   <!-- RESEÑAS -->
-  <section class="reviews">
-    <h2 class="reviews__title">¡RESEÑAS!</h2>
+  <section class="reviews" id="reviews">
+    <h2 class="reviews__titulo">¡RESEÑAS!</h2>
     <div class="reviews__divider"></div>
     <h3 class="reviews__subtitle">Todas las reseñas</h3>
 
-    <div class="reviews__container">
+    <div class="reviews__pista">
       <div class="review-card">
+        <div class="review-card__comilla">“</div>
         <div class="review-card__header">
           <img src="/src/static/imagenes/USER/PERFIL USUARIO.jpg" alt="Avatar" class="review-card__avatar" />
-          <span class="review-card__name">Bob B</span>
+          <div>
+            <span class="review-card__nombre">Bob B</span>
+            <div class="review-card__rating">
+              <span class="review-card__score">4.7</span>
+              <span class="review-card__stars">★★★★★</span>
+            </div>
+          </div>
         </div>
-        <div class="review-card__rating">
-          <span class="review-card__score">4,7</span>
-          <span class="review-card__stars">★★★★★</span>
-        </div>
-        <p class="review-card__text">
-          Tuvimos un gran líder turístico que administró perfectamente nuestro grupo mixto de habla inglesa y
+        <p class="review-card__texto">
+          Tuvimos un gran líder turístico que administró perfectamente nuestro grupo mixto de habla inglesa y española. ¡Increíble experiencia!
         </p>
       </div>
 
       <div class="review-card">
+        <div class="review-card__comilla">“</div>
         <div class="review-card__header">
           <img src="/src/static/imagenes/USER/2.jpeg" alt="Avatar" class="review-card__avatar" />
-          <span class="review-card__name">Bob B</span>
+          <div>
+            <span class="review-card__nombre">Maria G</span>
+            <div class="review-card__rating">
+              <span class="review-card__score">4.9</span>
+              <span class="review-card__stars">★★★★★</span>
+            </div>
+          </div>
         </div>
-        <div class="review-card__rating">
-          <span class="review-card__score">4,9</span>
-          <span class="review-card__stars">★★★★★</span>
-        </div>
-        <p class="review-card__text">
-          "El débil no puede perdonar. El perdón es un atributo de los fuertes" (Gandhi)
+        <p class="review-card__texto">
+          "El débil no puede perdonar. El perdón es un atributo de los fuertes". Pero aquí lo fuerte fue la belleza del paisaje. Recomendado 100%.
         </p>
       </div>
-      <div class="review-card review-card--empty"></div>
+      
+      <div class="review-card review-card--vacia">
+        <p>Sé el primero en dejar una reseña detallada</p>
+        <a href="#" class="tour-body__more">Escribir opinión</a>
+      </div>
     </div>
   </section>
+
+  <!-- BARRA FLOTANTE MÓVIL -->
+  <div class="sticky-cta" id="sticky-cta">
+    <div>
+      <span>Precio por persona</span>
+      <strong>$ 98.180</strong>
+    </div>
+    <a href="#reservar" class="btn-primario btn-primario--sm">Reservar</a>
+  </div>
+
+  <script>
+    // === LOGICA DEL SLIDER (HERO) ===
+    (function() {
+      const slides = document.querySelectorAll('.tour-hero__slide');
+      const dots = document.querySelectorAll('.tour-hero__dot-btn');
+      let currentSlide = 0;
+
+      function nextSlide() {
+        slides[currentSlide].classList.remove('active');
+        if(dots[currentSlide]) dots[currentSlide].classList.remove('active');
+        
+        currentSlide = (currentSlide + 1) % slides.length;
+        
+        slides[currentSlide].classList.add('active');
+        if(dots[currentSlide]) dots[currentSlide].classList.add('active');
+      }
+
+      // Cambiar imagen cada 5 segundos
+      setInterval(nextSlide, 5000);
+
+      // Click en dots
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          slides[currentSlide].classList.remove('active');
+          dots[currentSlide].classList.remove('active');
+          currentSlide = index;
+          slides[currentSlide].classList.add('active');
+          dots[currentSlide].classList.add('active');
+        });
+      });
+    })();
+
+    // === SUBNAV PEGAJOSA ===
+    (function() { 
+      const subnav = document.getElementById('tour-subnav');
+      const hero = document.getElementById('tour-hero');
+      const observer = new IntersectionObserver(([entry]) => {
+        subnav.classList.toggle('tour-subnav--fija', !entry.isIntersecting);
+      }, { threshold: 0 });
+      observer.observe(hero);
+    })();
+
+    // === ANIMACIONES AL SCROLL ===
+    (function() {
+      const elements = document.querySelectorAll('.stat-card, .timeline__item, .review-card');
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      
+      if (prefersReducedMotion) { elements.forEach((e) => e.classList.add('visible')); return; }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) { 
+            entry.target.classList.add('visible'); 
+            // Si es la lista de timeline, activar la línea
+            if(entry.target.closest('.timeline')) {
+               document.querySelector('.timeline').classList.add('timeline--activo');
+            }
+            observer.unobserve(entry.target); 
+          }
+        });
+      }, { threshold: 0.15 });
+
+      elements.forEach((el) => observer.observe(el));
+    })();
+
+    // === STICKY CTA (Móvil) ===
+    (function() {
+      const stickyCta = document.getElementById('sticky-cta');
+      const priceBox = document.querySelector('.price-box');
+      
+      window.addEventListener('scroll', () => {
+        if (window.innerWidth <= 768 && priceBox) {
+          const rect = priceBox.getBoundingClientRect();
+          // Mostrar cuando pasamos la caja de precio original
+          if (rect.bottom < 0) {
+            stickyCta.classList.add('visible');
+          } else {
+            stickyCta.classList.remove('visible');
+          }
+        }
+      });
+    })();
+  </script>
 
 </body>
 </html>

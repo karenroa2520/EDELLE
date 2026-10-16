@@ -7,15 +7,15 @@
   <link rel="stylesheet" href="/src/static/css/VISI/cosas.hacer.css" />
 </head>
 <body>
+
   <!-- Header Principal -->
   <header>
     <div class="navbar-container">
       <div class="logo">
         <div class="logo-container">
-          <img src="/src/static/imagenes/INICIO/logo_edelle.jpg" alt="Edelle - Tu Próxima Gran Aventura" />
+          <img src="/src/static/imagenes/INICIO/icono-krenga.svg" alt="Edelle - Tu Próxima Gran Aventura" />
         </div>
       </div>
-
       <nav>
         <ul>
           <li><a href="/index.html">Inicio</a></li>
@@ -25,7 +25,6 @@
           <li><a href="/src/templates/visitante/pasajes.html">Pasajes</a></li>
         </ul>
       </nav>
-
       <div class="user-icon">
         <a href="/src/templates/comprador/login.html" title="Iniciar Sesión">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -41,192 +40,326 @@
   <section class="sub-header">
     <div class="sub-header__container">
       <a href="/src/templates/visitante/BUCARAMANGA/BUCARAMANGA.html" class="sub-header__item sub-header__item--active">
-        <span class="sub-header__icon">📍</span>
-        Bucaramanga
+        <span class="sub-header__icon">📍</span> Bucaramanga
       </a>
       <a href="/src/templates/visitante/BUCARAMANGA/hoteles-bucara.html" class="sub-header__item">Hoteles</a>
       <a href="/src/templates/visitante/BUCARAMANGA/cosas-porHacer-bucara.html" class="sub-header__item">Cosas Por Hacer</a>
       <a href="/src/templates/visitante/BUCARAMANGA/restaurates-bucara.html" class="sub-header__item">Restaurantes</a>
-      <a href="#" class="sub-header__item">Reseñas</a>
     </div>
   </section>
 
-  <!-- Hotel Detail Section -->
-  <main class="hotel-detail">
-    <div class="hotel-detail__header">
-      <h1 class="hotel-detail__title">Tour Privado - Barichara / San Gil / Curiti (Cultura)</h1>
-      <div class="hotel-detail__rating">
-        <span class="hotel-detail__score">5.0</span>
-        <span class="hotel-detail__stars">★★★★★</span>
-      </div>
-      <a href="#reviews" class="hotel-detail__write-review">✏️ Escribir una Opinión</a>
+  <!-- HERO: Estructura adaptada al CSS (tour-hero) -->
+  <section class="tour-hero" id="tour-hero">
+    <div class="tour-hero__slides">
+      <img class="tour-hero__slide active" src="/src/static/imagenes/COSAS-PORHACER/BUCARAMANGA/barichara-sanGil/1.jpg" alt="Barichara Colonial" />
+      <img class="tour-hero__slide" src="/src/static/imagenes/COSAS-PORHACER/BUCARAMANGA/barichara-sanGil/2.jpg" alt="Cañón del Chicamocha" />
+      <img class="tour-hero__slide" src="/src/static/imagenes/COSAS-PORHACER/BUCARAMANGA/barichara-sanGil/3.jpg" alt="San Gil Aventura" />
+      <img class="tour-hero__slide" src="/src/static/imagenes/COSAS-PORHACER/BUCARAMANGA/barichara-sanGil/4.jpg" alt="Curití Artesanías" />
+      <img class="tour-hero__slide" src="/src/static/imagenes/COSAS-PORHACER/BUCARAMANGA/barichara-sanGil/5.jpg" alt="Paisaje Santandereano" />
+      <div class="tour-hero__overlay"></div>
     </div>
 
-    <!-- Gallery con Carrusel (SIN MINIATURAS) -->
-    <div class="gallery">
-      <div class="carousel-container">
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img class="d-block w-100" src="/src/static/imagenes/COSAS-PORHACER/BUCARAMANGA/barichara-sanGil/1.jpg" alt="First slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="/src/static/imagenes/COSAS-PORHACER/BUCARAMANGA/barichara-sanGil/2.jpg" alt="Second slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="/src/static/imagenes/COSAS-PORHACER/BUCARAMANGA/barichara-sanGil/3.jpg" alt="Third slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="/src/static/imagenes/COSAS-PORHACER/BUCARAMANGA/barichara-sanGil/4.jpg" alt="Fourth slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="/src/static/imagenes/COSAS-PORHACER/BUCARAMANGA/barichara-sanGil/5.jpg" alt="Fifth slide">
-            </div>
-          </div>
-          
-          <!-- Controles del carrusel -->
-          <a class="carousel-control-prev" href="#carouselExampleSlidesOnly" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Anterior</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleSlidesOnly" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Siguiente</span>
-          </a>
+    <div class="tour-hero__content">
+      <span class="tour-hero__eyebrow"><span class="linea"></span>Ruta Cultural Santander</span>
+      <h1 class="tour-hero__title">Tour Privado - <em>Barichara, San Gil & Curití</em></h1>
+      
+      <div class="tour-hero__meta">
+        <div class="tour-hero__rating">
+          <span class="tour-hero__score">5.0</span>
+          <span class="tour-hero__stars">★★★★★</span>
         </div>
-        <span class="gallery__count">5</span>
+        <span class="tour-hero__punto">•</span>
+        <span>Duración: 9 - 11 horas</span>
+      </div>
+
+      <div class="tour-hero__acciones">
+        <a href="#reservar" class="btn-primario">Reservar ahora</a>
+        <a href="#reviews" class="btn-fantasma">✎ Escribir opinión</a>
       </div>
     </div>
 
-    <!-- Booking Banner -->
-    <section class="booking-banner">
-      <h2 class="booking-banner__title">Actividades en Bucramanga y lugares donde alojarse</h2>
-      <div class="booking-banner__filters">
-        <div class="filter-item">
-          <span>📅 Check-in</span>
-          <span class="filter-value">-/-/-</span>
-        </div>
-        <div class="filter-item">
-          <span>📅 Check-out</span>
-          <span class="filter-value">-/-/-</span>
-        </div>
-        <div class="filter-item">
-          <span>👥 Habitaciones/huéspedes</span>
-          <span class="filter-value">1 habitación, 2 huéspedes</span>
-        </div>
-      </div>
-    </section>
+    <div class="tour-hero__dots">
+      <button class="tour-hero__dot-btn active"></button>
+      <button class="tour-hero__dot-btn"></button>
+      <button class="tour-hero__dot-btn"></button>
+      <button class="tour-hero__dot-btn"></button>
+      <button class="tour-hero__dot-btn"></button>
+    </div>
+    
+    <div class="tour-hero__scroll">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
+    </div>
+  </section>
 
-  <!-- DESCRIPCIÓN GENERAL -->
-  <section class="description">
-    <h2 class="description__title">Descripción General</h2>
-    <div class="description__content">
-      <h3>Acerca de</h3>
-      <p>
-        Visitando Barichara, San Gil y Curiti, conocerá 3 de los 17 pueblos emblemáticos de Santander. Mientras que Barichara atrae a los turistas por su arquitectura 
-        colonial perfectamente conservada, San Gil es reconocida como la capital turistica del Departamento destacándose en los deportes extremos o...
-        <a href="#" class="description__more">Mostrar más</a>
+  <!-- SUBNAV PEGAJOSA -->
+  <nav class="tour-subnav" id="tour-subnav">
+    <div class="tour-subnav__links">
+      <a href="#descripcion">Descripción</a>
+      <a href="#itinerario">Itinerario</a>
+      <a href="#incluye">Qué incluye</a>
+      <a href="#reviews">Reseñas</a>
+    </div>
+    <div class="tour-subnav__precio">
+      Desde <strong>$220.459</strong>
+    </div>
+    <a href="#reservar" class="btn-mini">Reservar</a>
+  </nav>
+
+  <!-- DATOS RÁPIDOS -->
+  <section class="stats-row">
+    <div class="stat-card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      <div><strong>9 - 11 Horas</strong><span>Duración total</span></div>
+    </div>
+    <div class="stat-card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+      <div><strong>18 a 59 años</strong><span>Edad recomendada</span></div>
+    </div>
+    <div class="stat-card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      <div><strong>3 Pueblos</strong><span>Barichara, San Gil, Curití</span></div>
+    </div>
+    <div class="stat-card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      <div><strong>Español / Inglés</strong><span>Guía en vivo</span></div>
+    </div>
+  </section>
+
+  <!-- CUERPO: Información + Precio -->
+  <section class="tour-body">
+    <div class="tour-body__main">
+
+      <h2 class="tour-body__h2" id="descripcion">Descripción General</h2>
+      <p class="tour-body__p">
+        Visitando Barichara, San Gil y Curití, conocerá 3 de los 17 pueblos emblemáticos de Santander. Mientras que Barichara atrae a los turistas por su arquitectura colonial perfectamente conservada, San Gil es reconocida como la capital turística del Departamento destacándose en los deportes extremos. Curití, por su parte, es famosa por sus artesanías en fique. Un recorrido completo por la historia, la aventura y la cultura santandereana.
       </p>
-    </div>
-    <div class="description__price-box">
-      <div class="price-box__price">
-        Desde $ 220.459
-      </div>
-      <div class="price-box__label">Por adulto</div>
-      <div class="price-box__guarantee">El precio mas bajo garantizado</div>
-      <button class="price-box__btn">Consultar Disponibilidad</button>
-      <div class="price-box__features">
-        <div class="feature-item">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"></circle>
-            <path d="M8 12h8"></path>
-            <path d="M12 8v8"></path>
-          </svg>
-          El precio más bajo garantizado • ¿Encontraste un precio más bajo en línea? ¡Obtén un reembolso por la diferencia!
+
+      <h2 class="tour-body__h2" id="itinerario">Puntos destacados del recorrido</h2>
+      <ul class="timeline" id="timeline-list">
+        <li class="timeline__item">
+          <span class="timeline__hora">07:00 AM</span>
+          <h4>Salida hacia Barichara</h4>
+          <p>Transporte privado disfrutando del paisaje santandereano.</p>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__hora">09:30 AM</span>
+          <h4>Recorrido por Barichara</h4>
+          <p>Caminata por las calles empedradas, visita a la Catedral y miradores.</p>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__hora">12:30 PM</span>
+          <h4>Almuerzo Típico</h4>
+          <p>Disfrute de la gastronomía local (generalmente en Barichara).</p>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__hora">02:30 PM</span>
+          <h4>Visita a Curití</h4>
+          <p>Experiencia del proceso del papel y recorrido por talleres de artesanías en fique.</p>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__hora">04:30 PM</span>
+          <h4>Parada en San Gil</h4>
+          <p>Breve recorrido por el parque principal y ambiente turístico.</p>
+        </li>
+      </ul>
+
+      <h2 class="tour-body__h2" id="incluye">¿Qué está incluido?</h2>
+      <div class="include-columns">
+        <div>
+          <h3 class="tour-body__h3">Sí incluye</h3>
+          <ul class="include-list include-list--si">
+            <li>Transporte privado a Barichara, Curití y San Gil</li>
+            <li>Caminata guiada por Barichara (entradas incluidas)</li>
+            <li>Experiencia del proceso de papel en Curití</li>
+            <li>Entrada y tour al museo histórico (Casa de la Cultura)</li>
+            <li>Almuerzo incluido</li>
+            <li>Acompañamiento de hablante español o inglés</li>
+            <li>Seguro del viajero</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="tour-body__h3">No incluye</h3>
+          <ul class="include-list include-list--no">
+            <li>Actividades de aventura adicionales en San Gil</li>
+            <li>Compras de artesanías personales</li>
+            <li>Bebidas alcohólicas o extras no mencionados</li>
+            <li>Propinas al guía o conductor (opcional)</li>
+          </ul>
         </div>
       </div>
+
     </div>
+
+    <!-- CAJA DE PRECIO FLOTANTE (Sidebar) -->
+    <aside class="price-box" id="reservar">
+      <span class="price-box__badge">El precio más bajo garantizado</span>
+      <div class="price-box__precio">$ 220.459</div>
+      <div class="price-box__label">Por adulto</div>
+      
+      <button class="price-box__btn">Consultar Disponibilidad</button>
+      
+      <ul class="price-box__features">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+          <span>¿Encontraste un precio más bajo? ¡Obtén un reembolso por la diferencia!</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg>
+          <span>Entrada para dispositivos móviles</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          <span>Confirmación inmediata al reservar</span>
+        </li>
+      </ul>
+    </aside>
   </section>
 
-  <!-- INFORMACIÓN GENERAL -->
-  <section class="info-general">
-    <h2 class="info-general__title">INFORMACION GENERAL</h2>
-    <ul class="info-general__list">
-      <li>Edades de 18 a 59</li>
-      <li>Duración: De 9 a 11 horas</li>
-      <li>Horario de inicio: consultar disponibilidad</li>
-      <li>Entrada para dispositivos móviles</li>
-      <li>Guía en vivo: Inglés, Español</li>
-    </ul>
+  <!-- BANDA CTA FINAL -->
+  <section class="cta-banner">
+    <div class="cta-banner__blob cta-banner__blob--1"></div>
+    <div class="cta-banner__blob cta-banner__blob--2"></div>
+    <h2>¿Listo para la aventura?</h2>
+    <p>Descubre la magia de los pueblos santandereanos hoy mismo.</p>
+    <button class="cta-banner__btn">¡AGREGAR A MI TOUR POR $ 220.459!</button>
   </section>
-
-  <!-- PUNTOS DESTACADOS -->
-  <section class="highlights">
-    <h2 class="highlights__title">Puntos destacados</h2>
-    <a href="#" class="highlights__link">Ver Itinerario</a>
-  </section>
-
-  <!-- INCLUIDO Y NO INCLUIDO -->
-  <section class="highlights">
-    <h2 class="highlights__title">Que esta incluido</h2>
-    <ul class="highlights__list">
-      <li>Transporte privado a Barichara y El Socorro</li>
-      <li>Caminata por Barichara, entradas incluidas</li>
-      <li>Experiencia del proceso de papel</li>
-      <li>Caminata por el Socorro</li>
-      <li>Entrada y tour al museo histórico en la Casa de la Cultura</li>
-      <li>Almuerzo incluido (por lo general en Barichara)</li>
-      <li>Acompañamiento de hablante español o inglés.</li>
-      <li>Seguro del viajero</li>
-    </ul>
-  </section>
-
-  <!-- BOTÓN DE ACCIÓN -->
-  <div class="cta-button">
-    <button class="cta-button__btn">¡AGREGAR A MI TOUR POR $ 220.459!</button>
-  </div>
 
   <!-- RESEÑAS -->
-  <section class="reviews">
-    <h2 class="reviews__title">¡RESEÑAS!</h2>
+  <section class="reviews" id="reviews">
+    <h2 class="reviews__titulo">¡RESEÑAS!</h2>
     <div class="reviews__divider"></div>
     <h3 class="reviews__subtitle">Todas las reseñas</h3>
 
-    <div class="reviews__container">
+    <div class="reviews__pista">
       <div class="review-card">
+        <div class="review-card__comilla">“</div>
         <div class="review-card__header">
           <img src="/src/static/imagenes/USER/PERFIL USUARIO.jpg" alt="Avatar" class="review-card__avatar" />
-          <span class="review-card__name">Bob B</span>
+          <div>
+            <span class="review-card__nombre">Bob B</span>
+            <div class="review-card__rating">
+              <span class="review-card__score">4.7</span>
+              <span class="review-card__stars">★★★★★</span>
+            </div>
+          </div>
         </div>
-        <div class="review-card__rating">
-          <span class="review-card__score">4,7</span>
-          <span class="review-card__stars">★★★★★</span>
-        </div>
-        <p class="review-card__text">
-          Tuvimos un gran líder turístico que administró perfectamente nuestro grupo mixto de habla inglesa y
+        <p class="review-card__texto">
+          Tuvimos un gran líder turístico que administró perfectamente nuestro grupo mixto de habla inglesa y española. Barichara es impresionante.
         </p>
       </div>
 
       <div class="review-card">
+        <div class="review-card__comilla">“</div>
         <div class="review-card__header">
           <img src="/src/static/imagenes/USER/2.jpeg" alt="Avatar" class="review-card__avatar" />
-          <span class="review-card__name">Bob B</span>
+          <div>
+            <span class="review-card__nombre">Maria G</span>
+            <div class="review-card__rating">
+              <span class="review-card__score">4.9</span>
+              <span class="review-card__stars">★★★★★</span>
+            </div>
+          </div>
         </div>
-        <div class="review-card__rating">
-          <span class="review-card__score">4,9</span>
-          <span class="review-card__stars">★★★★★</span>
-        </div>
-        <p class="review-card__text">
-          "El débil no puede perdonar. El perdón es un atributo de los fuertes" (Gandhi)
+        <p class="review-card__texto">
+          Una experiencia cultural completa. Me encantó aprender sobre el papel en Curití y la arquitectura de Barichara. Muy recomendado.
         </p>
       </div>
-      <div class="review-card review-card--empty"></div>
+      
+      <div class="review-card review-card--vacia">
+        <p>Sé el primero en dejar una reseña detallada</p>
+        <a href="#" class="tour-body__more">Escribir opinión</a>
+      </div>
     </div>
   </section>
 
-  <!-- Script Bootstrap para el carrusel -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <!-- BARRA FLOTANTE MÓVIL -->
+  <div class="sticky-cta" id="sticky-cta">
+    <div>
+      <span>Precio por persona</span>
+      <strong>$ 220.459</strong>
+    </div>
+    <a href="#reservar" class="btn-primario btn-primario--sm">Reservar</a>
+  </div>
+
+  <script>
+    // === LOGICA DEL SLIDER (HERO) ===
+    (function() {
+      const slides = document.querySelectorAll('.tour-hero__slide');
+      const dots = document.querySelectorAll('.tour-hero__dot-btn');
+      let currentSlide = 0;
+
+      function nextSlide() {
+        slides[currentSlide].classList.remove('active');
+        if(dots[currentSlide]) dots[currentSlide].classList.remove('active');
+        
+        currentSlide = (currentSlide + 1) % slides.length;
+        
+        slides[currentSlide].classList.add('active');
+        if(dots[currentSlide]) dots[currentSlide].classList.add('active');
+      }
+
+      setInterval(nextSlide, 5000);
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          slides[currentSlide].classList.remove('active');
+          dots[currentSlide].classList.remove('active');
+          currentSlide = index;
+          slides[currentSlide].classList.add('active');
+          dots[currentSlide].classList.add('active');
+        });
+      });
+    })();
+
+    // === SUBNAV PEGAJOSA ===
+    (function() { 
+      const subnav = document.getElementById('tour-subnav');
+      const hero = document.getElementById('tour-hero');
+      const observer = new IntersectionObserver(([entry]) => {
+        subnav.classList.toggle('tour-subnav--fija', !entry.isIntersecting);
+      }, { threshold: 0 });
+      observer.observe(hero);
+    })();
+
+    // === ANIMACIONES AL SCROLL ===
+    (function() {
+      const elements = document.querySelectorAll('.stat-card, .timeline__item, .review-card');
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      
+      if (prefersReducedMotion) { elements.forEach((e) => e.classList.add('visible')); return; }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) { 
+            entry.target.classList.add('visible'); 
+            if(entry.target.closest('.timeline')) {
+               document.querySelector('.timeline').classList.add('timeline--activo');
+            }
+            observer.unobserve(entry.target); 
+          }
+        });
+      }, { threshold: 0.15 });
+
+      elements.forEach((el) => observer.observe(el));
+    })();
+
+    // === STICKY CTA (Móvil) ===
+    (function() {
+      const stickyCta = document.getElementById('sticky-cta');
+      const priceBox = document.querySelector('.price-box');
+      
+      window.addEventListener('scroll', () => {
+        if (window.innerWidth <= 768 && priceBox) {
+          const rect = priceBox.getBoundingClientRect();
+          if (rect.bottom < 0) {
+            stickyCta.classList.add('visible');
+          } else {
+            stickyCta.classList.remove('visible');
+          }
+        }
+      });
+    })();
+  </script>
+
 </body>
 </html>

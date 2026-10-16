@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hotel El Peñón</title>
+  <title>Hotel El Peñón - Edelle</title>
   <link rel="stylesheet" href="/src/static/css/VISI/CALI/hotel-cali.css" />
 </head>
 
@@ -18,7 +18,7 @@
     <div class="navbar-container">
       <div class="logo">
         <div class="logo-container">
-          <img src="/src/static/imagenes/INICIO/logo_edelle.jpg" alt="Edelle - Tu Próxima Gran Aventura" />
+          <img src="/src/static/imagenes/INICIO/icono-krenga.svg" alt="Edelle - Tu Próxima Gran Aventura" />
         </div>
       </div>
 
@@ -54,228 +54,244 @@
       <a href="/src/templates/visitante/CALI/cosas-hacer-cali.html" class="sub-header__item">Hoteles</a>
       <a href="/src/templates/visitante/CALI/cosas-hacer-cali.html" class="sub-header__item">Cosas Por Hacer</a>
       <a href="/src/templates/visitante/CALI/restaurantes-cali.html" class="sub-header__item">Restaurantes</a>
-      <a href="#" class="sub-header__item">Reseñas</a>
+
     </div>
   </section>
 
-  <!-- Hotel Detail Section -->
-  <main class="hotel-detail">
-    <div class="hotel-detail__header">
-      <h1 class="hotel-detail__title">Hotel El Peñón
-      </h1>
-      <div class="hotel-detail__rating">
-        <span class="hotel-detail__score">4.5</span>
-        <span class="hotel-detail__stars">★★★★★</span>
-      </div>
-      <p class="hotel-detail__address">
-        <span>📍</span> Carrera 1C #2-56 en Santa María, Boyacá, Colombia
-      </p>
-      <a href="#reviews-section" class="hotel-detail__write-review">✏️ Escribir una Opinión</a>
-    </div>
-
-    <!-- Gallery -->
-    <div class="gallery">
-      <div class="gallery__main">
-        <img src="/src/static/imagenes/HOTELES/CALI/Hotel Peñon/uno.jpg" alt="Interior del hotel"
-          class="gallery__image" />
-        <span class="gallery__count">38</span>
-      </div>
-      <div class="gallery__thumbnails">
-        <img src="/src/static/imagenes/HOTELES/CALI/Hotel Peñon/dos.jpg" alt="Cama"
-          class="gallery__thumbnail" />
-        <img src="/src/static/imagenes/HOTELES/CALI/Hotel Peñon/tres.jpg" alt="Desayuno"
-          class="gallery__thumbnail" />
-        <img src="/src/static/imagenes/HOTELES/CALI/Hotel Peñon/cuatro.jpg" alt="Exterior"
-          class="gallery__thumbnail" />
-        <img src="/src/static/imagenes/HOTELES/CALI/Hotel Peñon/cinco.jpg" alt="Salón"
-          class="gallery__thumbnail" />
-      </div>
-    </div>
-
-    <!-- Booking Banner -->
-    <section class="booking-banner">
-      <h2 class="booking-banner__title">Hoteles en Cali y lugares donde alojarse</h2>
-      <div class="booking-banner__filters">
-        <div class="filter-item">
-          <span>📅 Check-in</span>
-          <span class="filter-value">-/-/-</span>
+  <!-- Contenido Principal del Hotel -->
+  <main class="hotel-main">
+    
+    <!-- Hero Section con Galería -->
+    <section class="hotel-hero">
+      <div>
+        <span class="hotel-hero__badge">Estilo Industrial & Moderno</span>
+        <h1 class="hotel-hero__title">Hotel El Peñón</h1>
+        
+        <div class="hotel-hero__meta">
+          <div class="hotel-hero__rating">
+            <span class="hotel-hero__score">4.5</span>
+            <span class="hotel-hero__stars">★★★★☆</span>
+            <span class="hotel-hero__reviews">(89 reseñas)</span>
+          </div>
+          <span>📍 Carrera 1C #2-56 en Santa María, Boyacá</span>
         </div>
-        <div class="filter-item">
-          <span>📅 Check-out</span>
-          <span class="filter-value">-/-/-</span>
+
+        <a href="#reservar" class="hotel-hero__cta">Reservar Ahora</a>
+      </div>
+
+      <!-- Galería de Imágenes -->
+      <div class="hotel-hero__gallery">
+        <div class="hotel-hero__gallery-main">
+          <img src="/src/static/imagenes/HOTELES/CALI/Hotel Peñon/uno.jpg" alt="Interior del hotel" />
+          <button class="hotel-hero__gallery-btn">Ver 38 fotos</button>
         </div>
-        <div class="filter-item">
-          <span>👥 Habitaciones/huéspedes</span>
-          <span class="filter-value">1 habitación, 2 huéspedes</span>
+        <div class="hotel-hero__gallery-thumbs">
+          <img src="/src/static/imagenes/HOTELES/CALI/Hotel Peñon/dos.jpg" alt="Cama" />
+          <img src="/src/static/imagenes/HOTELES/CALI/Hotel Peñon/tres.jpg" alt="Desayuno" />
+          <img src="/src/static/imagenes/HOTELES/CALI/Hotel Peñon/cuatro.jpg" alt="Exterior" />
+          <img src="/src/static/imagenes/HOTELES/CALI/Hotel Peñon/cinco.jpg" alt="Salón" />
         </div>
       </div>
     </section>
 
-    <!-- Information Section -->
-    <section class="info-section">
-      <h2 class="info-section__title">Información</h2>
+    <!-- Barra de Reserva Flotante -->
+    <div class="booking-bar">
+      <div class="booking-bar__inner">
+        <div class="booking-bar__field">
+          <span class="booking-bar__label">Check-in</span>
+          <span class="booking-bar__value">Seleccionar fecha</span>
+        </div>
+        <div class="booking-bar__divider"></div>
+        <div class="booking-bar__field">
+          <span class="booking-bar__label">Check-out</span>
+          <span class="booking-bar__value">Seleccionar fecha</span>
+        </div>
+        <div class="booking-bar__divider"></div>
+        <div class="booking-bar__field">
+          <span class="booking-bar__label">Huéspedes</span>
+          <span class="booking-bar__value">1 habitación, 2 huéspedes</span>
+        </div>
+        <button class="booking-bar__cta" id="reservar">Ver Disponibilidad</button>
+      </div>
+    </div>
 
-      <div class="info-grid">
-        <div class="info-grid__left">
-          <div class="rating-summary">
-            <div class="rating-summary__overall">
-              <span class="rating-summary__score">4.5</span>
-              <span class="rating-summary__label">Muy Buena</span>
-              <div class="rating-summary__stars">★★★★☆</div>
+    <!-- Grid de Contenido Principal -->
+    <div class="hotel-content">
+      
+      <!-- Columna Izquierda - Contenido -->
+      <div>
+        <!-- Información del Hotel -->
+        <article class="content-card">
+          <h2 class="content-card__title">Sobre el Hotel</h2>
+          <p class="content-card__text">
+            Bit Hotel El Peñón está inspirado en un estilo industrial y moderno, ajustándose a los viajeros actuales 
+            que buscan confort con instalaciones frescas y zonas amplias. Situado en el barrio El Peñón, a solo 
+            100 metros de la zona financiera y del centro de negocios. La zona ofrece una amplia gama de restaurantes, 
+            bares y oficinas. El desayuno y la WiFi están incluidos.
+          </p>
+        </article>
+
+        <!-- Servicios y Amenidades -->
+        <article class="content-card">
+          <h2 class="content-card__title">Servicios del Establecimiento</h2>
+          <div class="amenities-grid">
+            <div class="amenity-item">
+              <span class="amenity-icon">🚗</span>
+              <span>Estacionamiento con valet</span>
             </div>
-            <div class="rating-summary__details">
-              <div class="rating-summary__detail">
-                <span>4.8 ★★★★★ Ubicación</span>
+            <div class="amenity-item">
+              <span class="amenity-icon">☕</span>
+              <span>Desayuno gratis incluido</span>
+            </div>
+            <div class="amenity-item">
+              <span class="amenity-icon">🏋️</span>
+              <span>Gimnasio / Sala de entrenamiento</span>
+            </div>
+            <div class="amenity-item">
+              <span class="amenity-icon">🐶</span>
+              <span>Pet Friendly (Admite mascotas)</span>
+            </div>
+            <div class="amenity-item">
+              <span class="amenity-icon">🌐</span>
+              <span>WiFi Alta Velocidad Gratis</span>
+            </div>
+            <div class="amenity-item">
+              <span class="amenity-icon">💼</span>
+              <span>Centro de negocios 24h</span>
+            </div>
+          </div>
+          <button class="content-card__btn">Mostrar más servicios</button>
+        </article>
+
+        <!-- Reseñas -->
+        <article class="content-card">
+          <h2 class="content-card__title">Reseñas de Huéspedes</h2>
+          
+          <!-- Resumen de Reseñas -->
+          <div class="reviews-summary">
+            <div class="reviews-summary__score">
+              <span class="reviews-summary__number">4.5</span>
+              <span class="reviews-summary__text">Muy Buena</span>
+              <span class="reviews-summary__stars">★★★★☆</span>
+            </div>
+            <div class="reviews-summary__bars">
+              <div class="bar-item">
+                <span>Ubicación</span>
+                <div class="bar-track">
+                  <div class="bar-fill" style="width: 96%"></div>
+                </div>
+                <span>4.8</span>
               </div>
-              <div class="rating-summary__detail">
-                <span>4.4 ★★★★☆ Habitaciones</span>
+              <div class="bar-item">
+                <span>Limpieza</span>
+                <div class="bar-track">
+                  <div class="bar-fill" style="width: 90%"></div>
+                </div>
+                <span>4.5</span>
               </div>
-              <div class="rating-summary__detail">
-                <span>4.6 ★★★★ Calidad/precio</span>
-              </div>
-              <div class="rating-summary__detail">
-                <span>4.5 ★★★★☆ Limpieza</span>
-              </div>
-              <div class="rating-summary__detail">
-                <span>4.6 ★★★★★ Servicio</span>
-              </div>
-              <div class="rating-summary__detail">
-                <span>4.4 ★★★★☆ Sueño</span>
+              <div class="bar-item">
+                <span>Servicio</span>
+                <div class="bar-track">
+                  <div class="bar-fill" style="width: 92%"></div>
+                </div>
+                <span>4.6</span>
               </div>
             </div>
           </div>
 
-          <div class="description">
-            <p> Bithotel El Peñon esta inspirado en un estilo industrial y moderno, 
-                ajustandose a los viajeros actuales que buscan confort con 
-                instalaciones frescas y zonas amplias. Bit Peñon está situado en el 
-                barrio El Peñón, a solo 100 metros de la zona financiera y del centro 
-                negocios de la ciudad. La zona ofrece una amplia gama de restaurantes, 
-                bares, oficinas y centros de negocios. El desayuno y la WiFi están 
-                incluidos. Si lo desea, el personal de la recepción 24 horas puede 
-                proporcionarle información turística o de negocios sobre la zona... </p>
-          </div>
-        </div>
+          <!-- Lista de Reseñas -->
+          <div class="reviews-list">
+            <article class="review-card">
+              <div class="review-card__header">
+                <img src="https://placehold.co/50x50/ccc/000?text=AM" alt="Alba Martinez" class="review-card__avatar" />
+                <div class="review-card__user">
+                  <span class="review-card__name">Alba Martinez B</span>
+                  <span class="review-card__date">5 de Octubre, 2025</span>
+                </div>
+              </div>
+              <div class="review-card__rating">★★★★★</div>
+              <p class="review-card__text">
+                Tuvimos una estancia maravillosa. La atención y el servicio fueron excepcionales. 
+                Me sentí como en casa. Además, la comida estaba deliciosa. ¡Muchas gracias!
+              </p>
+              <span class="review-card__meta">Viajó con familia • Octubre 2025</span>
+            </article>
 
-        <div class="info-grid__right">
-          <div class="services">
-            <h3 class="services__title">Servicios del establecimiento</h3>
-            <ul class="services__list">
-              <li><span>🚗</span> Estacionamiento con servicio de valet</li>
-              <li><span>☕</span> Desayuno gratis</li>
-              <li><span>🏋️‍♂️</span> Gimnasio / Sala de entrenamiento</li>
-              <li><span>🐶</span> Se admiten mascotas (Se aceptan perros / mascotas)</li>
-              <li><span>🌐</span> Internet de alta velocidad gratuito</li>
-              <li><span>💼</span> Centro de negocios con acceso a Internet</li>
-              <li><span>👧</span> Actividades infantiles (Ideal para niños / familias)</li>
-              <li><span>💼</span> Centro de negocios con acceso a Internet</li>
-            </ul>
-            <button class="services__btn">Mostrar más ▼</button>
+            <article class="review-card">
+              <div class="review-card__header">
+                <img src="https://placehold.co/50x50/ccc/000?text=ER" alt="Edwar Roa" class="review-card__avatar" />
+                <div class="review-card__user">
+                  <span class="review-card__name">Edwar Roa</span>
+                  <span class="review-card__date">10 de Agosto, 2024</span>
+                </div>
+              </div>
+              <div class="review-card__rating">★★★★★</div>
+              <p class="review-card__text">
+                Excelente ubicación cerca de la zona financiera. Las habitaciones son modernas 
+                y el estilo industrial le da un toque muy fresco. Muy recomendado.
+              </p>
+              <span class="review-card__meta">Viajó por negocios • Agosto 2024</span>
+            </article>
           </div>
-
-          <div class="features">
-            <h3 class="features__title">Características de la habitación</h3>
-            <ul class="features__list">
-
-              <li><span>🔇</span> Habitaciones insonorizadas</li>
-              <li><span>⌨️</span> Escritorio</li>
-              <li><span>📱</span> Teléfono</li>
-              <li><span>📺</span> TV pantalla plana</li>
-              <li><span>❄️</span> Aire acondicionado</li>
-              <li><span>🧰</span> Caja fuerte</li>
-              <li><span>☕</span> Máquina de café/té</li>
-              <li><span>✅</span> Productos de tocador de cortesía</li>
-            </ul>
-            <button class="features__btn">Mostrar más ▼</button>
-          </div>
-
-          <div class="room-types">
-            <h3 class="room-types__title">Tipos de Habitación</h3>
-            <ul class="room-types__list">
-              <li><span>🚭</span> Habitaciones para no fumadores</li>
-            </ul>
-          </div>
-        </div>
+        </article>
       </div>
-    </section>
 
-    <!-- BOTÓN DE ACCIÓN CON LABEL VINCULADO AL CHECKBOX -->
-    <div class="cta-button">
-      <label for="cart-toggle" class="cta-button__btn">¡AGREGAR A MI TOUR POR $ 176.704!</label>
+      <!-- Columna Derecha - Sidebar con Precio -->
+      <aside class="hotel-content__sidebar">
+        <div class="sidebar-card sticky-card">
+          <div class="sidebar-card__price">
+            <span class="price-label">Desde</span>
+            <span class="price-amount">$176.704</span>
+            <span class="price-night">por noche</span>
+          </div>
+          
+          <div class="sidebar-card__features">
+            <span>Cancelación gratuita</span>
+            <span>Desayuno incluido</span>
+            <span>Confirmación instantánea</span>
+            <span>Atención 24/7</span>
+          </div>
+
+          <label for="cart-toggle" class="sidebar-card__cta">Agregar a mi Tour</label>
+          <p class="sidebar-card__hint">Toca para añadir al carrito</p>
+        </div>
+      </aside>
+
     </div>
-
-    <!-- Reviews Section -->
-    <section id="reviews-section" class="reviews-section">
-      <h2 class="reviews-section__title">¡RESEÑAS!</h2>
-      <h3 class="reviews-section__subtitle">Todas las reseñas</h3>
-
-      <!-- Review 1 -->
-      <article class="review-card">
-        <div class="review-card__header">
-          <img src="https://placehold.co/50x50/ccc/000?text=AM  " alt="Alba Martinez" class="review-card__avatar" />
-          <div class="review-card__user-info">
-            <span class="review-card__name">Alba Martinez B</span>
-            <span class="review-card__date">5-10-2025</span>
-          </div>
-        </div>
-        <div class="review-card__rating">
-          <span class="review-card__score">★★★★★</span>
-        </div>
-        <div class="review-card__content">
-          <p>Tuvimos una estancia maravillosa. La atención y el servicio fueron excepcionales. Me sentí como en casa.
-            Además, la comida estaba deliciosa. ¡Muchas gracias!</p>
-          <div class="review-card__meta">
-            <span>Fecha de estancia: Octubre de 2025</span>
-            <span>Tipo de viaje: Viajé con mi familia</span>
-          </div>
-        </div>
-      </article>
-
-
-      <article class="review-card">
-        <div class="review-card__header">
-          <img src="https://placehold.co/50x50/ccc/000?text=ER  " alt="Edwar Roa" class="review-card__avatar" />
-          <div class="review-card__user-info">
-            <span class="review-card__name">Alba Martinez B</span>
-            <span class="review-card__date">10-08-2024</span>
-          </div>
-        </div>
-        <div class="review-card__rating">
-          <span class="review-card__score">★★★★★</span>
-        </div>
-        <div class="review-card__content">
-          <p>Tuvimos una estancia maravillosa. La atención y el servicio fueron excepcionales. Me sentí como en casa.
-            Además, la comida estaba deliciosa. ¡Muchas gracias!</p>
-          <div class="review-card__meta">
-            <span>Fecha de estancia: Agosto de 2024</span>
-            <span>Tipo de viaje: Viajé con mi pareja</span>
-          </div>
-        </div>
-      </article>
-
-
-      <!-- Review 2 (Empty placeholder) -->
-      <article class="review-card review-card--placeholder">
-        <div class="review-card__placeholder-content">
-          <p>Próximamente nuevas reseñas...</p>
-        </div>
-      </article>
-    </section>
   </main>
 
-  <!-- PANEL LATERAL (RESUMEN CARRITO) -->
-  <aside class="reserva">
-    <h3>TU RESERVA</h3>
-    <div class="cart-list">
-      <div class="cart-item item-3"><span>Hotel Ciudad Bonita</span> <b>$176.704</b></div>
+  <!-- PANEL LATERAL DEL CARRITO -->
+  <aside class="cart-sidebar">
+    <div class="cart-sidebar__header">
+      <h3>TU RESERVA</h3>
+      <label for="cart-toggle" class="cart-sidebar__close">✕</label>
     </div>
-    <a href="/src/templates/comprador/factura.html" class="btn-checkout">Realizar Compra</a>
-    <p class="hint">Toca el producto de nuevo para quitarlo</p>
+    
+    <div class="cart-sidebar__body">
+      <div class="cart-item">
+        <div>
+          <span class="cart-item__name">Hotel El Peñón</span>
+          <span class="cart-item__desc">2 noches • 2 huéspedes</span>
+        </div>
+        <span class="cart-item__price">$176.704</span>
+      </div>
+
+      <div class="cart-sidebar__total">
+        <span>Total:</span>
+        <strong>$176.704</strong>
+      </div>
+
+      <a href="/src/templates/comprador/factura.html" class="cart-sidebar__checkout">Proceder al Pago</a>
+      <p class="cart-sidebar__hint">Toca el producto de nuevo para quitarlo</p>
+    </div>
   </aside>
 
-  <!-- VENTANA EMERGENTE -->
+  <!-- NOTIFICACIÓN TOAST -->
   <div class="notice-container">
-    <div class="notice">¡Producto añadido al carrito!</div>
+    <div class="notice">
+      <span>✓</span>
+      ¡Producto añadido al carrito!
+    </div>
   </div>
 
 </body>

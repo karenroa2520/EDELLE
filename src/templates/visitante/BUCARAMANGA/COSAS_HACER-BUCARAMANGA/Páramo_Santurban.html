@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tour Privado - Páramo de Santurban</title>
+  <title>Tour Privado - Páramo de Santurbán</title>
   <link rel="stylesheet" href="/src/static/css/VISI/cosas.hacer.css" />
 </head>
 <body>
+
   <!-- Header Principal -->
   <header>
     <div class="navbar-container">
       <div class="logo">
         <div class="logo-container">
-          <img src="/src/static/imagenes/INICIO/logo_edelle.jpg" alt="Edelle - Tu Próxima Gran Aventura" />
+          <img src="/src/static/imagenes/INICIO/icono-krenga.svg" alt="Edelle - Tu Próxima Gran Aventura" />
         </div>
       </div>
-
       <nav>
         <ul>
           <li><a href="/index.html">Inicio</a></li>
@@ -25,7 +25,6 @@
           <li><a href="/src/templates/visitante/pasajes.html">Pasajes</a></li>
         </ul>
       </nav>
-
       <div class="user-icon">
         <a href="/src/templates/comprador/login.html" title="Iniciar Sesión">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -41,190 +40,320 @@
   <section class="sub-header">
     <div class="sub-header__container">
       <a href="/src/templates/visitante/BUCARAMANGA/BUCARAMANGA.html" class="sub-header__item sub-header__item--active">
-        <span class="sub-header__icon">📍</span>
-        Bucaramanga
+        <span class="sub-header__icon">📍</span> Bucaramanga
       </a>
       <a href="/src/templates/visitante/BUCARAMANGA/hoteles-bucara.html" class="sub-header__item">Hoteles</a>
       <a href="/src/templates/visitante/BUCARAMANGA/cosas-porHacer-bucara.html" class="sub-header__item">Cosas Por Hacer</a>
       <a href="/src/templates/visitante/BUCARAMANGA/restaurates-bucara.html" class="sub-header__item">Restaurantes</a>
-      <a href="#" class="sub-header__item">Reseñas</a>
     </div>
   </section>
 
-  <!-- Hotel Detail Section -->
-  <main class="hotel-detail">
-    <div class="hotel-detail__header">
-      <h1 class="hotel-detail__title">Tour Privado - Páramo de Santurban</h1>
-      <div class="hotel-detail__rating">
-        <span class="hotel-detail__score">5.0</span>
-        <span class="hotel-detail__stars">★★★★★</span>
-      </div>
-      <a href="#reviews" class="hotel-detail__write-review">✏️ Escribir una Opinión</a>
+  <!-- HERO: Estructura adaptada al CSS (tour-hero) -->
+  <section class="tour-hero" id="tour-hero">
+    <div class="tour-hero__slides">
+      <img class="tour-hero__slide active" src="/src/static/imagenes/COSAS-PORHACER/BUCARAMANGA/paramo-santurban/1.jpg" alt="Páramo de Santurbán 1" />
+      <img class="tour-hero__slide" src="/src/static/imagenes/COSAS-PORHACER/BUCARAMANGA/paramo-santurban/2.jpg" alt="Páramo de Santurbán 2" />
+      <img class="tour-hero__slide" src="/src/static/imagenes/COSAS-PORHACER/BUCARAMANGA/paramo-santurban/3.jpg" alt="Páramo de Santurbán 3" />
+      <img class="tour-hero__slide" src="/src/static/imagenes/COSAS-PORHACER/BUCARAMANGA/paramo-santurban/4.jpg" alt="Páramo de Santurbán 4" />
+      <img class="tour-hero__slide" src="/src/static/imagenes/COSAS-PORHACER/BUCARAMANGA/paramo-santurban/5.jpg" alt="Páramo de Santurbán 5" />
+      <div class="tour-hero__overlay"></div>
     </div>
 
-    <!-- Gallery con Carrusel (SIN MINIATURAS) -->
-    <div class="gallery">
-      <div class="carousel-container">
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img class="d-block w-100" src="/src/static/imagenes/COSAS-PORHACER/BUCARAMANGA/paramo-santurban/1.jpg" alt="First slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="/src/static/imagenes/COSAS-PORHACER/BUCARAMANGA/paramo-santurban/2.jpg" alt="Second slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="/src/static/imagenes/COSAS-PORHACER/BUCARAMANGA/paramo-santurban/3.jpg" alt="Third slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="/src/static/imagenes/COSAS-PORHACER/BUCARAMANGA/paramo-santurban/4.jpg" alt="Fourth slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="/src/static/imagenes/COSAS-PORHACER/BUCARAMANGA/paramo-santurban/5.jpg" alt="Fifth slide">
-            </div>
-          </div>
-          
-          <!-- Controles del carrusel -->
-          <a class="carousel-control-prev" href="#carouselExampleSlidesOnly" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Anterior</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleSlidesOnly" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Siguiente</span>
-          </a>
+    <div class="tour-hero__content">
+      <span class="tour-hero__eyebrow"><span class="linea"></span>Ecoturismo en Santander</span>
+      <h1 class="tour-hero__title">Tour Privado - <em>Páramo de Santurbán</em></h1>
+      
+      <div class="tour-hero__meta">
+        <div class="tour-hero__rating">
+          <span class="tour-hero__score">5.0</span>
+          <span class="tour-hero__stars">★★★★★</span>
         </div>
-        <span class="gallery__count">5</span>
+        <span class="tour-hero__punto">•</span>
+        <span>Duración: 6 - 8 horas</span>
+      </div>
+
+      <div class="tour-hero__acciones">
+        <a href="#reservar" class="btn-primario">Reservar ahora</a>
+        <a href="#reviews" class="btn-fantasma">✎ Escribir opinión</a>
       </div>
     </div>
 
-    <!-- Booking Banner -->
-    <section class="booking-banner">
-      <h2 class="booking-banner__title">Actividades en Bucramanga y lugares donde alojarse</h2>
-      <div class="booking-banner__filters">
-        <div class="filter-item">
-          <span>📅 Check-in</span>
-          <span class="filter-value">-/-/-</span>
-        </div>
-        <div class="filter-item">
-          <span>📅 Check-out</span>
-          <span class="filter-value">-/-/-</span>
-        </div>
-        <div class="filter-item">
-          <span>👥 Habitaciones/huéspedes</span>
-          <span class="filter-value">1 habitación, 2 huéspedes</span>
-        </div>
-      </div>
-    </section>
+    <div class="tour-hero__dots">
+      <button class="tour-hero__dot-btn active"></button>
+      <button class="tour-hero__dot-btn"></button>
+      <button class="tour-hero__dot-btn"></button>
+      <button class="tour-hero__dot-btn"></button>
+      <button class="tour-hero__dot-btn"></button>
+    </div>
+    
+    <div class="tour-hero__scroll">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
+    </div>
+  </section>
 
-  <!-- DESCRIPCIÓN GENERAL -->
-  <section class="description">
-    <h2 class="description__title">Descripción General</h2>
-    <div class="description__content">
-      <h3>Acerca de</h3>
-      <p>
-        La experiencia en el Páramo de Santurbán está diseñada para amantes de la naturaleza a quienes les guste caminar a gran altura y con un clima frío. La Laguna Negra 
-        que visitaremos está localizada cerca de los 4000 metros sobre el nivel del mar. Al tener una de las reservas de agua dulce más grandes del planeta, el Páramo de 
-        Santurbán es protegido por la gente local quienes admiran su increíble ecosistema...
-        <a href="#" class="description__more">Mostrar más</a>
+  <!-- SUBNAV PEGAJOSA -->
+  <nav class="tour-subnav" id="tour-subnav">
+    <div class="tour-subnav__links">
+      <a href="#descripcion">Descripción</a>
+      <a href="#itinerario">Itinerario</a>
+      <a href="#incluye">Qué incluye</a>
+      <a href="#reviews">Reseñas</a>
+    </div>
+    <div class="tour-subnav__precio">
+      Desde <strong>$230.277</strong>
+    </div>
+    <a href="#reservar" class="btn-mini">Reservar</a>
+  </nav>
+
+  <!-- DATOS RÁPIDOS -->
+  <section class="stats-row">
+    <div class="stat-card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      <div><strong>6 - 8 Horas</strong><span>Duración total</span></div>
+    </div>
+    <div class="stat-card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+      <div><strong>18 a 59 años</strong><span>Edad recomendada</span></div>
+    </div>
+    <div class="stat-card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      <div><strong>Laguna Negra</strong><span>~4000 m.s.n.m.</span></div>
+    </div>
+    <div class="stat-card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      <div><strong>Español / Inglés</strong><span>Guía en vivo</span></div>
+    </div>
+  </section>
+
+  <!-- CUERPO: Información + Precio -->
+  <section class="tour-body">
+    <div class="tour-body__main">
+
+      <h2 class="tour-body__h2" id="descripcion">Descripción General</h2>
+      <p class="tour-body__p">
+        La experiencia en el Páramo de Santurbán está diseñada para amantes de la naturaleza a quienes les guste caminar a gran altura y con un clima frío. La Laguna Negra que visitaremos está localizada cerca de los 4000 metros sobre el nivel del mar. Al tener una de las reservas de agua dulce más grandes del planeta, el Páramo de Santurbán es protegido por la gente local quienes admiran su increíble ecosistema.
       </p>
-    </div>
-    <div class="description__price-box">
-      <div class="price-box__price">
-        Desde $ 230.277
-      </div>
-      <div class="price-box__label">Por adulto</div>
-      <div class="price-box__guarantee">El precio mas bajo garantizado</div>
-      <button class="price-box__btn">Consultar Disponibilidad</button>
-      <div class="price-box__features">
-        <div class="feature-item">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"></circle>
-            <path d="M8 12h8"></path>
-            <path d="M12 8v8"></path>
-          </svg>
-          El precio más bajo garantizado • ¿Encontraste un precio más bajo en línea? ¡Obtén un reembolso por la diferencia!
 
+      <h2 class="tour-body__h2" id="itinerario">Puntos destacados del recorrido</h2>
+      <ul class="timeline" id="timeline-list">
+        <li class="timeline__item">
+          <span class="timeline__hora">06:00 AM</span>
+          <h4>Salida desde Bucaramanga</h4>
+          <p>Transporte privado con destino al Páramo de Santurbán (aprox. 3 horas de viaje).</p>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__hora">09:00 AM</span>
+          <h4>Desayuno y Charla de Seguridad</h4>
+          <p>Refrigerio ligero y briefing sobre el cuidado del ecosistema de páramo.</p>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__hora">10:00 AM</span>
+          <h4>Caminata a la Laguna Negra</h4>
+          <p>Recorrido guiado entre frailejones hasta alcanzar la laguna a 4000 m.s.n.m.</p>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__hora">01:00 PM</span>
+          <h4>Almuerzo de Montaña</h4>
+          <p>Disfrute de un almuerzo típico caliente para recuperar energía antes del regreso.</p>
+        </li>
+      </ul>
+
+      <h2 class="tour-body__h2" id="incluye">¿Qué está incluido?</h2>
+      <div class="include-columns">
+        <div>
+          <h3 class="tour-body__h3">Sí incluye</h3>
+          <ul class="include-list include-list--si">
+            <li>Transporte privado ida y regreso (aprox. 3h)</li>
+            <li>Entrada a la Laguna Negra</li>
+            <li>Desayuno y almuerzo incluidos</li>
+            <li>Refrigerios durante la caminata</li>
+            <li>Guía local adicional de ser necesario</li>
+            <li>Acompañamiento en español o inglés</li>
+            <li>Seguro del viajero y deportes extremos</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="tour-body__h3">No incluye</h3>
+          <ul class="include-list include-list--no">
+            <li>Equipo de montaña personal (botas, impermeable)</li>
+            <li>Bebidas alcohólicas o extras</li>
+            <li>Propinas al guía o conductor (opcional)</li>
+          </ul>
         </div>
       </div>
+
     </div>
+
+    <!-- CAJA DE PRECIO FLOTANTE (Sidebar) -->
+    <aside class="price-box" id="reservar">
+      <span class="price-box__badge">El precio más bajo garantizado</span>
+      <div class="price-box__precio">$ 230.277</div>
+      <div class="price-box__label">Por adulto</div>
+      
+      <button class="price-box__btn">Consultar Disponibilidad</button>
+      
+      <ul class="price-box__features">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+          <span>¿Encontraste un precio más bajo? ¡Obtén un reembolso por la diferencia!</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg>
+          <span>Entrada para dispositivos móviles</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          <span>Confirmación inmediata al reservar</span>
+        </li>
+      </ul>
+    </aside>
   </section>
 
-  <!-- INFORMACIÓN GENERAL -->
-  <section class="info-general">
-    <h2 class="info-general__title">INFORMACION GENERAL</h2>
-    <ul class="info-general__list">
-      <li>Edades de 18 a 59</li>
-      <li>Duración: De 6 a 8 horas</li>
-      <li>Horario de inicio: consultar disponibilidad</li>
-      <li>Entrada para dispositivos móviles</li>
-      <li>Guía en vivo: Inglés, Español</li>
-    </ul>
+  <!-- BANDA CTA FINAL -->
+  <section class="cta-banner">
+    <div class="cta-banner__blob cta-banner__blob--1"></div>
+    <div class="cta-banner__blob cta-banner__blob--2"></div>
+    <h2>¿Listo para la aventura?</h2>
+    <p>Asegura tu cupo en el Páramo de Santurbán y vive una experiencia única.</p>
+    <button class="cta-banner__btn">¡AGREGAR A MI TOUR POR $ 230.277!</button>
   </section>
-
-  <!-- PUNTOS DESTACADOS -->
-  <section class="highlights">
-    <h2 class="highlights__title">Puntos destacados</h2>
-    <a href="#" class="highlights__link">Ver Itinerario</a>
-  </section>
-
-  <!-- INCLUIDO Y NO INCLUIDO -->
-  <section class="highlights">
-    <h2 class="highlights__title">Que esta incluido</h2>
-    <ul class="highlights__list">
-      <li>Transporte privado al Páramo de Santurbán (aprox. 3 horas desde Bucaramanga)</li>
-      <li>Entrada a la Laguna Negra</li>
-      <li>Guía local adicional de ser necesario</li>
-      <li>Refrigerios durante la caminata</li>
-      <li>Acompañamiento de hablante español o inglés.</li>
-      <li>Seguro del viajero y seguro adicional para deportes extremos</li>
-      <li>Desayuno y almuerzo</li>
-    </ul>
-  </section>
-
-
-  <!-- BOTÓN DE ACCIÓN -->
-  <div class="cta-button">
-    <button class="cta-button__btn">¡AGREGAR A MI TOUR POR $ 230.277!</button>
-  </div>
 
   <!-- RESEÑAS -->
-  <section class="reviews">
-    <h2 class="reviews__title">¡RESEÑAS!</h2>
+  <section class="reviews" id="reviews">
+    <h2 class="reviews__titulo">¡RESEÑAS!</h2>
     <div class="reviews__divider"></div>
     <h3 class="reviews__subtitle">Todas las reseñas</h3>
 
-    <div class="reviews__container">
+    <div class="reviews__pista">
       <div class="review-card">
+        <div class="review-card__comilla">“</div>
         <div class="review-card__header">
           <img src="/src/static/imagenes/USER/PERFIL USUARIO.jpg" alt="Avatar" class="review-card__avatar" />
-          <span class="review-card__name">Bob B</span>
+          <div>
+            <span class="review-card__nombre">Bob B</span>
+            <div class="review-card__rating">
+              <span class="review-card__score">4.7</span>
+              <span class="review-card__stars">★★★★★</span>
+            </div>
+          </div>
         </div>
-        <div class="review-card__rating">
-          <span class="review-card__score">4,7</span>
-          <span class="review-card__stars">★★★★★</span>
-        </div>
-        <p class="review-card__text">
-          Tuvimos un gran líder turístico que administró perfectamente nuestro grupo mixto de habla inglesa y
+        <p class="review-card__texto">
+          Tuvimos un gran líder turístico que administró perfectamente nuestro grupo mixto de habla inglesa y española. El paisaje es indescriptible.
         </p>
       </div>
 
       <div class="review-card">
+        <div class="review-card__comilla">“</div>
         <div class="review-card__header">
           <img src="/src/static/imagenes/USER/2.jpeg" alt="Avatar" class="review-card__avatar" />
-          <span class="review-card__name">Bob B</span>
+          <div>
+            <span class="review-card__nombre">Maria G</span>
+            <div class="review-card__rating">
+              <span class="review-card__score">4.9</span>
+              <span class="review-card__stars">★★★★★</span>
+            </div>
+          </div>
         </div>
-        <div class="review-card__rating">
-          <span class="review-card__score">4,9</span>
-          <span class="review-card__stars">★★★★★</span>
-        </div>
-        <p class="review-card__text">
-          "El débil no puede perdonar. El perdón es un atributo de los fuertes" (Gandhi)
+        <p class="review-card__texto">
+          Una experiencia transformadora. Caminar entre los frailejones y llegar a la Laguna Negra fue el punto culminante de nuestro viaje a Bucaramanga.
         </p>
       </div>
-      <div class="review-card review-card--empty"></div>
+      
+      <div class="review-card review-card--vacia">
+        <p>Sé el primero en dejar una reseña detallada</p>
+        <a href="#" class="tour-body__more">Escribir opinión</a>
+      </div>
     </div>
   </section>
+
+  <!-- BARRA FLOTANTE MÓVIL -->
+  <div class="sticky-cta" id="sticky-cta">
+    <div>
+      <span>Precio por persona</span>
+      <strong>$ 230.277</strong>
+    </div>
+    <a href="#reservar" class="btn-primario btn-primario--sm">Reservar</a>
+  </div>
+
+  <script>
+    // === LOGICA DEL SLIDER (HERO) ===
+    (function() {
+      const slides = document.querySelectorAll('.tour-hero__slide');
+      const dots = document.querySelectorAll('.tour-hero__dot-btn');
+      let currentSlide = 0;
+
+      function nextSlide() {
+        slides[currentSlide].classList.remove('active');
+        if(dots[currentSlide]) dots[currentSlide].classList.remove('active');
+        
+        currentSlide = (currentSlide + 1) % slides.length;
+        
+        slides[currentSlide].classList.add('active');
+        if(dots[currentSlide]) dots[currentSlide].classList.add('active');
+      }
+
+      setInterval(nextSlide, 5000);
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          slides[currentSlide].classList.remove('active');
+          dots[currentSlide].classList.remove('active');
+          currentSlide = index;
+          slides[currentSlide].classList.add('active');
+          dots[currentSlide].classList.add('active');
+        });
+      });
+    })();
+
+    // === SUBNAV PEGAJOSA ===
+    (function() { 
+      const subnav = document.getElementById('tour-subnav');
+      const hero = document.getElementById('tour-hero');
+      const observer = new IntersectionObserver(([entry]) => {
+        subnav.classList.toggle('tour-subnav--fija', !entry.isIntersecting);
+      }, { threshold: 0 });
+      observer.observe(hero);
+    })();
+
+    // === ANIMACIONES AL SCROLL ===
+    (function() {
+      const elements = document.querySelectorAll('.stat-card, .timeline__item, .review-card');
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      
+      if (prefersReducedMotion) { elements.forEach((e) => e.classList.add('visible')); return; }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) { 
+            entry.target.classList.add('visible'); 
+            if(entry.target.closest('.timeline')) {
+               document.querySelector('.timeline').classList.add('timeline--activo');
+            }
+            observer.unobserve(entry.target); 
+          }
+        });
+      }, { threshold: 0.15 });
+
+      elements.forEach((el) => observer.observe(el));
+    })();
+
+    // === STICKY CTA (Móvil) ===
+    (function() {
+      const stickyCta = document.getElementById('sticky-cta');
+      const priceBox = document.querySelector('.price-box');
+      
+      window.addEventListener('scroll', () => {
+        if (window.innerWidth <= 768 && priceBox) {
+          const rect = priceBox.getBoundingClientRect();
+          if (rect.bottom < 0) {
+            stickyCta.classList.add('visible');
+          } else {
+            stickyCta.classList.remove('visible');
+          }
+        }
+      });
+    })();
+  </script>
 
 </body>
 </html>

@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tour Compartido Catedral de Sal Zipaquirá</title>
-  <link rel="stylesheet" href="/src/static/css/VISI/BOGOTA/COSAS-POR-HACER-BOGOTA/Tour_Catedral_Sal_Y_Guatavita.css" />
+  <title>Tour Compartido Catedral de Sal Zipaquirá y Laguna de Guatavita</title>
+  <link rel="stylesheet" href="/src/static/css/VISI/cosas.hacer.css" />
 </head>
 <body>
+
   <!-- Header Principal -->
   <header>
     <div class="navbar-container">
       <div class="logo">
         <div class="logo-container">
-          <img src="/src/static/imagenes/INICIO/logo_edelle.jpg" alt="Edelle - Tu Próxima Gran Aventura" />
+          <img src="/src/static/imagenes/INICIO/icono-krenga.svg" alt="Edelle - Tu Próxima Gran Aventura" />
         </div>
       </div>
-
       <nav>
         <ul>
           <li><a href="/index.html">Inicio</a></li>
@@ -25,7 +25,6 @@
           <li><a href="/src/templates/visitante/pasajes.html">Pasajes</a></li>
         </ul>
       </nav>
-
       <div class="user-icon">
         <a href="/src/templates/comprador/login.html" title="Iniciar Sesión">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -40,177 +39,348 @@
   <!-- Sub-header / Submenu -->
   <section class="sub-header">
     <div class="sub-header__container">
-      <a href="#" class="sub-header__item sub-header__item--active">
-        <span class="sub-header__icon">📍</span>
-        Bogotá
+      <a href="/src/templates/visitante/BOGOTA/BOGOTA.html" class="sub-header__item sub-header__item--active">
+        <span class="sub-header__icon">📍</span> Bogotá
       </a>
       <a href="/src/templates/visitante/BOGOTA/hoteles-bogota.html" class="sub-header__item">Hoteles</a>
       <a href="/src/templates/visitante/BOGOTA/cosas-porHacer-bogota.html" class="sub-header__item">Cosas Por Hacer</a>
       <a href="/src/templates/visitante/BOGOTA/restaurates-bogota.html" class="sub-header__item">Restaurantes</a>
-      <a href="#" class="sub-header__item">Reseñas</a>
     </div>
   </section>
 
-  <!-- Hotel Detail Section -->
-  <main class="hotel-detail">
-    <div class="hotel-detail__header">
-      <h1 class="hotel-detail__title">Tour Compartido Catedral de Sal Zipaquirá y Laguna de Guatavita</h1>
-      <div class="hotel-detail__rating">
-        <span class="hotel-detail__score">4.7</span>
-        <span class="hotel-detail__stars">★★★★☆</span>
-      </div>
-      <a href="#reviews" class="hotel-detail__write-review">✏️ Escribir una Opinión</a>
+  <!-- HERO: Estructura adaptada al CSS (tour-hero) -->
+  <section class="tour-hero" id="tour-hero">
+    <div class="tour-hero__slides">
+      <img class="tour-hero__slide active" src="/src/static/imagenes/COSAS-PORHACER/BOGOTA/catedral_sal_guatabita/1.jpg" alt="Catedral de Sal" />
+      <img class="tour-hero__slide" src="/src/static/imagenes/COSAS-PORHACER/BOGOTA/catedral_sal_guatabita/2.jpg" alt="Laguna de Guatavita" />
+      <img class="tour-hero__slide" src="/src/static/imagenes/COSAS-PORHACER/BOGOTA/catedral_sal_guatabita/3.jpg" alt="Minas de Sal" />
+      <img class="tour-hero__slide" src="/src/static/imagenes/COSAS-PORHACER/BOGOTA/catedral_sal_guatabita/4.jpg" alt="Pueblo de Zipaquirá" />
+      <img class="tour-hero__slide" src="/src/static/imagenes/COSAS-PORHACER/BOGOTA/catedral_sal_guatabita/5.jpg" alt="Vistas Andinas" />
+      <div class="tour-hero__overlay"></div>
     </div>
 
-    <!-- Gallery -->
-    <div class="gallery">
-      <div class="gallery__main">
-        <img src="/src/static/imagenes/COSAS-PORHACER/BOGOTA/catedral_sal_guatabita/1.jpg" alt="Interior del hotel" class="gallery__image" />
-        <span class="gallery__count">70</span>
+    <div class="tour-hero__content">
+      <span class="tour-hero__eyebrow"><span class="linea"></span>Excursión desde Bogotá</span>
+      <h1 class="tour-hero__title">Tour Compartido Catedral de Sal Zipaquirá y <em>Laguna de Guatavita</em></h1>
+      
+      <div class="tour-hero__meta">
+        <div class="tour-hero__rating">
+          <span class="tour-hero__score">4.7</span>
+          <span class="tour-hero__stars">★★★★☆</span>
+        </div>
+        <span class="tour-hero__punto">•</span>
+        <span>Duración: 8 - 9 horas</span>
       </div>
-      <div class="gallery__thumbnails">
-        <img src="/src/static/imagenes/COSAS-PORHACER/BOGOTA/catedral_sal_guatabita/2.jpg" alt="Cama" class="gallery__thumbnail" />
-        <img src="/src/static/imagenes/COSAS-PORHACER/BOGOTA/catedral_sal_guatabita/3.jpg" alt="Desayuno" class="gallery__thumbnail" />
-        <img src="/src/static/imagenes/COSAS-PORHACER/BOGOTA/catedral_sal_guatabita/4.jpg" alt="Exterior" class="gallery__thumbnail" />
-        <img src="/src/static/imagenes/COSAS-PORHACER/BOGOTA/catedral_sal_guatabita/5.jpg" alt="Salón" class="gallery__thumbnail" />
+
+      <div class="tour-hero__acciones">
+        <a href="#reservar" class="btn-primario">Reservar ahora</a>
+        <a href="#reviews" class="btn-fantasma">✎ Escribir opinión</a>
       </div>
     </div>
 
-    <!-- Booking Banner -->
-    <section class="booking-banner">
-      <h2 class="booking-banner__title">Hoteles en Bogotá y lugares donde alojarse</h2>
-      <div class="booking-banner__filters">
-        <div class="filter-item">
-          <span>📅 Check-in</span>
-          <span class="filter-value">-/-/-</span>
-        </div>
-        <div class="filter-item">
-          <span>📅 Check-out</span>
-          <span class="filter-value">-/-/-</span>
-        </div>
-        <div class="filter-item">
-          <span>👥 Habitaciones/huéspedes</span>
-          <span class="filter-value">1 habitación, 2 huéspedes</span>
-        </div>
-      </div>
-    </section>
+    <div class="tour-hero__dots">
+      <button class="tour-hero__dot-btn active"></button>
+      <button class="tour-hero__dot-btn"></button>
+      <button class="tour-hero__dot-btn"></button>
+      <button class="tour-hero__dot-btn"></button>
+      <button class="tour-hero__dot-btn"></button>
+    </div>
+    
+    <div class="tour-hero__scroll">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
+    </div>
+  </section>
 
-  <!-- DESCRIPCIÓN GENERAL -->
-  <section class="description">
-    <h2 class="description__title">Descripción General</h2>
-    <div class="description__content">
-      <h3>Acerca de</h3>
-      <p>
-        Explore la Catedral de Sal de Zipaquirá en este tour de día completo desde Bogotá. No hay preocupaciones sobre el alquiler de coches, ya que se proporciona transporte desde y hacia su hotel.
-        Visite las minas de sal y aprenda sobre...
-        <a href="#" class="description__more">Mostrar más</a>
+  <!-- SUBNAV PEGAJOSA -->
+  <nav class="tour-subnav" id="tour-subnav">
+    <div class="tour-subnav__links">
+      <a href="#descripcion">Descripción</a>
+      <a href="#itinerario">Itinerario</a>
+      <a href="#incluye">Qué incluye</a>
+      <a href="#reviews">Reseñas</a>
+    </div>
+    <div class="tour-subnav__precio">
+      Desde <strong>$206.766</strong>
+    </div>
+    <a href="#reservar" class="btn-mini">Reservar</a>
+  </nav>
+
+  <!-- DATOS RÁPIDOS -->
+  <section class="stats-row">
+    <div class="stat-card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      <div><strong>8 - 9 Horas</strong><span>Duración total</span></div>
+    </div>
+    <div class="stat-card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+      <div><strong>Máx. 14 pers.</strong><span>Grupo reducido</span></div>
+    </div>
+    <div class="stat-card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l3 6 6 1-4.5 4.5L18 20l-6-3-6 3 1.5-6.5L3 9l6-1z"/></svg>
+      <div><strong>0 a 99 años</strong><span>Para toda la familia</span></div>
+    </div>
+    <div class="stat-card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      <div><strong>Multi-idioma</strong><span>Guía y Audioguía</span></div>
+    </div>
+  </section>
+
+  <!-- CUERPO: Información + Precio -->
+  <section class="tour-body">
+    <div class="tour-body__main">
+
+      <h2 class="tour-body__h2" id="descripcion">Descripción General</h2>
+      <p class="tour-body__p">
+        Explore la Catedral de Sal de Zipaquirá en este tour de día completo desde Bogotá. No hay preocupaciones sobre el alquiler de coches, ya que se proporciona transporte desde y hacia su hotel. Visite las minas de sal y aprenda sobre la historia de la extracción mientras admira la arquitectura religiosa tallada directamente en la roca. Combine cultura, historia y naturaleza en una sola excursión inolvidable.
       </p>
-    </div>
-    <div class="description__price-box">
-      <div class="price-box__price">
-        Desde $ 206.766
+
+      <h3 class="tour-body__h3">Lo que vas a vivir</h3>
+      <div class="highlight-grid">
+        <div class="highlight-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5s6 7 6 11.5a6 6 0 0 1-12 0c0-4.5 6-11.5 6-11.5z"/></svg>
+          <h4>Catedral de Sal</h4>
+          <p>Maravíllate con la iglesia subterránea más grande del mundo.</p>
+        </div>
+        <div class="highlight-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C7 2 4 6 4 10c0 6 8 12 8 12s8-6 8-12c0-4-3-8-8-8z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <h4>Laguna de Guatavita</h4>
+          <p>Visita la laguna sagrada de los Muiscas y conoce su leyenda.</p>
+        </div>
+        <div class="highlight-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+          <h4>Paseo Cultural</h4>
+          <p>Recorre el pueblo colonial de Zipaquirá y sus plazas.</p>
+        </div>
+        <div class="highlight-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v7a2 2 0 0 0 4 0V3M9 10v11M18 3c-2 2-2 5-2 7 0 1.5 1 2 2 2v9"/></svg>
+          <h4>Sin Preocupaciones</h4>
+          <p>Transporte, entradas y audioguía incluidos en el paquete.</p>
+        </div>
       </div>
+
+      <h2 class="tour-body__h2" id="itinerario">Cómo es el recorrido</h2>
+      <ol class="timeline">
+        <li class="timeline__item">
+          <span class="timeline__hora">07:30 AM</span>
+          <h4>Recogida en Bogotá</h4>
+          <p>Recogida en su hotel o punto de encuentro céntrico.</p>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__hora">09:30 AM</span>
+          <h4>Llegada a Zipaquirá</h4>
+          <p>Descenso a las minas de sal y visita a la Catedral.</p>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__hora">12:30 PM</span>
+          <h4>Almuerzo Libre</h4>
+          <p>Tiempo libre para almorzar en el pueblo de Zipaquirá.</p>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__hora">02:30 PM</span>
+          <h4>Laguna de Guatavita</h4>
+          <p>Visita al mirador de la laguna y explicación de la leyenda de El Dorado.</p>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__hora">05:00 PM</span>
+          <h4>Regreso a Bogotá</h4>
+          <p>Fin del tour y retorno a la ciudad capital.</p>
+        </li>
+      </ol>
+
+      <h2 class="tour-body__h2" id="incluye">¿Qué está incluido?</h2>
+      <div class="include-columns">
+        <div>
+          <h3 class="tour-body__h3">Sí incluye</h3>
+          <ul class="include-list include-list--si">
+            <li>Transporte ida y vuelta desde Bogotá</li>
+            <li>Entrada a la Catedral de Sal</li>
+            <li>Audioguía disponible en varios idiomas</li>
+            <li>Guía acompañante bilingüe</li>
+            <li>Visita a la Laguna de Guatavita</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="tour-body__h3">No incluye</h3>
+          <ul class="include-list include-list--no">
+            <li>Almuerzo y bebidas</li>
+            <li>Propinas opcionales</li>
+            <li>Gastos personales</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CAJA DE PRECIO FLOTANTE (Sidebar) -->
+    <aside class="price-box" id="reservar">
+      <span class="price-box__badge">El precio más bajo garantizado</span>
+      <div class="price-box__precio">$ 206.766</div>
       <div class="price-box__label">Por adulto</div>
-      <div class="price-box__guarantee">El precio mas bajo garantizado</div>
+      
       <button class="price-box__btn">Consultar Disponibilidad</button>
-      <div class="price-box__features">
-        <div class="feature-item">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"></circle>
-            <path d="M8 12h8"></path>
-            <path d="M12 8v8"></path>
-          </svg>
-          Cancelación gratuita • Reembolso total si se cancela hasta 24 horas antes de que comience la experiencia (hora local).
-        </div>
-        <div class="feature-item">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-            <line x1="16" y1="2" x2="16" y2="6"></line>
-            <line x1="8" y1="2" x2="8" y2="6"></line>
-            <line x1="3" y1="10" x2="21" y2="10"></line>
-          </svg>
-          Reserva ahora y paga después • Asegura tu lugar mientras mantienes la flexibilidad.
-        </div>
-        <div class="feature-item">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-            <path d="M16 2h2a2 2 0 012 2v2H8V4a2 2 0 012-2h2"></path>
-            <path d="M12 11h4"></path>
-            <path d="M12 16h4"></path>
-          </svg>
-          Reserva con anticipación-Esto se reserva con 11 días de anticipación en promedio.
-        </div>
-      </div>
-    </div>
+      
+      <ul class="price-box__features">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+          <span>Cancelación gratuita hasta 24 horas antes.</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg>
+          <span>Reserva ahora y paga después.</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          <span>Se reserva con 11 días de anticipación en promedio.</span>
+        </li>
+      </ul>
+    </aside>
   </section>
 
-  <!-- INFORMACIÓN GENERAL (la que ya tenías) -->
-  <section class="info-general">
-    <h2 class="info-general__title">INFORMACION GENERAL</h2>
-    <ul class="info-general__list">
-      <li>Edades: de 0 a 99, máx. de 14 por grupo</li>
-      <li>Duración: De 8 a 9 horas</li>
-      <li>Horario de inicio: consultar disponibilidad</li>
-      <li>Entrada para dispositivos móviles</li>
-      <li>Guía en vivo: Inglés, Español</li>
-      <li>Guía en audio: Alemán, Inglés, Italiano, Francés, Español</li>
-    </ul>
+  <!-- BANDA CTA FINAL -->
+  <section class="cta-banner">
+    <div class="cta-banner__blob cta-banner__blob--1"></div>
+    <div class="cta-banner__blob cta-banner__blob--2"></div>
+    <h2>¿Listo para la aventura?</h2>
+    <p>Descubre dos de los tesoros más grandes de Cundinamarca.</p>
+    <button class="cta-banner__btn">¡AGREGAR A MI TOUR POR $ 206.766!</button>
   </section>
-
-  <!-- PUNTOS DESTACADOS -->
-  <section class="highlights">
-    <h2 class="highlights__title">Puntos destacados</h2>
-    <ul class="highlights__list">
-      <li>Recorre una mina de sal de Zipaquirá y ve la Catedral de sal tallada</li>
-      <li>Conoce tu recorrido en un punto de partida situado en el centro</li>
-      <li>Incluye entradas y audioguía.</li>
-      <li>Disfrute de una combinación de visitas guiadas y tiempo libre.</li>
-    </ul>
-    <a href="#" class="highlights__link">Ver Itinerario</a>
-  </section>
-
-  <!-- BOTÓN DE ACCIÓN -->
-  <div class="cta-button">
-    <button class="cta-button__btn">¡AGREGAR A MI TOUR POR $ 206.766!</button>
-  </div>
 
   <!-- RESEÑAS -->
-  <section class="reviews">
-    <h2 class="reviews__title">¡RESEÑAS!</h2>
+  <section class="reviews" id="reviews">
+    <h2 class="reviews__titulo">¡RESEÑAS!</h2>
     <div class="reviews__divider"></div>
     <h3 class="reviews__subtitle">Todas las reseñas</h3>
 
-    <div class="reviews__container">
+    <div class="reviews__pista">
       <div class="review-card">
+        <div class="review-card__comilla">“</div>
         <div class="review-card__header">
           <img src="/src/static/imagenes/USER/PERFIL USUARIO.jpg" alt="Avatar" class="review-card__avatar" />
-          <span class="review-card__name">Bob B</span>
+          <div>
+            <span class="review-card__nombre">Bob B</span>
+            <div class="review-card__rating">
+              <span class="review-card__score">4.7</span>
+              <span class="review-card__stars">★★★★★</span>
+            </div>
+          </div>
         </div>
-        <div class="review-card__rating">
-          <span class="review-card__score">4,7</span>
-          <span class="review-card__stars">★★★★★</span>
-        </div>
-        <p class="review-card__text">
-          Tuvimos un gran líder turístico que administró perfectamente nuestro grupo mixto de habla inglesa y
+        <p class="review-card__texto">
+          Tuvimos un gran líder turístico que administró perfectamente nuestro grupo mixto de habla inglesa y española. La Catedral es impresionante.
         </p>
       </div>
 
       <div class="review-card">
+        <div class="review-card__comilla">“</div>
         <div class="review-card__header">
           <img src="/src/static/imagenes/USER/2.jpeg" alt="Avatar" class="review-card__avatar" />
-          <span class="review-card__name">Bob B</span>
+          <div>
+            <span class="review-card__nombre">Maria G</span>
+            <div class="review-card__rating">
+              <span class="review-card__score">4.9</span>
+              <span class="review-card__stars">★★★★★</span>
+            </div>
+          </div>
         </div>
-        <div class="review-card__rating">
-          <span class="review-card__score">4,9</span>
-          <span class="review-card__stars">★★★★★</span>
-        </div>
-        <p class="review-card__text">
-          "El débil no puede perdonar. El perdón es un atributo de los fuertes" (Gandhi)
+        <p class="review-card__texto">
+          Una excursión muy completa. Me gustó mucho la combinación de la mina de sal con la laguna. Muy recomendado.
         </p>
       </div>
-      <div class="review-card review-card--empty"></div>
+      
+      <div class="review-card review-card--vacia">
+        <p>Sé el primero en dejar una reseña detallada</p>
+        <a href="#" class="tour-body__more">Escribir opinión</a>
+      </div>
     </div>
   </section>
+
+  <!-- BARRA FLOTANTE MÓVIL -->
+  <div class="sticky-cta" id="sticky-cta">
+    <div>
+      <span>Precio por persona</span>
+      <strong>$ 206.766</strong>
+    </div>
+    <a href="#reservar" class="btn-primario btn-primario--sm">Reservar</a>
+  </div>
+
+  <script>
+    // === LOGICA DEL SLIDER (HERO) ===
+    (function() {
+      const slides = document.querySelectorAll('.tour-hero__slide');
+      const dots = document.querySelectorAll('.tour-hero__dot-btn');
+      let currentSlide = 0;
+
+      function nextSlide() {
+        slides[currentSlide].classList.remove('active');
+        if(dots[currentSlide]) dots[currentSlide].classList.remove('active');
+        
+        currentSlide = (currentSlide + 1) % slides.length;
+        
+        slides[currentSlide].classList.add('active');
+        if(dots[currentSlide]) dots[currentSlide].classList.add('active');
+      }
+
+      setInterval(nextSlide, 5000);
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          slides[currentSlide].classList.remove('active');
+          dots[currentSlide].classList.remove('active');
+          currentSlide = index;
+          slides[currentSlide].classList.add('active');
+          dots[currentSlide].classList.add('active');
+        });
+      });
+    })();
+
+    // === SUBNAV PEGAJOSA ===
+    (function() { 
+      const subnav = document.getElementById('tour-subnav');
+      const hero = document.getElementById('tour-hero');
+      const observer = new IntersectionObserver(([entry]) => {
+        subnav.classList.toggle('tour-subnav--fija', !entry.isIntersecting);
+      }, { threshold: 0 });
+      observer.observe(hero);
+    })();
+
+    // === ANIMACIONES AL SCROLL ===
+    (function() {
+      const elements = document.querySelectorAll('.stat-card, .timeline__item, .review-card');
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      
+      if (prefersReducedMotion) { elements.forEach((e) => e.classList.add('visible')); return; }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) { 
+            entry.target.classList.add('visible'); 
+            if(entry.target.closest('.timeline')) {
+               document.querySelector('.timeline').classList.add('timeline--activo');
+            }
+            observer.unobserve(entry.target); 
+          }
+        });
+      }, { threshold: 0.15 });
+
+      elements.forEach((el) => observer.observe(el));
+    })();
+
+    // === STICKY CTA (Móvil) ===
+    (function() {
+      const stickyCta = document.getElementById('sticky-cta');
+      const priceBox = document.querySelector('.price-box');
+      
+      window.addEventListener('scroll', () => {
+        if (window.innerWidth <= 768 && priceBox) {
+          const rect = priceBox.getBoundingClientRect();
+          if (rect.bottom < 0) {
+            stickyCta.classList.add('visible');
+          } else {
+            stickyCta.classList.remove('visible');
+          }
+        }
+      });
+    })();
+  </script>
 
 </body>
 </html>

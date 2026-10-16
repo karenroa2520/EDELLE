@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Restaurantes en Barranquilla</title>
+  <link rel="stylesheet" href="/src/static/css/VISI/restaurantes-estilos.css" />
+</head>
+<body>
+
+  <header>
+    <div class="navbar-container">
+      <div class="logo">
+        <div class="logo-container">
+          <img src="/src/static/imagenes/INICIO/logo_edelle.jpg" alt="Edelle - Tu Próxima Gran Aventura" />
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/index.html">Inicio</a></li>
+          <li><a href="/src/templates/visitante/quienes-somos.html">Quienes Somos</a></li>
+          <li><a href="/src/templates/visitante/servicios.html">Servicios</a></li>
+          <li><a href="/src/templates/visitante/destinos.html">Destinos</a></li>
+          <li><a href="/src/templates/visitante/pasajes.html">Pasajes</a></li>
+        </ul>
+      </nav>
+      <div class="user-icon">
+        <a href="/src/templates/comprador/login.html" title="Iniciar Sesión">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-5.656-3.656L12 17l-2.344-2.344A4 4 0 0 0 4 17v2"></path>
+            <circle cx="12" cy="9" r="4"></circle>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section class="sub-header">
+    <div class="sub-header__container">
+      <a href="/src/templates/visitante/BARRANQUILLA/BARRANQUILLA.html" class="sub-header__item sub-header__item--active">
+        <span class="sub-header__icon">📍</span> Barranquilla
+      </a>
+      <a href="/src/templates/visitante/BARRANQUILLA/hoteles-barranquilla.html" class="sub-header__item">Hoteles</a>
+      <a href="/src/templates/visitante/BARRANQUILLA/cosas-porHacer-barranquilla.html" class="sub-header__item">Cosas Por Hacer</a>
+      <a href="/src/templates/visitante/BARRANQUILLA/restaurantes-barranquilla.html" class="sub-header__item">Restaurantes</a>
+    </div>
+  </section>
+
+  <main class="main-content">
+
+    <!-- BANNER DE BIENVENIDA ADAPTADO A BARRANQUILLA -->
+    <section class="restaurantes-banner">
+      <div class="restaurantes-banner__blob restaurantes-banner__blob--1"></div>
+      <div class="restaurantes-banner__blob restaurantes-banner__blob--2"></div>
+      <span class="restaurantes-banner__eyebrow"><span class="linea"></span>Barranquilla, Colombia</span>
+      <h1 class="restaurantes-banner__titulo">Sabores del Caribe en <em>Barranquilla</em></h1>
+      <p class="restaurantes-banner__subtitulo">Desde la auténtica comida costeña y el arroz de lisa hasta la fusión internacional en el norte de la ciudad.</p>
+      <div class="restaurantes-banner__chips">
+        <button type="button" class="chip-rapido">Costeña</button>
+        <button type="button" class="chip-rapido">Mariscos</button>
+        <button type="button" class="chip-rapido">Económico</button>
+        <button type="button" class="chip-rapido">Mejor calificados</button>
+      </div>
+    </section>
+
+    <div class="content-container">
+
+      <!-- FILTROS -->
+      <aside class="filters">
+        <!-- Botón toggle necesario para móvil según el diseño de Bogotá -->
+        <button type="button" class="filters__mobile-toggle" id="filtros-toggle" aria-expanded="false" aria-controls="filtros-panel">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="6" x2="20" y2="6"/><circle cx="9" cy="6" r="2"/><line x1="4" y1="12" x2="20" y2="12"/><circle cx="15" cy="12" r="2"/><line x1="4" y1="18" x2="20" y2="18"/><circle cx="7" cy="18" r="2"/></svg>
+          Filtros
+        </button>
+
+        <div class="filters__panel" id="filtros-panel">
+
+          <div class="filters__group">
+            <h3 class="filters__group-title">Tipo de establecimiento</h3>
+            <div class="filters__options">
+              <label class="filters__option">
+                <input type="checkbox" name="establishment" value="restaurantes">
+                <span class="filters__option-text">Restaurantes</span>
+              </label>
+              <label class="filters__option">
+                <input type="checkbox" name="establishment" value="cafe">
+                <span class="filters__option-text">Café y té</span>
+              </label>
+              <label class="filters__option">
+                <input type="checkbox" name="establishment" value="tentempies">
+                <span class="filters__option-text">Bares y Pub</span>
+              </label>
+              <label class="filters__option">
+                <input type="checkbox" name="establishment" value="postres">
+                <span class="filters__option-text">Postres</span>
+              </label>
+            </div>
+            <a href="#" class="filters__show-more">Mostrar más</a>
+          </div>
+
+          <div class="filters__group">
+            <h3 class="filters__group-title">Tipo de comida</h3>
+            <div class="filters__options">
+              <label class="filters__option">
+                <input type="checkbox" name="food" value="desayuno">
+                <span class="filters__option-text">Desayuno</span>
+              </label>
+              <label class="filters__option">
+                <input type="checkbox" name="food" value="brunch">
+                <span class="filters__option-text">Brunch</span>
+              </label>
+              <label class="filters__option">
+                <input type="checkbox" name="food" value="almuerzo">
+                <span class="filters__option-text">Almuerzo</span>
+              </label>
+              <label class="filters__option">
+                <input type="checkbox" name="food" value="cena">
+                <span class="filters__option-text">Cena</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="filters__group">
+            <h3 class="filters__group-title">Tipo de cocina</h3>
+            <div class="filters__options">
+              <label class="filters__option">
+                <input type="checkbox" name="cuisine" value="colombiana">
+                <span class="filters__option-text">Costeña / Caribeña</span>
+              </label>
+              <label class="filters__option">
+                <input type="checkbox" name="cuisine" value="internacional">
+                <span class="filters__option-text">Internacional</span>
+              </label>
+              <label class="filters__option">
+                <input type="checkbox" name="cuisine" value="rapida">
+                <span class="filters__option-text">Comida Rápida</span>
+              </label>
+              <label class="filters__option">
+                <input type="checkbox" name="cuisine" value="italiana">
+                <span class="filters__option-text">Italiana</span>
+              </label>
+            </div>
+            <a href="#" class="filters__show-more">Mostrar más</a>
+          </div>
+
+          <div class="filters__group">
+            <h3 class="filters__group-title">Precio</h3>
+            <div class="filters__options">
+              <label class="filters__option">
+                <input type="checkbox" name="price" value="economico">
+                <span class="filters__option-text">Comer Barato</span>
+              </label>
+              <label class="filters__option">
+                <input type="checkbox" name="price" value="medio">
+                <span class="filters__option-text">Gama Media</span>
+              </label>
+              <label class="filters__option">
+                <input type="checkbox" name="price" value="alto">
+                <span class="filters__option-text">Gourmet</span>
+              </label>
+            </div>
+          </div>
+
+        </div>
+      </aside>
+
+      <!-- LISTADO DE RESTAURANTES -->
+      <section class="restaurants">
+        <div class="restaurants__header">
+          <p class="restaurants__count">Resultados encontrados</p>
+          <div class="restaurants__sort">
+            <label for="sort-select" class="restaurants__sort-label">Ordenar por</label>
+            <select id="sort-select" class="restaurants__sort-select">
+              <option value="relevancia">Relevancia</option>
+              <option value="rating">Mejor calificación</option>
+              <option value="nombre">Nombre (A-Z)</option>
+              <option value="precio">Precio</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="restaurants__list">
+
+          <!-- Restaurante 1: Palo de Mango -->
+          <article class="restaurant-item">
+            <div class="restaurant-item__media">
+              <img src="/src/static/imagenes/RESTAURANTES/BARRANQUILLA/Palo_de_Mango/1.jpg" alt="Palo de Mango Restaurante" class="restaurant-item__image">
+              <span class="restaurant-item__rank">1</span>
+            </div>
+            <div class="restaurant-item__info">
+              <div class="restaurant-item__top">
+                <h3 class="restaurant-item__title">Palo de Mango</h3>
+                <span class="restaurant-item__badge">
+                  <strong>4.9</strong>
+                  <span class="restaurant-item__stars">★★★★★</span>
+                </span>
+              </div>
+              <div class="restaurant-item__tags">
+                <span class="tag">Colombiana</span>
+                <span class="tag">Caribeña</span>
+                <span class="price-dots" aria-label="Precio: alto">
+                  <span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span>
+                </span>
+              </div>
+              <p class="restaurant-item__description">"Una experiencia culinaria única con los mejores sabores de la región."</p>
+              <p class="restaurant-item__quote">"Un almuerzo delicioso, la mejor experiencia en Barranquilla."</p>
+              <a href="/src/templates/visitante/BARRANQUILLA/RESTAURANTES-BARRANQUILLA/Palo de Mango.html" class="restaurant-item__menu">Ver menú</a>
+            </div>
+          </article>
+
+          <!-- Restaurante 2: Restaurante Varadero -->
+          <article class="restaurant-item">
+            <div class="restaurant-item__media">
+              <img src="/src/static/imagenes/RESTAURANTES/BARRANQUILLA/Restaurante_Varadero/1.jpg" alt="Restaurante Varadero" class="restaurant-item__image">
+              <span class="restaurant-item__rank">2</span>
+            </div>
+            <div class="restaurant-item__info">
+              <div class="restaurant-item__top">
+                <h3 class="restaurant-item__title">Restaurante Varadero</h3>
+                <span class="restaurant-item__badge">
+                  <strong>4.4</strong>
+                  <span class="restaurant-item__stars">★★★★☆</span>
+                </span>
+              </div>
+              <div class="restaurant-item__tags">
+                <span class="tag">Caribeña</span>
+                <span class="tag">Latina</span>
+                <span class="price-dots" aria-label="Precio: alto">
+                  <span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span>
+                </span>
+              </div>
+              <p class="restaurant-item__description">"Clásico de la gastronomía caribeña con un ambiente familiar y tradicional."</p>
+              <p class="restaurant-item__quote">"Excelente para celebraciones y comida tradicional costeña."</p>
+              <a href="/src/templates/visitante/BARRANQUILLA/RESTAURANTES-BARRANQUILLA/Restaurante Varadero.html" class="restaurant-item__menu">Ver menú</a>
+            </div>
+          </article>
+
+          <!-- Restaurante 3: La Matriarca -->
+          <article class="restaurant-item">
+            <div class="restaurant-item__media">
+              <img src="/src/static/imagenes/RESTAURANTES/BARRANQUILLA/La_Matriarca/1.jpg" alt="La Matriarca" class="restaurant-item__image">
+              <span class="restaurant-item__rank">3</span>
+            </div>
+            <div class="restaurant-item__info">
+              <div class="restaurant-item__top">
+                <h3 class="restaurant-item__title">La Matriarca</h3>
+                <span class="restaurant-item__badge">
+                  <strong>4.7</strong>
+                  <span class="restaurant-item__stars">★★★★★</span>
+                </span>
+              </div>
+              <div class="restaurant-item__tags">
+                <span class="tag">Latina</span>
+                <span class="tag">Bar</span>
+                <span class="price-dots" aria-label="Precio: medio">
+                  <span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot"></span>
+                </span>
+              </div>
+              <p class="restaurant-item__description">"Ambiente vibrante con cócteles de autor y fusión latina en el corazón de la ciudad."</p>
+              <p class="restaurant-item__quote">"Recomendado 100%. Excelente comida y servicio."</p>
+              <a href="/src/templates/visitante/BARRANQUILLA/RESTAURANTES-BARRANQUILLA/La Matriarca.html" class="restaurant-item__menu">Ver menú</a>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="restaurants__pagination">
+          <button class="restaurants__pagination-btn restaurants__pagination-btn--prev" disabled>← Anterior</button>
+          <div class="restaurants__pagination-numeros">
+            <button class="restaurants__pagination-num restaurants__pagination-num--activo">1</button>
+            <button class="restaurants__pagination-num">2</button>
+            <button class="restaurants__pagination-num">3</button>
+            <span class="restaurants__pagination-puntos">…</span>
+            <button class="restaurants__pagination-num">10</button>
+          </div>
+          <button class="restaurants__pagination-btn restaurants__pagination-btn--next">Siguiente →</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    // Revelado escalonado de las tarjetas de restaurante al hacer scroll
+    (function () {
+      const tarjetas = document.querySelectorAll('.restaurant-item');
+      const prefiereMenosMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (prefiereMenosMovimiento || !('IntersectionObserver' in window)) {
+        tarjetas.forEach((t) => t.classList.add('visible'));
+        return;
+      }
+
+      const observador = new IntersectionObserver((entradas) => {
+        entradas.forEach((entrada) => {
+          if (entrada.isIntersecting) {
+            entrada.target.classList.add('visible');
+            observador.unobserve(entrada.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      tarjetas.forEach((t) => observador.observe(t));
+    })();
+
+    // Panel de filtros plegable en móvil
+    (function () {
+      const boton = document.getElementById('filtros-toggle');
+      const panel = document.getElementById('filtros-panel');
+      if (!boton || !panel) return;
+
+      boton.addEventListener('click', () => {
+        const abierto = panel.classList.toggle('filters__panel--abierto');
+        boton.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+      });
+    })();
+
+    // Paginación: resalta el número de página seleccionado
+    (function () {
+      const numeros = document.querySelectorAll('.restaurants__pagination-num');
+      numeros.forEach((num) => {
+        num.addEventListener('click', () => {
+          numeros.forEach((n) => n.classList.remove('restaurants__pagination-num--activo'));
+          num.classList.add('restaurants__pagination-num--activo');
+        });
+      });
+    })();
+
+    // Chips rápidos del banner: alternan estado visual
+    (function () {
+      document.querySelectorAll('.chip-rapido').forEach((chip) => {
+        chip.addEventListener('click', () => chip.classList.toggle('chip-rapido--activo'));
+      });
+    })();
+  </script>
+
+</body>
+</html>

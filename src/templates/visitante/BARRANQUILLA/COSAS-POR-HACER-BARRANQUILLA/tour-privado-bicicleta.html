@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Private Bike Tour of Barranquilla</title>
+  <link rel="stylesheet" href="/src/static/css/VISI/cosas.hacer.css" />
+</head>
+<body>
+
+  <!-- Header Principal -->
+  <header>
+    <div class="navbar-container">
+      <div class="logo">
+        <div class="logo-container">
+          <img src="/src/static/imagenes/INICIO/icono-krenga.svg" alt="Krenga - Tu Próxima Gran Aventura" />
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/index.html">Inicio</a></li>
+          <li><a href="/src/templates/visitante/quienes-somos.html">Quienes Somos</a></li>
+          <li><a href="/src/templates/visitante/servicios.html">Servicios</a></li>
+          <li><a href="/src/templates/visitante/destinos.html">Destinos</a></li>
+          <li><a href="/src/templates/visitante/pasajes.html">Pasajes</a></li>
+        </ul>
+      </nav>
+      <div class="user-icon">
+        <a href="/src/templates/comprador/login.html" title="Iniciar Sesión">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-5.656-3.656L12 17l-2.344-2.344A4 4 0 0 0 4 17v2"></path>
+            <circle cx="12" cy="9" r="4"></circle>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sub-header / Submenu -->
+  <section class="sub-header">
+    <div class="sub-header__container">
+      <a href="/src/templates/visitante/BARRANQUILLA/BARRANQUILLA.html" class="sub-header__item sub-header__item--active">
+        <span class="sub-header__icon">📍</span> Barranquilla
+      </a>
+      <a href="/src/templates/visitante/BARRANQUILLA/hoteles-barranquilla.html" class="sub-header__item">Hoteles</a>
+      <a href="/src/templates/visitante/BARRANQUILLA/cosas-porHacer-barranquilla.html" class="sub-header__item">Cosas Por Hacer</a>
+      <a href="/src/templates/visitante/BARRANQUILLA/restaurantes-barranquilla.html" class="sub-header__item">Restaurantes</a>
+    </div>
+  </section>
+
+  <main class="tour">
+
+    <!-- HERO: carrusel a pantalla completa -->
+    <section class="tour-hero" id="tour-hero">
+      <div class="tour-hero__slides">
+        <img class="tour-hero__slide active" src="/src/static/imagenes/COSAS-PORHACER/BARRANQUILLA/Tour Privado en Bicicleta por Barranquilla/1.jpg" alt="Ciclista recorriendo las vías del tranvía histórico" />
+        <img class="tour-hero__slide" src="/src/static/imagenes/COSAS-PORHACER/BARRANQUILLA/Tour Privado en Bicicleta por Barranquilla/2.jpg" alt="Vista del Río Magdalena desde la cicloruta" />
+        <img class="tour-hero__slide" src="/src/static/imagenes/COSAS-PORHACER/BARRANQUILLA/Tour Privado en Bicicleta por Barranquilla/3.jpg" alt="Arquitectura republicana en el centro histórico" />
+        <img class="tour-hero__slide" src="/src/static/imagenes/COSAS-PORHACER/BARRANQUILLA/Tour Privado en Bicicleta por Barranquilla/4.jpg" alt="Grupo disfrutando de la brisa caribeña en bicicleta" />
+      </div>
+      <div class="tour-hero__overlay"></div>
+
+      <div class="tour-hero__content">
+        <span class="tour-hero__eyebrow"><span class="linea"></span>Barranquilla · Aventura Urbana</span>
+        <h1 class="tour-hero__title">Private Bike Tour of Barranquilla <em>Descubre la ciudad sobre dos ruedas</em></h1>
+        <div class="tour-hero__meta">
+          <span class="tour-hero__rating"><strong>5.0</strong><span class="tour-hero__stars">★★★★★</span></span>
+          <span class="tour-hero__punto">•</span>
+          <span>Privado</span>
+          <span class="tour-hero__punto">•</span>
+          <span>3 horas</span>
+        </div>
+        <div class="tour-hero__acciones">
+          <a href="#reservar" class="btn-primario">Reservar esta experiencia</a>
+          <a href="#reviews" class="btn-fantasma">✏️ Escribir una opinión</a>
+        </div>
+      </div>
+
+      <div class="tour-hero__dots">
+        <button class="tour-hero__dot-btn active" aria-label="Foto 1"></button>
+        <button class="tour-hero__dot-btn" aria-label="Foto 2"></button>
+        <button class="tour-hero__dot-btn" aria-label="Foto 3"></button>
+        <button class="tour-hero__dot-btn" aria-label="Foto 4"></button>
+      </div>
+
+      <a href="#datos-rapidos" class="tour-hero__scroll" aria-label="Ver más">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+      </a>
+    </section>
+
+    <!-- SUBNAV PEGAJOSA -->
+    <nav class="tour-subnav" id="tour-subnav">
+      <div class="tour-subnav__links">
+        <a href="#descripcion">Descripción</a>
+        <a href="#itinerario">Itinerario</a>
+        <a href="#incluye">Qué incluye</a>
+        <a href="#reviews">Reseñas</a>
+      </div>
+      <div class="tour-subnav__precio">
+        <span>Desde</span>
+        <strong>$190.000</strong>
+        <a href="#reservar" class="btn-mini">Reservar</a>
+      </div>
+    </nav>
+
+    <!-- DATOS RÁPIDOS -->
+    <section class="stats-row" id="datos-rapidos">
+      <div class="stat-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        <div><strong>3 horas</strong><span>Duración del tour</span></div>
+      </div>
+      <div class="stat-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <div><strong>Privado</strong><span>Tu propio grupo</span></div>
+      </div>
+      <div class="stat-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 6 6 1-4.5 4.5L18 20l-6-3-6 3 1.5-6.5L3 9l6-1z"/></svg>
+        <div><strong>Moderado</strong><span>Nivel físico</span></div>
+      </div>
+      <div class="stat-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+        <div><strong>ES / EN</strong><span>Idiomas disponibles</span></div>
+      </div>
+    </section>
+
+    <!-- CUERPO: descripción + precio -->
+    <section class="tour-body" id="descripcion">
+      <div class="tour-body__main">
+
+        <h2 class="tour-body__h2">Acerca de la experiencia</h2>
+        <p class="tour-body__p">
+          Explora Barranquilla a tu propio ritmo en este tour privado en bicicleta. Recorre las históricas vías del tranvía, siente la brisa del Caribe 
+          y descubre rincones ocultos del centro histórico que solo se pueden apreciar sobre dos ruedas. Este recorrido combina historia, cultura y ejercicio ligero, 
+          guiado por un experto local que te contará las mejores anécdotas de la "Ciudad de las Puertas Abiertas".
+          <a href="#" class="tour-body__more">Mostrar más</a>
+        </p>
+
+        <h3 class="tour-body__h3">Lo que vas a vivir</h3>
+        <div class="highlight-grid">
+          <div class="highlight-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            <h4>Ruta Histórica</h4>
+            <p>Pedalea por las antiguas vías del tranvía y conoce la evolución urbana de Barranquilla desde finales del siglo XIX.</p>
+          </div>
+          <div class="highlight-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4 8 4v14"/><path d="M17 21v-8.5a1.5 1.5 0 0 0-1.5-1.5h-5a1.5 1.5 0 0 0-1.5 1.5V21"/></svg>
+            <h4>Arquitectura Republicana</h4>
+            <p>Admira de cerca las casonas coloridas, balcones de hierro y detalles arquitectónicos del centro histórico.</p>
+          </div>
+          <div class="highlight-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <h4>Guía Privado</h4>
+            <p>Atención personalizada para adaptar el ritmo y las paradas a tus intereses y nivel físico.</p>
+          </div>
+          <div class="highlight-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <h4>Equipo de Calidad</h4>
+            <p>Bicicletas cómodas tipo city-bike, cascos y kit de reparación incluido para tu seguridad.</p>
+          </div>
+        </div>
+
+        <h2 class="tour-body__h2" id="itinerario">Cómo es el recorrido</h2>
+        <ol class="timeline">
+          <li class="timeline__item">
+            <span class="timeline__hora">Inicio</span>
+            <h4>Ajuste de Bicicletas</h4>
+            <p>Encuentro en el punto de partida. Se ajustan las bicicletas a tu altura y se entrega el equipo de seguridad.</p>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__hora">Paso 1</span>
+            <h4>Vías del Tranvía</h4>
+            <p>Comienzo del pedaleo suave por las vías históricas que conectaban el puerto con el interior de la ciudad.</p>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__hora">Paso 2</span>
+            <h4>Centro Histórico</h4>
+            <p>Recorrido por calles emblemáticas como la Calle 17 (Abajo), observando edificios patrimoniales y plazas.</p>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__hora">Paso 3</span>
+            <h4>Ribera del Magdalena</h4>
+            <p>Acercamiento a la zona ribereña para sentir la importancia del río en el desarrollo comercial de Barranquilla.</p>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__hora">Final</span>
+            <h4>Cierre y Hidratación</h4>
+            <p>Finalización del tour con tiempo para preguntas, fotos y recomendaciones locales antes de devolver las bicis.</p>
+          </li>
+        </ol>
+
+        <h2 class="tour-body__h2" id="incluye">Qué incluye</h2>
+        <div class="include-columns">
+          <ul class="include-list include-list--si">
+            <li>Bicicleta tipo city-bike o híbrida</li>
+            <li>Casco de seguridad</li>
+            <li>Guía privado bilingüe</li>
+            <li>Botella de agua</li>
+            <li>Seguro básico de actividad</li>
+          </ul>
+          <ul class="include-list include-list--no">
+            <li>Alimentos o snacks adicionales</li>
+            <li>Propinas</li>
+            <li>Transporte hacia el punto de encuentro</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- CAJA DE PRECIO (se queda visible al hacer scroll) -->
+      <aside class="price-box" id="reservar">
+        <span class="price-box__badge">Precio más bajo garantizado</span>
+        <div class="price-box__precio">$ 190.000</div>
+        <div class="price-box__label">Por persona (grupo privado)</div>
+        <button class="price-box__btn">Consultar disponibilidad</button>
+        <ul class="price-box__features">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+            <span>Cancelación gratuita hasta 24 horas antes.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span>Reserva ahora y paga después.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2h2a2 2 0 0 1 2 2v2H8V4a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/></svg>
+            <span>Confirmación inmediata al reservar.</span>
+          </li>
+        </ul>
+      </aside>
+    </section>
+
+    <!-- BANDA DE LLAMADO A LA ACCIÓN -->
+    <section class="cta-banner">
+      <div class="cta-banner__blob cta-banner__blob--1"></div>
+      <div class="cta-banner__blob cta-banner__blob--2"></div>
+      <h2>¿Listo para pedalear por Barranquilla?</h2>
+      <p>Descubre la ciudad de una forma activa, fresca y auténtica.</p>
+      <button class="cta-banner__btn">Agregar a mi tour por $ 190.000</button>
+    </section>
+
+    <!-- RESEÑAS -->
+    <section class="reviews" id="reviews">
+      <h2 class="reviews__titulo">Lo que dicen quienes ya lo vivieron</h2>
+      <div class="reviews__divider"></div>
+
+      <div class="reviews__pista">
+        <article class="review-card">
+          <span class="review-card__comilla">“</span>
+          <div class="review-card__header">
+            <img src="/src/static/imagenes/USER/PERFIL USUARIO.jpg" alt="Avatar de Usuario" class="review-card__avatar" />
+            <div>
+              <span class="review-card__nombre">Andrea P.</span>
+              <div class="review-card__rating"><span>5,0</span><span class="review-card__stars">★★★★★</span></div>
+            </div>
+          </div>
+          <p class="review-card__texto">La mejor forma de conocer el centro. Las bicicletas están en muy buen estado y el guía fue súper paciente explicando la historia de cada edificio.</p>
+        </article>
+
+        <article class="review-card">
+          <span class="review-card__comilla">“</span>
+          <div class="review-card__header">
+            <img src="/src/static/imagenes/USER/2.jpeg" alt="Avatar de Usuario" class="review-card__avatar" />
+            <div>
+              <span class="review-card__nombre">Mark S.</span>
+              <div class="review-card__rating"><span>5,0</span><span class="review-card__stars">★★★★★</span></div>
+            </div>
+          </div>
+          <p class="review-card__texto">Excelente experiencia privada. Pude ir a mi propio ritmo y tomar todas las fotos que quise. Muy recomendado para amantes del ciclismo urbano.</p>
+        </article>
+
+        <article class="review-card review-card--vacia">
+          <p>Sé el próximo en contar tu experiencia.</p>
+          <a href="#" class="highlights__link">Escribir una opinión</a>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- BARRA FLOTANTE DE RESERVA (móvil) -->
+  <div class="sticky-cta" id="sticky-cta">
+    <div><span>Desde</span><strong>$190.000</strong></div>
+    <a href="#reservar" class="btn-primario btn-primario--sm">Reservar</a>
+  </div>
+
+  <script>
+    // Carrusel del hero: crossfade automático + puntos clicables
+    (function () {
+      const slides = document.querySelectorAll('.tour-hero__slide');
+      const dots = document.querySelectorAll('.tour-hero__dot-btn');
+      let actual = 0;
+      const prefiereMenosMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function mostrar(indice) {
+        slides.forEach((s, i) => s.classList.toggle('active', i === indice));
+        dots.forEach((d, i) => d.classList.toggle('active', i === indice));
+        actual = indice;
+      }
+
+      dots.forEach((dot, i) => dot.addEventListener('click', () => mostrar(i)));
+
+      if (!prefiereMenosMovimiento) {
+        setInterval(() => mostrar((actual + 1) % slides.length), 5000);
+      }
+    })();
+
+    // Revelado al hacer scroll para tarjetas de highlights y stats
+    (function () {
+      const elementos = document.querySelectorAll('.stat-card, .highlight-card, .timeline__item, .review-card');
+      const observador = new IntersectionObserver((entradas) => {
+        entradas.forEach((entrada) => {
+          if (entrada.isIntersecting) {
+            entrada.target.classList.add('visible');
+            observador.unobserve(entrada.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      elementos.forEach((el) => observador.observe(el));
+    })();
+
+    // Línea del itinerario: se "dibuja" a medida que el timeline entra en pantalla
+    (function () {
+      const timeline = document.querySelector('.timeline');
+      if (!timeline) return;
+      const observador = new IntersectionObserver(([entrada]) => {
+        if (entrada.isIntersecting) {
+          timeline.classList.add('timeline--activo');
+          observador.unobserve(timeline);
+        }
+      }, { threshold: 0.1 });
+      observador.observe(timeline);
+    })();
+
+    // Subnav pegajosa: aparece solo después de salir del hero
+    // Barra flotante de reserva: aparece en móvil tras pasar la caja de precio
+    (function () {
+      const subnav = document.getElementById('tour-subnav');
+      const hero = document.getElementById('tour-hero');
+      const stickyCta = document.getElementById('sticky-cta');
+      const precio = document.getElementById('reservar');
+
+      const observadorHero = new IntersectionObserver(([entrada]) => {
+        subnav.classList.toggle('tour-subnav--fija', !entrada.isIntersecting);
+      }, { threshold: 0 });
+      observadorHero.observe(hero);
+
+      const observadorPrecio = new IntersectionObserver(([entrada]) => {
+        stickyCta.classList.toggle('visible', !entrada.isIntersecting && entrada.boundingClientRect.top < 0);
+      }, { threshold: 0 });
+      observadorPrecio.observe(precio);
+    })();
+  </script>
+
+</body>
+</html>

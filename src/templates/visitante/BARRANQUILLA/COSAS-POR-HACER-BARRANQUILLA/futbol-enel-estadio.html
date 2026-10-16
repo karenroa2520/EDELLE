@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Soccer at the Metropolitan Stadium with Local Fans</title>
+  <link rel="stylesheet" href="/src/static/css/VISI/cosas.hacer.css" />
+</head>
+<body>
+
+  <!-- Header Principal -->
+  <header>
+    <div class="navbar-container">
+      <div class="logo">
+        <div class="logo-container">
+          <img src="/src/static/imagenes/INICIO/icono-krenga.svg" alt="Krenga - Tu Próxima Gran Aventura" />
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/index.html">Inicio</a></li>
+          <li><a href="/src/templates/visitante/quienes-somos.html">Quienes Somos</a></li>
+          <li><a href="/src/templates/visitante/servicios.html">Servicios</a></li>
+          <li><a href="/src/templates/visitante/destinos.html">Destinos</a></li>
+          <li><a href="/src/templates/visitante/pasajes.html">Pasajes</a></li>
+        </ul>
+      </nav>
+      <div class="user-icon">
+        <a href="/src/templates/comprador/login.html" title="Iniciar Sesión">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-5.656-3.656L12 17l-2.344-2.344A4 4 0 0 0 4 17v2"></path>
+            <circle cx="12" cy="9" r="4"></circle>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sub-header / Submenu -->
+  <section class="sub-header">
+    <div class="sub-header__container">
+      <a href="/src/templates/visitante/BARRANQUILLA/BARRANQUILLA.html" class="sub-header__item sub-header__item--active">
+        <span class="sub-header__icon">📍</span> Barranquilla
+      </a>
+      <a href="/src/templates/visitante/BARRANQUILLA/hoteles-barranquilla.html" class="sub-header__item">Hoteles</a>
+      <a href="/src/templates/visitante/BARRANQUILLA/cosas-porHacer-barranquilla.html" class="sub-header__item">Cosas Por Hacer</a>
+      <a href="/src/templates/visitante/BARRANQUILLA/restaurantes-barranquilla.html" class="sub-header__item">Restaurantes</a>
+    </div>
+  </section>
+
+  <main class="tour">
+
+    <!-- HERO: carrusel a pantalla completa -->
+    <section class="tour-hero" id="tour-hero">
+      <div class="tour-hero__slides">
+        <img class="tour-hero__slide active" src="/src/static/imagenes/COSAS-PORHACER/BARRANQUILLA/Futbol en el estadio Metropolitano/1.jpg" alt="Vista panorámica del Estadio Metropolitano Roberto Meléndez lleno de hinchas" />
+        <img class="tour-hero__slide" src="/src/static/imagenes/COSAS-PORHACER/BARRANQUILLA/Futbol en el estadio Metropolitano/2.jpg" alt="Aficionados de Junior de Barranquilla celebrando un gol" />
+        <img class="tour-hero__slide" src="/src/static/imagenes/COSAS-PORHACER/BARRANQUILLA/Futbol en el estadio Metropolitano/3.jpg" alt="Ambiente festivo en las gradas del estadio" />
+        <img class="tour-hero__slide" src="/src/static/imagenes/COSAS-PORHACER/BARRANQUILLA/Futbol en el estadio Metropolitano/4.jpg" alt="Entrada al estadio y alrededores" />
+      </div>
+      <div class="tour-hero__overlay"></div>
+
+      <div class="tour-hero__content">
+        <span class="tour-hero__eyebrow"><span class="linea"></span>Barranquilla · Deportes y Cultura</span>
+        <h1 class="tour-hero__title">Soccer at the Metropolitan Stadium <em>Vive la pasión del fútbol local</em></h1>
+        <div class="tour-hero__meta">
+          <span class="tour-hero__rating"><strong>5.0</strong><span class="tour-hero__stars">★★★★★</span></span>
+          <span class="tour-hero__punto">•</span>
+          <span>Deportes</span>
+          <span class="tour-hero__punto">•</span>
+          <span>4 horas</span>
+        </div>
+        <div class="tour-hero__acciones">
+          <a href="#reservar" class="btn-primario">Reservar esta experiencia</a>
+          <a href="#reviews" class="btn-fantasma">✏️ Escribir una opinión</a>
+        </div>
+      </div>
+
+      <div class="tour-hero__dots">
+        <button class="tour-hero__dot-btn active" aria-label="Foto 1"></button>
+        <button class="tour-hero__dot-btn" aria-label="Foto 2"></button>
+        <button class="tour-hero__dot-btn" aria-label="Foto 3"></button>
+        <button class="tour-hero__dot-btn" aria-label="Foto 4"></button>
+      </div>
+
+      <a href="#datos-rapidos" class="tour-hero__scroll" aria-label="Ver más">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+      </a>
+    </section>
+
+    <!-- SUBNAV PEGAJOSA -->
+    <nav class="tour-subnav" id="tour-subnav">
+      <div class="tour-subnav__links">
+        <a href="#descripcion">Descripción</a>
+        <a href="#itinerario">Itinerario</a>
+        <a href="#incluye">Qué incluye</a>
+        <a href="#reviews">Reseñas</a>
+      </div>
+      <div class="tour-subnav__precio">
+        <span>Desde</span>
+        <strong>$220.000</strong>
+        <a href="#reservar" class="btn-mini">Reservar</a>
+      </div>
+    </nav>
+
+    <!-- DATOS RÁPIDOS -->
+    <section class="stats-row" id="datos-rapidos">
+      <div class="stat-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        <div><strong>4 horas</strong><span>Duración aproximada</span></div>
+      </div>
+      <div class="stat-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <div><strong>Máx. 10</strong><span>Personas por grupo</span></div>
+      </div>
+      <div class="stat-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 6 6 1-4.5 4.5L18 20l-6-3-6 3 1.5-6.5L3 9l6-1z"/></svg>
+        <div><strong>Todos</strong><span>Niveles de energía</span></div>
+      </div>
+      <div class="stat-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+        <div><strong>ES / EN</strong><span>Idiomas disponibles</span></div>
+      </div>
+    </section>
+
+    <!-- CUERPO: descripción + precio -->
+    <section class="tour-body" id="descripcion">
+      <div class="tour-body__main">
+
+        <h2 class="tour-body__h2">Acerca de la experiencia</h2>
+        <p class="tour-body__p">
+          Sumérgete en la pasión del fútbol colombiano viviendo un partido de Junior de Barranquilla o la Selección Colombia en el icónico Estadio Metropolitano Roberto Meléndez. 
+          No es solo un juego; es una fiesta cultural. Acompañado de guías locales y aficionados, sentirás la adrenalina de las barras, los cantos tradicionales y la alegría desbordante 
+          que caracteriza a la 'Curva Sur'. Una experiencia auténtica para entender el alma barranquillera.
+          <a href="#" class="tour-body__more">Mostrar más</a>
+        </p>
+
+        <h3 class="tour-body__h3">Lo que vas a vivir</h3>
+        <div class="highlight-grid">
+          <div class="highlight-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            <h4>Entrada Garantizada</h4>
+            <p>Acceso asegurado al estadio para disfrutar del partido desde una zona segura y con buena visibilidad.</p>
+          </div>
+          <div class="highlight-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4 8 4v14"/><path d="M17 21v-8.5a1.5 1.5 0 0 0-1.5-1.5h-5a1.5 1.5 0 0 0-1.5 1.5V21"/></svg>
+            <h4>Ambiente Local Auténtico</h4>
+            <p>Vive la experiencia junto a hinchas locales que te enseñarán los cantos, tradiciones y la cultura de la barra.</p>
+          </div>
+          <div class="highlight-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <h4>Guía Acompañante</h4>
+            <p>Un guía experto te acompañará antes, durante y después del partido, asegurando tu seguridad y diversión.</p>
+          </div>
+          <div class="highlight-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <h4>Transporte Incluido</h4>
+            <p>Traslado seguro desde puntos céntricos de Barranquilla hasta las inmediaciones del estadio y regreso.</p>
+          </div>
+        </div>
+
+        <h2 class="tour-body__h2" id="itinerario">Cómo es el recorrido</h2>
+        <ol class="timeline">
+          <li class="timeline__item">
+            <span class="timeline__hora">Pre-Juego</span>
+            <h4>Punto de Encuentro</h4>
+            <p>Reunión con el guía en un lugar seguro acordado. Briefing sobre seguridad, comportamiento en las gradas y detalles del partido.</p>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__hora">Traslado</span>
+            <h4>Rumbo al Metropolitano</h4>
+            <p>Transporte hacia el Estadio Roberto Meléndez. En el camino, el guía explicará la historia del equipo local y sus rivales.</p>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__hora">Inicio</span>
+            <h4>Ingreso y Ambiente</h4>
+            <p>Entrada al estadio. Sentirás la energía de la gente comprando cervezas, banderas y ubicándose en las gradas.</p>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__hora">Durante</span>
+            <h4>El Partido</h4>
+            <p>Disfruta de 90 minutos de pura pasión. Canta con la barra, celebra los goles y vive la intensidad del fútbol colombiano.</p>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__hora">Final</span>
+            <h4>Salida Segura</h4>
+            <p>Al finalizar el encuentro, el guía te acompañará en la salida ordenada y el transporte de regreso a tu hotel o punto inicial.</p>
+          </li>
+        </ol>
+
+        <h2 class="tour-body__h2" id="incluye">Qué incluye</h2>
+        <div class="include-columns">
+          <ul class="include-list include-list--si">
+            <li>Entrada al estadio (boletería incluida)</li>
+            <li>Guía local bilingüe especializado</li>
+            <li>Transporte ida y vuelta desde zona turística</li>
+            <li>Asistencia y soporte durante el evento</li>
+            <li>Información previa sobre equipos y jugadores</li>
+          </ul>
+          <ul class="include-list include-list--no">
+            <li>Alimentos y bebidas dentro del estadio</li>
+            <li>Camisetas o merchandising del equipo</li>
+            <li>Propinas opcionales</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- CAJA DE PRECIO (se queda visible al hacer scroll) -->
+      <aside class="price-box" id="reservar">
+        <span class="price-box__badge">Precio más bajo garantizado</span>
+        <div class="price-box__precio">$ 220.000</div>
+        <div class="price-box__label">Por adulto</div>
+        <button class="price-box__btn">Consultar disponibilidad</button>
+        <ul class="price-box__features">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+            <span>Cancelación gratuita hasta 24 horas antes.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span>Reserva ahora y paga después.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2h2a2 2 0 0 1 2 2v2H8V4a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/></svg>
+            <span>Confirmación inmediata al reservar.</span>
+          </li>
+        </ul>
+      </aside>
+    </section>
+
+    <!-- BANDA DE LLAMADO A LA ACCIÓN -->
+    <section class="cta-banner">
+      <div class="cta-banner__blob cta-banner__blob--1"></div>
+      <div class="cta-banner__blob cta-banner__blob--2"></div>
+      <h2>¿Listo para gritar gol con los locales?</h2>
+      <p>Vive la pasión del fútbol barranquillero en el Estadio Metropolitano.</p>
+      <button class="cta-banner__btn">Agregar a mi tour por $ 220.000</button>
+    </section>
+
+    <!-- RESEÑAS -->
+    <section class="reviews" id="reviews">
+      <h2 class="reviews__titulo">Lo que dicen quienes ya lo vivieron</h2>
+      <div class="reviews__divider"></div>
+
+      <div class="reviews__pista">
+        <article class="review-card">
+          <span class="review-card__comilla">“</span>
+          <div class="review-card__header">
+            <img src="/src/static/imagenes/USER/PERFIL USUARIO.jpg" alt="Avatar de Usuario" class="review-card__avatar" />
+            <div>
+              <span class="review-card__nombre">James T.</span>
+              <div class="review-card__rating"><span>5,0</span><span class="review-card__stars">★★★★★</span></div>
+            </div>
+          </div>
+          <p class="review-card__texto">Increíble experiencia. El ambiente en el estadio es eléctrico. El guía nos hizo sentir como uno más de la hinchada. ¡Totalmente recomendado!</p>
+        </article>
+
+        <article class="review-card">
+          <span class="review-card__comilla">“</span>
+          <div class="review-card__header">
+            <img src="/src/static/imagenes/USER/2.jpeg" alt="Avatar de Usuario" class="review-card__avatar" />
+            <div>
+              <span class="review-card__nombre">Sofia M.</span>
+              <div class="review-card__rating"><span>5,0</span><span class="review-card__stars">★★★★★</span></div>
+            </div>
+          </div>
+          <p class="review-card__texto">Me encantó la organización. Me sentí segura todo el tiempo y pude disfrutar del partido sin preocupaciones. La pasión de la gente es contagiosa.</p>
+        </article>
+
+        <article class="review-card review-card--vacia">
+          <p>Sé el próximo en contar tu experiencia.</p>
+          <a href="#" class="highlights__link">Escribir una opinión</a>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- BARRA FLOTANTE DE RESERVA (móvil) -->
+  <div class="sticky-cta" id="sticky-cta">
+    <div><span>Desde</span><strong>$220.000</strong></div>
+    <a href="#reservar" class="btn-primario btn-primario--sm">Reservar</a>
+  </div>
+
+  <script>
+    // Carrusel del hero: crossfade automático + puntos clicables
+    (function () {
+      const slides = document.querySelectorAll('.tour-hero__slide');
+      const dots = document.querySelectorAll('.tour-hero__dot-btn');
+      let actual = 0;
+      const prefiereMenosMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function mostrar(indice) {
+        slides.forEach((s, i) => s.classList.toggle('active', i === indice));
+        dots.forEach((d, i) => d.classList.toggle('active', i === indice));
+        actual = indice;
+      }
+
+      dots.forEach((dot, i) => dot.addEventListener('click', () => mostrar(i)));
+
+      if (!prefiereMenosMovimiento) {
+        setInterval(() => mostrar((actual + 1) % slides.length), 5000);
+      }
+    })();
+
+    // Revelado al hacer scroll para tarjetas de highlights y stats
+    (function () {
+      const elementos = document.querySelectorAll('.stat-card, .highlight-card, .timeline__item, .review-card');
+      const observador = new IntersectionObserver((entradas) => {
+        entradas.forEach((entrada) => {
+          if (entrada.isIntersecting) {
+            entrada.target.classList.add('visible');
+            observador.unobserve(entrada.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      elementos.forEach((el) => observador.observe(el));
+    })();
+
+    // Línea del itinerario: se "dibuja" a medida que el timeline entra en pantalla
+    (function () {
+      const timeline = document.querySelector('.timeline');
+      if (!timeline) return;
+      const observador = new IntersectionObserver(([entrada]) => {
+        if (entrada.isIntersecting) {
+          timeline.classList.add('timeline--activo');
+          observador.unobserve(timeline);
+        }
+      }, { threshold: 0.1 });
+      observador.observe(timeline);
+    })();
+
+    // Subnav pegajosa: aparece solo después de salir del hero
+    // Barra flotante de reserva: aparece en móvil tras pasar la caja de precio
+    (function () {
+      const subnav = document.getElementById('tour-subnav');
+      const hero = document.getElementById('tour-hero');
+      const stickyCta = document.getElementById('sticky-cta');
+      const precio = document.getElementById('reservar');
+
+      const observadorHero = new IntersectionObserver(([entrada]) => {
+        subnav.classList.toggle('tour-subnav--fija', !entrada.isIntersecting);
+      }, { threshold: 0 });
+      observadorHero.observe(hero);
+
+      const observadorPrecio = new IntersectionObserver(([entrada]) => {
+        stickyCta.classList.toggle('visible', !entrada.isIntersecting && entrada.boundingClientRect.top < 0);
+      }, { threshold: 0 });
+      observadorPrecio.observe(precio);
+    })();
+  </script>
+
+</body>
+</html>

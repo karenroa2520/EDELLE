@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hotel Dann Carlton</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hotel Dann Carlton Bucaramanga</title>
   <link rel="stylesheet" href="/src/static/css/VISI/BUCARAMANGA/HOTELES-BUCARA/Hotel_Dann_Carlton.css" />
 </head>
+
 <body>
 
   <!-- CHECKBOX HACK PARA EL CARRITO -->
@@ -16,7 +18,7 @@
     <div class="navbar-container">
       <div class="logo">
         <div class="logo-container">
-          <img src="/src/static/imagenes/INICIO/logo_edelle.jpg" alt="Edelle - Tu Próxima Gran Aventura" />
+          <img src="/src/static/imagenes/INICIO/icono-krenga.svg" alt="Edelle - Tu Próxima Gran Aventura" />
         </div>
       </div>
 
@@ -32,7 +34,8 @@
 
       <div class="user-icon">
         <a href="/src/templates/comprador/login.html" title="Iniciar Sesión">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M20 21v-2a4 4 0 0 0-5.656-3.656L12 17l-2.344-2.344A4 4 0 0 0 4 17v2"></path>
             <circle cx="12" cy="9" r="4"></circle>
           </svg>
@@ -50,219 +53,262 @@
       </a>
       <a href="/src/templates/visitante/BUCARAMANGA/hoteles-bucara.html" class="sub-header__item">Hoteles</a>
       <a href="/src/templates/visitante/BUCARAMANGA/cosas-porHacer-bucara.html" class="sub-header__item">Cosas Por Hacer</a>
-      <a href="#" class="sub-header__item">Restaurantes</a>
-      <a href="#" class="sub-header__item">Reseñas</a>
+      <a href="/src/templates/visitante/BUCARAMANGA/restaurantes-bucara.html" class="sub-header__item">Restaurantes</a>
     </div>
   </section>
 
-  <!-- Hotel Detail Section -->
-  <main class="hotel-detail">
-    <div class="hotel-detail__header">
-      <h1 class="hotel-detail__title">Hotel Dann Carlton de Bucaramanga</h1>
-      <div class="hotel-detail__rating">
-        <span class="hotel-detail__score">4.2</span>
-        <span class="hotel-detail__stars">★★★★☆</span>
-      </div>
-      <p class="hotel-detail__address">
-        <span>📍</span> Cra. 19 #37-26, Bolívar, Bucaramanga, Santander
-      </p>
-      <a href="#reviews-section" class="hotel-detail__write-review">✏️ Escribir una Opinión</a>
-    </div>
-
-    <!-- Gallery -->
-    <div class="gallery">
-      <div class="gallery__main">
-        <img src="/src/static/imagenes/HOTELES/BUCARAMANGA/Hotel Dann Carlton de Bucaramanga/1.jpg" alt="Interior del hotel" class="gallery__image" />
-        <span class="gallery__count">38</span>
-      </div>
-      <div class="gallery__thumbnails">
-        <img src="/src/static/imagenes/HOTELES/BUCARAMANGA/Hotel Dann Carlton de Bucaramanga/2.jpg" alt="Cama" class="gallery__thumbnail" />
-        <img src="/src/static/imagenes/HOTELES/BUCARAMANGA/Hotel Dann Carlton de Bucaramanga/3.jpg" alt="Desayuno" class="gallery__thumbnail" />
-        <img src="/src/static/imagenes/HOTELES/BUCARAMANGA/Hotel Dann Carlton de Bucaramanga/4.jpg" alt="Exterior" class="gallery__thumbnail" />
-        <img src="/src/static/imagenes/HOTELES/BUCARAMANGA/Hotel Dann Carlton de Bucaramanga/5.jpg" alt="Salón" class="gallery__thumbnail" />
-      </div>
-    </div>
-
-    <!-- Booking Banner -->
-    <section class="booking-banner">
-      <h2 class="booking-banner__title">Hoteles en Bucaramanga y lugares donde alojarse</h2>
-      <div class="booking-banner__filters">
-        <div class="filter-item">
-          <span>📅 Check-in</span>
-          <span class="filter-value">-/-/-</span>
+  <!-- Main Content Wrapper -->
+  <main class="hotel-main">
+    
+    <!-- HERO SECTION -->
+    <section class="hotel-hero">
+      <div class="hotel-hero__info">
+        <span class="hotel-hero__badge">Zona Bancaria</span>
+        <h1 class="hotel-hero__title">Hotel Dann Carlton Bucaramanga</h1>
+        
+        <div class="hotel-hero__meta">
+          <div class="hotel-hero__rating">
+            <span class="hotel-hero__score">4.2</span>
+            <span class="hotel-hero__stars">★★★★☆</span>
+            <a href="#reviews-section" class="hotel-hero__reviews">(189 reseñas)</a>
+          </div>
+          <p>📍 Cra. 19 #37-26, Bolívar, Bucaramanga, Santander</p>
         </div>
-        <div class="filter-item">
-          <span>📅 Check-out</span>
-          <span class="filter-value">-/-/-</span>
+
+        <p style="color: var(--color-texto-suave); margin-bottom: 1.5rem;">
+          Estratégicamente ubicado en la zona bancaria con las comodidades de la hotelería moderna. Contamos con 51 habitaciones diseñadas exclusivamente para el descanso de nuestros huéspedes.
+        </p>
+
+        <a href="#reserva-sticky" class="hotel-hero__cta">Ver disponibilidad</a>
+      </div>
+
+      <div class="hotel-hero__gallery">
+        <div class="hotel-hero__gallery-main">
+          <img src="/src/static/imagenes/HOTELES/BUCARAMANGA/Hotel Dann Carlton de Bucaramanga/1.jpg" alt="Fachada Dann Carlton" />
+          <button class="hotel-hero__gallery-btn">Ver 38 fotos</button>
         </div>
-        <div class="filter-item">
-          <span>👥 Habitaciones/huéspedes</span>
-          <span class="filter-value">1 habitación, 2 huéspedes</span>
+        <div class="hotel-hero__gallery-thumbs">
+          <img src="/src/static/imagenes/HOTELES/BUCARAMANGA/Hotel Dann Carlton de Bucaramanga/2.jpg" alt="Habitación" />
+          <img src="/src/static/imagenes/HOTELES/BUCARAMANGA/Hotel Dann Carlton de Bucaramanga/3.jpg" alt="Desayuno" />
+          <img src="/src/static/imagenes/HOTELES/BUCARAMANGA/Hotel Dann Carlton de Bucaramanga/4.jpg" alt="Exterior" />
+          <img src="/src/static/imagenes/HOTELES/BUCARAMANGA/Hotel Dann Carlton de Bucaramanga/5.jpg" alt="Salón" />
         </div>
       </div>
     </section>
 
-    <!-- Information Section -->
-    <section class="info-section">
-      <h2 class="info-section__title">Información</h2>
+    <!-- BARRA DE RESERVA FLOTANTE -->
+    <section class="booking-bar" id="reserva-sticky">
+      <div class="booking-bar__inner">
+        <div class="booking-bar__field">
+          <span class="booking-bar__label">Check-in</span>
+          <span class="booking-bar__value">Seleccionar fecha</span>
+        </div>
+        <div class="booking-bar__divider"></div>
+        <div class="booking-bar__field">
+          <span class="booking-bar__label">Check-out</span>
+          <span class="booking-bar__value">Seleccionar fecha</span>
+        </div>
+        <div class="booking-bar__divider"></div>
+        <div class="booking-bar__field">
+          <span class="booking-bar__label">Huéspedes</span>
+          <span class="booking-bar__value">2 Adultos</span>
+        </div>
+        <label for="cart-toggle" class="booking-bar__cta">Reservar ahora</label>
+      </div>
+    </section>
 
-      <div class="info-grid">
-        <div class="info-grid__left">
-          <div class="rating-summary">
-            <div class="rating-summary__overall">
-              <span class="rating-summary__score">4.2</span>
-              <span class="rating-summary__label">Bueno</span>
-              <div class="rating-summary__stars">★★★★☆</div>
+    <!-- GRID DE CONTENIDO PRINCIPAL + SIDEBAR -->
+    <div class="hotel-content">
+      
+      <!-- COLUMNA IZQUIERDA: Información -->
+      <div class="hotel-content__main">
+        
+        <!-- Descripción -->
+        <article class="content-card">
+          <h2 class="content-card__title">Sobre el hotel</h2>
+          <p class="content-card__text">
+            En la ciudad Bonita de Colombia, estratégicamente ubicado en la zona bancaria y con las comodidades de la hotelería moderna es para nosotros un gusto presentarnos con el fin de convertirnos en la primera opción de alojamiento para usted su familia, su personal y sus clientes. Contamos con 51 habitaciones diseñadas exclusivamente para el descanso de nuestros huéspedes.
+          </p>
+        </article>
+
+        <!-- Servicios -->
+        <article class="content-card">
+          <h2 class="content-card__title">Servicios del establecimiento</h2>
+          <div class="amenities-grid">
+            <div class="amenity-item"><span class="amenity-icon">🚗</span> Estacionamiento gratis</div>
+            <div class="amenity-item"><span class="amenity-icon">☕</span> Desayuno gratis</div>
+            <div class="amenity-item"><span class="amenity-icon">🤽‍♂️</span> Parque acuático (cerca)</div>
+            <div class="amenity-item"><span class="amenity-icon">🐕</span> Pet friendly</div>
+            <div class="amenity-item"><span class="amenity-icon">🌐</span> Wifi alta velocidad</div>
+            <div class="amenity-item"><span class="amenity-icon">🚶‍♀️</span> Tours a pie</div>
+            <div class="amenity-item"><span class="amenity-icon">👧</span> Actividades infantiles</div>
+            <div class="amenity-item"><span class="amenity-icon">📺</span> TV para niños</div>
+          </div>
+          <button class="content-card__btn">Mostrar todos los servicios ▼</button>
+        </article>
+
+        <!-- Habitaciones -->
+        <article class="content-card">
+          <h2 class="content-card__title">Características de la habitación</h2>
+          <div class="amenities-grid">
+            <div class="amenity-item"><span class="amenity-icon">🍂</span> Libre de alérgenos</div>
+            <div class="amenity-item"><span class="amenity-icon">❄️</span> Aire acondicionado</div>
+            <div class="amenity-item"><span class="amenity-icon">🛏️</span> Cortinas blackout</div>
+            <div class="amenity-item"><span class="amenity-icon">📺</span> TV por cable/satélite</div>
+            <div class="amenity-item"><span class="amenity-icon">🛁</span> Bañera/Ducha</div>
+            <div class="amenity-item"><span class="amenity-icon">🧧</span> Minibar</div>
+            <div class="amenity-item"><span class="amenity-icon">☎️</span> Servicio de limpieza</div>
+            <div class="amenity-item"><span class="amenity-icon">⌨️</span> Escritorio</div>
+          </div>
+          
+          <h3 style="font-family: var(--fuente-display); margin-top: 1.5rem; color: var(--color-ciruela);">Tipos de Habitación</h3>
+          <div class="amenities-grid" style="margin-top: 1rem;">
+            <div class="amenity-item"><span class="amenity-icon">🏙️</span> Vista a la ciudad</div>
+            <div class="amenity-item"><span class="amenity-icon">⛰️</span> Vista a lugar de interés</div>
+            <div class="amenity-item"><span class="amenity-icon">🚭</span> No fumadores</div>
+            <div class="amenity-item"><span class="amenity-icon">👨‍👩‍👧‍👦</span> Familiar</div>
+          </div>
+        </article>
+
+        <!-- Reseñas -->
+        <section id="reviews-section">
+          <h2 class="content-card__title" style="margin-bottom: 1.5rem;">¡RESEÑAS!</h2>
+          
+          <!-- Resumen Visual de Puntuaciones -->
+          <div class="reviews-summary">
+            <div class="reviews-summary__score">
+              <span class="reviews-summary__number">4.2</span>
+              <span class="reviews-summary__text">Bueno</span>
+              <div class="reviews-summary__stars">★★★★☆</div>
             </div>
-            <div class="rating-summary__details">
-              <div class="rating-summary__detail">
-                <span>4.8 ★★★★★ Ubicación</span>
+            <div class="reviews-summary__bars">
+              <div class="bar-item">
+                <span style="width: 80px;">Ubicación</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 96%;"></div></div>
+                <span>4.8</span>
               </div>
-              <div class="rating-summary__detail">
-                <span>3.9 ★★★★☆ Habitaciones</span>
+              <div class="bar-item">
+                <span style="width: 80px;">Calidad</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 90%;"></div></div>
+                <span>4.5</span>
               </div>
-              <div class="rating-summary__detail">
-                <span>4.5 ★★★★☆ Calidad/precio</span>
+              <div class="bar-item">
+                <span style="width: 80px;">Servicio</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 86%;"></div></div>
+                <span>4.3</span>
               </div>
-              <div class="rating-summary__detail">
-                <span>4.0 ★★★★☆ Limpieza</span>
+              <div class="bar-item">
+                <span style="width: 80px;">Sueño</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 82%;"></div></div>
+                <span>4.1</span>
               </div>
-              <div class="rating-summary__detail">
-                <span>4.3 ★★★★☆ Servicio</span>
+              <div class="bar-item">
+                <span style="width: 80px;">Limpieza</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 80%;"></div></div>
+                <span>4.0</span>
               </div>
-              <div class="rating-summary__detail">
-                <span>4.1 ★★★★☆ Sueño</span>
+              <div class="bar-item">
+                <span style="width: 80px;">Habitac.</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 78%;"></div></div>
+                <span>3.9</span>
               </div>
             </div>
           </div>
 
-          <div class="description">
-            <p>En la ciudad Bonita de Colombia, estratégicamente ubicado en la zona bancaria y con las comodidades de la hotelería moderna es para nosotros 
-              un gusto presentarnos con el fin de convertirnos en la primera opción de alojamiento para usted su familia, su personal y sus clientes Contamos 
-              con 51 habitaciones diseñadas exclusivamente para el descanso de nuestros huéspedes...</p>
-          </div>
-        </div>
+          <!-- Lista de Reseñas -->
+          <div class="reviews-list">
+            <article class="review-card">
+              <div class="review-card__header">
+                <img src="https://placehold.co/50x50/ccc/000?text=AM" alt="Alba Martinez" class="review-card__avatar" />
+                <div class="review-card__user">
+                  <span class="review-card__name">Alba Martinez B</span>
+                  <span class="review-card__date">5-10-2025</span>
+                </div>
+              </div>
+              <div class="review-card__rating">★★★★★</div>
+              <p class="review-card__text">Tuvimos una estancia maravillosa. La atención y el servicio fueron excepcionales. Me sentí como en casa. Además, la comida estaba deliciosa. ¡Muchas gracias!</p>
+              <div class="review-card__meta">Viajé con mi familia • Octubre 2025</div>
+            </article>
 
-        <div class="info-grid__right">
-          <div class="services">
-            <h3 class="services__title">Servicios del establecimiento</h3>
-            <ul class="services__list">
-              <li><span>🚗</span> Estacionamiento gratis</li>
-              <li><span>☕</span> Desayuno gratis</li>
-              <li><span>🤽‍♂️</span> Parque acuático fuera del predio</li>
-              <li><span>👧</span> Actividades infantiles (Ideal para niños / familias)</li>
-              <li><span>🌐</span> Internet de alta velocidad gratuito</li>
-              <li><span>🚶‍♀️</span> Tours a pie</li>
-              <li><span>📺</span> Cadenas de televisión para niños</li>
-              <li><span>🐕</span> Se admiten mascotas (Se aceptan perros / mascotas)</li>
-            </ul>
-            <button class="services__btn">Mostrar más ▼</button>
-          </div>
+            <article class="review-card">
+              <div class="review-card__header">
+                <img src="https://placehold.co/50x50/ccc/000?text=ER" alt="Edwar Roa" class="review-card__avatar" />
+                <div class="review-card__user">
+                  <span class="review-card__name">Edwar Roa</span>
+                  <span class="review-card__date">10-08-2024</span>
+                </div>
+              </div>
+              <div class="review-card__rating">★★★★★</div>
+              <p class="review-card__text">Excelente ubicación en el centro, cerca de todo. Las habitaciones son cómodas y el aire acondicionado funciona bien. El desayuno muy completo.</p>
+              <div class="review-card__meta">Viajé con mi pareja • Agosto 2024</div>
+            </article>
 
-          <div class="features">
-            <h3 class="features__title">Características de la habitación</h3>
-            <ul class="features__list">
-              
-              <li><span>🍂</span> Habitación libre de alérgenos</li>
-              <li><span>❄</span> Aire acondicionado</li>
-              <li><span>☎</span> Servicio de limpieza</li>
-              <li><span>📺</span> TV por cable/satélite</li>
-              <li><span>🛏️</span> Cortinas blackout</li>
-              <li><span>🛏️</span> Escritorio</li>
-              <li><span>🧧</span> Minibar</li>
-              <li><span>🛁</span> Bañera/Ducha</li>
-            </ul>
-            <button class="features__btn">Mostrar más ▼</button>
+            <article class="review-card review-card--placeholder">
+              <div class="review-card__placeholder-content">
+                <p>Próximamente nuevas reseñas...</p>
+              </div>
+            </article>
           </div>
+        </section>
 
-          <div class="room-types">
-            <h3 class="room-types__title">Tipos de Habitación</h3>
-            <ul class="room-types__list">
-              <li><span>🏙️</span> Vista a la ciudad</li>
-              <li><span>🚭</span> Habitaciones para no fumadores</li>
-              <li><span>⛰️</span> Vista a un lugar de interés</li>
-              <li><span>👨‍👩‍👧‍👦</span> Habitaciones para familias</li>
-            </ul>
-          </div>
-        </div>
       </div>
-    </section>
 
-    <!-- BOTÓN DE ACCIÓN CON LABEL VINCULADO AL CHECKBOX -->
-    <div class="cta-button">
-      <label for="cart-toggle" class="cta-button__btn">¡AGREGAR A MI TOUR POR $ 310.149!</label>
+      <!-- COLUMNA DERECHA: Sidebar Sticky -->
+      <aside class="hotel-content__sidebar">
+        <div class="sidebar-card sticky-card">
+          <div class="sidebar-card__price">
+            <span class="price-label">Precio por noche desde</span>
+            <span class="price-amount">$310.149</span>
+            <span class="price-night">Impuestos incluidos</span>
+          </div>
+          
+          <div class="sidebar-card__features">
+            <span>Cancelación gratuita</span>
+            <span>Desayuno incluido</span>
+            <span>Sin prepago</span>
+          </div>
+
+          <label for="cart-toggle" class="sidebar-card__cta">
+            ¡AGREGAR A MI TOUR!
+          </label>
+          
+          <p class="sidebar-card__hint">Toca el botón para añadir al carrito</p>
+        </div>
+      </aside>
+
     </div>
-
-    <!-- Reviews Section -->
-    <section id="reviews-section" class="reviews-section">
-      <h2 class="reviews-section__title">¡RESEÑAS!</h2>
-      <h3 class="reviews-section__subtitle">Todas las reseñas</h3>
-
-      <!-- Review 1 -->
-      <article class="review-card">
-        <div class="review-card__header">
-          <img src="https://placehold.co/50x50/ccc/000?text=AM  " alt="Alba Martinez" class="review-card__avatar" />
-          <div class="review-card__user-info">
-            <span class="review-card__name">Alba Martinez B</span>
-            <span class="review-card__date">5-10-2025</span>
-          </div>
-        </div>
-        <div class="review-card__rating">
-          <span class="review-card__score">★★★★★</span>
-        </div>
-        <div class="review-card__content">
-          <p>Tuvimos una estancia maravillosa. La atención y el servicio fueron excepcionales. Me sentí como en casa. Además, la comida estaba deliciosa. ¡Muchas gracias!</p>
-          <div class="review-card__meta">
-            <span>Fecha de estancia: Octubre de 2025</span>
-            <span>Tipo de viaje: Viajé con mi familia</span>
-          </div>
-        </div>
-      </article>
-
-
-      <article class="review-card">
-        <div class="review-card__header">
-          <img src="https://placehold.co/50x50/ccc/000?text=ER  " alt="Edwar Roa" class="review-card__avatar" />
-          <div class="review-card__user-info">
-            <span class="review-card__name">Alba Martinez B</span>
-            <span class="review-card__date">10-08-2024</span>
-          </div>
-        </div>
-        <div class="review-card__rating">
-          <span class="review-card__score">★★★★★</span>
-        </div>
-        <div class="review-card__content">
-          <p>Tuvimos una estancia maravillosa. La atención y el servicio fueron excepcionales. Me sentí como en casa. Además, la comida estaba deliciosa. ¡Muchas gracias!</p>
-          <div class="review-card__meta">
-            <span>Fecha de estancia: Agosto de 2024</span>
-            <span>Tipo de viaje: Viajé con mi pareja</span>
-          </div>
-        </div>
-      </article>
-
-
-      <!-- Review 2 (Empty placeholder) -->
-      <article class="review-card review-card--placeholder">
-        <div class="review-card__placeholder-content">
-          <p>Próximamente nuevas reseñas...</p>
-        </div>
-      </article>
-    </section>
   </main>
 
-  <!-- PANEL LATERAL (RESUMEN CARRITO) -->
-  <aside class="reserva">
-    <h3>TU RESERVA</h3>
-    <div class="cart-list">
-      <div class="cart-item item-3"><span>Avani Royal Zona T Bogotá Hotel</span> <b>$310.149</b></div>
+  <!-- PANEL LATERAL (CARRITO DESLIZANTE) -->
+  <aside class="cart-sidebar">
+    <div class="cart-sidebar__header">
+      <h3>TU RESERVA</h3>
+      <label for="cart-toggle" class="cart-sidebar__close">✕</label>
     </div>
-    <a href="/src/templates/comprador/factura.html" class="btn-checkout">Realizar Compra</a>
-    <p class="hint">Toca el producto de nuevo para quitarlo</p>
+    <div class="cart-sidebar__body">
+      <div class="cart-item">
+        <div>
+          <span class="cart-item__name">Hotel Dann Carlton</span>
+          <span class="cart-item__desc">1 Noche • 2 Adultos</span>
+        </div>
+        <span class="cart-item__price">$310.149</span>
+      </div>
+      
+      <div class="cart-sidebar__total">
+        <span>Total:</span>
+        <strong>$310.149</strong>
+      </div>
+
+      <a href="/src/templates/comprador/factura.html" class="cart-sidebar__checkout">Realizar Compra</a>
+      <p class="cart-sidebar__hint">Toca la X o fuera del panel para cerrar</p>
+    </div>
   </aside>
 
-  <!-- VENTANA EMERGENTE -->
+  <!-- VENTANA EMERGENTE (TOAST) -->
   <div class="notice-container">
-    <div class="notice">¡Producto añadido al carrito!</div>
+    <div class="notice">
+      <span>✓</span> ¡Producto añadido al carrito!
+    </div>
   </div>
 
 </body>
