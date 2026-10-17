@@ -3,21 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Iniciar Sesión</title>
+  <title>Iniciar Sesión | Edelle</title>
   <link rel="stylesheet" href="/src/static/css/USER/login.css" />
 </head>
 <body>
+
   <!-- Barra de navegación fija -->
   <header>
     <div class="navbar-container">
-      <!-- Logo circular a la izquierda -->
       <div class="logo">
         <div class="logo-container">
-          <img src="/src/static/imagenes/img/logo_edelle.jpg" alt="Edelle - Tu Próxima Gran Aventura" />
+          <img src="/src/static/imagenes/INICIO/icono-krenga.svg" alt="Edelle - Tu Próxima Gran Aventura" />
         </div>
       </div>
-
-      <!-- Menú de navegación -->
       <nav>
         <ul>
           <li><a href="/index.html">Inicio</a></li>
@@ -27,8 +25,6 @@
           <li><a href="/src/templates/visitante/pasajes.html">Pasajes</a></li>
         </ul>
       </nav>
-
-      <!-- Ícono de usuario a la derecha -->
       <div class="user-icon">
         <a href="/src/templates/comprador/login.html" title="Iniciar Sesión">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -40,18 +36,117 @@
     </div>
   </header>
 
-  <!-- Formulario de login centrado -->
-  <div class="login-container">
-    <h2>Iniciar Sesión</h2>
-    <form action="#" method="POST">
-      <input type="email" placeholder="Ingrese el correo" required />
-      <input type="password" placeholder="Ingrese la contraseña" required />
-      <a href="#" class="forgot-password">¿Se me olvidó la contraseña?</a>
-      <a href="/src/templates/comprador/Principal_comprador.html" class="inicio-link">Iniciar Sesión</a>
-    </form>
-    <a href="/src/templates/visitante/registro_visitante.html" class="register-link">REGISTRARME</a>
-  </div>
+  <main class="login-page">
 
-  
+    <!-- PANEL DE MARCA -->
+    <section class="login-brand">
+      <img class="login-brand__foto" src="/src/static/imagenes/INICIO/inicio.jpg" alt="" />
+      <div class="login-brand__velo"></div>
+
+      <svg class="login-brand__ruta" viewBox="0 0 500 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M5 100 C 120 10, 220 110, 330 50 S 470 20, 495 40" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="5" cy="100" r="5"/>
+        <circle cx="495" cy="40" r="5"/>
+      </svg>
+
+      <div class="login-brand__contenido">
+        <span class="login-brand__eyebrow"><span class="linea"></span>Agencia de viajes Edelle</span>
+        <h2 class="login-brand__titulo">Tu próxima gran aventura <em>te está esperando</em></h2>
+        <p class="login-brand__texto">Entra para guardar tus destinos, reservar tours y comprar pasajes al mejor precio.</p>
+
+        <ul class="login-brand__beneficios">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            Reserva ahora y paga después
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            Cancelación gratuita en tours seleccionados
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            Comparamos ofertas para ti
+          </li>
+        </ul>
+      </div>
+
+      <div class="login-brand__ticker" aria-hidden="true">
+        <div class="login-brand__pista">
+          <span>Bogotá</span><span class="punto">&#9992;</span>
+          <span>Medellín</span><span class="punto">&#9992;</span>
+          <span>Cartagena</span><span class="punto">&#9992;</span>
+          <span>Santa Marta</span><span class="punto">&#9992;</span>
+          <span>San Andrés</span><span class="punto">&#9992;</span>
+          <span>Cali</span><span class="punto">&#9992;</span>
+          <span>Bogotá</span><span class="punto">&#9992;</span>
+          <span>Medellín</span><span class="punto">&#9992;</span>
+          <span>Cartagena</span><span class="punto">&#9992;</span>
+          <span>Santa Marta</span><span class="punto">&#9992;</span>
+          <span>San Andrés</span><span class="punto">&#9992;</span>
+          <span>Cali</span><span class="punto">&#9992;</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMULARIO -->
+    <section class="login-form-panel">
+      <div class="login-container">
+        <span class="login-container__badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15 9l-2 6-6 2 2-6 6-2z"/></svg>
+        </span>
+        <h1 class="login-container__titulo">Bienvenido de vuelta</h1>
+        <p class="login-container__subtitulo">Inicia sesión para continuar tu viaje.</p>
+
+        <form action="#" method="POST" class="login-form">
+
+          <div class="campo">
+            <input type="email" id="correo" name="correo" placeholder=" " autocomplete="email" required />
+            <label for="correo">Correo electrónico</label>
+            <svg class="campo__icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+          </div>
+
+          <div class="campo">
+            <input type="password" id="contrasena" name="contrasena" placeholder=" " autocomplete="current-password" required />
+            <label for="contrasena">Contraseña</label>
+            <svg class="campo__icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <button type="button" class="campo__ojo" id="toggle-contrasena" aria-label="Mostrar contraseña" aria-pressed="false">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+
+          <div class="login-form__opciones">
+            <label class="recordarme">
+              <input type="checkbox" name="recordarme" />
+              <span>Recordarme</span>
+            </label>
+            <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+          </div>
+
+          <a href="/src/templates/comprador/Principal_comprador.html" class="inicio-link">Iniciar sesión</a>
+        </form>
+
+        <div class="login-container__separador"><span>¿Aún no tienes cuenta?</span></div>
+
+        <a href="/src/templates/visitante/registro_visitante.html" class="register-link">Crear mi cuenta</a>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    // Mostrar / ocultar contraseña
+    (function () {
+      const boton = document.getElementById('toggle-contrasena');
+      const input = document.getElementById('contrasena');
+      if (!boton || !input) return;
+      boton.addEventListener('click', () => {
+        const visible = input.type === 'text';
+        input.type = visible ? 'password' : 'text';
+        boton.setAttribute('aria-pressed', visible ? 'false' : 'true');
+        boton.setAttribute('aria-label', visible ? 'Mostrar contraseña' : 'Ocultar contraseña');
+      });
+    })();
+  </script>
+
 </body>
 </html>

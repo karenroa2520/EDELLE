@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Registrarse</title>
+  <title>Crear cuenta | Edelle</title>
   <link rel="stylesheet" href="/src/static/css/VISI/visitante.css" />
 </head>
 <body>
+
   <!-- Barra de navegación fija -->
   <header>
     <div class="navbar-container">
@@ -15,7 +16,6 @@
           <img src="/src/static/imagenes/INICIO/logo_edelle.jpg" alt="Edelle - Tu Próxima Gran Aventura" />
         </div>
       </div>
-
       <nav>
         <ul>
           <li><a href="/index.html">Inicio</a></li>
@@ -25,7 +25,6 @@
           <li><a href="/src/templates/visitante/pasajes.html">Pasajes</a></li>
         </ul>
       </nav>
-
       <div class="user-icon">
         <a href="/src/templates/comprador/login.html" title="Iniciar Sesión">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -37,49 +36,273 @@
     </div>
   </header>
 
-  <!-- Formulario de registro centrado -->
-  <div class="register-container">
-    <!-- CHECKBOX HIDDEN PARA EL MENSAJE DE ÉXITO -->
-    <input type="checkbox" id="success-toggle" class="success-checkbox" style="display: none;">
+  <main class="registro-page">
 
-    <h2>Crear Cuenta</h2>
-    
-    <!-- FORMULARIO (visible por defecto) -->
-    <form action="#" method="POST" class="register-form">
-      <input type="text" placeholder="Nombre completo" required />
+    <!-- PANEL DE MARCA -->
+    <section class="registro-brand">
+      <img class="registro-brand__foto" src="/src/static/imagenes/INICIO/conocer ciudades.jpg" alt="" />
+      <div class="registro-brand__velo"></div>
 
-      <label for="tipo-documento" class="form-label">Seleccione el tipo de Documento:</label>
-      <select name="tipo-documento" id="tipo-documento" class="form-select" required>
-        <option value="">-- Elija una opción --</option>
-        <option value="ti">Tarjeta de Identidad</option>
-        <option value="cc">Cédula de Ciudadanía</option>
-        <option value="ce">Cédula de Extranjería</option>
-        <option value="pasaporte">Pasaporte</option>
-      </select>
+      <svg class="registro-brand__ruta" viewBox="0 0 500 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M5 100 C 120 10, 220 110, 330 50 S 470 20, 495 40" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="5" cy="100" r="5"/>
+        <circle cx="495" cy="40" r="5"/>
+      </svg>
 
-      <input type="tel" placeholder="Documento" required/>
-      <input type="tel" placeholder="Teléfono" required />
-      <input type="email" placeholder="Correo electrónico" required />
-      <label for="fecha" class="form-label">Fecha de nacimiento</label>
-      <input type="date" placeholder="Fecha de nacimiento" required />
-      <input type="password" placeholder="Contraseña" required />
-      <input type="password" placeholder="Confirmar contraseña" required />
+      <div class="registro-brand__contenido">
+        <span class="registro-brand__eyebrow"><span class="linea"></span>Agencia de viajes Edelle</span>
+        <h2 class="registro-brand__titulo">Tu viaje empieza con <em>una cuenta</em></h2>
+        <p class="registro-brand__texto">Crear tu cuenta toma menos de un minuto y te abre la puerta a todo Colombia.</p>
 
-      <!-- BOTÓN DE REGISTRO (label del checkbox) -->
-      <label for="success-toggle" class="btn-register">Registrarme</label>
-    </form>
+        <ol class="registro-brand__pasos">
+          <li><span class="num">1</span> Crea tu cuenta</li>
+          <li><span class="num">2</span> Elige tu destino</li>
+          <li><span class="num">3</span> Reserva y viaja tranquilo</li>
+        </ol>
+      </div>
 
-    <!-- MENSAJE DE ÉXITO (oculto por defecto) -->
-    <div class="success-message">
-      <div class="success-icon">✓</div>
-      <h3>Usuario Creado con Éxito!</h3>
-      <p>El usuario "Juan Pérez" ha sido creado con éxito.</p>
-      <p>¡Bienvenido al sistema de la Agencia de Viajes!</p>
-      <a href="/src/templates/comprador/login.html" class="btn-aceptar">Aceptar</a>
-    </div>
+      <div class="registro-brand__ticker" aria-hidden="true">
+        <div class="registro-brand__pista">
+          <span>Bogotá</span><span class="punto">&#9992;</span>
+          <span>Medellín</span><span class="punto">&#9992;</span>
+          <span>Cartagena</span><span class="punto">&#9992;</span>
+          <span>Santa Marta</span><span class="punto">&#9992;</span>
+          <span>San Andrés</span><span class="punto">&#9992;</span>
+          <span>Cali</span><span class="punto">&#9992;</span>
+          <span>Bogotá</span><span class="punto">&#9992;</span>
+          <span>Medellín</span><span class="punto">&#9992;</span>
+          <span>Cartagena</span><span class="punto">&#9992;</span>
+          <span>Santa Marta</span><span class="punto">&#9992;</span>
+          <span>San Andrés</span><span class="punto">&#9992;</span>
+          <span>Cali</span><span class="punto">&#9992;</span>
+        </div>
+      </div>
+    </section>
 
-    <!-- ENLACE A INICIAR SESIÓN (visible solo cuando el formulario está activo) -->
-    <a href="/src/templates/comprador/login.html" class="login-link">Ya tengo cuenta → Iniciar Sesión</a>
-  </div>
+    <!-- FORMULARIO -->
+    <section class="registro-form-panel">
+      <div class="register-container" id="register-container">
+
+        <!-- VISTA FORMULARIO -->
+        <div class="registro-vista" id="vista-formulario">
+          <h1 class="register-container__titulo">Crear cuenta</h1>
+          <p class="register-container__subtitulo">Solo dos pasos y listo.</p>
+
+          <ol class="progreso" aria-label="Progreso del registro">
+            <li class="progreso__item progreso__item--activo" id="prog-1"><span class="progreso__num">1</span><span class="progreso__txt">Tus datos</span></li>
+            <li class="progreso__linea" aria-hidden="true"><span id="prog-linea"></span></li>
+            <li class="progreso__item" id="prog-2"><span class="progreso__num">2</span><span class="progreso__txt">Tu acceso</span></li>
+          </ol>
+
+          <form action="#" method="POST" class="register-form" id="register-form" novalidate>
+
+            <!-- PASO 1 -->
+            <div class="paso paso--activo" id="paso-1">
+              <div class="campo">
+                <input type="text" id="nombre" name="nombre" placeholder=" " autocomplete="name" required />
+                <label for="nombre">Nombre completo</label>
+                <svg class="campo__icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+              </div>
+
+              <div class="campo campo--fijo">
+                <select name="tipo-documento" id="tipo-documento" class="form-select" required>
+                  <option value="">Elige una opción</option>
+                  <option value="ti">Tarjeta de Identidad</option>
+                  <option value="cc">Cédula de Ciudadanía</option>
+                  <option value="ce">Cédula de Extranjería</option>
+                  <option value="pasaporte">Pasaporte</option>
+                </select>
+                <label for="tipo-documento">Tipo de documento</label>
+                <svg class="campo__icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><circle cx="8" cy="12" r="2"/><path d="M13 10h5M13 14h4"/></svg>
+              </div>
+
+              <div class="campo">
+                <input type="text" id="documento" name="documento" placeholder=" " inputmode="numeric" required />
+                <label for="documento">Número de documento</label>
+                <svg class="campo__icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16M4 15h16M10 3 8 21M16 3l-2 18"/></svg>
+              </div>
+
+              <div class="campo campo--fijo">
+                <input type="date" id="fecha" name="fecha" placeholder=" " required />
+                <label for="fecha">Fecha de nacimiento</label>
+                <svg class="campo__icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+              </div>
+
+              <button type="button" class="btn-registro" id="btn-siguiente">Continuar →</button>
+            </div>
+
+            <!-- PASO 2 -->
+            <div class="paso" id="paso-2">
+              <div class="campo">
+                <input type="tel" id="telefono" name="telefono" placeholder=" " autocomplete="tel" required />
+                <label for="telefono">Teléfono</label>
+                <svg class="campo__icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.8 2z"/></svg>
+              </div>
+
+              <div class="campo">
+                <input type="email" id="correo" name="correo" placeholder=" " autocomplete="email" required />
+                <label for="correo">Correo electrónico</label>
+                <svg class="campo__icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+              </div>
+
+              <div class="campo">
+                <input type="password" id="contrasena" name="contrasena" placeholder=" " autocomplete="new-password" minlength="6" required />
+                <label for="contrasena">Contraseña</label>
+                <svg class="campo__icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                <button type="button" class="campo__ojo" data-target="contrasena" aria-label="Mostrar contraseña" aria-pressed="false">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                </button>
+              </div>
+
+              <div class="medidor" id="medidor" data-nivel="0" aria-live="polite">
+                <div class="medidor__barra"><span></span></div>
+                <span class="medidor__texto" id="medidor-texto">Usa 8 o más caracteres, mayúsculas y números.</span>
+              </div>
+
+              <div class="campo">
+                <input type="password" id="confirmar" name="confirmar" placeholder=" " autocomplete="new-password" required />
+                <label for="confirmar">Confirmar contraseña</label>
+                <svg class="campo__icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5z"/><path d="m9 12 2 2 4-4"/></svg>
+                <button type="button" class="campo__ojo" data-target="confirmar" aria-label="Mostrar contraseña" aria-pressed="false">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                </button>
+              </div>
+              <p class="campo__error" id="error-confirmar" role="alert"></p>
+
+              <div class="botones-paso">
+                <button type="button" class="btn-atras" id="btn-atras">← Atrás</button>
+                <button type="submit" class="btn-registro">Crear mi cuenta</button>
+              </div>
+            </div>
+
+          </form>
+
+          <a href="/src/templates/comprador/login.html" class="login-link">¿Ya tienes cuenta? <strong>Inicia sesión</strong></a>
+        </div>
+
+        <!-- VISTA ÉXITO -->
+        <div class="registro-vista exito" id="vista-exito" hidden>
+          <div class="exito__icono">
+            <svg viewBox="0 0 52 52" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <circle class="exito__circulo" cx="26" cy="26" r="23"/>
+              <path class="exito__check" d="M15 27l8 8 14-16"/>
+            </svg>
+            <span class="exito__chispa exito__chispa--1"></span>
+            <span class="exito__chispa exito__chispa--2"></span>
+            <span class="exito__chispa exito__chispa--3"></span>
+          </div>
+          <h2 class="exito__titulo" id="exito-titulo" tabindex="-1">¡Bienvenido!</h2>
+          <p class="exito__texto">Tu cuenta fue creada con éxito. Ya puedes explorar destinos, reservar tours y comprar pasajes con la Agencia de Viajes.</p>
+          <a href="/src/templates/comprador/login.html" class="btn-registro btn-registro--enlace">Iniciar sesión</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    (function () {
+      const form = document.getElementById('register-form');
+      const contenedor = document.getElementById('register-container');
+      const pasos = [document.getElementById('paso-1'), document.getElementById('paso-2')];
+      const prog = [document.getElementById('prog-1'), document.getElementById('prog-2')];
+      const linea = document.getElementById('prog-linea');
+      const btnSiguiente = document.getElementById('btn-siguiente');
+      const btnAtras = document.getElementById('btn-atras');
+      let actual = 0;
+
+      function mostrar(i) {
+        actual = i;
+        pasos.forEach((p, idx) => p.classList.toggle('paso--activo', idx === i));
+        prog[0].classList.toggle('progreso__item--activo', i === 0);
+        prog[0].classList.toggle('progreso__item--hecho', i > 0);
+        prog[1].classList.toggle('progreso__item--activo', i === 1);
+        linea.style.width = i === 1 ? '100%' : '0%';
+        const primero = pasos[i].querySelector('input, select');
+        if (primero) setTimeout(() => primero.focus(), 150);
+      }
+
+      function validarPaso(i) {
+        const campos = pasos[i].querySelectorAll('input, select');
+        for (const c of campos) {
+          if (!c.checkValidity()) { c.reportValidity(); return false; }
+        }
+        return true;
+      }
+
+      btnSiguiente.addEventListener('click', () => { if (validarPaso(0)) mostrar(1); });
+      btnAtras.addEventListener('click', () => mostrar(0));
+
+      // Enter en el paso 1 avanza en lugar de enviar
+      form.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && actual === 0 && e.target.tagName !== 'BUTTON') {
+          e.preventDefault();
+          btnSiguiente.click();
+        }
+      });
+
+      // Mostrar / ocultar contraseñas
+      document.querySelectorAll('.campo__ojo').forEach((boton) => {
+        boton.addEventListener('click', () => {
+          const input = document.getElementById(boton.dataset.target);
+          const visible = input.type === 'text';
+          input.type = visible ? 'password' : 'text';
+          boton.setAttribute('aria-pressed', visible ? 'false' : 'true');
+          boton.setAttribute('aria-label', visible ? 'Mostrar contraseña' : 'Ocultar contraseña');
+        });
+      });
+
+      // Medidor de fortaleza
+      const pass = document.getElementById('contrasena');
+      const confirmar = document.getElementById('confirmar');
+      const medidor = document.getElementById('medidor');
+      const medidorTexto = document.getElementById('medidor-texto');
+      const errorConfirmar = document.getElementById('error-confirmar');
+      const etiquetas = ['Usa 8 o más caracteres, mayúsculas y números.', 'Débil', 'Podría ser mejor', 'Buena', 'Muy fuerte'];
+
+      function evaluar(v) {
+        if (!v) return 0;
+        let puntos = 0;
+        if (v.length >= 8) puntos++;
+        if (/[A-Z]/.test(v) && /[a-z]/.test(v)) puntos++;
+        if (/[0-9]/.test(v)) puntos++;
+        if (/[^A-Za-z0-9]/.test(v)) puntos++;
+        return Math.max(puntos, 1);
+      }
+
+      function validarCoincidencia() {
+        if (confirmar.value && confirmar.value !== pass.value) {
+          confirmar.setCustomValidity('Las contraseñas no coinciden');
+          errorConfirmar.textContent = 'Las contraseñas no coinciden';
+        } else {
+          confirmar.setCustomValidity('');
+          errorConfirmar.textContent = '';
+        }
+      }
+
+      pass.addEventListener('input', () => {
+        const nivel = evaluar(pass.value);
+        medidor.dataset.nivel = nivel;
+        medidorTexto.textContent = etiquetas[nivel];
+        validarCoincidencia();
+      });
+      confirmar.addEventListener('input', validarCoincidencia);
+
+      // Envío: muestra la pantalla de éxito con el nombre real
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        validarCoincidencia();
+        if (!validarPaso(1)) return;
+        const nombre = document.getElementById('nombre').value.trim().split(' ')[0];
+        document.getElementById('exito-titulo').textContent = '¡Bienvenido, ' + nombre + '!';
+        document.getElementById('vista-formulario').hidden = true;
+        document.getElementById('vista-exito').hidden = false;
+        contenedor.classList.add('register-container--exito');
+        document.getElementById('exito-titulo').focus();
+      });
+    })();
+  </script>
+
 </body>
 </html>
